@@ -2,12 +2,13 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
+  apiKey: "AIzaSyD1WYapSb3fCybXN5anUgbbuyDP-fQjEaA",
+  authDomain: "adventcalendar-d50fc.firebaseapp.com",
+  projectId: "adventcalendar-d50fc",
+  storageBucket: "adventcalendar-d50fc.appspot.com",
+  messagingSenderId: "983622613978",
+  appId: "1:983622613978:web:85cc4971a5f7feb5241ee3",
+  measurementId: "G-XSVJK6MGJW"
 };
 
 firebase.initializeApp(firebaseConfig);
