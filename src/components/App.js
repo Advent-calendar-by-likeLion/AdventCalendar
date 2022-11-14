@@ -1,6 +1,7 @@
 import AppRouter from "components/Router";
 import { useEffect, useState } from "react";
 import {authService} from "fbase"
+import { MediaDiv } from "../styles/layout";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,7 +20,9 @@ function App() {
 
   return (
     <>
-      {init ? <AppRouter isLoggedIn={isLoggedIn} /> : "init.."}
+      <MediaDiv>
+        {init ? <AppRouter isLoggedIn={isLoggedIn} /> : "init.."}
+      </MediaDiv>
     </>
   )
 }

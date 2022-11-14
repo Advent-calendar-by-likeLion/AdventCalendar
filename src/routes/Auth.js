@@ -22,19 +22,19 @@ const Auth = () => {
     }
 
     return (
-        <div className="authContainer">
-            <FontAwesomeIcon
-                icon={faArtstation}
-                color={"#04AAFF"}
-                size="3x"
-                style={{marginBottom: 30}}
-            />
-            <AuthForm />
-            <div className="authBtns">
-                <button onClick={onSocialClick} name="google" className="authBtn">Continue With Google <FontAwesomeIcon icon={faGoogle}/></button>
-                <button onClick={onSocialClick} name="github" className="authBtn">Continue With Github <FontAwesomeIcon icon={faGithub}/></button>
+            <div className="authContainer">
+                <FontAwesomeIcon
+                    icon={faArtstation}
+                    color={"#04AAFF"}
+                    size="3x"
+                    style={{marginBottom: 30}}
+                />
+                <AuthForm />
+                <div className="authBtns">
+                    <button onClick={onSocialClick} name="google" className="authBtn">Continue With Google <FontAwesomeIcon icon={faGoogle}/></button>
+                    <button onClick={onSocialClick} name="github" className="authBtn">Continue With Github <FontAwesomeIcon icon={faGithub}/></button>
+                </div>
             </div>
-        </div>
     )
 
 
