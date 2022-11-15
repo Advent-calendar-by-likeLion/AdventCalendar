@@ -30,7 +30,7 @@ export const MediaDiv = styled.div`
     min-height: calc(var(--vh, 1vh) * 100);
     width: 768px;
     margin: 0 auto;
-    background-color: gray;
+    background-color: #FCF4E9;
     display: flex;
     flex-direction: column;
     @media screen and (max-width: 768px) {
@@ -40,4 +40,7 @@ export const MediaDiv = styled.div`
 
 export const GlobalStyle = createGlobalStyle`
     ${reset}
+    body {
+        margin: 0px;
+    }
 `

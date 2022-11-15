@@ -3,6 +3,10 @@ import { faGoogle,faGithub, faArtstation } from "@fortawesome/free-brands-svg-ic
 
 import { authService, firebaseInstance } from "fbase";
 import AuthForm from "components/AuthForm";
+import Google from '../assets/Google.svg';
+import Github from '../assets/Github.svg';
+import { Container } from './styles/style';
+import styled from 'styled-components';
 
 const Auth = () => {
     const onSocialClick = async (event) => {
@@ -22,25 +26,23 @@ const Auth = () => {
     }
 
     return (
-            <div className="authContainer">
-                <FontAwesomeIcon
-                    icon={faArtstation}
-                    color={"#04AAFF"}
-                    size="3x"
-                    style={{marginBottom: 30}}
-                />
+            <Container>
                 <AuthForm />
-                <div className="authBtns">
-                    <button onClick={onSocialClick} name="google" className="authBtn">Continue With Google <FontAwesomeIcon icon={faGoogle}/></button>
-                    <button onClick={onSocialClick} name="github" className="authBtn">Continue With Github <FontAwesomeIcon icon={faGithub}/></button>
-                </div>
-            </div>
+                <ButtonStyle>
+                    <img src={Google} onClick={onSocialClick} name="google" />
+                    <img src={Github} onClick={onSocialClick} name="github" />
+                </ButtonStyle>
+            </Container>
     )
-
 
 
 };
 
-
-
 export default Auth;
+
+const ButtonStyle = styled.div`
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+`
