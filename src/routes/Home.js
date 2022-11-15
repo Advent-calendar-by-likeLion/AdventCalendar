@@ -51,6 +51,8 @@ const Home = ({ userObj }) => {
       reader.readAsDataURL(theFile);
     }
   
+    const onClearAttachment = () => setAttachment("");
+
     return (
       <>
         <form onSubmit={onSubmit}>
@@ -63,7 +65,12 @@ const Home = ({ userObj }) => {
           />
           <input type="file" accept="image/*" onChange={onFileChange}/>
           <input type="submit" value="Nweet" />
-          {attachment && <img src={attachment} width="50px" height="50px" />}
+          {attachment && (
+            <div>
+              <img src={attachment} width="50px" height="50px" />
+              <button onClick={onClearAttachment}>Clear</button>
+            </div>
+          )}
         </form>
         <div>
             {
