@@ -1,5 +1,10 @@
 import {dbService} from "fbase";
+import { useState } from "react";
+
 const Nweet = ({ nweetObj, isOwner }) => {
+    const [editing, setEditing] = useState(false);
+    const [newNweet, setNewNweet] = useState(nweetObj.text); // for editing state
+
     const onDeleteClick = async () => {
         const ok = window.confirm("삭제?");
         if (ok) {
@@ -7,15 +12,31 @@ const Nweet = ({ nweetObj, isOwner }) => {
         }
     }
 
+    const toggleEditing = () => setEditing((prev) => !prev);
+
     return (
         <div>
-            <h4>{nweetObj.text}</h4>
-            {isOwner && (
+            {editing ? (
                 <>
-                    <button onClick={onDeleteClick}>Delete Nweet</button>
-                    <button>Edit Nweet</button>
+                    <form>
+                        <input value={newNweet} required />
+                    </form>
+                    <button onClick={toggleEditing}>Cancel</button>
+                </>
+            ):(
+                <>
+                   <h4>{nweetObj.text}</h4>
+                   {isOwner && (
+                       <>
+                           <button onClick={onDeleteClick}>Delete Nweet</button>
+                           <button onClick={toggleEditing}>Edit Nweet</button>
+                       </>
+                   )}
                 </>
             )}
+
+
+
         </div>
     )
 }
