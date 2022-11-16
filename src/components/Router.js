@@ -5,6 +5,7 @@ import Profile from "routes/Profile"
 import Start from "../routes/Start";
 import Navigation from "./Navigation";
 import Signup from '../routes/Signup';
+import Write from "../routes/Write";
 
 const AppRouter = ({isLoggedIn, userObj}) => {
   return (
@@ -15,6 +16,9 @@ const AppRouter = ({isLoggedIn, userObj}) => {
           <>
             <Route exact path="/home">
               <Home userObj={userObj}/>
+            </Route>
+            <Route exact path="/write">
+              <Write userObj={userObj}/>
             </Route>
             <Route exact path="/profile">
               <Profile />

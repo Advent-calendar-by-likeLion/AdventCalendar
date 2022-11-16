@@ -1,14 +1,20 @@
-
 import { dbService, storageService } from "fbase";
-import { useEffect, useState } from "react";
 import Nweet from "../components/Nweet";
-import {v4 as uuidv4} from "uuid";
+
+import styled from 'styled-components';
+import Hotel from '../assets/Hotel.svg';
+import LoginBar from '../assets/LoginBar.svg';
+import SignupBar from '../assets/SignupBar.svg';
+import Title from '../assets/Welcome.svg';
+import { useHistory } from 'react-router-dom';
+import { Container, HotelImg, TitleDiv } from './styles/style';
+import { useEffect, useState } from 'react';
 
 const Home = ({ userObj }) => {
     const [nweet, setNweet] = useState("");
     const [nweets, setNweets] = useState([]);
     const [attachment, setAttachment] = useState("");
-  
+
     useEffect(() => {
       dbService.collection("nweets").onSnapshot((snapshot) => {
         const newArray = snapshot.docs.map((document) => ({
@@ -18,73 +24,23 @@ const Home = ({ userObj }) => {
         setNweets(newArray);
       })
     }, []);
-  
-    const onSubmit = async (event) => {
-      event.preventDefault();
-      let attachmentUrl = "";
-      if (attachment !== "") {
-        // file 
-        const attRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
-        const response = await attRef.putString(attachment, "data_url");
-        attachmentUrl = await response.ref.getDownloadURL();
-      }
-      // text by db
-      await dbService.collection("nweets").add({
-        text: nweet,
-        createdAt: Date.now(),
-        creatorId: userObj.uid,
-        attachmentUrl
-      });
 
-      setNweet("");
-      setAttachment("");
-    };
-  
-    const onChange = (event) => {
-      event.preventDefault();
-      const {
-        target: { value },
-      } = event;
-      setNweet(value);
-    };
 
-    const onFileChange = (event) => {
-      const {
-        target: { files },
-      } = event;
-      const theFile = files[0];
-      const reader = new FileReader();
-      reader.onloadend = (finishedEvent) => {
-        const {
-          currentTarget: { result },
-        } = finishedEvent;
-        setAttachment(result);
-      }
-      reader.readAsDataURL(theFile);
+    const history = useHistory();
+    const onclickLoginBar = () => {
+        history.push("/write");
     }
-  
-    const onClearAttachment = () => setAttachment("");
-
-    return (
+  return (
       <>
-        <form onSubmit={onSubmit}>
-          <input
-            value={nweet}
-            onChange={onChange}
-            type="text"
-            placeholder="What's on your mind?"
-            maxLength={120}
-          />
-          <input type="file" accept="image/*" onChange={onFileChange}/>
-          <input type="submit" value="Nweet" />
-          {attachment && (
-            <div>
-              <img src={attachment} width="50px" height="50px" />
-              <button onClick={onClearAttachment}>Clear</button>
-            </div>
-          )}
-        </form>
-        <div>
+      <Container>
+        <img src={Title} />
+        <TitleDiv>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
+        <HotelImg src={Hotel} />
+        <ButtonLayout>
+            <img src={LoginBar} onClick={onclickLoginBar} />
+         </ButtonLayout>
+      </Container>
+      <div>
             {
             nweets.map((nweet) => (
                 <Nweet 
@@ -95,7 +51,15 @@ const Home = ({ userObj }) => {
             ))}
         </div>
       </>
-    );
-  };
-  
-  export default Home;
+  )
+}
+
+export default Home;
+
+const ButtonLayout = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 12.57px;
+    margin-top: 62.02px;
+    margin-bottom: 142px;
+`
