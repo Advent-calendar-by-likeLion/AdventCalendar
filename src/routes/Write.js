@@ -12,10 +12,10 @@ const Write = ({ userObj }) => {
         event.preventDefault();
         let attachmentUrl = "";
         if (attachment !== "") {
-        // file 
-        const attRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
-        const response = await attRef.putString(attachment, "data_url");
-        attachmentUrl = await response.ref.getDownloadURL();
+            // file 
+            const attRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
+            const response = await attRef.putString(attachment, "data_url");
+            attachmentUrl = await response.ref.getDownloadURL();
         }
         // text by db
         await dbService.collection("nweets").add({
