@@ -7,8 +7,9 @@ import LoginBar from '../assets/LoginBar.svg';
 import SignupBar from '../assets/SignupBar.svg';
 import Title from '../assets/Welcome.svg';
 import { useHistory } from 'react-router-dom';
-import { Container, HotelImg, TitleDiv } from './styles/style';
+import { Container, HotelImg, TitleDiv, ButtonLayout } from './styles/style';
 import { useEffect, useState } from 'react';
+import { RedButton } from "./styles/buttonstyle";
 
 const Home = ({ userObj }) => {
     const [nweet, setNweet] = useState("");
@@ -27,39 +28,29 @@ const Home = ({ userObj }) => {
 
 
     const history = useHistory();
-    const onclickLoginBar = () => {
+    const toWrite = () => {
         history.push("/write");
     }
   return (
       <>
-      <Container>
-        <img src={Title} />
-        <TitleDiv>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
-        <HotelImg src={Hotel} />
-        <ButtonLayout>
-            <img src={LoginBar} onClick={onclickLoginBar} />
-         </ButtonLayout>
-      </Container>
-      <div>
-            {
-            nweets.map((nweet) => (
-                <Nweet 
-                key={nweet.id} 
-                nweetObj={nweet}
-                isOwner={nweet.creatorId === userObj.uid}
-                />
-            ))}
+        <Container>
+          <img src={Title} />
+          <TitleDiv>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
+          <HotelImg src={Hotel} />
+          <RedButton onClick={toWrite}>편지 보내기</RedButton>
+        </Container>
+        <div>
+              {
+              nweets.map((nweet) => (
+                  <Nweet 
+                  key={nweet.id} 
+                  nweetObj={nweet}
+                  isOwner={nweet.creatorId === userObj.uid}
+                  />
+              ))}
         </div>
       </>
   )
 }
 
 export default Home;
-
-const ButtonLayout = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 12.57px;
-    margin-top: 62.02px;
-    margin-bottom: 142px;
-`
