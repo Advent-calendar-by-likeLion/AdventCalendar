@@ -24,7 +24,7 @@ function App() {
     <>
     <GlobalStyle/>
       <MediaDiv>
-        {init ? <AppRouter isLoggedIn={isLoggedIn} /> : "init.."}
+        {init ? <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} /> : "init.."}
       </MediaDiv>
     </>
   )
