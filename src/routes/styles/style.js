@@ -53,3 +53,28 @@ export const InputStyle = styled.input`
         line-height: 25px;
     }
 `
+// write.js
+export const WriteTitleDiv = styled.div`
+    width: 159px;
+    height: 58px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: center;
+
+    color: #000000;
+`
+
+
+// common
+
+export const ButtonLayout = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 12.57px;
+    margin-top: 62.02px;
+    margin-bottom: 142px;
+`
