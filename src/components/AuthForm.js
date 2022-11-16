@@ -9,7 +9,7 @@ import { RedButton } from "../routes/styles/buttonstyle";
 
 const AuthForm = () => {
 
-    const [id, setId] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
@@ -17,8 +17,8 @@ const AuthForm = () => {
         const {
             target: {name, value},
         } = event;
-        if (name === "id") {
-            setId(value);
+        if (name === "email") {
+            setEmail(value);
         } else if (name === "password") {
             setPassword(value);
         }
@@ -28,14 +28,14 @@ const AuthForm = () => {
         event.preventDefault();
         try {
             let data;
-              data = await authService.signlnWithEmailAndPassword(id, password);  
+              data = await authService.signInWithEmailAndPassword(email, password);  
             console.log(data);
         } catch (error) {
             setError(error.message);
         } 
     }
 
-    const buttonDisabled = id && password;
+    const buttonDisabled = email && password;
 
     return (
         <>
@@ -44,7 +44,7 @@ const AuthForm = () => {
                 <form onSubmit={onSubmit}>
                     <LoginFormStyle>
                         <InputLayout>
-                            <InputStyle name="id" type="text" placeholder="아이디" required value={id} onChange={onChange}/>
+                            <InputStyle name="email" type="email" placeholder="이메일" required value={email} onChange={onChange}/>
                             <InputStyle name="password" type="password" placeholder="비밀번호" required value={password} onChange={onChange}/>
                         </InputLayout>
                         <RedButton disabled={buttonDisabled? false : true} type="submit">로그인</RedButton>
