@@ -2,9 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import {v4 as uuidv4} from "uuid";
 import { dbService, storageService } from "fbase";
 import styled from "styled-components";
-import { Container, WriteTitleDiv, ButtonLayout } from "./styles/style";
+import { Container, WriteTitleDiv, ButtonLayout, LetterStyle } from "./styles/style";
 import LoginBar from '../assets/LoginBar.svg';
 import { RedButton } from "./styles/buttonstyle";
+import Letter from '../assets/Letter.svg';
+import { useHistory } from 'react-router-dom';
 
 const Write = ({ userObj }) => {
     const [nweet, setNweet] = useState("");
@@ -74,10 +76,17 @@ const Write = ({ userObj }) => {
 
     const onClearAttachment = () => setAttachment("");
 
+    // const buttonDisabled = nweet && Input;
+
+    const history = useHistory();
+    const onClickSuccessWrite = () => {
+        history.push("/writesuccess");
+    }
+
     return (
         <>
         <Container>
-                <div>편지위치</div>
+                <LetterStyle src={Letter}/>
                 <WriteTitleDiv>친구의 호텔에 <br/>편지를 보내주세요!</WriteTitleDiv>
                 <Textarea 
                     ref={ref} 
@@ -90,13 +99,18 @@ const Write = ({ userObj }) => {
 
             <Input
              type="text"
-             placeholder="닉네임을 입력하세요 (10자 이하)" />
+             placeholder="닉네임을 입력하세요 (10자 이하)"  />
 
             <form onSubmit={onSubmit}>
-                <RedButton type="submit" value="Nw">보내기</RedButton>
+                <RedButton
+                    type="submit"
+                    disabled={true}
+                    onClick={onClickSuccessWrite}
+                    value="Nw"
+                >보내기</RedButton>
             </form>
 
-            <input type="file" accept="image/*" onChange={onFileChange}/>
+            <FileInput type="file" accept="image/*" onChange={onFileChange}/>
             {attachment && (
                 <div>
                 <img src={attachment} width="50px" height="50px" />
@@ -116,12 +130,27 @@ const Textarea = styled.textarea`
     box-sizing: border-box;
     min-height: 183px;
     width: 293px;
-
+    margin-top: 33px;
+    padding-top: 25px;
 
     background: #FFFFFF;
     border: 1px solid #D9D9D9;
     border-radius: 7px;
 
+    text-align: center;
+    font-size: 13px;
+    line-height: 19px;  
+
+    :focus::placeholder {
+        color: transparent;
+    }
+
+    ::placeholder {
+        color: #BAB8B5;
+        font-size: 13px;
+        line-height: 19px;
+        text-align: center;
+    }
 `
 const Input = styled.input`
     box-sizing: border-box;
@@ -133,4 +162,23 @@ const Input = styled.input`
     border: 1px solid #D9D9D9;
     border-radius: 7px;
     margin : 20px;
+
+    text-align: center;
+    font-size: 13px;
+    line-height: 19px;  
+
+    :focus::placeholder {
+        color: transparent;
+    }
+
+    ::placeholder {
+        font-size: 13px;
+        line-height: 19px;
+        color: #BAB8B5;
+        text-align: center;
+    }
 `;
+
+const FileInput = styled.input`
+    margin-top: 24px;
+`

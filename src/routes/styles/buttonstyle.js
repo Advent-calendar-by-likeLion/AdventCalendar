@@ -6,7 +6,7 @@ export const RedButton = styled.button`
     border-width: 1.5px;
     border-style: dashed;
     border-color: white;
-    border-radius: 2px;
+    border-radius: 1px;
     background-color: #AF2010;
     outline-width: 9px;
     outline-color:  #AF2010;
@@ -24,4 +24,26 @@ export const RedButton = styled.button`
         outline-color:  rgba(175, 32, 16, 0.5);
     }
 
+`
+
+export const WhiteButton = styled.button`
+    width: 281px;
+    height: 29px;
+
+    box-shadow:  0 0 0 10px #AF2010;
+
+    border: 1.5px dashed #AF2010;
+    outline:  solid white;
+    box-shadow: 0 0 0 8px white, 0 0 0 9px #AF2010;
+
+    border-radius: 2px;
+    background-color: white; 
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #AF2010;
+    
+    margin-top: 9px;
+    margin-bottom: 9px;
 `
