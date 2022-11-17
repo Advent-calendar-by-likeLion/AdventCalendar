@@ -6,12 +6,14 @@ import LoginBar from '../assets/LoginBar.svg';
 import styled from "styled-components";
 import { Container, InputStyle, TitleDiv } from "../routes/styles/style";
 import { RedButton } from "../routes/styles/buttonstyle";
+import { useHistory } from "react-router-dom";
 
 const AuthForm = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const history = useHistory();
 
     const onChange = (event) => {
         const {
@@ -27,9 +29,8 @@ const AuthForm = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         try {
-            let data;
-              data = await authService.signInWithEmailAndPassword(email, password);  
-            console.log(data);
+            await authService.signInWithEmailAndPassword(email, password);  
+            history.push("/home");
         } catch (error) {
             setError(error.message);
         } 

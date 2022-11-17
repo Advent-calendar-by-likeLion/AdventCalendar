@@ -7,10 +7,12 @@ import Google from '../assets/Google.svg';
 import Github from '../assets/Github.svg';
 import { Container } from './styles/style';
 import styled from 'styled-components';
+import { useHistory } from "react-router-dom";
 
 const Auth = () => {
+    const history = useHistory();
+
     const onSocialClick = async (event) => {
-        //console.log(event.target.name);
         const {
             target: {name},
         } = event;
@@ -20,9 +22,12 @@ const Auth = () => {
         } else if (name === "github") {
             provider = new firebaseInstance.auth.GithubAuthProvider();
         }
-
-        const data = await authService.signInWithPopup(provider);
-        console.log(data);
+        try {
+            await authService.signInWithPopup(provider);
+            history.push("/home");
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
     return (
