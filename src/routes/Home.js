@@ -1,6 +1,6 @@
 import { dbService, storageService, authService } from "fbase";
 import Nweet from "../components/Nweet";
-import HomeData from '../components/HomeData';
+import HotelName from '../components/HotelName';
 import styled from 'styled-components';
 import Hotel from '../assets/Hotel.svg';
 import LoginBar from '../assets/LoginBar.svg';
@@ -47,8 +47,8 @@ const Home = ({ userObj }) => {
       <>
         <Container>
           {/* <img src={Title} /> */}
-          <HomeData userObj={userObj} />
-          <TitleDiv>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
+          <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
+          <HotelName userObj={userObj} />
           <HotelImg src={Hotel} />
           <RedButton onClick={toWrite}>편지 보내기</RedButton>
           <button onClick={onClickOpenModal}>모달창 테스트</button>

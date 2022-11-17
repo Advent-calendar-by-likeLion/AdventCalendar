@@ -5,16 +5,16 @@ import { Container, InputStyle, TitleDiv } from "../routes/styles/style";
 import { RedButton } from "../routes/styles/buttonstyle";
 import { useHistory } from "react-router-dom";
 
-const HomeData = ({ userObj }) => {
+const HotelName = ({ userObj }) => {
     const [editing, setEditing] = useState(false);
-    const [homeData, setHomeData] = useState("Welcome to " + authService.currentUser.displayName + " Ginger Hotel");
+    const [hotelName, setHotelName] = useState(userObj.displayName);
     const toggleEditing = () => setEditing((prev) => !prev);
 
     const onChange = (event) => {
         const {
             target: { value },
         } = event;
-        setHomeData(value);
+        setHotelName(value);
     };
 
     const onSubmit = (event) => {
@@ -27,14 +27,14 @@ const HomeData = ({ userObj }) => {
             {editing ? (
                 <>
                     <form onSubmit={onSubmit}>
-                        <input onChange={onChange} value={homeData} required />
+                        <input onChange={onChange} value={hotelName} required />
                         <input type="submit" value="update" />
                     </form>
                     <button onClick={toggleEditing}>Cancel</button>
                 </>
             ) : (
                 <>
-                    <div style={{fontSize: '30px', fontWeight: "bold"}}>{homeData}</div>
+                    <div style={{fontSize: '30px', fontWeight: "bold"}}>{hotelName}의 진저호텔</div>
                     {userObj && (
                         <>
                             <button onClick={toggleEditing}>수정</button>
@@ -46,4 +46,4 @@ const HomeData = ({ userObj }) => {
     );
 
 }        
-export default HomeData;
+export default HotelName;
