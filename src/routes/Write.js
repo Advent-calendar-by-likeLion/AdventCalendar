@@ -104,7 +104,6 @@ const Write = ({ userObj }) => {
             <form onSubmit={onSubmit}>
                 <RedButton
                     type="submit"
-                    disabled={true}
                     onClick={onClickSuccessWrite}
                     value="Nw"
                 >보내기</RedButton>
@@ -131,7 +130,7 @@ const Textarea = styled.textarea`
     min-height: 183px;
     width: 293px;
     margin-top: 33px;
-    padding-top: 25px;
+    padding: 25px;
 
     background: #FFFFFF;
     border: 1px solid #D9D9D9;
