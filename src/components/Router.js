@@ -6,6 +6,7 @@ import Start from "../routes/Start";
 import Navigation from "./Navigation";
 import Signup from '../routes/Signup';
 import Write from "../routes/Write";
+import Home2 from "../routes/Home2";
 
 const AppRouter = ({isLoggedIn, userObj}) => {
   return (
@@ -14,6 +15,9 @@ const AppRouter = ({isLoggedIn, userObj}) => {
       <Switch>
         {isLoggedIn ? (
           <>
+            <Route exact path="/home2">
+              <Home2 userObj={userObj}/>
+            </Route>
             <Route exact path="/home">
               <Home userObj={userObj}/>
             </Route>
