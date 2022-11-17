@@ -67,8 +67,18 @@ export const WriteTitleDiv = styled.div`
 
     color: #000000;
 `
-
-
+export const LetterStyle = styled.img`
+    width: 70px;
+    height: 43.47px;
+    margin-bottom: 22.53px;
+`
+export const WriteSubTitle = styled.div`
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    
+    color: #686363;
+`
 // common
 
 export const ButtonLayout = styled.div`
