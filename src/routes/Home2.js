@@ -6,7 +6,7 @@ import { GridBox, Hotelbg, HotelContainer } from './styles/HotelStyle';
 import { Container } from "./styles/style";
 import Progressbar from "./Progressbar";
 import Hotel from "../components/Hotel";
-import { RedButton } from "./styles/buttonstyle";
+import { RedButton, WhiteButton } from "./styles/buttonstyle";
 import { useHistory, useParams } from "react-router-dom";
 
 const Home2 = ({ userObj, match }) => {
@@ -15,6 +15,11 @@ const Home2 = ({ userObj, match }) => {
   const toWrite = () => {
     history.push("/write/" + id);
   }
+  const onLogOutClick = () => {
+    authService.signOut();
+    history.push("/");
+  };
+
 
   return (
     <>
@@ -22,6 +27,7 @@ const Home2 = ({ userObj, match }) => {
         <Progressbar />
         <Hotel />
         <RedButton onClick={toWrite}>편지 보내기</RedButton>
+          <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
       </HotelContainer>
     </>
   );
