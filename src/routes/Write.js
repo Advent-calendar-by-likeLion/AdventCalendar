@@ -101,7 +101,8 @@ const Write = ({ match, userObj }) => {
             onChange={onChange}
             placeholder = {userObj.displayName}
             type="text"
-            value={userObj.displayName} />
+            value={userObj.displayName}
+            />
 
             <form onSubmit={onSubmit}>
                 <RedButton
