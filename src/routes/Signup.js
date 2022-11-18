@@ -5,11 +5,13 @@ import styled from 'styled-components';
 import { RedButton } from './styles/buttonstyle';
 import { useState } from 'react';
 import { authService } from 'fbase';
+import { useHistory } from 'react-router-dom';
 
-const Signup = () => {
+const Signup = ({userObj}) => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
+  const history = useHistory();
 
   const onChange = (event) => {
     const {target: {name, value}} = event;
@@ -28,7 +30,8 @@ const Signup = () => {
       let data;
       if (password1 == password2) {
         data = await authService.createUserWithEmailAndPassword(email, password1);
-        console.log(data);
+        history.push("/hotel/" + userObj.uid);
+        //console.log(data);
       } else if (password1 == "" || password2 == "") {
         alert("비밀번호를 입력해주세요.");
       } else if (password1 != password2) {

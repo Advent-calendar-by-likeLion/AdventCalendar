@@ -23,10 +23,10 @@ const AppRouter = ({isLoggedIn, userObj}) => {
             <Route exact path="/home2"> 
                 <Home2 userObj={userObj}/>
             </Route>
-            <Route exact path="/home">
+            <Route exact path="/home/:id">
               <Home userObj={userObj}/>
             </Route>
-            <Route exact path="/write">
+            <Route exact path="/write/:id">
               <Write userObj={userObj}/>
             </Route>
             <Route exact path="/writesuccess">
@@ -45,10 +45,10 @@ const AppRouter = ({isLoggedIn, userObj}) => {
               <Start />
             </Route>
             <Route exact path="/login">
-              <Auth />
+              <Auth userObj={userObj}/>
             </Route>
             <Route exact path="/signup">
-              <Signup />
+              <Signup userObj={userObj}/>
             </Route>
           </>
         )}

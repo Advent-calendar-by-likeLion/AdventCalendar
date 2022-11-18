@@ -6,9 +6,11 @@ import { Container, WriteTitleDiv, ButtonLayout, LetterStyle } from "./styles/st
 import LoginBar from '../assets/LoginBar.svg';
 import { RedButton } from "./styles/buttonstyle";
 import Letter from '../assets/Letter.svg';
-import { useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
-const Write = ({ userObj }) => {
+const Write = ({ match, userObj }) => {
+    const {id} = useParams(); // hetelOwnerId
+
     const [nweet, setNweet] = useState("");
     const [nweets, setNweets] = useState([]);
     const [attachment, setAttachment] = useState("");
@@ -40,7 +42,8 @@ const Write = ({ userObj }) => {
         text: nweet,
         timestamp: new Date(),
         creatorId: userObj.uid,
-        attachmentUrl
+        attachmentUrl,
+        hotelOwnerId: id
         });
 
         setNweet("");

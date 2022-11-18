@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styled, { createGlobalStyle } from 'styled-components';
 import reset from "styled-reset"
 
