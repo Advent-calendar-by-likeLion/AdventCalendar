@@ -1,10 +1,65 @@
+import { dbService } from "fbase";
+
 import styled from 'styled-components';
 import Hotel from '../components/Hotel';
 import { RedButton } from './styles/buttonstyle';
 import HotelSnow from '../assets/SnowHotel.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useHistory } from "react-router-dom";
 
-const Nickname = () => {
+const Nickname = ({userObj}) => {
+
+    const [nickname, setNickname] = useState("");
+    const history = useHistory();
+
+    useEffect(() => {
+        addHotelOwner();
+    }, []);
+
+    const onChange = (event) => {
+        const {target: {value}} = event;
+        setNickname(value)
+    }
+
+    const addHotelOwner = async () => {
+
+        await dbService.collection("hotelOwner").doc(userObj.uid).set({
+            nickname: userObj.displayName,
+            doorInfo: {
+                1 : false,
+                2 : false,
+                3 : false,
+                4 : false,
+                5 : false,
+                6 : false,
+                7 : false,
+                8 : false,
+                9 : false,
+                10 : false,
+                11 : false,
+                12 : false,
+                13 : false,
+                14 : false,
+                15 : false,
+                16 : false,
+                17 : false,
+                18 : false,
+                19 : false,
+                20 : false,
+                21 : false,
+                22 : false,
+                23 : false,
+                24 : false,
+                25 : false,
+            }
+        });
+    }
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
+        history.push("/hotel/" + userObj.uid);
+    }
 
   return (
       <>
@@ -20,13 +75,18 @@ const Nickname = () => {
                 <HotelImg src={HotelSnow} />
             </HotelSubCon>
             <NicknameInput>
-                <InputStylenick type="text" placeholder='낙네임'/>
+                <InputStylenick type="text" placeholder='닉네임' 
+                defaultValue={userObj.displayName ? userObj.displayName : ''}
+                onChange={onChange}/>
                     <h1 style={{
                         fontSize: "22px",
                     }}
                     >의 진저호텔</h1>
             </NicknameInput>
-            <RedButton>완성하기</RedButton>
+
+            <form onSubmit={onSubmit}>
+                <RedButton>완성하기</RedButton>
+            </form>
         </Container>
       </>
   )
