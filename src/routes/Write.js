@@ -38,7 +38,7 @@ const Write = ({ userObj }) => {
         // text by db
         await dbService.collection("nweets").add({
         text: nweet,
-        createdAt: Date.now(),
+        timestamp: new Date(),
         creatorId: userObj.uid,
         attachmentUrl
         });
