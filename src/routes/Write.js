@@ -7,6 +7,7 @@ import LoginBar from '../assets/LoginBar.svg';
 import { RedButton } from "./styles/buttonstyle";
 import Letter from '../assets/Letter.svg';
 import { useHistory } from 'react-router-dom';
+import HotelName from '../components/HotelName';
 
 const Write = ({ userObj }) => {
     const [nweet, setNweet] = useState("");
@@ -98,8 +99,10 @@ const Write = ({ userObj }) => {
                 />
 
             <Input
-             type="text"
-             placeholder="닉네임을 입력하세요 (10자 이하)"  />
+            onChange={onChange}
+            placeholder = {userObj.displayName}
+            type="text"
+            value={userObj.displayName} />
 
             <form onSubmit={onSubmit}>
                 <RedButton
