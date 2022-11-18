@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogle,faGithub, faArtstation } from "@fortawesome/free-brands-svg-icons";
 
 import { authService, firebaseInstance } from "fbase";
 import AuthForm from "components/AuthForm";
@@ -24,7 +22,8 @@ const Auth = ( {userObj} ) => {
         }
         try {
             await authService.signInWithPopup(provider);
-            history.push("/hotel/" + userObj.uid);
+            //addHotelOwner();
+            history.push("/Nickname");
         } catch (error) {
             console.log(error.message);
         }

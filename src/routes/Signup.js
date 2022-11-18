@@ -27,11 +27,9 @@ const Signup = ({userObj}) => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      let data;
       if (password1 == password2) {
-        data = await authService.createUserWithEmailAndPassword(email, password1);
-        history.push("/hotel/" + userObj.uid);
-        //console.log(data);
+        await authService.createUserWithEmailAndPassword(email, password1);
+        history.push("/Nickname");
       } else if (password1 == "" || password2 == "") {
         alert("비밀번호를 입력해주세요.");
       } else if (password1 != password2) {
