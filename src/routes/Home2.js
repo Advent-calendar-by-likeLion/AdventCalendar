@@ -10,10 +10,10 @@ import Hotel from "../components/Hotel";
 const Home2 = ({ userObj }) => {
   return (
     <>
-    <HotelContainer> 
-      <Progressbar />
-      <Hotel />
-    </HotelContainer>
+      <HotelContainer> 
+        <Progressbar />
+        <Hotel />
+      </HotelContainer>
     </>
   );
 }
