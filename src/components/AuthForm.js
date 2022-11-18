@@ -8,7 +8,7 @@ import { Container, InputStyle, TitleDiv } from "../routes/styles/style";
 import { RedButton } from "../routes/styles/buttonstyle";
 import { useHistory } from "react-router-dom";
 
-const AuthForm = () => {
+const AuthForm = (userObj) => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -30,7 +30,7 @@ const AuthForm = () => {
         event.preventDefault();
         try {
             await authService.signInWithEmailAndPassword(email, password);  
-            history.push("/home");
+            history.push("/hotel/" + userObj.uid);
         } catch (error) {
             setError(error.message);
         } 

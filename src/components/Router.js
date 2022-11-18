@@ -41,10 +41,10 @@ const AppRouter = ({isLoggedIn, userObj}) => {
               <Start />
             </Route>
             <Route exact path="/login">
-              <Auth />
+              <Auth userObj={userObj}/>
             </Route>
             <Route exact path="/signup">
-              <Signup />
+              <Signup userObj={userObj}/>
             </Route>
           </>
         )}

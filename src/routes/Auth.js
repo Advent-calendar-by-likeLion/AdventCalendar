@@ -9,7 +9,7 @@ import { Container } from './styles/style';
 import styled from 'styled-components';
 import { useHistory } from "react-router-dom";
 
-const Auth = () => {
+const Auth = ( {userObj} ) => {
     const history = useHistory();
 
     const onSocialClick = async (event) => {
@@ -24,7 +24,7 @@ const Auth = () => {
         }
         try {
             await authService.signInWithPopup(provider);
-            history.push("/home");
+            history.push("/hotel/" + userObj.uid);
         } catch (error) {
             console.log(error.message);
         }
@@ -32,7 +32,7 @@ const Auth = () => {
 
     return (
             <Container>
-                <AuthForm />
+                <AuthForm userObj={userObj}/>
                 <ButtonStyle>
                     <img src={Google} onClick={onSocialClick} name="google" />
                     <img src={Github} onClick={onSocialClick} name="github" />
