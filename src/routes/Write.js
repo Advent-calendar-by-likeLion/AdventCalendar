@@ -97,9 +97,11 @@ const Write = ({ match, userObj }) => {
                     maxLength={1000}
                 />
 
-            <Input
-             type="text"
-             placeholder="닉네임을 입력하세요 (10자 이하)"  />
+        <Input
+            onChange={onChange}
+            placeholder = {userObj.displayName}
+            type="text"
+            value={userObj.displayName} />
 
             <form onSubmit={onSubmit}>
                 <RedButton
