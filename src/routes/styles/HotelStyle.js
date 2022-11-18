@@ -7,7 +7,6 @@ export const HotelContainer = styled.div`
 `
 
 export const Hotelbg = styled.img`
-    position: absolute;
     width: 319.37px;
     height: 466.9px;
 
