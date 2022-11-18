@@ -20,6 +20,7 @@ const Home = ({ userObj }) => {
     const [isModalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
+      //dbService.collection("nweets").where("creatorId", "==", userObj.uid).onSnapshot((snapshot) => {
       dbService.collection("nweets").onSnapshot((snapshot) => {
         const newArray = snapshot.docs.map((document) => ({
             id: document.id,
