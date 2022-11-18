@@ -8,11 +8,12 @@ import Signup from '../routes/Signup';
 import Write from "../routes/Write";
 import Home2 from "../routes/Home2";
 import WriteSuccess from "../routes/WriteSuccess";
+import Nickname from '../routes/Nickname';
 
 const AppRouter = ({isLoggedIn, userObj}) => {
   return (
     <Router>
-      {isLoggedIn && <Navigation />}
+      {/* {isLoggedIn && <Navigation />} */}
       <Switch>
         {isLoggedIn ? (
           <>
@@ -30,6 +31,9 @@ const AppRouter = ({isLoggedIn, userObj}) => {
             </Route>
             <Route exact path="/writesuccess">
               <WriteSuccess userObj={userObj}/>
+            </Route>
+            <Route exact path="/nickname">
+              <Nickname userObj={userObj}/>
             </Route>
             <Route exact path="/profile">
               <Profile />
