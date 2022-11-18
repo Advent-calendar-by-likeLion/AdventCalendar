@@ -39,11 +39,11 @@ const Write = ({ match, userObj }) => {
         }
         // text by db
         await dbService.collection("nweets").add({
-        text: nweet,
-        timestamp: new Date(),
-        creatorId: userObj.uid,
-        attachmentUrl,
-        hotelOwnerId: id
+            text: nweet,
+            timestamp: new Date(),
+            creatorId: userObj.uid,
+            attachmentUrl,
+            hotelOwnerId: id
         });
 
         setNweet("");
