@@ -4,11 +4,13 @@ import styled from "styled-components";
 import Hotel2 from '../assets/Hotel2.svg';
 import { GridBox, Hotelbg, HotelContainer } from './styles/HotelStyle';
 import { Container } from "./styles/style";
+import Progressbar from "./Progressbar";
 
 const Home2 = ({ userObj }) => {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 ,22 , 23, 24, 25];
   return (
     <HotelContainer>
+      <Progressbar />
       <Hotelbg src={Hotel2} />
       <GridBox>
         {items.map((item, key) => (

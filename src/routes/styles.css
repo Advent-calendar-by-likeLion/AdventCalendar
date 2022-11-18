@@ -105,5 +105,5 @@
     }
     .div25 {
         grid-area: 1 / 3 / 2 / 4;
-        align-self: flex-end;
+        align-self: flex-start;
     }

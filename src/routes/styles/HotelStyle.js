@@ -7,7 +7,7 @@ export const HotelContainer = styled.div`
 `
 
 export const Hotelbg = styled.img`
-    position: fixed;
+    position: absolute;
     width: 319.37px;
     height: 466.9px;
 
@@ -15,7 +15,7 @@ export const Hotelbg = styled.img`
     margin-top: 242px;
 `
 export const GridBox = styled.div `
-    position: relative;
+    position: absolute;
     display: grid;
     width: 207.69px;
     height: 358.8px;
