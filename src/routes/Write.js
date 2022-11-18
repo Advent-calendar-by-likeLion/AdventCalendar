@@ -15,6 +15,7 @@ const Write = ({ userObj }) => {
 
     const [value, setValue] = useState("")
     const ref = useRef();
+    const history = useHistory();
   
     
     useEffect(() => {
@@ -37,13 +38,15 @@ const Write = ({ userObj }) => {
         // text by db
         await dbService.collection("nweets").add({
         text: nweet,
-        createdAt: Date.now(),
+        timestamp: new Date(),
         creatorId: userObj.uid,
         attachmentUrl
         });
 
         setNweet("");
         setAttachment("");
+        history.push("/writesuccess");
+
     };
 
     const onChange = (event) => {
@@ -76,12 +79,6 @@ const Write = ({ userObj }) => {
 
     const onClearAttachment = () => setAttachment("");
 
-    // const buttonDisabled = nweet && Input;
-
-    const history = useHistory();
-    const onClickSuccessWrite = () => {
-        history.push("/writesuccess");
-    }
 
     return (
         <>
@@ -104,7 +101,6 @@ const Write = ({ userObj }) => {
             <form onSubmit={onSubmit}>
                 <RedButton
                     type="submit"
-                    onClick={onClickSuccessWrite}
                     value="Nw"
                 >보내기</RedButton>
             </form>
