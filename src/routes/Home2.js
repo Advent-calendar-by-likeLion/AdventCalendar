@@ -53,6 +53,15 @@ const Home2 = ({ userObj, match }) => {
   };
 
 
+  //링크 복사 버튼 코드
+  let nowUrl = window.location.href;
+
+  const copyUrl = () => { 
+      navigator.clipboard.writeText(nowUrl).then(res=>{
+      alert("주소가 복사되었습니다!");
+    })
+  }
+
   return (
     <>
       <HotelContainer> 
@@ -63,6 +72,7 @@ const Home2 = ({ userObj, match }) => {
 
           <RedButton onClick={toWrite}>편지 보내기</RedButton>
           <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
+          <RedButton onClick={copyUrl}>호텔 링크 복사하기</RedButton>
           <button onClick={onClickOpenModal}>모달창 테스트</button>
           {isModalOpen && <Modal closeModal={onClickCloseModal}>
                             <h1>도착한 편지</h1>
