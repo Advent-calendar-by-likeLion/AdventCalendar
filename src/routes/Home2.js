@@ -51,6 +51,7 @@ const Home2 = ({ userObj, match }) => {
     authService.signOut();
     history.push("/");
   };
+  
 
 
   //링크 복사 버튼 코드
@@ -72,6 +73,9 @@ const Home2 = ({ userObj, match }) => {
 
           <RedButton onClick={toWrite}>편지 보내기</RedButton>
           <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
+          <WhiteButton onClick={ () => {
+          history.goBack();
+          } } >뒤로 가기</WhiteButton>
           <RedButton onClick={copyUrl}>호텔 링크 복사하기</RedButton>
           <button onClick={onClickOpenModal}>모달창 테스트</button>
           {isModalOpen && <Modal closeModal={onClickCloseModal}>

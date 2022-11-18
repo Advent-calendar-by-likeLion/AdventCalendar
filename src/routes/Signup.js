@@ -2,7 +2,7 @@ import Title from '../assets/Welcome.svg';
 import { Container, InputStyle, TitleDiv } from './styles/style';
 import DisSignup from '../assets/DisSignup.svg';
 import styled from 'styled-components';
-import { RedButton } from './styles/buttonstyle';
+import { RedButton, WhiteButton } from './styles/buttonstyle';
 import { useState } from 'react';
 import { authService } from 'fbase';
 import { useHistory } from 'react-router-dom';
@@ -54,6 +54,9 @@ const Signup = ({userObj}) => {
               <InputStyle placeholder='비밀번호 확인' name="password2" type="password" required value={password2} onChange={onChange}/>
           </InputLayout2>
           <RedButton disabled={false} type="submit">내 호텔 만들기</RedButton>
+          <WhiteButton onClick={ () => {
+          history.goBack();
+          } } >뒤로 가기</WhiteButton>
         </form>
       </Container>
       </>
