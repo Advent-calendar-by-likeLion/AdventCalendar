@@ -28,7 +28,7 @@ const Signup = () => {
       let data;
       if (password1 == password2) {
         data = await authService.createUserWithEmailAndPassword(email, password1);
-        console.log(data);
+        //console.log(data);
       } else if (password1 == "" || password2 == "") {
         alert("비밀번호를 입력해주세요.");
       } else if (password1 != password2) {
