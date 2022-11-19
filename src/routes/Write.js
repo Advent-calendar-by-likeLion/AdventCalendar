@@ -104,13 +104,6 @@ const Write = ({ match, userObj }) => {
                     maxLength={1000}
                 />
 
-        <Input
-            onChange={onChange}
-            placeholder = {displayName}
-            type="text"
-            value={displayName}
-            />
-
             <form onSubmit={onSubmit}>
                 <RedButton
                     type="submit"
