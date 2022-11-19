@@ -47,3 +47,11 @@ export const WhiteButton = styled.button`
     margin-top: 9px;
     margin-bottom: 9px;
 `
+
+export const CircleButton = styled.button`
+
+    height: 20px;
+    width: 20px;
+    border-radius: 100px;
+    border-width: 0px;
+`
