@@ -6,7 +6,7 @@ const Progressbar = ({msgCount}) => {
 
 //   const [count, setCount] = useState(0);
 const [nweet, setNweet] = useState("");
-const [count, setCount] = useState(0);
+const [count, setCount] = useState();
 
 
 useEffect(() => {
@@ -27,12 +27,12 @@ useEffect(() => {
     <>  
         <CountContainer>
             <h1>오늘의 편지 (</h1>
-            <h1 style={{color: "#AF2010"}}>{count}</h1>
+            <h1 style={{color: "#AF2010"}}>{msgCount}</h1>
             <h1>/5)</h1>
         </CountContainer>
         <Container>
         {/*%로 부모넓이의 1/5 씩 넓어짐*/}
-        <Progress width={(count/5)*100 + "%"}/>
+        <Progress width={(msgCount/5)*100 + "%"}/>
         </Container>
     </>
     
