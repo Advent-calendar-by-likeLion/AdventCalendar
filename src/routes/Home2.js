@@ -91,6 +91,7 @@ const Home2 = ({ userObj }) => {
           :  
           <>
             <RedButton onClick={toWrite}>편지 보내기</RedButton>
+            <br/>
             <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
           </>
           }          
