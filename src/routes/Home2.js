@@ -16,7 +16,7 @@ import Modal from "../components/Modal/Modal";
 import { CardLayout, MessageCard } from "../components/Modal/styles";
 import Nweet from "../components/Nweet";
 
-const Home2 = ({ userObj, match }) => {
+const Home2 = ({ userObj }) => {
   const history = useHistory();
   const {id} = useParams(); // hetelOwnerId
   const toWrite = () => {
@@ -27,8 +27,12 @@ const Home2 = ({ userObj, match }) => {
   const [nweets, setNweets] = useState([]);
   const [attachment, setAttachment] = useState("");
   const [isModalOpen, setModalOpen] = useState(false);
+  let uid = 0;
 
   useEffect(() => {
+
+    if (userObj) uid = userObj.uid;     
+
     //dbService.collection("nweets").where("creatorId", "==", userObj.uid).onSnapshot((snapshot) => {
     dbService.collection("nweets").onSnapshot((snapshot) => {
       const newArray = snapshot.docs.map((document) => ({
@@ -51,7 +55,6 @@ const Home2 = ({ userObj, match }) => {
     authService.signOut();
     history.push("/");
   };
-  
 
 
   //링크 복사 버튼 코드
@@ -68,19 +71,20 @@ const Home2 = ({ userObj, match }) => {
       <HotelContainer> 
         <Progressbar />
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
-          <HotelName userObj={userObj} />
+          {/* <HotelName userObj={userObj} /> */}
           <Hotel />
-
-          <RedButton onClick={toWrite}>편지 보내기</RedButton>
-          <br/>
-          <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
-          <br/>
-          <WhiteButton onClick={ () => {
-          history.goBack();
-          } } >뒤로 가기</WhiteButton>
-          <br/>
-          <RedButton onClick={copyUrl}>호텔 링크 복사하기</RedButton>
-          <br/>
+          { 
+          id === userObj.uid ?  
+          <>
+            <RedButton onClick={copyUrl}>호텔 링크 복사하기</RedButton>
+            <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
+          </>
+          :  
+          <>
+            <RedButton onClick={toWrite}>편지 보내기</RedButton>
+            <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
+          </>
+          }          
           <button onClick={onClickOpenModal}>모달창 테스트</button>
           {isModalOpen && <Modal closeModal={onClickCloseModal}>
                             <h1>도착한 편지</h1>

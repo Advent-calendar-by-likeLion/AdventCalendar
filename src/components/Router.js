@@ -23,17 +23,14 @@ const AppRouter = ({isLoggedIn, userObj}) => {
             <Route exact path="/hotel/:id">
               <Home2 userObj={userObj}/>
             </Route>
-            <Route exact path="/write/:id">
-              <Write userObj={userObj}/>
-            </Route>
-            <Route exact path="/writesuccess">
-              <WriteSuccess userObj={userObj}/>
-            </Route>
             <Route exact path="/nickname">
               <Nickname userObj={userObj}/>
             </Route>
             <Route exact path="/profile">
               <Profile />
+            </Route>
+            <Route exact path="/write/:id">
+              <Write userObj={userObj}/>
             </Route>
             <Route exact path="/hotelcolor">
               <HotelColor userObj={userObj} />
@@ -44,11 +41,20 @@ const AppRouter = ({isLoggedIn, userObj}) => {
             <Route exact path="/">
               <Start />
             </Route>
+            <Route exact path="/write/:id">
+              <Write />
+            </Route>
             <Route exact path="/login">
               <Auth userObj={userObj}/>
             </Route>
             <Route exact path="/signup">
               <Signup userObj={userObj}/>
+            </Route>
+            <Route exact path="/writesuccess">
+              <WriteSuccess userObj={userObj}/>
+            </Route>
+            <Route exact path="/hotel/:id">
+              <Home2 userObj={userObj}/>
             </Route>
           </>
         )}

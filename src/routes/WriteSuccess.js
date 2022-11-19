@@ -3,7 +3,7 @@ import Letter from '../assets/Letter.svg';
 import styled from 'styled-components';
 import { RedButton, WhiteButton } from './styles/buttonstyle';
 
-const WriteSuccess= () => {
+const WriteSuccess= ({userObj}) => {
   return (
       <Container>
           <LetterStyle src={Letter} />
@@ -12,6 +12,9 @@ const WriteSuccess= () => {
           <WriteSubTitle>내 호텔을 만들면</WriteSubTitle>
           <WriteSubTitle>친구에게 편지를 받을 수 있어요.</WriteSubTitle>
           <ButtonLayout>
+            {
+               
+            }
             <RedButton>내 호텔 만들기</RedButton>
             <WhiteButton>로그인</WhiteButton>
           </ButtonLayout>

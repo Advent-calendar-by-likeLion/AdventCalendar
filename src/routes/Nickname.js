@@ -67,7 +67,7 @@ const Nickname = ({userObj}) => {
             <div style={{
                 marginTop: "141px",
                 height: "29px",
-                fontSize: "20px",
+                fontSize: "20px",  
                 fontWeight: "500px",
 
             }}>누구의 진저호텔인가요?</div>
