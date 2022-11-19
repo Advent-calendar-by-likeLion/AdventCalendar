@@ -72,11 +72,15 @@ const Home2 = ({ userObj, match }) => {
           <Hotel />
 
           <RedButton onClick={toWrite}>편지 보내기</RedButton>
+          <br/>
           <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
+          <br/>
           <WhiteButton onClick={ () => {
           history.goBack();
           } } >뒤로 가기</WhiteButton>
+          <br/>
           <RedButton onClick={copyUrl}>호텔 링크 복사하기</RedButton>
+          <br/>
           <button onClick={onClickOpenModal}>모달창 테스트</button>
           {isModalOpen && <Modal closeModal={onClickCloseModal}>
                             <h1>도착한 편지</h1>

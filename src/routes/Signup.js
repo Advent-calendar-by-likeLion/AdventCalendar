@@ -52,6 +52,8 @@ const Signup = ({userObj}) => {
               <InputStyle placeholder='비밀번호 확인' name="password2" type="password" required value={password2} onChange={onChange}/>
           </InputLayout2>
           <RedButton disabled={false} type="submit">내 호텔 만들기</RedButton>
+          <br/>
+          <br/>
           <WhiteButton onClick={ () => {
           history.goBack();
           } } >뒤로 가기</WhiteButton>
