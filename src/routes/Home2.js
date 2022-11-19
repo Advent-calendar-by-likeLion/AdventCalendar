@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {authService} from "fbase"
+import {authService, storageService} from "fbase"
 import "./styles.css";
 import styled from "styled-components";
 import Hotel2 from '../assets/Hotel2.svg';
@@ -28,6 +28,9 @@ const Home2 = ({ userObj }) => {
   const [attachment, setAttachment] = useState("");
   const [isModalOpen, setModalOpen] = useState(false);
   let uid = 0;
+
+
+  const user = dbService.collection("users").get(id).displayName;
 
   useEffect(() => {
 
@@ -70,6 +73,7 @@ const Home2 = ({ userObj }) => {
     <>
       <HotelContainer> 
         <Progressbar />
+        <h1 style={{marginBottom:'10px', marginTop:'40px', fontSize:'25px', fontWeight:'bold'}}>{user}의 진저호텔</h1>
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
           {/* <HotelName userObj={userObj} /> */}
           <Hotel />
@@ -85,7 +89,6 @@ const Home2 = ({ userObj }) => {
           :  
           <>
             <RedButton onClick={toWrite}>편지 보내기</RedButton>
-            <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
           </>
           }          
           {isModalOpen && <Modal closeModal={onClickCloseModal}>
