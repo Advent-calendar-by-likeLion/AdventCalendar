@@ -34,7 +34,7 @@ const Home2 = ({ userObj }) => {
     if (userObj) uid = userObj.uid;     
 
     //dbService.collection("nweets").where("creatorId", "==", userObj.uid).onSnapshot((snapshot) => {
-    dbService.collection("nweets").onSnapshot((snapshot) => {
+    dbService.collection(id).onSnapshot((snapshot) => {
       const newArray = snapshot.docs.map((document) => ({
           id: document.id,
           ...document.data(),
@@ -76,7 +76,10 @@ const Home2 = ({ userObj }) => {
           { 
           id === userObj.uid ?  
           <>
+            <RedButton onClick={onClickOpenModal}>오늘의 편지</RedButton>
+            <br/>
             <RedButton onClick={copyUrl}>호텔 링크 복사하기</RedButton>
+            <br/>
             <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
           </>
           :  
@@ -85,7 +88,6 @@ const Home2 = ({ userObj }) => {
             <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
           </>
           }          
-          <button onClick={onClickOpenModal}>모달창 테스트</button>
           {isModalOpen && <Modal closeModal={onClickCloseModal}>
                             <h1>도착한 편지</h1>
                             <CardLayout>
@@ -106,3 +108,5 @@ const Home2 = ({ userObj }) => {
 }
 
 export default Home2;
+
+

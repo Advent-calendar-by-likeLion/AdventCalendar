@@ -1,5 +1,4 @@
 import { dbService } from "fbase";
-
 import styled from 'styled-components';
 import Hotel from '../components/Hotel';
 import { RedButton, CircleButton } from './styles/buttonstyle';
@@ -10,96 +9,35 @@ import NoRoofwall from '../assets/NoRoofWall.svg';
 
 const HotelColor = ({userObj}) => {
     const history = useHistory();
+    let roofColor = "";
+    let bodyColor = "";
 
-    const changeRoof1 = () => {
-        document.getElementById("roof1").style.fill="#AF2010";
-        document.getElementById("roof2").style.fill="#AF2010";
+    const setRoofColor = (name) => {
+        document.getElementById("roof1").style.fill=name;
+        document.getElementById("roof2").style.fill=name;
     }
 
-    const changeRoof2 = () => {
-        document.getElementById("roof1").style.fill="#FF9494";
-        document.getElementById("roof2").style.fill="#FF9494";
+    const changeRoof = (event) => {
+        const {target: {name}} = event;
+        setRoofColor(name);
+        roofColor = name;
     }
 
-    const changeRoof3 = () => {
-        document.getElementById("roof1").style.fill="#FFD372";
-        document.getElementById("roof2").style.fill="#FFD372";
+    const setBodyColor = (name) => {
+        document.getElementById("body1").style.fill=name;
+        document.getElementById("body2").style.fill=name;
     }
 
-    const changeRoof4 = () => {
-        document.getElementById("roof1").style.fill="#829460";
-        document.getElementById("roof2").style.fill="#829460";
+    const changeBody = (event) => {
+        const {target: {name}} = event;
+        setBodyColor(name);
+        bodyColor = name;
     }
 
-    const changeRoof5 = () => {
-        document.getElementById("roof1").style.fill="#0E5E6F";
-        document.getElementById("roof2").style.fill="#0E5E6F";
-    }
-
-    const changeRoof6 = () => {
-        document.getElementById("roof1").style.fill="#005452";
-        document.getElementById("roof2").style.fill="#005452";
-    }
-
-    const changeRoof7 = () => {
-        document.getElementById("roof1").style.fill="#B4CDE6";
-        document.getElementById("roof2").style.fill="#B4CDE6";
-    }
-
-    const changeRoof8 = () => {
-        document.getElementById("roof1").style.fill="#30475E";
-        document.getElementById("roof2").style.fill="#30475E";
-    }
-
-    const changeRoof9 = () => {
-        document.getElementById("roof1").style.fill="#A4688F";
-        document.getElementById("roof2").style.fill="#A4688F";
-    }
-
-    const changeRoof10 = () => {
-        document.getElementById("roof1").style.fill="#4C243C";
-        document.getElementById("roof2").style.fill="#4C243C";
-    }
-
-
-    const changeBody1 = () => {
-        document.getElementById("body").style.fill="#AF2010";
-    }
-
-    const changeBody2 = () => {
-        document.getElementById("body").style.fill="#FF9494";
-    }
-
-    const changeBody3 = () => {
-        document.getElementById("body").style.fill="#FFD372";
-    }
-    
-    const changeBody4 = () => {
-        document.getElementById("body").style.fill="#829460";
-    }
-
-    const changeBody5 = () => {
-        document.getElementById("body").style.fill="#0E5E6F";
-    }
-
-    const changeBody6 = () => {
-        document.getElementById("body").style.fill="#005452";
-    }
-
-    const changeBody7 = () => {
-        document.getElementById("body").style.fill="#B4CDE6";
-    }
-
-    const changeBody8 = () => {
-        document.getElementById("body").style.fill="#30475E";
-    }
-
-    const changeBody9 = () => {
-        document.getElementById("body").style.fill="#A4688F";
-    }
-
-    const changeBody10 = () => {
-        document.getElementById("body").style.fill="#4C243C";
+    const onSubmit = async (event) => {
+        // event.preventDefault();
+        // await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
+        // history.push("/hotel/" + userObj.uid);
     }
 
   return (

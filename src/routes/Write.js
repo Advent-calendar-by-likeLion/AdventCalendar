@@ -38,7 +38,7 @@ const Write = ({ match, userObj }) => {
             attachmentUrl = await response.ref.getDownloadURL();
         }
         // text by db
-        await dbService.collection("nweets").add({
+        await dbService.collection(id).add({
             text: nweet,
             timestamp: new Date(),
             creatorId: userObj.uid,
