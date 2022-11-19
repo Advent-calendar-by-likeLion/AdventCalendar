@@ -34,6 +34,12 @@ const HotelColor = ({userObj}) => {
         bodyColor = name;
     }
 
+    const onSubmit = async (event) => {
+        // event.preventDefault();
+        // await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
+        // history.push("/hotel/" + userObj.uid);
+    }
+
   return (
       <>
         <Container>
@@ -47,7 +53,7 @@ const HotelColor = ({userObj}) => {
             </div>
 
             <DefaultHotel />
-            <br/>
+            <br/><br/><br/>
             <div>
                 <div style={{marginTop:'10px'}}>
                     <p style={{marginBottom:'10px'}}>지붕 색깔</p>
@@ -77,6 +83,10 @@ const HotelColor = ({userObj}) => {
                     <CircleButton onClick={changeBody} style={{background: '#4C243C'}} name="#4C243C"></CircleButton>
                 </div>
             </div>
+
+            <form onSubmit={onSubmit} style={{marginTop:'50px'}}>
+                <RedButton>다음으로</RedButton>
+            </form>
         </Container>
       </>
   )
