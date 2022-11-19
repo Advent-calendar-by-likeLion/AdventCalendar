@@ -18,13 +18,20 @@ const Write = ({ match, userObj }) => {
     const [value, setValue] = useState("")
     const ref = useRef();
     const history = useHistory();
-  
+    let displayName = "";
+    let uid = 0;
     
     useEffect(() => {
       // textarea scroll height 설정
       ref.current.style.height = "0px";
       const scrollHeight = ref.current.scrollHeight;
       ref.current.style.height = scrollHeight + "px";
+
+      if (userObj) {
+        displayName = userObj.displayName; 
+        uid = userObj.uid; 
+      }
+
     }, [value]);
     
     const onSubmit = async (event) => {
@@ -41,7 +48,7 @@ const Write = ({ match, userObj }) => {
         await dbService.collection(id).add({
             text: nweet,
             timestamp: new Date(),
-            creatorId: userObj.uid,
+            creatorId: uid,
             attachmentUrl,
             hotelOwnerId: id
         });
@@ -99,9 +106,9 @@ const Write = ({ match, userObj }) => {
 
         <Input
             onChange={onChange}
-            placeholder = {userObj.displayName}
+            placeholder = {displayName}
             type="text"
-            value={userObj.displayName}
+            value={displayName}
             />
 
             <form onSubmit={onSubmit}>

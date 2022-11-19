@@ -80,7 +80,7 @@ const Home2 = ({ userObj }) => {
           {/* <HotelName userObj={userObj} /> */}
           <Hotel />
           { 
-          id === userObj.uid ?  
+          id === uid ?  
           <>
             <RedButton onClick={onClickOpenModal}>오늘의 편지</RedButton>
             <br/>
