@@ -1,14 +1,18 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Nweet from '../components/Nweet';
 
-const Progressbar = () => {
+const Progressbar = ({msgCount}) => {
 
 //   const [count, setCount] = useState(0);
 const [nweet, setNweet] = useState("");
-const [nweets, setNweets] = useState([]);
+const [count, setCount] = useState(0);
 
-  let count = nweets.length;
+
+useEffect(() => {
+  setCount(msgCount);
+}, []);
+
 
 //   function add_count(){
 //     if (count === 5){

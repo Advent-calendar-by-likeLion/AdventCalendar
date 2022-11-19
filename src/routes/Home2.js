@@ -28,6 +28,10 @@ const Home2 = ({ userObj }) => {
   const [attachment, setAttachment] = useState("");
   const [isModalOpen, setModalOpen] = useState(false);
   let uid = 0;
+  let msgSize1 = 0;
+
+  const [msgSize, setMsgSize] = useState(0);
+
 
   useEffect(() => {
 
@@ -39,6 +43,7 @@ const Home2 = ({ userObj }) => {
           id: document.id,
           ...document.data(),
       }))
+      setMsgSize(newArray.length);
       setNweets(newArray);
     })
   }, []);
@@ -69,7 +74,8 @@ const Home2 = ({ userObj }) => {
   return (
     <>
       <HotelContainer> 
-        <Progressbar />
+        {/* <span>{msgSize}</span> */}
+        <Progressbar msgCount={msgSize}/>
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
           {/* <HotelName userObj={userObj} /> */}
           <Hotel />
