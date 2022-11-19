@@ -35,6 +35,10 @@ const AppRouter = ({isLoggedIn, userObj}) => {
             <Route exact path="/hotelcolor">
               <HotelColor userObj={userObj} />
             </Route>
+            <Route exact path="/">
+              <Auth userObj={userObj} />
+            </Route>
+            
           </>
         ) : (
           <>
