@@ -34,7 +34,7 @@ const Home2 = ({ userObj }) => {
     if (userObj) uid = userObj.uid;     
 
     //dbService.collection("nweets").where("creatorId", "==", userObj.uid).onSnapshot((snapshot) => {
-    dbService.collection("nweets").onSnapshot((snapshot) => {
+    dbService.collection(id).onSnapshot((snapshot) => {
       const newArray = snapshot.docs.map((document) => ({
           id: document.id,
           ...document.data(),
