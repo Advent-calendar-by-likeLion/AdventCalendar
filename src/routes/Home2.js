@@ -33,8 +33,8 @@ const Home2 = ({ userObj }) => {
   const [msgSize, setMsgSize] = useState(0);
 
 
-
-  const user = dbService.collection("users").get(id).displayName;
+  
+  const user = "";
 
   useEffect(() => {
 
@@ -51,6 +51,8 @@ const Home2 = ({ userObj }) => {
       setMsgSize(newArray.length);
       setNweets(newArray);
     })
+
+
   }, []);
 
   const onClickOpenModal = () => {
@@ -80,7 +82,7 @@ const Home2 = ({ userObj }) => {
     <>
       <HotelContainer> 
         <Progressbar msgCount={msgSize}/>
-        <h1 style={{marginBottom:'10px', marginTop:'40px', fontSize:'25px', fontWeight:'bold'}}>{user}의 진저호텔</h1>
+        <h1 style={{marginBottom:'10px', marginTop:'40px', fontSize:'25px', fontWeight:'bold'}}>Ginger Hotel</h1>
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
           {/* <HotelName userObj={userObj} /> */}
           <Hotel />
