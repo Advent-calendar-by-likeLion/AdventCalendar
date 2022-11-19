@@ -83,7 +83,6 @@ const Nickname = ({userObj}) => {
                     }}
                     >의 진저호텔</h1>
             </NicknameInput>
-
             <form onSubmit={onSubmit}>
                 <RedButton>완성하기</RedButton>
             </form>

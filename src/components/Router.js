@@ -9,6 +9,10 @@ import Write from "../routes/Write";
 import Home2 from "../routes/Home2";
 import WriteSuccess from "../routes/WriteSuccess";
 import Nickname from '../routes/Nickname';
+import HotelRoofColor from '../routes/HotelRoofColor';
+import HotelBodyColor from '../routes/HotelBodyColor';
+
+
 
 const AppRouter = ({isLoggedIn, userObj}) => {
   return (
@@ -31,6 +35,12 @@ const AppRouter = ({isLoggedIn, userObj}) => {
             </Route>
             <Route exact path="/profile">
               <Profile />
+            </Route>
+            <Route exact path="/bodycolor">
+              <HotelBodyColor userObj={userObj} />
+            </Route>
+            <Route exact path="/roofcolor">
+              <HotelRoofColor userObj={userObj} />
             </Route>
           </>
         ) : (
