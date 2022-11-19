@@ -54,4 +54,5 @@ export const CircleButton = styled.button`
     width: 30px;
     border-radius: 100px;
     border-width: 0px;
+    margin-right: 10px;
 `
