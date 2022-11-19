@@ -6,6 +6,7 @@ import { RedButton, CircleButton } from './styles/buttonstyle';
 import HotelSnow from '../assets/SnowHotel.svg';
 import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
+import NoRoofwall from '../assets/NoRoofWall.svg';
 
 const HotelColor = ({userObj}) => {
     const history = useHistory();
@@ -109,22 +110,28 @@ const HotelColor = ({userObj}) => {
                 height: "29px",
                 fontSize: "20px",
                 fontWeight: "500px",
+                position:"relative",
             }}>
                 내 호텔은 무슨 색인가요?
             </div>
-
-            <svg width="169" height="56" viewBox="0 0 169 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path id="roof1" d="M1.03595 40.5715L17.3368 20.0576H84.3598H151.384L167.81 40.5715H1.03595Z" fill="white" stroke="black"/>
-            <path id="roof2" d="M49.6453 40.8164L84.2627 0.764626L118.88 40.8164H49.6453Z" fill="white" stroke="black"/>
-            </svg>
-        <br/>
-
-
-            <svg width="169" height="235" viewBox="0 0 169 235" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect id="body" x="0.5" y="0.5" width="167.851" height="233.045" fill="white" stroke="black"/>
-            </svg>
-        <br/>
-        지붕
+            
+            <ColorHotelLayout>
+                <RoofLayout>
+                    <svg width="169" height="56" viewBox="0 0 169 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="roof1" d="M1.03595 40.5715L17.3368 20.0576H84.3598H151.384L167.81 40.5715H1.03595Z" fill="white" stroke="black"/>
+                    <path id="roof2"  d="M49.6453 40.8164L84.2627 0.764626L118.88 40.8164H49.6453Z" fill="white" stroke="black"/>
+                    </svg>
+                    <WallLayout>
+                    <svg width="169" height="235" viewBox="0 0 169 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="body" x="0.5" y="0.5" width="167.851" height="233.045" fill="white" stroke="black"/>
+                    </svg>
+                    </WallLayout>
+                </RoofLayout>
+                <NoRoofWall src={NoRoofwall} />
+            </ColorHotelLayout>
+        <PalleteLayout>
+        <TextStyle>지붕</TextStyle>
+            <PalleteFlex>
                 <CircleButton onClick={changeRoof1} style={{background: '#AF2010'}}></CircleButton>
                 <CircleButton onClick={changeRoof2} style={{background: '#FF9494'}}></CircleButton>
                 <CircleButton onClick={changeRoof3} style={{background: '#FFD372'}}></CircleButton>
@@ -135,8 +142,11 @@ const HotelColor = ({userObj}) => {
                 <CircleButton onClick={changeRoof8} style={{background: '#30475E'}}></CircleButton>
                 <CircleButton onClick={changeRoof9} style={{background: '#A4688F'}}></CircleButton>
                 <CircleButton onClick={changeRoof10} style={{background: '#4C243C'}}></CircleButton>
+            </PalleteFlex>
             <br/>
-            호텔
+            <br/>
+        <TextStyle>호텔</TextStyle>
+            <PalleteFlex>
                 <CircleButton onClick={changeBody1} style={{background: '#AF2010'}}></CircleButton>
                 <CircleButton onClick={changeBody2} style={{background: '#FF9494'}}></CircleButton>
                 <CircleButton onClick={changeBody3} style={{background: '#FFD372'}}></CircleButton>
@@ -147,9 +157,10 @@ const HotelColor = ({userObj}) => {
                 <CircleButton onClick={changeBody8} style={{background: '#30475E'}}></CircleButton>
                 <CircleButton onClick={changeBody9} style={{background: '#A4688F'}}></CircleButton>
                 <CircleButton onClick={changeBody10} style={{background: '#4C243C'}}></CircleButton>
-
-            </Container>
-      </>
+            </PalleteFlex>
+        </PalleteLayout>
+    </Container>
+    </>
   )
 }
 
@@ -208,4 +219,46 @@ const HotelImg = styled.img`
     width: 210px;
     height: 315.16px;
     margin-top: 27px;
+`
+const RoofLayout = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    top: 5px;
+`
+
+const NoRoofWall = styled.img`
+    width: 330px;
+    height: 318.16px;
+
+    position: absolute;
+
+`
+
+const WallLayout = styled.div` 
+    margin: -15px;
+`
+const ColorHotelLayout = styled.div`
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 27px;
+`
+const PalleteLayout = styled.div`
+    margin-top: 100px;
+`
+const TextStyle = styled.div`
+    font-size: 18px;
+    font-weight: 600px;
+    padding-bottom: 5px;
+`
+const PalleteFlex = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
 `
