@@ -110,7 +110,7 @@ const Write = ({ match, userObj }) => {
                     value="Nw"
                 >보내기</RedButton>
             </form>
-            
+            <br/>
             <WhiteButton onClick={ () => {
             history.goBack();
             } } >뒤로 가기</WhiteButton>
