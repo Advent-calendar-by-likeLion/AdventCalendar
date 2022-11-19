@@ -35,7 +35,9 @@ const Home2 = ({ userObj }) => {
 
   useEffect(() => {
 
-    if (userObj) uid = userObj.uid;     
+    if (userObj) {
+      uid = userObj.uid;
+    }     
 
     //dbService.collection("nweets").where("creatorId", "==", userObj.uid).onSnapshot((snapshot) => {
     dbService.collection(id).onSnapshot((snapshot) => {
@@ -74,13 +76,13 @@ const Home2 = ({ userObj }) => {
   return (
     <>
       <HotelContainer> 
-        {/* <span>{msgSize}</span> */}
         <Progressbar msgCount={msgSize}/>
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
           {/* <HotelName userObj={userObj} /> */}
           <Hotel />
           { 
-          id === uid ?  
+          
+          id === (userObj ? userObj.uid : 0) ?  
           <>
             <RedButton onClick={onClickOpenModal}>오늘의 편지</RedButton>
             <br/>
