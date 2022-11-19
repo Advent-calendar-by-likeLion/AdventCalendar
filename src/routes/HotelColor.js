@@ -24,8 +24,7 @@ const HotelColor = ({userObj}) => {
     }
 
     const setBodyColor = (name) => {
-        document.getElementById("body1").style.fill=name;
-        document.getElementById("body2").style.fill=name;
+        document.getElementById("body").style.fill=name;
     }
 
     const changeBody = (event) => {
@@ -70,31 +69,31 @@ const HotelColor = ({userObj}) => {
         <PalleteLayout>
         <TextStyle>지붕</TextStyle>
             <PalleteFlex>
-                <CircleButton onClick={changeRoof1} style={{background: '#AF2010'}}></CircleButton>
-                <CircleButton onClick={changeRoof2} style={{background: '#FF9494'}}></CircleButton>
-                <CircleButton onClick={changeRoof3} style={{background: '#FFD372'}}></CircleButton>
-                <CircleButton onClick={changeRoof4} style={{background: '#829460'}}></CircleButton>
-                <CircleButton onClick={changeRoof5} style={{background: '#0E5E6F'}}></CircleButton>
-                <CircleButton onClick={changeRoof6} style={{background: '#005452'}}></CircleButton>
-                <CircleButton onClick={changeRoof7} style={{background: '#B4CDE6'}}></CircleButton>
-                <CircleButton onClick={changeRoof8} style={{background: '#30475E'}}></CircleButton>
-                <CircleButton onClick={changeRoof9} style={{background: '#A4688F'}}></CircleButton>
-                <CircleButton onClick={changeRoof10} style={{background: '#4C243C'}}></CircleButton>
+                <CircleButton name="#AF2010" onClick={changeRoof} style={{background: '#AF2010'}}></CircleButton>
+                <CircleButton name="#FF9494" onClick={changeRoof} style={{background: '#FF9494'}}></CircleButton>
+                <CircleButton name="#FFD372" onClick={changeRoof} style={{background: '#FFD372'}}></CircleButton>
+                <CircleButton name="#829460" onClick={changeRoof} style={{background: '#829460'}}></CircleButton>
+                <CircleButton name="#0E5E6F" onClick={changeRoof} style={{background: '#0E5E6F'}}></CircleButton>
+                <CircleButton name="#005452" onClick={changeRoof} style={{background: '#005452'}}></CircleButton>
+                <CircleButton name="#B4CDE6" onClick={changeRoof} style={{background: '#B4CDE6'}}></CircleButton>
+                <CircleButton name="#30475E" onClick={changeRoof} style={{background: '#30475E'}}></CircleButton>
+                <CircleButton name="#A4688F" onClick={changeRoof} style={{background: '#A4688F'}}></CircleButton>
+                <CircleButton name="#4C243C" onClick={changeRoof} style={{background: '#4C243C'}}></CircleButton>
             </PalleteFlex>
             <br/>
             <br/>
         <TextStyle>호텔</TextStyle>
             <PalleteFlex>
-                <CircleButton onClick={changeBody1} style={{background: '#AF2010'}}></CircleButton>
-                <CircleButton onClick={changeBody2} style={{background: '#FF9494'}}></CircleButton>
-                <CircleButton onClick={changeBody3} style={{background: '#FFD372'}}></CircleButton>
-                <CircleButton onClick={changeBody4} style={{background: '#829460'}}></CircleButton>
-                <CircleButton onClick={changeBody5} style={{background: '#0E5E6F'}}></CircleButton>
-                <CircleButton onClick={changeBody6} style={{background: '#005452'}}></CircleButton>
-                <CircleButton onClick={changeBody7} style={{background: '#B4CDE6'}}></CircleButton>
-                <CircleButton onClick={changeBody8} style={{background: '#30475E'}}></CircleButton>
-                <CircleButton onClick={changeBody9} style={{background: '#A4688F'}}></CircleButton>
-                <CircleButton onClick={changeBody10} style={{background: '#4C243C'}}></CircleButton>
+                <CircleButton name="#AF2010" onClick={changeBody} style={{background: '#AF2010'}}></CircleButton>
+                <CircleButton name="#FF9494" onClick={changeBody} style={{background: '#FF9494'}}></CircleButton>
+                <CircleButton name="#FFD372" onClick={changeBody} style={{background: '#FFD372'}}></CircleButton>
+                <CircleButton name="#829460" onClick={changeBody} style={{background: '#829460'}}></CircleButton>
+                <CircleButton name="#0E5E6F" onClick={changeBody} style={{background: '#0E5E6F'}}></CircleButton>
+                <CircleButton name="#005452" onClick={changeBody} style={{background: '#005452'}}></CircleButton>
+                <CircleButton name="#B4CDE6" onClick={changeBody} style={{background: '#B4CDE6'}}></CircleButton>
+                <CircleButton name="#30475E" onClick={changeBody} style={{background: '#30475E'}}></CircleButton>
+                <CircleButton name="#A4688F" onClick={changeBody} style={{background: '#A4688F'}}></CircleButton>
+                <CircleButton name="#4C243C" onClick={changeBody} style={{background: '#4C243C'}}></CircleButton>
             </PalleteFlex>
         </PalleteLayout>
     </Container>
