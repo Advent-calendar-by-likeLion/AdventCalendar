@@ -4,7 +4,7 @@ import Hotel from '../components/Hotel';
 import { RedButton, CircleButton } from './styles/buttonstyle';
 import HotelSnow from '../assets/SnowHotel.svg';
 import { useEffect, useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import NoRoofwall from '../assets/NoRoofWall.svg';
 
 const HotelColor = ({userObj}) => {
@@ -96,6 +96,12 @@ const HotelColor = ({userObj}) => {
                 <CircleButton name="#4C243C" onClick={changeBody} style={{background: '#4C243C'}}></CircleButton>
             </PalleteFlex>
         </PalleteLayout>
+        <br/>
+        <br/>
+        <br/>
+        <Link to="./Nickname">
+            <RedButton>다음으로</RedButton>
+        </Link>
     </Container>
     </>
   )
