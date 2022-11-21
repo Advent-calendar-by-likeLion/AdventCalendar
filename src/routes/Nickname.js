@@ -2,7 +2,7 @@ import { dbService } from "fbase";
 
 import styled from 'styled-components';
 import Hotel from '../components/Hotel';
-import { RedButton } from './styles/buttonstyle';
+import { RedButton, WhiteButton } from './styles/buttonstyle';
 import HotelSnow from '../assets/SnowHotel.svg';
 import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
@@ -86,6 +86,10 @@ const Nickname = ({userObj}) => {
             <form onSubmit={onSubmit}>
                 <RedButton>완성하기</RedButton>
             </form>
+            <br/>
+            <WhiteButton onClick={ () => {
+            history.goBack();
+            } } >뒤로 가기</WhiteButton>
         </Container>
       </>
   )
