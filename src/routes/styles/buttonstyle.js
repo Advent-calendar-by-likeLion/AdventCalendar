@@ -6,7 +6,7 @@ export const RedButton = styled.button`
     border-width: 1.5px;
     border-style: dashed;
     border-color: white;
-    border-radius: 1px;
+    border-radius: 2px;
     background-color: #AF2010;
     outline-width: 9px;
     outline-color:  #AF2010;
