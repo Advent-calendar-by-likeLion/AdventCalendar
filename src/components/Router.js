@@ -13,7 +13,7 @@ import HotelColor from '../routes/HotelColor';
 
 
 
-const AppRouter = ({isLoggedIn, userObj}) => {
+const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
   return (
     <Router>
       {/* {isLoggedIn && <Navigation />} */}
@@ -24,7 +24,7 @@ const AppRouter = ({isLoggedIn, userObj}) => {
               <Home2 userObj={userObj}/>
             </Route>
             <Route exact path="/nickname">
-              <Nickname userObj={userObj}/>
+              <Nickname userObj={userObj} refreshUser={refreshUser}/>
             </Route>
             <Route exact path="/profile">
               <Profile />

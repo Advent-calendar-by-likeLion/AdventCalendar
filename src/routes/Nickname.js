@@ -7,9 +7,10 @@ import HotelSnow from '../assets/SnowHotel.svg';
 import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 
-const Nickname = ({userObj}) => {
+const Nickname = ({userObj, refreshUser}) => {
 
-    const [nickname, setNickname] = useState("");
+    //const [nickname, setNickname] = useState("");
+    const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
     const history = useHistory();
 
     useEffect(() => {
@@ -17,9 +18,15 @@ const Nickname = ({userObj}) => {
     }, []);
 
     const onChange = (event) => {
-        const {target: {value}} = event;
-        setNickname(value)
-    }
+        const {
+          target: { value },
+        } = event;
+        setNewDisplayName(value);
+      };
+
+
+    
+
 
     const addHotelOwner = async () => {
 
@@ -57,9 +64,14 @@ const Nickname = ({userObj}) => {
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
+        //await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
+        if (userObj.displayName !== newDisplayName) {
+          await userObj.updateProfile({displayName: newDisplayName});
+        }
+
         history.push("/hotel/" + userObj.uid);
     }
+    
 
   return (
       <>
@@ -86,6 +98,7 @@ const Nickname = ({userObj}) => {
             <form onSubmit={onSubmit}>
                 <RedButton>완성하기</RedButton>
             </form>
+
             <br/>
             <WhiteButton onClick={ () => {
             history.goBack();

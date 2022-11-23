@@ -8,6 +8,10 @@ function App() {
   const [init, setInit] = useState(false);
   const [userObj, setUserObj] = useState(null);
 
+  const refreshUser = () => {
+    setUserObj(authService.currentUser);
+  }
+
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
@@ -15,6 +19,7 @@ function App() {
         setUserObj(user);
       } else {
         setIsLoggedIn(false);
+        setUserObj(false);
       }
       setInit(true);
     });
@@ -24,7 +29,7 @@ function App() {
     <>
     <GlobalStyle/>
       <MediaDiv>
-        {init ? <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} /> : "init.."}
+        {init ? <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} refreshUser={refreshUser}/> : "init.."}
       </MediaDiv>
     </>
   )
