@@ -1,5 +1,7 @@
 import { dbService, storageService} from "fbase";
 import { useState } from "react";
+import styled from 'styled-components';
+
 
 const Nweet = ({ nweetObj, isOwner }) => {
     const [editing, setEditing] = useState(false);
@@ -44,7 +46,7 @@ const Nweet = ({ nweetObj, isOwner }) => {
                 <>
                    <h4>{nweetObj.text}</h4>
                    {nweetObj.attachmentUrl && (
-                     <img src={nweetObj.attachmentUrl} width="50px" height="50px"/>
+                     <img width="100%" src={nweetObj.attachmentUrl} />
                    )}
 
                    {isOwner && (
@@ -63,3 +65,9 @@ const Nweet = ({ nweetObj, isOwner }) => {
 }
 
 export default Nweet;
+
+const postImg = styled.img`
+    object-fit: cover; 
+    width: 100%; 
+    max-height: 20rem; 
+`

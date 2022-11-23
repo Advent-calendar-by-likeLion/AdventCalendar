@@ -40,7 +40,7 @@ const Write = ({ match, userObj }) => {
         let attachmentUrl = "";
         if (attachment !== "") {
             // file 
-            const attRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
+            const attRef = storageService.ref().child(`${id}/${uuidv4()}`);
             const response = await attRef.putString(attachment, "data_url");
             attachmentUrl = await response.ref.getDownloadURL();
         }
@@ -84,7 +84,9 @@ const Write = ({ match, userObj }) => {
             } = finishedEvent;
             setAttachment(result);
         }
-        reader.readAsDataURL(theFile);
+        if (Boolean(theFile)) {
+            reader.readAsDataURL(theFile);
+        }
     }
 
     const onClearAttachment = () => setAttachment("");
@@ -103,7 +105,7 @@ const Write = ({ match, userObj }) => {
                     placeholder="친구에게 전하고 싶은 말을 적어주세요!"
                     maxLength={1000}
                 />
-
+            <br/>
             <form onSubmit={onSubmit}>
                 <RedButton
                     type="submit"
@@ -115,13 +117,20 @@ const Write = ({ match, userObj }) => {
             history.goBack();
             } } >뒤로 가기</WhiteButton>
 
-            <FileInput type="file" accept="image/*" onChange={onFileChange}/>
-            {attachment && (
-                <div>
-                <img src={attachment} width="50px" height="50px" />
-                <button onClick={onClearAttachment}>Clear</button>
+            <>
+                <br/>
+                <div class="upload-btn-wrapper">
+                    <RedButton>이미지 업로드</RedButton>
+                    <input type="file" accept="image/*" onChange={onFileChange}/>
+                    {attachment && (
+                        <ImgDiv>
+                            <br/>
+                            <img src={attachment} width="100%" />
+                            <button onClick={onClearAttachment}>취소</button>
+                        </ImgDiv>
+                    )}
                 </div>
-            )}
+            </>
         </Container>
         </>
     )
@@ -184,6 +193,6 @@ const Input = styled.input`
     }
 `;
 
-const FileInput = styled.input`
-    margin-top: 24px;
+const ImgDiv = styled.div`
+    position: absolute;
 `
