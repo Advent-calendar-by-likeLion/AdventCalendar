@@ -62,6 +62,9 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             <Route exact path="/hotel/:id">
               <Home2 userObj={userObj}/>
             </Route>
+            <Route exact path="/hotelcolor">
+              <HotelColor userObj={userObj} />
+            </Route>
           </>
         )}
         {/* <Redirect from="*" to="/"/> */}

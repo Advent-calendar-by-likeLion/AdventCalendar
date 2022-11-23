@@ -39,6 +39,21 @@ const HotelColor = ({userObj}) => {
         // history.push("/hotel/" + userObj.uid);
     }
 
+    useEffect( () => {
+        dbTest();
+
+    }, []);
+
+    const dbTest= async() => {
+        let data = "";
+        //await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
+        await dbService.collection("hotelOwner").doc(userObj.uid)
+        .get()
+        .then((doc) => {data = doc.data()});
+        console.log(data);
+        console.log(data["nickname"]);
+    }
+
   return (
       <>
         <Container>
