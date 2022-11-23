@@ -16,9 +16,9 @@ const Write = ({ match, userObj }) => {
     const [attachment, setAttachment] = useState("");
 
     const [value, setValue] = useState("")
+    const [displayName, setDisplayName] = useState("")
     const ref = useRef();
     const history = useHistory();
-    let displayName = "";
     let uid = 0;
     
     useEffect(() => {
@@ -28,7 +28,7 @@ const Write = ({ match, userObj }) => {
       ref.current.style.height = scrollHeight + "px";
 
       if (userObj) {
-        displayName = userObj.displayName; 
+        setDisplayName(userObj.displayName); 
         uid = userObj.uid; 
       }
 
@@ -72,6 +72,19 @@ const Write = ({ match, userObj }) => {
 
       };
 
+    const onChangeNm = (event) => {
+        event.preventDefault();
+        const {
+          target: { displayName },
+        } = event;
+        setDisplayName(displayName);
+
+
+        const v = event.target.value;
+        setDisplayName(v);
+
+      };
+
     const onFileChange = (event) => {
         const {
             target: { files },
@@ -105,6 +118,12 @@ const Write = ({ match, userObj }) => {
                     placeholder="친구에게 전하고 싶은 말을 적어주세요!"
                     maxLength={1000}
                 />
+            <Input
+            onChange={onChangeNm}
+            placeholder = "닉네임"
+            type="text"
+            value={displayName}
+            />
             <br/>
             <form onSubmit={onSubmit}>
                 <RedButton
