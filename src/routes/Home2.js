@@ -82,7 +82,8 @@ const Home2 = ({ userObj }) => {
     <>
       <HotelContainer> 
         <Progressbar msgCount={msgSize}/>
-        <h1 style={{marginBottom:'10px', marginTop:'40px', fontSize:'25px', fontWeight:'bold'}}>Ginger Hotel</h1>
+        <br/>
+        <HotelName userObj={userObj}/>
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
           {/* <HotelName userObj={userObj} /> */}
           <Hotel />
