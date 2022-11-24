@@ -31,10 +31,7 @@ const Home2 = ({ userObj }) => {
   let msgSize1 = 0;
 
   const [msgSize, setMsgSize] = useState(0);
-
-
-  
-  const user = "";
+  const [displayName, setDisplayName] = useState(0);
 
   useEffect(() => {
 
@@ -42,7 +39,10 @@ const Home2 = ({ userObj }) => {
       uid = userObj.uid;
     }     
 
-    //dbService.collection("nweets").where("creatorId", "==", userObj.uid).onSnapshot((snapshot) => {
+    dbService.collection("hotelOwner").doc(id).get()
+    .then((doc) => {
+      setDisplayName(doc.data().nickname)
+    });
     dbService.collection(id).onSnapshot((snapshot) => {
       const newArray = snapshot.docs.map((document) => ({
           id: document.id,
@@ -51,7 +51,6 @@ const Home2 = ({ userObj }) => {
       setMsgSize(newArray.length);
       setNweets(newArray);
     })
-
 
   }, []);
 
@@ -83,7 +82,7 @@ const Home2 = ({ userObj }) => {
       <HotelContainer> 
         <Progressbar msgCount={msgSize}/>
         <br/>
-        <HotelName userObj={userObj}/>
+        <HotelName userObj={userObj} displayName={displayName}/>
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
           {/* <HotelName userObj={userObj} /> */}
           <Hotel />

@@ -1,14 +1,14 @@
 import "../routes/styles.css";
 import { useHistory, useParams } from "react-router-dom";
 
-const HotelName = ({ userObj }) => {
+const HotelName = ({ userObj, displayName }) => {
     const history = useHistory();
     const {id} = useParams(); // hetelOwnerId
     const changeNm = () => history.push("/Nickname");
     
     return (
         <>
-         <div style={{fontSize: '30px', fontWeight: "bold"}}>{userObj.displayName}의 진저호텔
+         <div style={{fontSize: '30px', fontWeight: "bold"}}>{displayName}의 진저호텔
          {
          id === (userObj ? userObj.uid : 0) ?
             <button onClick={changeNm} id="search-button">

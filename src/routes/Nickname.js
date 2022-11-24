@@ -29,6 +29,13 @@ const Nickname = ({userObj, refreshUser}) => {
 
 
     const addHotelOwner = async () => {
+        let data = "";
+        //await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
+        await dbService.collection("hotelOwner").doc(userObj.uid).get()
+        .then((doc) => {data = doc.data()});
+        //console.log(data);
+        //console.log(data["nickname"]);
+        setNewDisplayName(data["nickname"]);
 
         await dbService.collection("hotelOwner").doc(userObj.uid).set({
             nickname: userObj.displayName,
@@ -68,6 +75,10 @@ const Nickname = ({userObj, refreshUser}) => {
         if (userObj.displayName !== newDisplayName) {
           await userObj.updateProfile({displayName: newDisplayName});
         }
+
+        dbService.collection("hotelOwner").doc(userObj.uid).set({
+            nickname: newDisplayName
+        });
 
         history.push("/hotel/" + userObj.uid);
     }
