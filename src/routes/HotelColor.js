@@ -7,7 +7,9 @@ import { useEffect, useState } from 'react';
 import { useHistory, Link } from "react-router-dom";
 import NoRoofwall from '../assets/NoRoofWall.svg';
 import "./styles.css";
-import ColorPicker from "../components/ColorPicker";
+import ColorPicker from "../components/ColorPickerBody";
+import ColorPickerRoof from "../components/ColorPickerRoof";
+import ColorPickerBody from "../components/ColorPickerBody";
 
 
 
