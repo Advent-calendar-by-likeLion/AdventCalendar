@@ -1,8 +1,8 @@
-const ColorPicker = ({changeRoof, color}) => {
+const ColorPickerBody = ({changeBody, color, type}) => {
     return (
         <div>
-            <input id={color} type="radio" name="color" onChange={changeRoof}/>
-            <label for={color}>
+            <input id={color + type} type="radio" name="color" value={color} onChange={changeBody}/>
+            <label for={color + type}>
                 <span style={{background: color}}>
                     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon"/>
                 </span>
@@ -11,4 +11,4 @@ const ColorPicker = ({changeRoof, color}) => {
     )
 }
 
-export default ColorPicker;
+export default ColorPickerBody;

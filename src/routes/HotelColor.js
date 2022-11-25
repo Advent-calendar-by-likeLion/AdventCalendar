@@ -83,23 +83,16 @@ const HotelColor = ({userObj}) => {
         <TextStyle>지붕</TextStyle>
             <PalleteFlex>
                 <div class="custom-radios">
-                    {colors.map((value) => <ColorPicker changeRoof={changeRoof} color={value}/>)}
+                    {colors.map((value) => <ColorPickerRoof changeRoof={changeRoof} color={value} type="roof"/>)}
                 </div>
             </PalleteFlex>
 
             <br/>
         <TextStyle>호텔</TextStyle>
             <PalleteFlex>
-                <CircleButton name="#AF2010" onClick={changeBody} style={{background: '#AF2010'}}></CircleButton>
-                <CircleButton name="#FF9494" onClick={changeBody} style={{background: '#FF9494'}}></CircleButton>
-                <CircleButton name="#FFD372" onClick={changeBody} style={{background: '#FFD372'}}></CircleButton>
-                <CircleButton name="#829460" onClick={changeBody} style={{background: '#829460'}}></CircleButton>
-                <CircleButton name="#0E5E6F" onClick={changeBody} style={{background: '#0E5E6F'}}></CircleButton>
-                <CircleButton name="#005452" onClick={changeBody} style={{background: '#005452'}}></CircleButton>
-                <CircleButton name="#B4CDE6" onClick={changeBody} style={{background: '#B4CDE6'}}></CircleButton>
-                <CircleButton name="#30475E" onClick={changeBody} style={{background: '#30475E'}}></CircleButton>
-                <CircleButton name="#A4688F" onClick={changeBody} style={{background: '#A4688F'}}></CircleButton>
-                <CircleButton name="#4C243C" onClick={changeBody} style={{background: '#4C243C'}}></CircleButton>
+                <div class="custom-radios">
+                    {colors.map((value) => <ColorPickerBody changeBody={changeBody} color={value} type="body"/>)}
+                </div>
             </PalleteFlex>
         </PalleteLayout>
         <br/>
