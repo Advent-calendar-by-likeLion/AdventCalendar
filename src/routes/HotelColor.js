@@ -26,19 +26,20 @@ const HotelColor = ({userObj}) => {
 
 
     const changeRoof = (event) => {
-        const {target: {id}} = event;
-        setRoofColor(id);
-        roofColor = id;
+        const {target: {value}} = event;
+        setRoofColor(value);
+        roofColor = value;
     }
-
+    
     const setBodyColor = (name) => {
         document.getElementById("body").style.fill=name;
     }
 
     const changeBody = (event) => {
-        const {target: {name}} = event;
-        setBodyColor(name);
-        bodyColor = name;
+        const {target: {value}} = event;
+        setBodyColor(value);
+        bodyColor = value;
+
     }
 
     const onSubmit = async (event) => { // Todo: Need to connect DB
