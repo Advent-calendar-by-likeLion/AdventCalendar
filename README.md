@@ -1,3 +1,6 @@
+# 2022년 멋쟁이사자처럼 단풍톤_4팀
+# Welcome to Ginger Hotel
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
