@@ -51,12 +51,13 @@ const Signup = ({userObj}) => {
               <InputStyle placeholder='비밀번호' name="password1" type="password" required value={password1} onChange={onChange} />
               <InputStyle placeholder='비밀번호 확인' name="password2" type="password" required value={password2} onChange={onChange}/>
           </InputLayout2>
-          <RedButton disabled={false} type="submit">내 호텔 만들기</RedButton>
-          <br/>
-          <br/>
-          <WhiteButton onClick={ () => {
-          history.goBack();
-          } } >뒤로 가기</WhiteButton>
+          <ButtonLayout>
+            <RedButton disabled={false} type="submit">내 호텔 만들기</RedButton>
+            <br/>
+            <WhiteButton onClick={ () => {
+              history.goBack();
+            }}>뒤로 가기</WhiteButton>
+          </ButtonLayout>
         </form>
       </Container>
       </>
@@ -71,4 +72,13 @@ const InputLayout2 = styled.div`
     gap: 9px;
     margin-top: 72px;
     margin-bottom: 39px;
+`
+
+const ButtonLayout = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 12.57px;
+    margin-top: 62.02px;
+    margin-bottom: 142px;
+    align-items: center;
 `
