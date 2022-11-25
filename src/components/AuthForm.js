@@ -29,8 +29,9 @@ const AuthForm = (userObj) => {
     const onSubmit = async (event) => {
         event.preventDefault();
         try {
-            await authService.signInWithEmailAndPassword(email, password);  
-            history.push("/hotel/" + userObj.uid);
+            await authService.signInWithEmailAndPassword(email, password); 
+            const id = authService.currentUser.uid;
+            history.push("/hotel/" + id);
         } catch (error) {
             setError(error.message);
         } 

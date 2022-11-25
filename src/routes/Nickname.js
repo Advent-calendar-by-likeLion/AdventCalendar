@@ -24,18 +24,14 @@ const Nickname = ({userObj, refreshUser}) => {
         setNewDisplayName(value);
       };
 
-
-    
-
-
     const addHotelOwner = async () => {
         let data = "";
-        //await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
-        await dbService.collection("hotelOwner").doc(userObj.uid).get()
-        .then((doc) => {data = doc.data()});
-        //console.log(data);
-        //console.log(data["nickname"]);
-        setNewDisplayName(data["nickname"]);
+        //await dbService.collection("hotelOwner").doc(userObj.uid).set({nickname : null});
+        // await dbService.collection("hotelOwner").doc(userObj.uid).get()
+        // .then((doc) => {data = doc.data()});
+        // console.log(data);
+        // console.log(data["nickname"]);
+        // setNewDisplayName(data["nickname"]);
 
         await dbService.collection("hotelOwner").doc(userObj.uid).set({
             nickname: userObj.displayName,
@@ -73,10 +69,16 @@ const Nickname = ({userObj, refreshUser}) => {
         event.preventDefault();
         //await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
         if (userObj.displayName !== newDisplayName) {
-          await userObj.updateProfile({displayName: newDisplayName});
+            await userObj.updateProfile({
+                displayName : newDisplayName
+            }).then(function() {
+                var displayName = userObj.displayName;
+            }, function(error) {
+                alert(error);
+            });
         }
 
-        dbService.collection("hotelOwner").doc(userObj.uid).set({
+        await dbService.collection("hotelOwner").doc(userObj.uid).update({
             nickname: newDisplayName
         });
 
