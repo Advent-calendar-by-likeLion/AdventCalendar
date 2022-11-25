@@ -98,7 +98,9 @@ const Home2 = ({ userObj }) => {
           </>
           :  
           <>
+            <br/>
             <RedButton onClick={toWrite}>편지 보내기</RedButton>
+            <br/>
           </>
           }          
           {isModalOpen && <Modal closeModal={onClickCloseModal}>
