@@ -3,30 +3,24 @@ import styled from 'styled-components';
 import Hotel from '../components/Hotel';
 import { RedButton, CircleButton } from './styles/buttonstyle';
 import HotelSnow from '../assets/SnowHotel.svg';
-import { useEffect, useState } from 'react';
 import { useHistory, Link } from "react-router-dom";
 import NoRoofwall from '../assets/NoRoofWall.svg';
 import "./styles.css";
-import ColorPicker from "../components/ColorPickerBody";
 import ColorPickerRoof from "../components/ColorPickerRoof";
 import ColorPickerBody from "../components/ColorPickerBody";
-
-
 
 const HotelColor = ({userObj}) => {
     const history = useHistory();
     let roofColor = "";
     let bodyColor = "";
+    
     const colors = ["#AF2010", "#FF9494", "#FFD372", "#829460", "#0E5E6F", "#005452", "#B4CDE6", "#30475E", "#A4688F", "#4C243C"];
-
-    const red = "#AF2010";
 
     const setRoofColor = (name) => {
         document.getElementById("roof1").style.fill = name;
         document.getElementById("roof2").style.fill = name;
     }
-
-
+    
     const changeRoof = (event) => {
         const {target: {value}} = event;
         setRoofColor(value);
@@ -49,10 +43,6 @@ const HotelColor = ({userObj}) => {
         // await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
         // history.push("/hotel/" + userObj.uid);
     }
-
-
-
-
 
   return (
       <>
@@ -88,7 +78,6 @@ const HotelColor = ({userObj}) => {
                     {colors.map((value) => <ColorPickerRoof changeRoof={changeRoof} color={value} type="roof"/>)}
                 </div>
             </PalleteFlex>
-
             <br/>
         <TextStyle>호텔</TextStyle>
             <PalleteFlex>
