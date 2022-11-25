@@ -25,13 +25,6 @@ const Nickname = ({userObj, refreshUser}) => {
       };
 
     const addHotelOwner = async () => {
-        let data = "";
-        //await dbService.collection("hotelOwner").doc(userObj.uid).set({nickname : null});
-        // await dbService.collection("hotelOwner").doc(userObj.uid).get()
-        // .then((doc) => {data = doc.data()});
-        // console.log(data);
-        // console.log(data["nickname"]);
-        // setNewDisplayName(data["nickname"]);
 
         await dbService.collection("hotelOwner").doc(userObj.uid).set({
             nickname: userObj.displayName,
@@ -100,13 +93,9 @@ const Nickname = ({userObj, refreshUser}) => {
                 <HotelImg src={HotelSnow} />
             </HotelSubCon>
             <NicknameInput>
-                <InputStylenick type="text" placeholder='닉네임' 
-                defaultValue={userObj.displayName ? userObj.displayName : ''}
+                <InputStylenick type="text" placeholder='닉네임' defaultValue={userObj.displayName ? userObj.displayName : ''}
                 onChange={onChange}/>
-                    <h1 style={{
-                        fontSize: "22px",
-                    }}
-                    >의 진저호텔</h1>
+                    <h1 style={{fontSize: "22px",}} >의 진저호텔</h1>
             </NicknameInput>
             <form onSubmit={onSubmit}>
                 <RedButton>완성하기</RedButton>
