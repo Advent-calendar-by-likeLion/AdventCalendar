@@ -39,7 +39,13 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             </Route>
             <Route exact path="/writesuccess">
               <WriteSuccess userObj={userObj}/>
-            </Route>            
+            </Route>  
+            <Route exact path="/login">
+              <Auth userObj={userObj}/>
+            </Route>
+            <Route exact path="/signup">
+              <Signup userObj={userObj}/>
+            </Route>          
           </>
         ) : (
           <>
