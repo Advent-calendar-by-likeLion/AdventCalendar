@@ -1,9 +1,17 @@
 import { LetterStyle, WriteSubTitle } from "./styles/style"
 import Letter from '../assets/Letter.svg';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 import { RedButton, WhiteButton } from './styles/buttonstyle';
 
 const WriteSuccess= ({userObj}) => {
+    const history = useHistory();
+    const onclickLoginBar = () => {
+        history.push("/login");
+    }
+    const onclickSignupBar = () => {
+        history.push("/signup");
+    }
   return (
       <Container>
           <LetterStyle src={Letter} />
@@ -15,8 +23,8 @@ const WriteSuccess= ({userObj}) => {
             {
                
             }
-            <RedButton>내 호텔 만들기</RedButton>
-            <WhiteButton>로그인</WhiteButton>
+            <RedButton onClick={onclickSignupBar}>내 호텔 만들기</RedButton>
+            <WhiteButton onClick={onclickLoginBar}>로그인</WhiteButton>
           </ButtonLayout>
       </Container>
   )
