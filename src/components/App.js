@@ -1,7 +1,9 @@
 import AppRouter from "components/Router";
 import { useEffect, useState } from "react";
 import {authService} from "fbase"
-import { GlobalStyle, MediaDiv } from "../styles/layout";
+import { GlobalStyle, MediaDiv, SnowOpacity } from "../styles/layout";
+import Snowfall from 'react-snowfall'
+import { SnowfallStyle } from "../styles/layout";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,7 +31,16 @@ function App() {
     <>
     <GlobalStyle/>
       <MediaDiv>
-        {init ? <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} refreshUser={refreshUser}/> : "init.."}
+        <SnowfallStyle style={{background: '#FCF4E9', position: 'relative', snowflakeCount: "150" }}>
+
+          <Snowfall 
+          color="white"
+             />
+    
+          <div style={{position: "relative"}}>
+            {init ? <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} refreshUser={refreshUser}/> : "init.."}
+          </div>
+        </SnowfallStyle>
       </MediaDiv>
     </>
   )
