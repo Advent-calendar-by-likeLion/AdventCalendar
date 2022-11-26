@@ -12,7 +12,7 @@ export const HotelImg = styled.img`
     margin-top: 36px;
 `
 export const TitleDiv = styled.div`
-    width: 176px;
+    width: 200px;
     height: 17px;
     text-align: center;
     padding-top: 3px;
