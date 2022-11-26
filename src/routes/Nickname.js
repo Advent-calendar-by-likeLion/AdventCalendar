@@ -9,12 +9,18 @@ import { useHistory } from "react-router-dom";
 
 const Nickname = ({userObj}) => {
 
-    const [description, setDescription] = useState("나의 호텔을 소개 해주세요!");
+    const [description, setDescription] = useState("");
     const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
     const history = useHistory();
 
     useEffect(() => {
         addHotelOwner();
+
+        dbService.collection("hotelOwner").doc(userObj.uid).get()
+        .then((doc) => {
+          setDescription(doc.data().description === "" ? "" : doc.data().description)
+        });
+
     }, []);
 
     const onChange = (event) => {
@@ -29,12 +35,11 @@ const Nickname = ({userObj}) => {
           target: { value },
         } = event;
         setDescription(value);
-        console.log(value);
     };
 
     const addHotelOwner = async () => {
         await dbService.collection("hotelOwner").doc(userObj.uid).set({
-            description: description,
+            description : description,
             nickname: userObj.displayName,
             doorInfo: {
                 1 : false,
@@ -79,6 +84,7 @@ const Nickname = ({userObj}) => {
             });
         }
 
+
         await dbService.collection("hotelOwner").doc(userObj.uid).update({
             nickname: newDisplayName,
             description: description.replaceAll("\r\n", "<br>") 
@@ -106,7 +112,9 @@ const Nickname = ({userObj}) => {
                 onChange={onChange}/>
                     <h1 style={{fontSize: "22px",}} >의 진저호텔</h1>
             </NicknameInput>
-            <TxtAreaDesc maxLength={1000} type="text" placeholder='나의 호텔 소개' onChange={onChangeDesc}/>
+            <TxtAreaDesc maxLength={1000} type="text" placeholder='나의 호텔 소개' onChange={onChangeDesc}
+            defaultValue={description ? description : ''}
+            />
             <br/>
             <br/>
             <br/>
