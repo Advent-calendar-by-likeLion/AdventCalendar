@@ -115,7 +115,7 @@ const Write = ({ match, userObj }) => {
                     value={nweet}
                     type="text"
                     onChange={onChange} 
-                    placeholder="친구에게 전하고 싶은 말을 적어주세요!"
+                    placeholder="친구에게 전하고 싶은 말을 &#13;적어주세요!"
                     maxLength={1000}
                 />
             <Input
@@ -173,6 +173,7 @@ const Textarea = styled.textarea`
     text-align: center;
     font-size: 13px;
     line-height: 19px;  
+    resize: none;
 
     :focus::placeholder {
         color: transparent;
