@@ -112,9 +112,9 @@ const Nickname = ({userObj}) => {
                 onChange={onChange}/>
                     <h1 style={{fontSize: "22px",}} >의 진저호텔</h1>
             </NicknameInput>
-            <TxtAreaDesc maxLength={1000} type="text" placeholder='나의 호텔 소개' onChange={onChangeDesc}
-            defaultValue={description ? description : ''}
-            />
+            <br/>
+            <br/>
+            <TxtAreaDesc maxLength={1000} type="text" placeholder='나의 호텔 소개' defaultValue={description ? description : ''} onChange={onChangeDesc}/>
             <br/>
             <br/>
             <br/>
