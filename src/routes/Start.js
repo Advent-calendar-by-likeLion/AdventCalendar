@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Hotel from '../assets/Hotel.svg';
+import Hotel from '../assets/SnowHotel.svg';
 import LoginBar from '../assets/LoginBar.svg';
 import SignupBar from '../assets/SignupBar.svg';
 import Title from '../assets/Welcome.svg';
