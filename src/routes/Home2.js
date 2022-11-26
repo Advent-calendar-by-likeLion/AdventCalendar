@@ -31,7 +31,8 @@ const Home2 = ({ userObj }) => {
   let msgSize1 = 0;
 
   const [msgSize, setMsgSize] = useState(0);
-  const [displayName, setDisplayName] = useState(0);
+  const [displayName, setDisplayName] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
 
@@ -42,6 +43,7 @@ const Home2 = ({ userObj }) => {
     dbService.collection("hotelOwner").doc(id).get()
     .then((doc) => {
       setDisplayName(doc.data().nickname)
+      setDescription(doc.data().description)
     });
     dbService.collection(id).onSnapshot((snapshot) => {
       const newArray = snapshot.docs.map((document) => ({
@@ -84,6 +86,8 @@ const Home2 = ({ userObj }) => {
         <br/>
         <HotelName userObj={userObj} displayName={displayName}/>
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
+        <br/>
+        <TitleDiv style={{marginBottom:'10px'}}>{description}</TitleDiv>
           {/* <HotelName userObj={userObj} /> */}
           <Hotel />
           { 

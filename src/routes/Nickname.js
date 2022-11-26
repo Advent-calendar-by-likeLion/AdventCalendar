@@ -7,9 +7,9 @@ import HotelSnow from '../assets/SnowHotel.svg';
 import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 
-const Nickname = ({userObj, refreshUser}) => {
+const Nickname = ({userObj}) => {
 
-    //const [nickname, setNickname] = useState("");
+    const [description, setDescription] = useState("나의 호텔을 소개 해주세요!");
     const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
     const history = useHistory();
 
@@ -22,11 +22,19 @@ const Nickname = ({userObj, refreshUser}) => {
           target: { value },
         } = event;
         setNewDisplayName(value);
-      };
+    };
+
+    const onChangeDesc = (event) => {
+        const {
+          target: { value },
+        } = event;
+        setDescription(value);
+        console.log(value);
+    };
 
     const addHotelOwner = async () => {
-
         await dbService.collection("hotelOwner").doc(userObj.uid).set({
+            description: description,
             nickname: userObj.displayName,
             doorInfo: {
                 1 : false,
@@ -72,7 +80,8 @@ const Nickname = ({userObj, refreshUser}) => {
         }
 
         await dbService.collection("hotelOwner").doc(userObj.uid).update({
-            nickname: newDisplayName
+            nickname: newDisplayName,
+            description: description.replaceAll("\r\n", "<br>") 
         });
 
         history.push("/hotel/" + userObj.uid);
@@ -97,6 +106,10 @@ const Nickname = ({userObj, refreshUser}) => {
                 onChange={onChange}/>
                     <h1 style={{fontSize: "22px",}} >의 진저호텔</h1>
             </NicknameInput>
+            <TxtAreaDesc maxLength={1000} type="text" placeholder='나의 호텔 소개' onChange={onChangeDesc}/>
+            <br/>
+            <br/>
+            <br/>
             <form onSubmit={onSubmit}>
                 <RedButton>완성하기</RedButton>
             </form>
@@ -124,8 +137,40 @@ const NicknameInput = styled.form`
     justify-content: center;
     align-items: center;
 
-    margin-top: 92.84px;
-    margin-bottom: 63px;
+    margin-top: 22.84px;
+`
+const TxtAreaDesc = styled.textarea`
+    width: 235px;
+    min-height: 93px;
+    background-color: #FCF4E9;
+    color:  #000000;
+
+    border-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #BAB8B5;
+    padding-left: 10px;
+    text-align: center;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    font-family: none;
+    resize: none;
+    white-space: pre-wrap;
+    ::placeholder {
+        color: #BAB8B5;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 33px;
+        text-align: center; 
+    }
+
+    :focus {
+        outline: none;
+    }
 `
 const InputStylenick = styled.input`
     width: 115px;
