@@ -50,7 +50,8 @@ const Write = ({ match, userObj }) => {
             timestamp: new Date(),
             creatorId: uid,
             attachmentUrl,
-            hotelOwnerId: id
+            hotelOwnerId: id,
+            writerNickname: displayName
         });
 
         setNweet("");
