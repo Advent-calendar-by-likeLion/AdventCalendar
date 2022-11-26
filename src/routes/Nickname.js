@@ -146,9 +146,10 @@ const NicknameInput = styled.form`
     align-items: center;
 
     margin-top: 22.84px;
+    margin-bottom: 20px;
 `
 const TxtAreaDesc = styled.textarea`
-    width: 235px;
+    width: 230px;
     min-height: 93px;
     background-color: #FCF4E9;
     color:  #000000;
@@ -182,7 +183,7 @@ const TxtAreaDesc = styled.textarea`
 `
 const InputStylenick = styled.input`
     width: 115px;
-    height: 35px;
+    height: 25px;
     background-color: #FCF4E9;
     color:  #000000;
 
