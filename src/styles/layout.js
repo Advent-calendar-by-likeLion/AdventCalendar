@@ -34,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const SnowfallStyle = styled.div`
     margin: 0px auto;
-    height: auto;
+    height: 40vh;
     width: 768px;
     display: flex;
     flex-direction: column;
