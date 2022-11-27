@@ -50,4 +50,5 @@ export const Btn = styled.button `
   border-color: transparent;
   border: none;
   color: #FFFFFF;
+  padding: 0px 0px;
 `
