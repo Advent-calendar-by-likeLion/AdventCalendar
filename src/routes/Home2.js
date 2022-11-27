@@ -32,6 +32,7 @@ const Home2 = ({ userObj }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [msgCount, setMsgCount] = useState(0);
   const [goalCount, setGoalCount] = useState(0);
+  const [isFull, setIsFull] = useState(false);
 
   useEffect(() => {
 
@@ -51,9 +52,21 @@ const Home2 = ({ userObj }) => {
       }))
       setMsgCount(newArray.length);
       setNweets(newArray);
+
+      getGoalCount();
     })
 
   }, []);
+
+  useEffect(() => {
+    if (msgCount == goalCount) {
+      setIsFull(true);
+    }
+  }, [msgCount]);
+
+  const getGoalCount = () => {
+    setGoalCount(2);
+  }
 
   const onClickOpenModal = () => {
     setModalOpen(true);
@@ -81,14 +94,14 @@ const Home2 = ({ userObj }) => {
   return (
     <>
       <HotelContainer> 
-        <Progressbar msgCount={msgCount}/>
+        <Progressbar msgCount={msgCount} goalCount={goalCount}/>
         <br/>
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
         <HotelName userObj={userObj} displayName={displayName}/>
         <br/>
         <TitleDiv style={{marginBottom:'10px'}}>{description}</TitleDiv>
           {/* <HotelName userObj={userObj} /> */}
-          <Hotel />
+          <Hotel isFull={isFull} />
           { 
           
           id === (userObj ? userObj.uid : 0) ?  

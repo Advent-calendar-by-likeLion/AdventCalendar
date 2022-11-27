@@ -2,19 +2,11 @@ import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import Nweet from '../components/Nweet';
 
-const Progressbar = ({msgCount}) => {
+const Progressbar = ({msgCount, goalCount}) => {
 
-//   const [count, setCount] = useState(0);
-const [nweet, setNweet] = useState("");
-const [count, setCount] = useState();
-
-const getTodayCount = () => {
-  setCount(5);
-}
 
 useEffect(() => {
-  setCount(msgCount);
-  getTodayCount();
+
 }, []);
 
 
@@ -32,11 +24,11 @@ useEffect(() => {
         <CountContainer>
             <h1>오늘의 편지 (</h1>
             <h1 style={{color: "#AF2010"}}>{msgCount}</h1>
-            <h1>/{count})</h1>
+            <h1>/{goalCount})</h1>
         </CountContainer>
         <Container>
         {/*%로 부모넓이의 1/5 씩 넓어짐*/}
-        <Progress width={(msgCount/count)*100 + "%"}/>
+        <Progress width={(msgCount/goalCount)*100 + "%"}/>
         </Container>
     </>
     
