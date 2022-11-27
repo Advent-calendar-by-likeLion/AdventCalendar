@@ -9,6 +9,7 @@ import Progressbar from "./Progressbar";
 import Hotel from "../components/Hotel";
 import { RedButton, WhiteButton } from "./styles/buttonstyle";
 import { useHistory, useParams } from "react-router-dom";
+import {  } from "fbase";
 
 import HotelName from "../components/HotelName";
 import Modal from "../components/Modal/Modal";
@@ -29,7 +30,8 @@ const Home2 = ({ userObj }) => {
   const [description, setDescription] = useState("");
   
   const [isModalOpen, setModalOpen] = useState(false);
-  const [msgSize, setMsgSize] = useState(0);
+  const [msgCount, setMsgCount] = useState(0);
+  const [goalCount, setGoalCount] = useState(0);
 
   useEffect(() => {
 
@@ -47,7 +49,7 @@ const Home2 = ({ userObj }) => {
           id: document.id,
           ...document.data(),
       }))
-      setMsgSize(newArray.length);
+      setMsgCount(newArray.length);
       setNweets(newArray);
     })
 
@@ -79,7 +81,7 @@ const Home2 = ({ userObj }) => {
   return (
     <>
       <HotelContainer> 
-        <Progressbar msgCount={msgSize}/>
+        <Progressbar msgCount={msgCount}/>
         <br/>
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
         <HotelName userObj={userObj} displayName={displayName}/>
