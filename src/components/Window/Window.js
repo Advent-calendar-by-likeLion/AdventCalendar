@@ -1,8 +1,27 @@
 import styled from 'styled-components';
+import {dbService, authService, storageService} from "fbase"
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
-const Window = (isFull) => {
+
+const Window = ({item}) => {
+    const {id} = useParams(); // hetelOwnerId
+    const [info, setInfo] = useState([]);
+
+    useEffect(() => {
+        initWindowInfo();
+    }, []);
+
+    const initWindowInfo = () => {
+        dbService.collection("hotelOwner").doc(id).get()
+        .then((doc) => {
+            setInfo(doc.data().windowInfo);
+        });
+      }
+
+
     return (
-        !isFull ? 
+        info[item] ? 
         <svg width="45" height="55" viewBox="0 0 45 55" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M38.7979 14.161L44.5 11.1959L44.5 32.234V53.3396L38.7979 50.9135L38.7979 14.161Z" fill="white" stroke="black"/>
             <path d="M6.20213 51.1046L0.5 54.0698V33.0316V11.926L6.20213 14.3521V51.1046Z" fill="white" stroke="black"/>

@@ -11,7 +11,7 @@ import Modal from './Modal/Modal';
 import { CardLayout, MessageCard } from './Modal/styles';
 import Nweet from './Nweet';
 
-const Hotel = (isFull) => {
+const Hotel = () => {
 
 
     const [isModalOpen, setModalOpen] = useState(false);
@@ -53,7 +53,7 @@ const Hotel = (isFull) => {
                         {
                         item == 1 ? 
                           <Btn onClick={onClickOpenModal}>
-                              <Window isFull={isFull}/>
+                              <Window item={item}/>
                           </Btn>
                         : 
                         item == 24 ? 
@@ -67,7 +67,7 @@ const Hotel = (isFull) => {
                           </Btn>
                         : 
                           <Btn onClick={onClickOpenModal}>
-                            <Window isFull={isFull}/>
+                              <Window item={item} />
                           </Btn>
                         } 
                     </div>

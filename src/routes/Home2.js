@@ -53,7 +53,7 @@ const Home2 = ({ userObj }) => {
       setMsgCount(newArray.length);
       setNweets(newArray);
 
-      getGoalCount();
+      initWindowInfo();
     })
 
   }, []);
@@ -64,8 +64,8 @@ const Home2 = ({ userObj }) => {
     }
   }, [msgCount]);
 
-  const getGoalCount = () => {
-    setGoalCount(2);
+  const initWindowInfo = () => {
+    setGoalCount(5);
   }
 
   const onClickOpenModal = () => {
@@ -101,7 +101,7 @@ const Home2 = ({ userObj }) => {
         <br/>
         <TitleDiv style={{marginBottom:'10px'}}>{description}</TitleDiv>
           {/* <HotelName userObj={userObj} /> */}
-          <Hotel isFull={isFull} />
+          <Hotel/>
           { 
           
           id === (userObj ? userObj.uid : 0) ?  
