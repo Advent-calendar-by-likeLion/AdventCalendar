@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from 'styled-components';
 
 
-const Nweet = ({ nweetObj, isOwner }) => {
+const Nweet = ({ nweetObj }) => {
     return (
         <div>
             {nweetObj.writerNickname && (
