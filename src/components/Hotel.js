@@ -5,11 +5,44 @@ import OpenWindow from './Window/OpenWindow';
 import Door from './Window/Door';
 import TopWindow from './Window/TopWindow';
 import Window from './Window/Window';
+import { useState } from 'react';
+import {dbService } from "fbase"
+import { useParams } from 'react-router-dom';
+import Modal from './Modal/Modal';
+import { CardLayout, MessageCard } from './Modal/styles';
+import Nweet from './Nweet';
 
 const Hotel = () => {
 
 
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [msgSize, setMsgSize] = useState(0);
+    const [nweets, setNweets] = useState([]);
+
+    const {id} = useParams(); // hetelOwnerId
+
+
+    const getPost = () => {
+
+    }
+
     const openModalPost = () => console.log("btn event");
+    
+    const onClickOpenModal = () => {
+      dbService.collection(id).onSnapshot((snapshot) => {
+        const newArray = snapshot.docs.map((document) => ({
+            id: document.id,
+            ...document.data(),
+        }))
+        setMsgSize(newArray.length);
+        setNweets(newArray);
+      })
+      setModalOpen(true);
+    }
+  
+    const onClickCloseModal = () => {
+      setModalOpen((prev) => !prev);
+    }
 
     const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 ,22 , 23, 24, 25];
     return (
@@ -20,17 +53,21 @@ const Hotel = () => {
                     <div key={key} className={`div${item}`}>
                         {
                         item == 1 ? 
-                        <Btn onClick={openModalPost}>
-                            <OpenWindow/>
-                        </Btn> 
+                          <Btn onClick={onClickOpenModal}>
+                              <OpenWindow/>
+                          </Btn>
                         : 
                         item == 24 ? 
-                          <Door/>
+                          <Btn onClick={onClickOpenModal}>
+                            <Door/>
+                          </Btn>
                         : 
                         item == 25 ? 
-                          <TopWindow/>
+                          <Btn onClick={onClickOpenModal}>
+                            <TopWindow/>
+                          </Btn>
                         : 
-                          <Btn onClick={openModalPost}>
+                          <Btn onClick={onClickOpenModal}>
                             <Window/>
                           </Btn>
                         } 
@@ -38,6 +75,19 @@ const Hotel = () => {
 
                 ))
             } </GridBox>
+                      {isModalOpen && <Modal closeModal={onClickCloseModal}>
+                            <h1>도착한 편지</h1>
+                            <CardLayout>
+                            {nweets.map((nweet) => (
+                            <MessageCard>
+                                <Nweet 
+                                  key={nweet.id} 
+                                  nweetObj={nweet}
+                                />
+                            </MessageCard>
+                            ))}
+                            </CardLayout>
+                          </Modal>}
         </HotelContainer>
     );
 }
