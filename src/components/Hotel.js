@@ -1,7 +1,6 @@
 import {GridBox, Hotelbg, HotelContainer} from '../routes/styles/HotelStyle';
 import Hotel2 from '../assets/Hotel2.svg';
 import styled from 'styled-components';
-import OpenWindow from './Window/OpenWindow';
 import Door from './Window/Door';
 import TopWindow from './Window/TopWindow';
 import Window from './Window/Window';
@@ -12,7 +11,7 @@ import Modal from './Modal/Modal';
 import { CardLayout, MessageCard } from './Modal/styles';
 import Nweet from './Nweet';
 
-const Hotel = () => {
+const Hotel = (isFull) => {
 
 
     const [isModalOpen, setModalOpen] = useState(false);
@@ -54,7 +53,7 @@ const Hotel = () => {
                         {
                         item == 1 ? 
                           <Btn onClick={onClickOpenModal}>
-                              <OpenWindow/>
+                              <Window isFull={isFull}/>
                           </Btn>
                         : 
                         item == 24 ? 
@@ -68,7 +67,7 @@ const Hotel = () => {
                           </Btn>
                         : 
                           <Btn onClick={onClickOpenModal}>
-                            <Window/>
+                            <Window isFull={isFull}/>
                           </Btn>
                         } 
                     </div>
