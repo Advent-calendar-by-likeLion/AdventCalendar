@@ -23,12 +23,9 @@ const Home2 = ({ userObj }) => {
     history.push("/write/" + id);
   }
     
-  const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
-  const [attachment, setAttachment] = useState("");
   const [isModalOpen, setModalOpen] = useState(false);
   let uid = 0;
-  let msgSize1 = 0;
 
   const [msgSize, setMsgSize] = useState(0);
   const [displayName, setDisplayName] = useState("");
