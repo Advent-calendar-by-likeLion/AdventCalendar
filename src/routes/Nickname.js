@@ -41,7 +41,7 @@ const Nickname = ({userObj}) => {
         await dbService.collection("hotelOwner").doc(userObj.uid).set({
             description : description,
             nickname: userObj.displayName,
-            doorInfo: {
+            windowInfo: {
                 1 : false,
                 2 : false,
                 3 : false,
