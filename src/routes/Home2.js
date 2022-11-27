@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {authService, storageService} from "fbase"
+import {dbService, authService, storageService} from "fbase"
 import "./styles.css";
 import styled from "styled-components";
 import Hotel2 from '../assets/Hotel2.svg';
@@ -9,7 +9,6 @@ import Progressbar from "./Progressbar";
 import Hotel from "../components/Hotel";
 import { RedButton, WhiteButton } from "./styles/buttonstyle";
 import { useHistory, useParams } from "react-router-dom";
-import { dbService } from "fbase";
 
 import HotelName from "../components/HotelName";
 import Modal from "../components/Modal/Modal";
@@ -24,12 +23,13 @@ const Home2 = ({ userObj }) => {
   }
     
   const [nweets, setNweets] = useState([]);
-  const [isModalOpen, setModalOpen] = useState(false);
   let uid = 0;
-
-  const [msgSize, setMsgSize] = useState(0);
+  
   const [displayName, setDisplayName] = useState("");
   const [description, setDescription] = useState("");
+  
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [msgSize, setMsgSize] = useState(0);
 
   useEffect(() => {
 
