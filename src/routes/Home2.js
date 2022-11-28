@@ -4,7 +4,7 @@ import "./styles.css";
 import styled from "styled-components";
 import Hotel2 from '../assets/Hotel2.svg';
 import { GridBox, Hotelbg, HotelContainer } from './styles/HotelStyle';
-import { Container, TitleDiv } from "./styles/style";
+import { Container, TitleDiv, TitleDiv2 } from "./styles/style";
 import Progressbar from "./Progressbar";
 import Hotel from "../components/Hotel";
 import { RedButton, WhiteButton } from "./styles/buttonstyle";
@@ -99,7 +99,7 @@ const Home2 = ({ userObj }) => {
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
         <HotelName userObj={userObj} displayName={displayName}/>
         <br/>
-        <TitleDiv style={{marginBottom:'10px'}}>{description}</TitleDiv>
+        <TitleDiv2 style={{marginBottom:'10px'}}>{description}</TitleDiv2>
           {/* <HotelName userObj={userObj} /> */}
           <Hotel/>
           { 
