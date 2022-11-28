@@ -38,11 +38,16 @@ const HotelColor = ({userObj}) => {
 
     }
 
-    const onSubmit = async (event) => { // Todo: Need to connect DB
+    const onSubmit = async (event) => {
+        history.push("/hotel/" + userObj.uid);
+    }
+    
+
+    /* const onSubmit = async (event) => { // Todo: Need to connect DB
         // event.preventDefault();
         // await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
         // history.push("/hotel/" + userObj.uid);
-    }
+    } */
 
   return (
       <>
@@ -89,9 +94,9 @@ const HotelColor = ({userObj}) => {
         <br/>
         <br/>
         <br/>
-        <Link to="./Nickname">
-            <RedButton>다음으로</RedButton>
-        </Link>
+        <form onSubmit={onSubmit}>
+                <RedButton>완성하기</RedButton>
+        </form>
     </Container>
     </>
   )
