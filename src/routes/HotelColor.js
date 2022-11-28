@@ -145,4 +145,5 @@ const PalleteFlex = styled.div`
     display: flex;
     flex-direction: row;
     gap: 3px;
+    justify-content: center;
 `
