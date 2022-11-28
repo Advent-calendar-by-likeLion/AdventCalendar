@@ -6,6 +6,7 @@ import { RedButton, WhiteButton } from './styles/buttonstyle';
 import HotelSnow from '../assets/SnowHotel.svg';
 import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
+import { faWeight } from "@fortawesome/free-solid-svg-icons";
 
 const Nickname = ({userObj}) => {
 
@@ -100,22 +101,27 @@ const Nickname = ({userObj}) => {
             <div style={{
                 marginTop: "141px",
                 height: "29px",
-                fontSize: "20px",  
-                fontWeight: "500px",
+                fontSize: "22px",  
+                fontWeight: "bold",
 
             }}>누구의 진저호텔인가요?</div>
             <HotelSubCon>
                 <HotelImg src={HotelSnow} />
             </HotelSubCon>
             <NicknameInput>
-                <InputStylenick type="text" placeholder='닉네임' defaultValue={userObj.displayName ? userObj.displayName : ''}
+                <InputStylenick style={{fontWeight:"bold"}} type="text" placeholder='닉네임' defaultValue={userObj.displayName ? userObj.displayName : ''}
                 onChange={onChange}/>
-                    <h1 style={{fontSize: "22px",}} >의 진저호텔</h1>
+                    <h1 style={{fontSize: "20px", fontWeight: "bold"}} >의 진저호텔</h1>
             </NicknameInput>
-            <TxtAreaDesc maxLength={1000} type="text" placeholder='나의 호텔 소개' onChange={onChangeDesc}
+            <TxtAreaDesc maxLength={1000} type="text" placeholder='내 호텔을 소개해 주세요!' onChange={onChangeDesc}
             defaultValue={description ? description : ''}
             />
             <br/>
+            <br/>
+            <br/>
+            <WhiteButton onClick={() => {
+                history.push("/hotelcolor");
+            }}>호텔 색상 바꾸기</WhiteButton>
             <br/>
             <br/>
             <form onSubmit={onSubmit}>
