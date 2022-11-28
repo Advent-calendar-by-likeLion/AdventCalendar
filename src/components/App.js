@@ -31,7 +31,7 @@ function App() {
     <>
     <GlobalStyle/>
       <MediaDiv>
-        <SnowfallStyle style={{background: '#FCF4E9', position: 'relative', snowflakeCount: "150" }}>
+        <SnowfallStyle style={{background: 'transparent', position: 'relative', snowflakeCount: "150" }}>
 
           <Snowfall 
           color="white"
