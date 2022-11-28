@@ -138,7 +138,7 @@ const PalleteLayout = styled.div`
 `
 const TextStyle = styled.div`
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600px;
     padding-bottom: 5px;
 `
 const PalleteFlex = styled.div`
