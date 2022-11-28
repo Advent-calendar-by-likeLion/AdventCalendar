@@ -1,8 +1,6 @@
 import { HashRouter as Router, Route, Switch /*, Redirect*/ } from "react-router-dom";
 import Auth from "routes/Auth";
-import Profile from "routes/Profile"
 import Start from "../routes/Start";
-import Navigation from "./Navigation";
 import Signup from '../routes/Signup';
 import Write from "../routes/Write";
 import Home2 from "../routes/Home2";
@@ -15,7 +13,6 @@ import HotelColor from '../routes/HotelColor';
 const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
   return (
     <Router>
-      {/* {isLoggedIn && <Navigation />} */}
       <Switch>
         {isLoggedIn ? (
           <>
