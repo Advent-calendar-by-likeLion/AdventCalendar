@@ -35,7 +35,7 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
               <HotelColor userObj={userObj} />
             </Route>
             <Route exact path="/">
-              <Auth userObj={userObj} />
+              <Start userObj={userObj} />
             </Route>
             <Route exact path="/writesuccess">
               <WriteSuccess userObj={userObj}/>
