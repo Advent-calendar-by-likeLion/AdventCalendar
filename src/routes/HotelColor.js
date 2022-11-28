@@ -55,8 +55,8 @@ const HotelColor = ({userObj}) => {
             <div style={{
                 marginTop: "141px",
                 height: "29px",
-                fontSize: "20px",
-                fontWeight: "500px",
+                fontSize: "22px",
+                fontWeight: "bold",
                 position:"relative",
             }}>
                 내 호텔은 무슨 색인가요?
@@ -113,18 +113,14 @@ const RoofLayout = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
     position: relative;
-
     top: 5px;
 `
 
 const NoRoofWall = styled.img`
     width: 330px;
     height: 318.16px;
-
     position: absolute;
-
 `
 
 const WallLayout = styled.div` 
@@ -135,7 +131,6 @@ const ColorHotelLayout = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin-top: 27px;
 `
 const PalleteLayout = styled.div`
@@ -143,7 +138,7 @@ const PalleteLayout = styled.div`
 `
 const TextStyle = styled.div`
     font-size: 18px;
-    font-weight: 600px;
+    font-weight: 500;
     padding-bottom: 5px;
 `
 const PalleteFlex = styled.div`
