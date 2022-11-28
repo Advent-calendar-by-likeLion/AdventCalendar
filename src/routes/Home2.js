@@ -65,7 +65,7 @@ const Home2 = ({ userObj }) => {
   }, [msgCount]);
 
   const initWindowInfo = () => {
-    setGoalCount(5);
+    setGoalCount(3);
   }
 
   const onClickOpenModal = () => {
