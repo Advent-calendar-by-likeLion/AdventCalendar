@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {dbService, authService, storageService} from "fbase"
 import "./styles.css";
-import styled from "styled-components";
-import Hotel2 from '../assets/Hotel2.svg';
 import { GridBox, Hotelbg, HotelContainer } from './styles/HotelStyle';
 import { Container, TitleDiv, TitleDiv2 } from "./styles/style";
 import Progressbar from "./Progressbar";
