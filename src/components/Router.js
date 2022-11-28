@@ -7,6 +7,7 @@ import Home2 from "../routes/Home2";
 import WriteSuccess from "../routes/WriteSuccess";
 import Nickname from '../routes/Nickname';
 import HotelColor from '../routes/HotelColor';
+import InitConfigData from "../routes/InitConfigData";
 
 
 
@@ -22,8 +23,8 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             <Route exact path="/nickname">
               <Nickname userObj={userObj} refreshUser={refreshUser}/>
             </Route>
-            <Route exact path="/profile">
-              <Profile />
+            <Route exact path="/InitConfigData">
+              <InitConfigData userObj={userObj}/>
             </Route>
             <Route exact path="/write/:id">
               <Write userObj={userObj}/>
