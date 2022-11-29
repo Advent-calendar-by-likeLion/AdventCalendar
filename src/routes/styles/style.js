@@ -101,3 +101,12 @@ export const ButtonLayout = styled.div`
     margin-top: 62.02px;
     margin-bottom: 142px;
 `
+
+// GingerCookie
+export const GingerCookie = styled.img`
+    width: 150px;
+    height: 188px;
+
+    margin: 0 auto;
+    margin-top: 95px;
+`

@@ -3,19 +3,21 @@ import styled from "styled-components";
 import {dbService, authService, storageService} from "fbase"
 import "./styles.css";
 import { GridBox, Hotelbg, HotelContainer } from './styles/HotelStyle';
-import { Container, TitleDiv, TitleDiv2 } from "./styles/style";
+import { Container, TitleDiv, TitleDiv2, GingerCookie } from "./styles/style";
 import Progressbar from "./Progressbar";
 import Hotel from "../components/Hotel";
-import { RedButton, WhiteButton, GreenButton } from "./styles/buttonstyle";
+import { RedButton, WhiteButton, GreenButton, RedRoundButton } from "./styles/buttonstyle";
 import { useHistory, useParams } from "react-router-dom";
 
 import HotelName from "../components/HotelName";
 import Modal from "../components/Modal/Modal";
-import { CardLayout, MessageCard } from "../components/Modal/styles";
+import GingerModal from "../components/Modal/GingerModal";
+import { CardLayout, MessageCard, GingerCardLayout } from "../components/Modal/styles";
 import Nweet from "../components/Nweet";
-import CookieImg from '../assets/JinegrMan.svg';
 import MessageModal from "../components/Modal/MessageModal";
-import Cookie2 from '../assets/Cookie.svg';
+
+// 쿠키 관련 모음
+import BellBoyCookie from '../assets/cookie/BellBoyCookie.svg';
 
 const Home2 = ({ userObj }) => {
   const history = useHistory();
@@ -26,7 +28,6 @@ const Home2 = ({ userObj }) => {
     
   const [nweets, setNweets] = useState([]);
   const [attachment, setAttachment] = useState("");
-  const [isModalOpen2, setModalOpen2] = useState(false);
   const [isModalLetter, setIsModalLetter] = useState(false);
 
   let uid = 0;
@@ -38,6 +39,8 @@ const Home2 = ({ userObj }) => {
   const [msgCount, setMsgCount] = useState(0);
   const [goalCount, setGoalCount] = useState(0);
   const [isFull, setIsFull] = useState(false);
+
+  const [isGingerModalOpen, setGingerModalOpen] = useState(false);
 
   useEffect(() => {
 
@@ -80,24 +83,16 @@ const Home2 = ({ userObj }) => {
     setModalOpen(true);
   }
 
-  const onClickOpenModal2 = () => {
-    setModalOpen2(true);
-  }
-
   const onClickCloseModal = () => {
     setModalOpen((prev) => !prev);
   }
 
-  const onClickCloseModal2 = () => {
-    setModalOpen2((prev) => !prev);
-  }
-
   const onClickOpenGingerModal = () => {
-    setModalOpen(true);
+    setGingerModalOpen(true);
   }
 
   const onClickCloseGingerModal = () => {
-    setModalOpen((prev) => !prev);
+    setGingerModalOpen((prev) => !prev);
   }
 
   const onLogOutClick = () => {
@@ -127,7 +122,6 @@ const Home2 = ({ userObj }) => {
           {/* <HotelName userObj={userObj} /> */}
           <Hotel/>
           { 
-          
           id === (userObj ? userObj.uid : 0) ?  
           <>
             <RedButton onClick={onClickOpenModal}>오늘의 편지</RedButton>
@@ -160,21 +154,20 @@ const Home2 = ({ userObj }) => {
                             ))}
                             </CardLayout>
                           </Modal>}
-
-          {isModalOpen && <Modal closeModal={onClickCloseGingerModal}>
-                            <h1>도착한 편지</h1>
-                            <CardLayout>
-                            {nweets.map((nweet) => (
-                            <MessageCard>
-                                <Nweet 
-                                  key={nweet.id} 
-                                  nweetObj={nweet}
-                                  isOwner={nweet.creatorId === userObj.uid}
-                                />
-                            </MessageCard>
-                            ))}
-                            </CardLayout>
-                          </Modal>}
+          {isGingerModalOpen && <GingerModal closeModal={onClickCloseGingerModal}>
+                            <GingerCardLayout>
+                              <GingerTitle>벨보이 진저맨</GingerTitle>
+                              <br/>
+                              <GingerContent>진저호텔에 온 걸 환영한다!
+                                              <br/>
+                                              크리스마스에 진저호텔이라...
+                                              <br/>
+                                              탁월한 선택!
+                              </GingerContent>
+                              <GingerCookie src={BellBoyCookie} />
+                              <RedRoundButton>편지 읽기</RedRoundButton>
+                            </GingerCardLayout>
+                          </GingerModal>}
       </HotelContainer>
     </>
   );
@@ -223,7 +216,7 @@ const SmallCookie = styled.img`
   width: 40px;
   height: 54px;
   position: relative;
-  top: 10pxpx;
+  top: 10px;
   margin: 0 auto;
 `
 const TextDiv = styled.div`
@@ -233,4 +226,35 @@ const TextDiv = styled.div`
 `
 const Footer = styled.div`
   height: 75px;
+`
+const GingerTitle = styled.div`
+  position: absolute;
+
+  top: 6%;
+  bottom: 18.26%;
+
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 17px;
+  line-height: 48px;
+
+  text-align: center;
+
+  color: #000000;
+`
+const GingerContent = styled.div`
+  position: absolute;
+
+  top: 17%;
+  bottom: 12.8%;
+
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 21.72px;
+  text-align: center;
+  
+  color: #000000;
 `
