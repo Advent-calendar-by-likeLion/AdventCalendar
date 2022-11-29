@@ -46,7 +46,7 @@ const Write = ({ match, userObj }) => {
         const scrollHeight = ref.current.scrollHeight;
         ref.current.style.height = scrollHeight + "px";
 
-        if (userObj) {
+        if (userObj && displayName == "") {
             setDisplayName(userObj.displayName); 
             uid = userObj.uid; 
         }
