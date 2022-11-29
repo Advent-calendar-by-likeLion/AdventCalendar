@@ -66,7 +66,7 @@ export const GreenButton = styled.button`
     border-radius: 2px;
     background: #005452;
     outline-width: 9px;
-    outline-color:  #005452;
+    outline-color: #005452;
     outline-style: solid;
 
     font-weight: 400;
@@ -83,6 +83,31 @@ export const GreenButton = styled.button`
 
 `
 
+export const YellowButton = styled.button`
+    width: 281px;
+    height: 29px;
+    border-width: 1.5px;
+    border-style: dashed;
+    border-color: white;
+    border-radius: 2px;
+    background: #C07C0F;
+    outline-width: 9px;
+    outline-color: #C07C0F;
+    outline-style: solid;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    
+    margin-top: 9px;
+    margin-bottom: 9px;
+    :disabled {
+        background-color: rgba(175, 32, 16, 0.5);
+        outline-color:  rgba(175, 32, 16, 0.5);
+    }
+
+`
 export const RedRoundButton = styled.button`
     width: 94px;
     height: 29px;
