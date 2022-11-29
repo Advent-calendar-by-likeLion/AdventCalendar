@@ -35,10 +35,14 @@ const HotelColor = ({userObj}) => {
         const {target: {value}} = event;
         setBodyColor(value);
         bodyColor = value;
-
     }
 
     const onSubmit = async (event) => {
+        event.preventDefault();
+        await dbService.collection("hotelOwner").doc(userObj.uid).update({
+            roofColor : roofColor,
+            bodyColor : bodyColor,
+        });
         history.push("/hotel/" + userObj.uid);
     }
 
