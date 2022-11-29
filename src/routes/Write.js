@@ -10,6 +10,7 @@ import { useParams, useHistory } from 'react-router-dom';
 
 // image resizing
 import imageCompression from "browser-image-compression";
+import { ColorRing } from 'react-loader-spinner';
 
 const Write = ({ match, userObj }) => {
     const {id} = useParams(); // hetelOwnerId
@@ -17,6 +18,7 @@ const Write = ({ match, userObj }) => {
     const [nweet, setNweet] = useState("");
     const [nweets, setNweets] = useState([]);
     const [attachment, setAttachment] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const [value, setValue] = useState("")
     const [displayName, setDisplayName] = useState("")
@@ -54,8 +56,10 @@ const Write = ({ match, userObj }) => {
     }, [value]);
     
     const onSubmit = async (event) => {
-        
         event.preventDefault();
+        
+        setLoading(true);
+        
         let attachmentUrl = "";
         if (attachment !== "") {
             // file 
@@ -190,7 +194,23 @@ const Write = ({ match, userObj }) => {
     }
 
     return (
-        <>
+        loading ?            
+        (<>
+            <Container>
+                <WriteSuccessTitle>잠시만 기다려주세요...</WriteSuccessTitle>
+                <br/>
+                <br/>
+                <ColorRing
+                    visible={true}
+                    height="80"
+                    width="80"
+                    ariaLabel="blocks-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="blocks-wrapper"
+                    colors={['#F05454', '#AF2010', '#B4CDE6', '#FFD372', '#F0B3B0']}
+                />
+            </Container>
+        </>) :
         <Container>
             <>
                 <LetterStyle src={Letter}/>
@@ -239,7 +259,6 @@ const Write = ({ match, userObj }) => {
             </>
             </>
         </Container>
-        </>
     )
 }
 
@@ -304,4 +323,12 @@ const Input = styled.input`
 const ImgDiv = styled.div`
     position: absolute;
     align-items: center;
+`
+
+const WriteSuccessTitle = styled.div`
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    width: 280px;
+    height: 29px;
 `
