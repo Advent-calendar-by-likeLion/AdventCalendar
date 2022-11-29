@@ -14,7 +14,7 @@ const TimeTitle = () => {
   }
 
   return (
-    <div>{todayTime().slice(0, 9)}
+    <div>{todayTime().slice(2, 9)}
       <span>{todayTime().slice(9, 12)}</span>
       <span>{todayTime().slice(12, 19)}</span>
     </div>
