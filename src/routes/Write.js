@@ -148,7 +148,7 @@ const Write = ({ match, userObj }) => {
                             <img src={attachment} width="100%" />
                             <br/>
                             <br/> 
-                            <WhiteButton style={{width: 60, height: 22}} onClick={onClearAttachment}>취소</WhiteButton>
+                            <WhiteButton style={{width: 60, height: 22, marginLeft: 105}} onClick={onClearAttachment}>취소</WhiteButton>
                         </ImgDiv>
                     )}
                 </div>
