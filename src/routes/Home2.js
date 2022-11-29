@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {dbService, authService, storageService} from "fbase"
 import "./styles.css";
-import styled from "styled-components";
-import Hotel2 from '../assets/Hotel2.svg';
 import { GridBox, Hotelbg, HotelContainer } from './styles/HotelStyle';
 import { Container, TitleDiv, TitleDiv2 } from "./styles/style";
 import Progressbar from "./Progressbar";
@@ -72,7 +70,10 @@ const Home2 = ({ userObj }) => {
   }, [msgCount]);
 
   const initWindowInfo = () => {
-    setGoalCount(3);
+    dbService.collection("AdminConfig").doc("AdminConfig").get()
+      .then((doc) => {
+        setGoalCount(doc.data().goalCount);
+      });
   }
 
   const onClickOpenModal = () => {

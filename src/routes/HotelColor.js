@@ -14,7 +14,7 @@ const HotelColor = ({userObj}) => {
     let roofColor = "";
     let bodyColor = "";
     
-    const colors = ["#AF2010", "#FF9494", "#FFD372", "#829460", "#0E5E6F", "#005452", "#B4CDE6", "#30475E", "#A4688F", "#4C243C"];
+    const colors = ["#AF2010", "#FF9494", "#c07c0f", "#829460", "#0E5E6F", "#005452", "#B4CDE6", "#30475E", "#A4688F", "#4C243C"];
 
     const setRoofColor = (name) => {
         document.getElementById("roof1").style.fill = name;
@@ -40,6 +40,14 @@ const HotelColor = ({userObj}) => {
 
     const onSubmit = async (event) => {
         history.push("/hotel/" + userObj.uid);
+    }
+
+    const dbEx = async (event) => {
+        await dbService.collection("hotelOwner").doc(userObj.uid).update({
+            roofColor : roofColor,
+            bodyColor : bodyColor,
+        });
+        history.push("/Nickname");
     }
     
 

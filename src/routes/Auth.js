@@ -30,7 +30,7 @@ const Auth = ( {userObj} ) => {
                     const userNickname = doc.data().nickname;
                     history.push("/hotel/" + id);
                 } catch (error) {
-                    history.push("/Nickname");
+                    history.push("/InitConfigData");
                 }
             });
         } catch (error) {
