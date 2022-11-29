@@ -165,32 +165,27 @@ const Write = ({ match, userObj }) => {
       };
 
     const changeVisible = () => {
-        dbService.collection("hotelOwner").doc(id).get()
-        .then((doc) => {
-          //console.log(doc.data().windowInfo);
-
-
-        let i = 1;
+        dbService.collection("hotelOwner").doc(id).get().then((doc) => {
+        let i = 1; // window day count
         let text = "";
         while (true) {
-            if (doc.data().windowInfo[i]) continue;
-            /*console.log("doc.data().windowInfo - start")
-            console.log(doc.data().windowInfo)
-            console.log(doc.data().windowInfo[i])
-            doc.data().windowInfo[i] = true;*/
-            changeVisible2(doc.data().windowInfo)
+            if (doc.data().windowInfo[i]) {
+                i++;
+                continue;
+            }
+            changeVisible2(i)
             break;
         }
 
         });
     }
 
-    const changeVisible2 = async (windowInfoP) => { // Todo: Need to connect DB
-        console.log(windowInfoP);
+    const changeVisible2 = async (i) => { // Todo: Need to connect DB
+        let a = `windowInfo.2`;
         // event.preventDefault();
         // await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
         await dbService.collection("hotelOwner").doc(userObj.uid).update({
-            "windowInfo.1" : true, 
+             [`windowInfo.${i}`] : true  
         });
         //history.push("/Nickname");
     }
