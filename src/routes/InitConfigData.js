@@ -6,7 +6,6 @@ import { dbService } from "fbase";
 
 const InitConfigData = ({userObj}) => {
     const history = useHistory();
-    console.log(userObj);
     useEffect(() => {
         HotelOwnerDBInit()
         history.push("/nickname");

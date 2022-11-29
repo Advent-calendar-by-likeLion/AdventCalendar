@@ -37,11 +37,12 @@ const Nickname = ({userObj}) => {
         setDescription(value);
     };
 
+    const clickHotelColorButton = () => {
+        saveNicknameAndDescription();
+        history.push("/hotelcolor");
+    }
 
-
-    const onSubmit = async (event) => {
-        event.preventDefault();
-        //await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
+    const saveNicknameAndDescription = async () => {
         if (userObj.displayName !== newDisplayName) {
             await userObj.updateProfile({
                 displayName : newDisplayName
@@ -57,7 +58,12 @@ const Nickname = ({userObj}) => {
             nickname: newDisplayName,
             description: description.replaceAll("\r\n", "<br>") 
         });
+    }
 
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        //await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
+        saveNicknameAndDescription();
         history.push("/hotel/" + userObj.uid);
     }
     
@@ -86,9 +92,7 @@ const Nickname = ({userObj}) => {
             <br/>
             <br/>
             <br/>
-            <GreenButton onClick={() => {
-                history.push("/hotelcolor");
-            }}>호텔 색상 정하기</GreenButton>
+            <GreenButton onClick={clickHotelColorButton}>호텔 색상 정하기</GreenButton>
             <br/>
             <br/>
             <HotelGuide>* 호텔 이름과 색상은 나중에도 수정할 수 있어요!</HotelGuide>
