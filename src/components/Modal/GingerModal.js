@@ -22,7 +22,7 @@ const TimeTitle = () => {
 }
 
 
-const Modal = ({ closeModal, children }) => {
+const GingerModal = ({ closeModal, children }) => {
 
     const outside = useRef();
 
@@ -42,7 +42,7 @@ const Modal = ({ closeModal, children }) => {
     );
 };
 
-export default Modal;
+export default GingerModal;
 
 const StampLayout = styled.img`
     position: absolute;
