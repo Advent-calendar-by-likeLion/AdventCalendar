@@ -68,12 +68,12 @@ export const InputStyle = styled.input`
 `
 // write.js
 export const WriteTitleDiv = styled.div`
-    width: 159px;
+    width: 200px;
     height: 58px;
 
     font-family: 'Noto Sans KR';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 20px;
     line-height: 29px;
     text-align: center;
