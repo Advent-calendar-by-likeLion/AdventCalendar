@@ -17,6 +17,7 @@ const Write = ({ match, userObj }) => {
     const [nweet, setNweet] = useState("");
     const [nweets, setNweets] = useState([]);
     const [attachment, setAttachment] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const [value, setValue] = useState("")
     const [displayName, setDisplayName] = useState("")
@@ -194,18 +195,14 @@ const Write = ({ match, userObj }) => {
         //history.push("/Nickname");
     }
 
-
-
-    
-
     return (
         <>
         <Container>
             {loading ?
-            <>
+            (<>
                 <div>잠시만 기다려주세요...</div>
-            </> :
-                <>
+            </>) :
+                (<>
                 <LetterStyle src={Letter}/>
                 <WriteTitleDiv>친구의 호텔에 <br/>편지를 보내주세요!</WriteTitleDiv>
                 <Textarea 
@@ -250,7 +247,7 @@ const Write = ({ match, userObj }) => {
                     )}
                 </div>
             </>
-            </>}
+            </>)}
         </Container>
         </>
     )
