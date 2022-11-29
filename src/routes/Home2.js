@@ -36,11 +36,10 @@ const Home2 = ({ userObj }) => {
   const [description, setDescription] = useState("");
   
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isGingerModalOpen, setGingerModalOpen] = useState(false);
   const [msgCount, setMsgCount] = useState(0);
   const [goalCount, setGoalCount] = useState(0);
   const [isFull, setIsFull] = useState(false);
-
-  const [isGingerModalOpen, setGingerModalOpen] = useState(false);
 
   useEffect(() => {
 
@@ -126,7 +125,7 @@ const Home2 = ({ userObj }) => {
           <>
             <RedButton onClick={onClickOpenModal}>오늘의 편지</RedButton>
             <br/>
-            <RedButton onClick={onClickOpenGingerModal}>진저맨 모달 준비 중</RedButton>
+            <RedButton onClick={onClickOpenGingerModal}>진저맨 모달</RedButton>
             <br/>
             <GreenButton onClick={copyUrl}>호텔 링크 복사하기</GreenButton>
             <br/>
