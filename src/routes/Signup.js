@@ -57,7 +57,6 @@ const Signup = ({userObj}) => {
           </InputLayout2>
           <ButtonLayout>
             <RedButton disabled={false} type="submit">내 호텔 만들기</RedButton>
-            <br/>
             <WhiteButton onClick={ () => {
               history.goBack();
             }}>뒤로 가기</WhiteButton>
