@@ -4,7 +4,7 @@ import { dbService, storageService } from "fbase";
 import styled from "styled-components";
 import { Container, WriteTitleDiv, ButtonLayout, LetterStyle } from "./styles/style";
 import LoginBar from '../assets/LoginBar.svg';
-import { RedButton, WhiteButton } from "./styles/buttonstyle";
+import { RedButton, WhiteButton, GreenButton } from "./styles/buttonstyle";
 import Letter from '../assets/Letter.svg';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -231,15 +231,10 @@ const Write = ({ match, userObj }) => {
                     value="Nw"
                 >보내기</RedButton>
             </form>
-            <br/>
-            <WhiteButton onClick={ () => {
-            history.goBack();
-            } } >뒤로 가기</WhiteButton>
-
             <>
                 <br/>
                 <div class="upload-btn-wrapper">
-                    <RedButton>이미지 업로드</RedButton>
+                    <GreenButton>이미지 업로드</GreenButton>
                     <input type="file" accept="image/*" onChange={onFileChange}/>
                     {attachment && (
                         <ImgDiv>
