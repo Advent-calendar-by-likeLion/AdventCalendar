@@ -66,9 +66,13 @@ const Home2 = ({ userObj }) => {
   }, []);
 
   useEffect(() => {
-    if (msgCount == goalCount) {
+    if (msgCount >= goalCount) {
       setIsFull(true);
+    } else {
+      setIsFull(false);
     }
+
+    // true고 date가 local과 같을떄.
   }, [msgCount]);
 
   const initWindowInfo = () => {
@@ -123,7 +127,9 @@ const Home2 = ({ userObj }) => {
           { 
           id === (userObj ? userObj.uid : 0) ?  
           <>
-            <RedButton onClick={onClickOpenModal}>오늘의 편지</RedButton>
+            <RedButton disabled={isFull} onClick={onClickOpenModal}>오늘의 편지</RedButton>
+            
+            {isFull ? <><br/><HotelGuide>* 오늘의 편지 마감! 내일 작성 해주세요.</HotelGuide></>:<></>}
             <br/>
             <RedButton onClick={onClickOpenGingerModal}>진저맨 모달</RedButton>
             <br/>
@@ -256,4 +262,10 @@ const GingerContent = styled.div`
   text-align: center;
   
   color: #000000;
+`
+
+const HotelGuide = styled.div`
+    text-align: center; 
+    font-weight: 500;
+    font-size: 12px;
 `

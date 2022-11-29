@@ -18,6 +18,7 @@ const InitConfigData = ({userObj}) => {
             nickname: "",
             roofColor : "#005452",
             bodyColor : "#AF2010",
+            windowCount : 1,
             windowInfo: {
                 1 : false,
                 2 : false,
