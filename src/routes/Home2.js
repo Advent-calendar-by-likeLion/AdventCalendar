@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import {dbService, authService, storageService} from "fbase"
 import "./styles.css";
 import { GridBox, Hotelbg, HotelContainer } from './styles/HotelStyle';
@@ -7,7 +8,6 @@ import Progressbar from "./Progressbar";
 import Hotel from "../components/Hotel";
 import { RedButton, WhiteButton } from "./styles/buttonstyle";
 import { useHistory, useParams } from "react-router-dom";
-import {  } from "fbase";
 
 import HotelName from "../components/HotelName";
 import Modal from "../components/Modal/Modal";
