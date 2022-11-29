@@ -28,6 +28,16 @@ const Write = ({ match, userObj }) => {
     const [file, setFile] = useState(null);
     const [fileUrl, setFileUrl] = useState("");
 
+    const [goalCount, setGoalCount] = useState(0)
+    
+    useEffect(() => {
+        dbService.collection("AdminConfig").doc("AdminConfig").get()
+        .then((doc) => {
+          setGoalCount(doc.data().goalCount);
+        });
+    }, []);
+
+
     useEffect(() => {
       // textarea scroll height 설정
         ref.current.style.height = "0px";
@@ -38,6 +48,8 @@ const Write = ({ match, userObj }) => {
             setDisplayName(userObj.displayName); 
             uid = userObj.uid; 
         }
+
+      
 
     }, [value]);
     
@@ -63,6 +75,7 @@ const Write = ({ match, userObj }) => {
 
         setNweet("");
         setAttachment("");
+        checkVisible();
         history.push("/writesuccess");
 
     };
@@ -134,10 +147,65 @@ const Write = ({ match, userObj }) => {
 
     const onClearAttachment = () => setAttachment("");
 
+    const checkVisible = () => {
+
+        let msgCount = 0;
+        dbService.collection(id).onSnapshot((snapshot) => {
+            const newArray = snapshot.docs.map((document) => ({
+                id: document.id,
+                ...document.data(),
+            }))
+            if ( newArray.length == goalCount ) {
+              changeVisible();
+            }
+            console.log(msgCount);
+        })
+
+      };
+
+    const changeVisible = () => {
+        dbService.collection("hotelOwner").doc(id).get()
+        .then((doc) => {
+          //console.log(doc.data().windowInfo);
+
+
+        let i = 1;
+        let text = "";
+        while (true) {
+            if (doc.data().windowInfo[i]) continue;
+            /*console.log("doc.data().windowInfo - start")
+            console.log(doc.data().windowInfo)
+            console.log(doc.data().windowInfo[i])
+            doc.data().windowInfo[i] = true;*/
+            changeVisible2(doc.data().windowInfo)
+            break;
+        }
+
+        });
+    }
+
+    const changeVisible2 = async (windowInfoP) => { // Todo: Need to connect DB
+        console.log(windowInfoP);
+        // event.preventDefault();
+        // await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
+        await dbService.collection("hotelOwner").doc(userObj.uid).update({
+            "windowInfo.1" : true, 
+        });
+        //history.push("/Nickname");
+    }
+
+
+
+    
 
     return (
         <>
         <Container>
+            {loading ?
+            <>
+                <div>잠시만 기다려주세요...</div>
+            </> :
+                <>
                 <LetterStyle src={Letter}/>
                 <WriteTitleDiv>친구의 호텔에 <br/>편지를 보내주세요!</WriteTitleDiv>
                 <Textarea 
@@ -182,6 +250,7 @@ const Write = ({ match, userObj }) => {
                     )}
                 </div>
             </>
+            </>}
         </Container>
         </>
     )

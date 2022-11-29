@@ -29,7 +29,7 @@ const Signup = ({userObj}) => {
     try {
       if (password1 == password2) {
         await authService.createUserWithEmailAndPassword(email, password1);
-        history.push("/Nickname");
+        history.push("/InitConfigData");
       } else if (password1 == "" || password2 == "") {
         alert("비밀번호를 입력해주세요.");
       } else if (password1 != password2) {
@@ -38,6 +38,10 @@ const Signup = ({userObj}) => {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  const GoMakeHotel = () => {
+    history.push("/hotelcolor");
   }
 
   return (

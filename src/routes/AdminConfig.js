@@ -1,25 +1,21 @@
 import { dbService } from "fbase";
 
 import styled from 'styled-components';
-import Hotel from '../components/Hotel';
 import { RedButton, WhiteButton } from './styles/buttonstyle';
-import HotelSnow from '../assets/SnowHotel.svg';
 import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { faWeight } from "@fortawesome/free-solid-svg-icons";
 
-const Nickname = ({userObj}) => {
+const AdminConfig = ({userObj}) => {
 
-    const [description, setDescription] = useState("");
-    const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
+    const [goalCount, setGoalCount] = useState(userObj.displayName);
     const history = useHistory();
 
     useEffect(() => {
 
-        dbService.collection("hotelOwner").doc(userObj.uid).get()
+        /*dbService.collection("AdminConfig").doc("AdminConfig").get()
         .then((doc) => {
           setDescription(doc.data().description === "" ? "" : doc.data().description)
-        });
+        });*/
 
     }, []);
 
@@ -27,84 +23,54 @@ const Nickname = ({userObj}) => {
         const {
           target: { value },
         } = event;
-        setNewDisplayName(value);
+        setGoalCount(value);
     };
-
-    const onChangeDesc = (event) => {
-        const {
-          target: { value },
-        } = event;
-        setDescription(value);
-    };
-
 
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        //await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
-        if (userObj.displayName !== newDisplayName) {
-            await userObj.updateProfile({
-                displayName : newDisplayName
-            }).then(function() {
-                var displayName = userObj.displayName;
-            }, function(error) {
-                alert(error);
-            });
-        }
 
-
-        await dbService.collection("hotelOwner").doc(userObj.uid).update({
-            nickname: newDisplayName,
-            description: description.replaceAll("\r\n", "<br>") 
+        await dbService.collection("AdminConfig").doc("AdminConfig").update({
+            goalCount: goalCount,
         });
 
-        history.push("/hotel/" + userObj.uid);
+        alert(`오늘의 편지 갯수 ${goalCount}개 로 변경`);
+        //history.push("/hotel/" + userObj.uid);
     }
     
 
   return (
       <>
         <Container>
-            <div style={{
-                marginTop: "141px",
-                height: "29px",
-                fontSize: "22px",  
-                fontWeight: "bold",
 
-            }}>누구의 진저호텔인가요?</div>
-            <HotelSubCon>
-                <HotelImg src={HotelSnow} />
-            </HotelSubCon>
+            <div style={{marginTop: "141px", fontSize: '30px', fontWeight: "bold"}}>관리자페이지</div>
+            <br/>
+            <div style={{
+                height: "29px",
+                fontSize: "20px",  
+                fontWeight: "500px",
+
+            }}>오늘의 편지 최대 갯수</div>
+
             <NicknameInput>
-                <InputStylenick style={{fontWeight:"bold"}} type="text" placeholder='닉네임' defaultValue={userObj.displayName ? userObj.displayName : ''}
+                <InputStylenick type="text" placeholder='숫자 입력'
                 onChange={onChange}/>
-                    <h1 style={{fontSize: "20px", fontWeight: "bold"}} >의 진저호텔</h1>
             </NicknameInput>
-            <TxtAreaDesc maxLength={1000} type="text" placeholder='내 호텔을 소개해 주세요!' onChange={onChangeDesc}
-            defaultValue={description ? description : ''}
-            />
-            <br/>
-            <br/>
-            <br/>
-            <WhiteButton onClick={() => {
-                history.push("/hotelcolor");
-            }}>호텔 색상 바꾸기</WhiteButton>
-            <br/>
             <br/>
             <form onSubmit={onSubmit}>
-                <RedButton>완성하기</RedButton>
+                <RedButton>편지 갯수 변경</RedButton>
             </form>
 
             <br/>
             <WhiteButton onClick={ () => {
-            history.goBack();
-            } } >뒤로 가기</WhiteButton>
+                history.push("/");
+            } } >시작화면</WhiteButton>
         </Container>
       </>
   )
 }
 
-export default Nickname
+export default AdminConfig
 
 const Container = styled.div`
     margin: 0 auto;
@@ -184,12 +150,4 @@ const InputStylenick = styled.input`
     :focus {
         outline: none;
     }
-`
-const HotelSubCon = styled.div`
-    margin: 0 auto;
-`
-const HotelImg = styled.img`
-    width: 210px;
-    height: 315.16px;
-    margin-top: 27px;
 `
