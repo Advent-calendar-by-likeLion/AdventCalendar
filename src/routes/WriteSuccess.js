@@ -2,7 +2,7 @@ import { HotelImg, LetterStyle, WriteSubTitle } from "./styles/style"
 import Letter from '../assets/Letter.svg';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import { RedButton, WhiteButton } from './styles/buttonstyle';
+import { RedButton, WhiteButton, GreenButton } from './styles/buttonstyle';
 import { useState, useEffect } from 'react';
 import Hotel from '../assets/SnowHotel.svg';
 import { ColorRing } from  'react-loader-spinner'
@@ -115,8 +115,8 @@ const WriteSuccess= ({userObj}) => {
                     {
 
                     }
-                    <RedButton onClick={onclickWriteLetterBar}>편지 더 쓰러 가기</RedButton>
-                    <WhiteButton onClick={onclickMyHotelBar}>내 호텔 보러 가기</WhiteButton>
+                    <RedButton onClick={onclickWriteLetterBar}>편지 더 쓰기</RedButton>
+                    <GreenButton onClick={onclickMyHotelBar}>내 호텔 가기</GreenButton>
                 </ButtonLayout>
             </Container>
     </>
