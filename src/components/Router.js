@@ -8,6 +8,7 @@ import WriteSuccess from "../routes/WriteSuccess";
 import Nickname from '../routes/Nickname';
 import HotelColor from '../routes/HotelColor';
 import InitConfigData from "../routes/InitConfigData";
+import AdminConfig from "../routes/AdminConfig";
 
 
 
@@ -43,7 +44,10 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             </Route>
             <Route exact path="/signup">
               <Signup userObj={userObj}/>
-            </Route>          
+            </Route>
+            <Route exact path="/AdminConfig">
+              <AdminConfig userObj={userObj}/>
+            </Route>
           </>
         ) : (
           <>
@@ -67,6 +71,9 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             </Route>
             <Route exact path="/hotelcolor">
               <HotelColor userObj={userObj} />
+            </Route>
+            <Route exact path="/AdminConfig">
+              <AdminConfig userObj={userObj}/>
             </Route>
           </>
         )}

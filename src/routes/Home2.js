@@ -63,7 +63,10 @@ const Home2 = ({ userObj }) => {
   }, [msgCount]);
 
   const initWindowInfo = () => {
-    setGoalCount(3);
+    dbService.collection("AdminConfig").doc("AdminConfig").get()
+      .then((doc) => {
+        setGoalCount(doc.data().goalCount);
+      });
   }
 
   const onClickOpenModal = () => {
