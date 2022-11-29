@@ -6,7 +6,7 @@ import { GridBox, Hotelbg, HotelContainer } from './styles/HotelStyle';
 import { Container, TitleDiv, TitleDiv2 } from "./styles/style";
 import Progressbar from "./Progressbar";
 import Hotel from "../components/Hotel";
-import { RedButton, WhiteButton } from "./styles/buttonstyle";
+import { RedButton, WhiteButton, GreenButton } from "./styles/buttonstyle";
 import { useHistory, useParams } from "react-router-dom";
 
 import HotelName from "../components/HotelName";
@@ -92,6 +92,14 @@ const Home2 = ({ userObj }) => {
     setModalOpen2((prev) => !prev);
   }
 
+  const onClickOpenGingerModal = () => {
+    setModalOpen(true);
+  }
+
+  const onClickCloseGingerModal = () => {
+    setModalOpen((prev) => !prev);
+  }
+
   const onLogOutClick = () => {
     authService.signOut();
     history.push("/");
@@ -124,7 +132,9 @@ const Home2 = ({ userObj }) => {
           <>
             <RedButton onClick={onClickOpenModal}>오늘의 편지</RedButton>
             <br/>
-            <RedButton onClick={copyUrl}>호텔 링크 복사하기</RedButton>
+            <RedButton onClick={onClickOpenGingerModal}>진저맨 모달 준비 중</RedButton>
+            <br/>
+            <GreenButton onClick={copyUrl}>호텔 링크 복사하기</GreenButton>
             <br/>
             <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
             <Footer />
@@ -137,6 +147,21 @@ const Home2 = ({ userObj }) => {
           </>
           }          
           {isModalOpen && <Modal closeModal={onClickCloseModal}>
+                            <h1>도착한 편지</h1>
+                            <CardLayout>
+                            {nweets.map((nweet) => (
+                            <MessageCard>
+                                <Nweet 
+                                  key={nweet.id} 
+                                  nweetObj={nweet}
+                                  isOwner={nweet.creatorId === userObj.uid}
+                                />
+                            </MessageCard>
+                            ))}
+                            </CardLayout>
+                          </Modal>}
+
+          {isModalOpen && <Modal closeModal={onClickCloseGingerModal}>
                             <h1>도착한 편지</h1>
                             <CardLayout>
                             {nweets.map((nweet) => (

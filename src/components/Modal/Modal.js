@@ -50,8 +50,8 @@ const StampLayout = styled.img`
   position: absolute;
   width: 80px;
   height: 80px;
-  left: 210px;
-  top: -28px
+  left: 207.5px;
+  top: -25px
 `
 
 const TimeTitleLayout = styled.div`
