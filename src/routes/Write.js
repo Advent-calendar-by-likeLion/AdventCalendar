@@ -170,7 +170,6 @@ const Write = ({ match, userObj }) => {
     const changeVisible = () => {
         dbService.collection("hotelOwner").doc(id).get().then((doc) => {
         let i = 1; // window day count
-        let text = "";
         while (true) {
             if (doc.data().windowInfo[i]) {
                 i++;
@@ -184,13 +183,9 @@ const Write = ({ match, userObj }) => {
     }
 
     const changeVisible2 = async (i) => { // Todo: Need to connect DB
-        let a = `windowInfo.2`;
-        // event.preventDefault();
-        // await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
         await dbService.collection("hotelOwner").doc(userObj.uid).update({
              [`windowInfo.${i}`] : true  
         });
-        //history.push("/Nickname");
     }
 
     return (
