@@ -42,7 +42,8 @@ const Home2 = ({ userObj }) => {
   const [isFull, setIsFull] = useState(false);
 
   useEffect(() => {
-
+    
+    initWindowInfo();
     if (userObj) {
       uid = userObj.uid;
     }     
@@ -60,17 +61,19 @@ const Home2 = ({ userObj }) => {
       setMsgCount(newArray.length);
       setNweets(newArray);
 
-      initWindowInfo();
     })
 
   }, []);
 
   useEffect(() => {
-    if (msgCount >= goalCount) {
-      setIsFull(true);
-    } else {
-      setIsFull(false);
-    }
+    
+    dbService.collection("hotelOwner").doc(id).get().then((doc) => {
+      if (msgCount >= goalCount && doc.data().windowInfo[doc.data().windowCount]) {
+        setIsFull(true);
+      } else {
+        setIsFull(false);
+      }
+    });
 
     // true고 date가 local과 같을떄.
   }, [msgCount]);
