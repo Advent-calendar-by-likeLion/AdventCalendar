@@ -38,11 +38,16 @@ const HotelColor = ({userObj}) => {
 
     }
 
-    const onSubmit = async (event) => { // Todo: Need to connect DB
+    const onSubmit = async (event) => {
+        history.push("/hotel/" + userObj.uid);
+    }
+    
+
+    /* const onSubmit = async (event) => { // Todo: Need to connect DB
         // event.preventDefault();
         // await dbService.collection("hotelOwner").doc(userObj.uid).update({nickname : nickname});
         // history.push("/hotel/" + userObj.uid);
-    }
+    } */
 
   return (
       <>
@@ -50,8 +55,8 @@ const HotelColor = ({userObj}) => {
             <div style={{
                 marginTop: "141px",
                 height: "29px",
-                fontSize: "20px",
-                fontWeight: "500px",
+                fontSize: "22px",
+                fontWeight: "bold",
                 position:"relative",
             }}>
                 내 호텔은 무슨 색인가요?
@@ -89,9 +94,9 @@ const HotelColor = ({userObj}) => {
         <br/>
         <br/>
         <br/>
-        <Link to="./Nickname">
-            <RedButton>다음으로</RedButton>
-        </Link>
+        <form onSubmit={onSubmit}>
+                <RedButton>완성하기</RedButton>
+        </form>
     </Container>
     </>
   )
@@ -108,18 +113,14 @@ const RoofLayout = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
     position: relative;
-
     top: 5px;
 `
 
 const NoRoofWall = styled.img`
     width: 330px;
     height: 318.16px;
-
     position: absolute;
-
 `
 
 const WallLayout = styled.div` 
@@ -130,7 +131,6 @@ const ColorHotelLayout = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin-top: 27px;
 `
 const PalleteLayout = styled.div`
@@ -145,4 +145,5 @@ const PalleteFlex = styled.div`
     display: flex;
     flex-direction: row;
     gap: 3px;
+    justify-content: center;
 `

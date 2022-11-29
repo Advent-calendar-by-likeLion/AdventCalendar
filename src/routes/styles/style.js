@@ -12,6 +12,19 @@ export const HotelImg = styled.img`
     margin-top: 36px;
 `
 export const TitleDiv = styled.div`
+    width: auto;
+    height: 17px;
+    text-align: center;
+    padding-top: 3px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #000000;
+`
+export const TitleDiv2 = styled.div`
     width: 200px;
     height: 17px;
     text-align: center;
@@ -19,7 +32,7 @@ export const TitleDiv = styled.div`
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 17px;
 
     color: #000000;

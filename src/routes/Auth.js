@@ -6,6 +6,7 @@ import Github from '../assets/Github.svg';
 import { Container } from './styles/style';
 import styled from 'styled-components';
 import { useHistory } from "react-router-dom";
+import { dbService } from "fbase";
 
 const Auth = ( {userObj} ) => {
     const history = useHistory();
@@ -22,8 +23,16 @@ const Auth = ( {userObj} ) => {
         }
         try {
             await authService.signInWithPopup(provider);
-            //addHotelOwner();
-            history.push("/Nickname");
+            const id = authService.currentUser.uid;
+            dbService.collection("hotelOwner").doc(id).get()
+            .then((doc) => {
+                try {
+                    const userNickname = doc.data().nickname;
+                    history.push("/hotel/" + id);
+                } catch (error) {
+                    history.push("/Nickname");
+                }
+            });
         } catch (error) {
             console.log(error.message);
         }

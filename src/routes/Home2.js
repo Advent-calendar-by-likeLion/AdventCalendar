@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import {authService, storageService} from "fbase"
+import {dbService, authService, storageService} from "fbase"
 import "./styles.css";
 import styled from "styled-components";
 import Hotel2 from '../assets/Hotel2.svg';
 import { GridBox, Hotelbg, HotelContainer } from './styles/HotelStyle';
-import { Container, TitleDiv } from "./styles/style";
+import { Container, TitleDiv, TitleDiv2 } from "./styles/style";
 import Progressbar from "./Progressbar";
 import Hotel from "../components/Hotel";
 import { RedButton, WhiteButton } from "./styles/buttonstyle";
 import { useHistory, useParams } from "react-router-dom";
-import { dbService } from "fbase";
+import {  } from "fbase";
 
 import HotelName from "../components/HotelName";
 import Modal from "../components/Modal/Modal";
@@ -23,16 +23,16 @@ const Home2 = ({ userObj }) => {
     history.push("/write/" + id);
   }
     
-  const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
-  const [attachment, setAttachment] = useState("");
-  const [isModalOpen, setModalOpen] = useState(false);
   let uid = 0;
-  let msgSize1 = 0;
-
-  const [msgSize, setMsgSize] = useState(0);
+  
   const [displayName, setDisplayName] = useState("");
   const [description, setDescription] = useState("");
+  
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [msgCount, setMsgCount] = useState(0);
+  const [goalCount, setGoalCount] = useState(0);
+  const [isFull, setIsFull] = useState(false);
 
   useEffect(() => {
 
@@ -50,11 +50,23 @@ const Home2 = ({ userObj }) => {
           id: document.id,
           ...document.data(),
       }))
-      setMsgSize(newArray.length);
+      setMsgCount(newArray.length);
       setNweets(newArray);
+
+      initWindowInfo();
     })
 
   }, []);
+
+  useEffect(() => {
+    if (msgCount == goalCount) {
+      setIsFull(true);
+    }
+  }, [msgCount]);
+
+  const initWindowInfo = () => {
+    setGoalCount(3);
+  }
 
   const onClickOpenModal = () => {
     setModalOpen(true);
@@ -82,14 +94,14 @@ const Home2 = ({ userObj }) => {
   return (
     <>
       <HotelContainer> 
-        <Progressbar msgCount={msgSize}/>
+        <Progressbar msgCount={msgCount} goalCount={goalCount}/>
         <br/>
         <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
         <HotelName userObj={userObj} displayName={displayName}/>
         <br/>
-        <TitleDiv style={{marginBottom:'10px'}}>{description}</TitleDiv>
+        <TitleDiv2 style={{marginBottom:'10px'}}>{description}</TitleDiv2>
           {/* <HotelName userObj={userObj} /> */}
-          <Hotel />
+          <Hotel/>
           { 
           
           id === (userObj ? userObj.uid : 0) ?  
