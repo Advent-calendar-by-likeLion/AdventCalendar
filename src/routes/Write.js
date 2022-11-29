@@ -8,6 +8,9 @@ import { RedButton, WhiteButton } from "./styles/buttonstyle";
 import Letter from '../assets/Letter.svg';
 import { useParams, useHistory } from 'react-router-dom';
 
+// image resizing
+import imageCompression from "browser-image-compression";
+
 const Write = ({ match, userObj }) => {
     const {id} = useParams(); // hetelOwnerId
 
@@ -21,6 +24,10 @@ const Write = ({ match, userObj }) => {
     const history = useHistory();
     let uid = 0;
 
+    // image resizing 관련
+    const [file, setFile] = useState(null);
+    const [fileUrl, setFileUrl] = useState("");
+
     const [goalCount, setGoalCount] = useState(0)
     
     useEffect(() => {
@@ -33,14 +40,14 @@ const Write = ({ match, userObj }) => {
 
     useEffect(() => {
       // textarea scroll height 설정
-      ref.current.style.height = "0px";
-      const scrollHeight = ref.current.scrollHeight;
-      ref.current.style.height = scrollHeight + "px";
+        ref.current.style.height = "0px";
+        const scrollHeight = ref.current.scrollHeight;
+        ref.current.style.height = scrollHeight + "px";
 
-      if (userObj) {
-        setDisplayName(userObj.displayName); 
-        uid = userObj.uid; 
-      }
+        if (userObj) {
+            setDisplayName(userObj.displayName); 
+            uid = userObj.uid; 
+        }
 
       
 
@@ -76,7 +83,7 @@ const Write = ({ match, userObj }) => {
     const onChange = (event) => {
         event.preventDefault();
         const {
-          target: { value },
+            target: { value },
         } = event;
         setNweet(value);
 
@@ -84,12 +91,12 @@ const Write = ({ match, userObj }) => {
         const v = event.target.value
         setValue(v)
 
-      };
+        };
 
     const onChangeNm = (event) => {
         event.preventDefault();
         const {
-          target: { displayName },
+            target: { displayName },
         } = event;
         setDisplayName(displayName);
 
@@ -97,13 +104,35 @@ const Write = ({ match, userObj }) => {
         const v = event.target.value;
         setDisplayName(v);
 
-      };
+        };
 
-    const onFileChange = (event) => {
+    const onFileChange = async (event) => {
         const {
             target: { files },
         } = event;
         const theFile = files[0];
+
+        // image resize 옵션 설정
+        const options = {
+            maxSizeMB: 2,
+            maxWidthOrHeight: 100
+        }
+
+        try {
+            const compressedFile = await imageCompression(theFile, options);
+            setFile(compressedFile);
+
+            // resize된 이미지의 url을 받아 fileUrl에 저장
+            const promise = imageCompression.getDataUrlFromFile(compressedFile);
+            promise.then(result => {
+                setFileUrl(result);
+            })
+        } catch (error) {
+            console.log(error);
+        }
+
+        console.log("f : " +fileUrl);
+
         const reader = new FileReader();
         reader.onloadend = (finishedEvent) => {
             const {
