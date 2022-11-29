@@ -2,7 +2,7 @@ import { dbService } from "fbase";
 
 import styled from 'styled-components';
 import Hotel from '../components/Hotel';
-import { RedButton, WhiteButton } from './styles/buttonstyle';
+import { RedButton, WhiteButton, GreenButton } from './styles/buttonstyle';
 import HotelSnow from '../assets/SnowHotel.svg';
 import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
@@ -86,10 +86,12 @@ const Nickname = ({userObj}) => {
             <br/>
             <br/>
             <br/>
-            <WhiteButton onClick={() => {
+            <GreenButton onClick={() => {
                 history.push("/hotelcolor");
-            }}>호텔 색상 바꾸기</WhiteButton>
+            }}>호텔 색상 정하기</GreenButton>
             <br/>
+            <br/>
+            <HotelGuide>* 호텔 이름과 색상은 나중에도 수정할 수 있어요!</HotelGuide>
             <br/>
             <form onSubmit={onSubmit}>
                 <RedButton>완성하기</RedButton>
@@ -192,4 +194,9 @@ const HotelImg = styled.img`
     width: 210px;
     height: 315.16px;
     margin-top: 27px;
+`
+const HotelGuide = styled.div`
+    text-align: center; 
+    font-weight: 500;
+    font-size: 12px;
 `
