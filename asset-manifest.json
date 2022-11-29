@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/AdventCalendar/static/css/main.05582816.chunk.css",
-    "main.js": "/AdventCalendar/static/js/main.8be8ae1e.chunk.js",
-    "main.js.map": "/AdventCalendar/static/js/main.8be8ae1e.chunk.js.map",
+    "main.js": "/AdventCalendar/static/js/main.dc4d87cd.chunk.js",
+    "main.js.map": "/AdventCalendar/static/js/main.dc4d87cd.chunk.js.map",
     "runtime-main.js": "/AdventCalendar/static/js/runtime-main.5bb88139.js",
     "runtime-main.js.map": "/AdventCalendar/static/js/runtime-main.5bb88139.js.map",
-    "static/js/2.c05cbb37.chunk.js": "/AdventCalendar/static/js/2.c05cbb37.chunk.js",
-    "static/js/2.c05cbb37.chunk.js.map": "/AdventCalendar/static/js/2.c05cbb37.chunk.js.map",
+    "static/js/2.dbac16dc.chunk.js": "/AdventCalendar/static/js/2.dbac16dc.chunk.js",
+    "static/js/2.dbac16dc.chunk.js.map": "/AdventCalendar/static/js/2.dbac16dc.chunk.js.map",
     "index.html": "/AdventCalendar/index.html",
     "static/css/main.05582816.chunk.css.map": "/AdventCalendar/static/css/main.05582816.chunk.css.map",
-    "static/js/2.c05cbb37.chunk.js.LICENSE.txt": "/AdventCalendar/static/js/2.c05cbb37.chunk.js.LICENSE.txt",
+    "static/js/2.dbac16dc.chunk.js.LICENSE.txt": "/AdventCalendar/static/js/2.dbac16dc.chunk.js.LICENSE.txt",
     "static/media/Cookie.9b019560.svg": "/AdventCalendar/static/media/Cookie.9b019560.svg",
     "static/media/DisLoginBar.3b9d2d32.svg": "/AdventCalendar/static/media/DisLoginBar.3b9d2d32.svg",
     "static/media/DisSignup.b2dce7f0.svg": "/AdventCalendar/static/media/DisSignup.b2dce7f0.svg",
@@ -27,8 +27,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.5bb88139.js",
-    "static/js/2.c05cbb37.chunk.js",
+    "static/js/2.dbac16dc.chunk.js",
     "static/css/main.05582816.chunk.css",
-    "static/js/main.8be8ae1e.chunk.js"
+    "static/js/main.dc4d87cd.chunk.js"
   ]
 }
