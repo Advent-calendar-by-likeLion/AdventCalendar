@@ -90,3 +90,17 @@ export const CardLayout = styled.div`
     flex-direction: column;
     gap: 35px;
 `
+
+export const GingerCardLayout = styled.div`
+    position: relative;
+    align-items: center;
+
+    width: 279px;
+    height: 435px;
+    padding-top: 10px;
+    padding-bottom: 35px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+`
