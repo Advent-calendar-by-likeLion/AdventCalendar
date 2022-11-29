@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import reset from "styled-reset"
 import { Snowfall } from 'react-snowfall';
+import { useEffect } from 'react';
 
 export const MediaDiv = styled.div`
     margin: 0px auto;
@@ -13,6 +14,7 @@ export const MediaDiv = styled.div`
     @media screen and (max-width: 768px) {
         width: 100%;
     }
+    overflow: auto;
 `;
 
 export const GlobalStyle = createGlobalStyle`
