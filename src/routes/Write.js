@@ -146,7 +146,9 @@ const Write = ({ match, userObj }) => {
                         <ImgDiv>
                             <br/>
                             <img src={attachment} width="100%" />
-                            <button onClick={onClearAttachment}>취소</button>
+                            <br/>
+                            <br/> 
+                            <WhiteButton style={{width: 60, height: 22}} onClick={onClearAttachment}>취소</WhiteButton>
                         </ImgDiv>
                     )}
                 </div>
@@ -216,4 +218,5 @@ const Input = styled.input`
 
 const ImgDiv = styled.div`
     position: absolute;
+    align-items: center;
 `
