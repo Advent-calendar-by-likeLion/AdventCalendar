@@ -40,6 +40,10 @@ const Signup = ({userObj}) => {
     }
   }
 
+  const GoMakeHotel = () => {
+    history.push("/hotelcolor");
+  }
+
   return (
       <>
       <Container>

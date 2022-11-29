@@ -105,10 +105,16 @@ const Write = ({ match, userObj }) => {
 
     const onClearAttachment = () => setAttachment("");
 
+    const [loading, setLoading] = useState(false);
 
     return (
         <>
         <Container>
+            {loading ?
+            <>
+                <div>잠시만 기다려주세요...</div>
+            </> :
+                <>
                 <LetterStyle src={Letter}/>
                 <WriteTitleDiv>친구의 호텔에 <br/>편지를 보내주세요!</WriteTitleDiv>
                 <Textarea 
@@ -151,6 +157,7 @@ const Write = ({ match, userObj }) => {
                     )}
                 </div>
             </>
+            </>}
         </Container>
         </>
     )

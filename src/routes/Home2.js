@@ -15,6 +15,9 @@ import HotelName from "../components/HotelName";
 import Modal from "../components/Modal/Modal";
 import { CardLayout, MessageCard } from "../components/Modal/styles";
 import Nweet from "../components/Nweet";
+import CookieImg from '../assets/JinegrMan.svg';
+import MessageModal from "../components/Modal/MessageModal";
+import Cookie2 from '../assets/Cookie.svg';
 
 const Home2 = ({ userObj }) => {
   const history = useHistory();
@@ -24,8 +27,12 @@ const Home2 = ({ userObj }) => {
   }
     
   const [nweets, setNweets] = useState([]);
+  const [attachment, setAttachment] = useState("");
+  const [isModalOpen2, setModalOpen2] = useState(false);
+  const [isModalLetter, setIsModalLetter] = useState(false);
+
   let uid = 0;
-  
+  const [msgSize, setMsgSize] = useState(0);
   const [displayName, setDisplayName] = useState("");
   const [description, setDescription] = useState("");
   
@@ -72,8 +79,16 @@ const Home2 = ({ userObj }) => {
     setModalOpen(true);
   }
 
+  const onClickOpenModal2 = () => {
+    setModalOpen2(true);
+  }
+
   const onClickCloseModal = () => {
     setModalOpen((prev) => !prev);
+  }
+
+  const onClickCloseModal2 = () => {
+    setModalOpen2((prev) => !prev);
   }
 
   const onLogOutClick = () => {
@@ -111,6 +126,7 @@ const Home2 = ({ userObj }) => {
             <RedButton onClick={copyUrl}>호텔 링크 복사하기</RedButton>
             <br/>
             <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
+            <Footer />
           </>
           :  
           <>
@@ -140,4 +156,55 @@ const Home2 = ({ userObj }) => {
 
 export default Home2;
 
+const Cookie = styled.img`
+  width: 180px;
+  height: 218px;
 
+
+`
+
+const ModalLayout2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const ReadLetterBtn = styled.button`
+      width: 108px;
+      height: 29px;
+      border-width: 1.5px;
+      border-style: dashed;
+      border-color: white;
+      border-radius: 1px;
+      background-color: #AF2010;
+      outline-width: 9px;
+      outline-color:  #AF2010;
+      outline-style: solid;
+
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: white;
+      
+      margin-top: 9px;
+      margin-bottom: 9px;
+      :disabled {
+          background-color: rgba(175, 32, 16, 0.5);
+          outline-color:  rgba(175, 32, 16, 0.5);
+    }
+`
+const SmallCookie = styled.img`
+  width: 40px;
+  height: 54px;
+  position: relative;
+  top: 10pxpx;
+  margin: 0 auto;
+`
+const TextDiv = styled.div`
+  width: 182px;
+  height: 66px;
+  margin-bottom: 30px;
+`
+const Footer = styled.div`
+  height: 75px;
+`

@@ -77,6 +77,7 @@ const HotelColor = ({userObj}) => {
                 <NoRoofWall src={NoRoofwall} />
             </ColorHotelLayout>
         <PalleteLayout>
+        <PalleteBox>
         <TextStyle>지붕</TextStyle>
             <PalleteFlex>
                 <div class="custom-radios">
@@ -90,6 +91,7 @@ const HotelColor = ({userObj}) => {
                     {colors.map((value) => <ColorPickerBody changeBody={changeBody} color={value} type="body"/>)}
                 </div>
             </PalleteFlex>
+        </PalleteBox>
         </PalleteLayout>
         <br/>
         <br/>
@@ -145,5 +147,9 @@ const PalleteFlex = styled.div`
     display: flex;
     flex-direction: row;
     gap: 3px;
+    margin: 0 auto;
     justify-content: center;
+`
+const PalleteBox = styled.div`
+
 `
