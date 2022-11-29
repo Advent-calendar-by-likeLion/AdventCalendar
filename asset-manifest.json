@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/AdventCalendar/static/css/main.bb6c2bf4.chunk.css",
-    "main.js": "/AdventCalendar/static/js/main.128b598c.chunk.js",
-    "main.js.map": "/AdventCalendar/static/js/main.128b598c.chunk.js.map",
+    "main.css": "/AdventCalendar/static/css/main.3280b9c0.chunk.css",
+    "main.js": "/AdventCalendar/static/js/main.e53d17a1.chunk.js",
+    "main.js.map": "/AdventCalendar/static/js/main.e53d17a1.chunk.js.map",
     "runtime-main.js": "/AdventCalendar/static/js/runtime-main.5bb88139.js",
     "runtime-main.js.map": "/AdventCalendar/static/js/runtime-main.5bb88139.js.map",
-    "static/js/2.e723853b.chunk.js": "/AdventCalendar/static/js/2.e723853b.chunk.js",
-    "static/js/2.e723853b.chunk.js.map": "/AdventCalendar/static/js/2.e723853b.chunk.js.map",
+    "static/js/2.137426f5.chunk.js": "/AdventCalendar/static/js/2.137426f5.chunk.js",
+    "static/js/2.137426f5.chunk.js.map": "/AdventCalendar/static/js/2.137426f5.chunk.js.map",
     "index.html": "/AdventCalendar/index.html",
-    "static/css/main.bb6c2bf4.chunk.css.map": "/AdventCalendar/static/css/main.bb6c2bf4.chunk.css.map",
-    "static/js/2.e723853b.chunk.js.LICENSE.txt": "/AdventCalendar/static/js/2.e723853b.chunk.js.LICENSE.txt",
+    "static/css/main.3280b9c0.chunk.css.map": "/AdventCalendar/static/css/main.3280b9c0.chunk.css.map",
+    "static/js/2.137426f5.chunk.js.LICENSE.txt": "/AdventCalendar/static/js/2.137426f5.chunk.js.LICENSE.txt",
     "static/media/DisLoginBar.3c0e8c3b.svg": "/AdventCalendar/static/media/DisLoginBar.3c0e8c3b.svg",
     "static/media/DisSignup.5bbd4721.svg": "/AdventCalendar/static/media/DisSignup.5bbd4721.svg",
     "static/media/Github.426ae318.svg": "/AdventCalendar/static/media/Github.426ae318.svg",
@@ -25,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.5bb88139.js",
-    "static/js/2.e723853b.chunk.js",
-    "static/css/main.bb6c2bf4.chunk.css",
-    "static/js/main.128b598c.chunk.js"
+    "static/js/2.137426f5.chunk.js",
+    "static/css/main.3280b9c0.chunk.css",
+    "static/js/main.e53d17a1.chunk.js"
   ]
 }
