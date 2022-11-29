@@ -27,6 +27,7 @@ const WriteSuccess= ({userObj}) => {
             <Container>
             <LetterStyle src={Letter} />
                 <WriteSuccessTitle>편지를 보냈어요!</WriteSuccessTitle>
+                <br/>
                 <WriteSubTitle>아직 내 호텔이 없나요?</WriteSubTitle>
                 <WriteSubTitle>내 호텔을 만들면</WriteSubTitle>
                 <WriteSubTitle>친구에게 편지를 받을 수 있어요.</WriteSubTitle>
@@ -43,6 +44,7 @@ const WriteSuccess= ({userObj}) => {
             <Container>
             <LetterStyle src={Letter} />
                 <WriteSuccessTitle>편지를 성공적으로 보냈어요!</WriteSuccessTitle>
+                <br/>
                 <WriteSubTitle>이젠 어떤 걸 해볼까요?</WriteSubTitle>
                 <ButtonLayout>
                     {
@@ -60,7 +62,9 @@ export default WriteSuccess
 
 const WriteSuccessTitle = styled.div`
     text-align: center;
-    width: 210px;
+    font-weight: bold;
+    font-size: 20px;
+    width: 280px;
     height: 29px;
 `
 const ButtonLayout = styled.div`
