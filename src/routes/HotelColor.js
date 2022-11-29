@@ -41,6 +41,14 @@ const HotelColor = ({userObj}) => {
     const onSubmit = async (event) => {
         history.push("/hotel/" + userObj.uid);
     }
+
+    const dbEx = async (event) => {
+        await dbService.collection("hotelOwner").doc(userObj.uid).update({
+            roofColor : roofColor,
+            bodyColor : bodyColor,
+        });
+        history.push("/Nickname");
+    }
     
 
     /* const onSubmit = async (event) => { // Todo: Need to connect DB
