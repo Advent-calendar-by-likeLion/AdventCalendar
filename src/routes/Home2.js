@@ -212,8 +212,6 @@ const Home2 = ({ userObj }) => {
             <RedButton disabled={!isFull} onClick={onClickOpenGingerModal}>오늘의 편지</RedButton>
             {!isFull ? <><br/><HotelGuide>* 오늘의 편지를 채워야 열람할 수 있어요! *</HotelGuide></>:<></>}
             <br/>
-            <RedButton onClick={onClickOpenGingerModal}>진저맨 모달</RedButton>
-            <br/>
             <GreenButton onClick={copyUrl}>호텔 링크 복사하기</GreenButton>
             <br/>
             <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
