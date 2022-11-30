@@ -81,7 +81,7 @@ const Hotel = () => {
 
                 ))
             } </GridBox>
-                      {isModalOpen && <Modal closeModal={onClickCloseModal}>
+                      {isModalOpen && <Modal dateFormat={nweets[0].dateFormat} closeModal={onClickCloseModal}>
                             <h1>도착한 편지</h1>
                             <CardLayout>
                             {nweets.map((nweet) => (
