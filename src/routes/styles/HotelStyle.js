@@ -17,7 +17,7 @@ export const Hotelbg = styled.img`
 export const GridBox = styled.div `
     position: absolute;
     display: grid;
-    width: 205.69px;
+    width: 235px;
     height: 358.8px;
 
     margin-top: 30px;
