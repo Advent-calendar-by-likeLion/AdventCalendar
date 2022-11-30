@@ -433,8 +433,8 @@ const LandingButtonHotel1 = styled.div`
     position: relative;
     width: 35px;
     height: 35px;
-    left: 130px;
-    top: -200px;
+    left: 157px;
+    top: -203px;
 `
 const LandingContent5 = styled.div`
     position: relative;
