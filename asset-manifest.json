@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/AdventCalendar/static/css/main.3280b9c0.chunk.css",
-    "main.js": "/AdventCalendar/static/js/main.2a44b1a5.chunk.js",
-    "main.js.map": "/AdventCalendar/static/js/main.2a44b1a5.chunk.js.map",
+    "main.js": "/AdventCalendar/static/js/main.b0f30a8d.chunk.js",
+    "main.js.map": "/AdventCalendar/static/js/main.b0f30a8d.chunk.js.map",
     "runtime-main.js": "/AdventCalendar/static/js/runtime-main.5bb88139.js",
     "runtime-main.js.map": "/AdventCalendar/static/js/runtime-main.5bb88139.js.map",
     "static/js/2.66305b65.chunk.js": "/AdventCalendar/static/js/2.66305b65.chunk.js",
@@ -30,6 +30,6 @@
     "static/js/runtime-main.5bb88139.js",
     "static/js/2.66305b65.chunk.js",
     "static/css/main.3280b9c0.chunk.css",
-    "static/js/main.2a44b1a5.chunk.js"
+    "static/js/main.b0f30a8d.chunk.js"
   ]
 }
