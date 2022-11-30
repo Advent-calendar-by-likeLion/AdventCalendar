@@ -72,7 +72,7 @@ const Home2 = ({ userObj }) => {
 
 
   }, []);
-
+/*
   useEffect(() => {
     
     dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
@@ -95,6 +95,7 @@ const Home2 = ({ userObj }) => {
 
     // true고 date가 local과 같을떄.
   }, [msgCount]);
+  */
 
   useEffect(() => {
     dbService.collection(`${id}_${windowCount}`).onSnapshot((snapshot) => {
