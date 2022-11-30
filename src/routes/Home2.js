@@ -54,6 +54,7 @@ const Home2 = ({ userObj }) => {
   const [goalCount, setGoalCount] = useState(0);
   const [isFull, setIsFull] = useState(false);
   const [isMsgFull, setIsMsgFull] = useState(false);
+  const [isGoLetter, setIsGoLetter] = useState(false);
 
   useEffect(() => {
     Config();
@@ -158,6 +159,7 @@ const Home2 = ({ userObj }) => {
 
   const onClickCloseGingerModal = () => {
     setGingerModalOpen((prev) => !prev);
+    setIsGoLetter((prev) => !prev);
   }
 
   const [isLandingModalOpen, setLandingModalOpen] = useState(false);
@@ -175,6 +177,10 @@ const Home2 = ({ userObj }) => {
     authService.signOut();
     history.push("/");
   };
+
+  const onClickGoLetter = () => {
+    setIsGoLetter(true);
+  }
 
 
   //링크 복사 버튼 코드
@@ -201,7 +207,7 @@ const Home2 = ({ userObj }) => {
           id === (userObj ? userObj.uid : 0) ?  
           
           <>
-            <RedButton disabled={!isFull} onClick={onClickOpenModal}>오늘의 편지</RedButton>
+            <RedButton disabled={!isFull} onClick={onClickOpenGingerModal}>오늘의 편지</RedButton>
             {!isFull ? <><br/><HotelGuide>* 오늘의 편지를 채워야 열람할 수 있어요! *</HotelGuide></>:<></>}
             <br/>
             <RedButton onClick={onClickOpenGingerModal}>진저맨 모달</RedButton>
@@ -230,8 +236,36 @@ const Home2 = ({ userObj }) => {
           }   
           <LandingButtonHotel1>
             <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
-          </LandingButtonHotel1>       
-          {isModalOpen && <Modal closeModal={onClickCloseModal}>
+          </LandingButtonHotel1>      
+          {isGingerModalOpen && <GingerModal closeModal={onClickCloseGingerModal}>
+                        {isGoLetter ? <Modal closeModal={onClickCloseModal}>
+                                          <h1>도착한 편지</h1>
+                                          <CardLayout>
+                                          {nweets.map((nweet) => (
+                                          <MessageCard>
+                                              <Nweet 
+                                                key={nweet.id} 
+                                                nweetObj={nweet}
+                                                isOwner={nweet.creatorId === userObj.uid}
+                                              />
+                                          </MessageCard>
+                                          ))}
+                                          </CardLayout>
+                                        </Modal> :
+                            <GingerCardLayout>
+                              <GingerTitle>벨보이 진저맨</GingerTitle>
+                              <br/>
+                              <GingerContent>진저호텔에 온 걸 환영한다!
+                                              <br/>
+                                              크리스마스에 진저호텔이라...
+                                              <br/>
+                                              탁월한 선택!
+                              </GingerContent>
+                              <GingerCookie src={BellBoyCookie} />
+                              <RedRoundButton onClick={onClickGoLetter}>편지 읽기</RedRoundButton>
+                            </GingerCardLayout>}
+                          </GingerModal>} 
+          {/* {isModalOpen && <Modal closeModal={onClickCloseModal}>
                             <h1>도착한 편지</h1>
                             <CardLayout>
                             {nweets.map((nweet) => (
@@ -258,7 +292,7 @@ const Home2 = ({ userObj }) => {
                               <GingerCookie src={BellBoyCookie} />
                               <RedRoundButton>편지 읽기</RedRoundButton>
                             </GingerCardLayout>
-                          </GingerModal>}
+                          </GingerModal>} */}
           {isLandingModalOpen && <LandingModal closeModal={onClickCloseLandingModal}>
                             <LandingPageModalInner>
                                 <LandingRedButton src={LandingPage} />
