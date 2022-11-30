@@ -107,33 +107,34 @@ export const GingerCardLayout = styled.div`
 
 export const LandingPageModalLayout = styled.div`
     box-sizing: border-box;
+    position: fixed;
+
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
 
     width: 300px;
     height: 687px;
 
-    position: fixed;
-    left: 35.5%;
-    right: 0%;
-    top: 15%;
-    bottom: -243.5%;
-
     background: #FFFFFF;
     border: 3px solid #BAB8B5;
     border-radius: 10px;
-
 `
 
 export const LandingPageModalInner = styled.div`
-    position: absolute;
+    position: relative;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
 
     width: 280px;
     height: 665px;
 
-    left: 1.9%;
-    right: 3.33%;
-    top: 0.85%;
-    bottom: -237.5%;
-
     border: 1px dashed #686363;
     border-radius: 7px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 `

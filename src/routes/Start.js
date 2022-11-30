@@ -71,10 +71,6 @@ const ButtonLayout = styled.div`
     margin-bottom: 142px;
 `
 const GingerTitle = styled.div`
-    position: absolute;
-
-    top: 6%;
-    bottom: 18.26%;
 
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -87,10 +83,6 @@ const GingerTitle = styled.div`
     color: #000000;
 `
 const GingerContent = styled.div`
-    position: absolute;
-
-    top: 17%;
-    bottom: 12.8%;
 
     font-family: 'Noto Sans KR';
     font-style: normal;
