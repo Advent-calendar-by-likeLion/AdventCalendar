@@ -199,9 +199,12 @@ const Home2 = ({ userObj }) => {
         <Progressbar msgCount={msgCount} goalCount={goalCount}/>
         <br/>
         <TitleDiv style={{marginBottom:'10px', fontFamily: "humanbeomseok"}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
-        <HotelName userObj={userObj} displayName={displayName}/>
+        <HotelName userObj={userObj} displayName={displayName}/> 
         <br/>
         <TitleDiv2 style={{marginBottom:'10px', fontFamily: "humanbeomseok"}}>{description}</TitleDiv2>
+        <LandingButtonHotel1>
+            <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
+        </LandingButtonHotel1>  
           {/* <HotelName userObj={userObj} /> */}
           <Hotel/>
           { 
@@ -234,10 +237,7 @@ const Home2 = ({ userObj }) => {
             
             <br/>
           </>
-          }   
-          <LandingButtonHotel1>
-            <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
-          </LandingButtonHotel1>      
+          }      
           {isGingerModalOpen && <GingerModal closeModal={onClickCloseGingerModal}>
                         {isGoLetter ? <Modal closeModal={onClickCloseModal}>
                                           <h1>도착한 편지</h1>
@@ -431,5 +431,5 @@ const LandingButtonHotel1 = styled.div`
     width: 35px;
     height: 35px;
     left: 130px;
-    top: -993px;
+    top: -200px;
 `
