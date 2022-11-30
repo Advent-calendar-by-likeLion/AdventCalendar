@@ -2,6 +2,7 @@
 import { authService, firebaseInstance } from "fbase";
 import AuthForm from "components/AuthForm";
 import Google from '../assets/GoogleLogin.svg';
+import Facebook from '../assets/FacebookLogin.svg';
 import Github from '../assets/GithubLogin.svg';
 import { Container } from './styles/style';
 import styled from 'styled-components';
@@ -18,6 +19,8 @@ const Auth = ( {userObj} ) => {
         let provider;
         if (name === "google") {
             provider = new firebaseInstance.auth.GoogleAuthProvider();
+        } else if (name === "facebook") {
+            provider = new firebaseInstance.auth.FacebookAuthProvider();
         } else if (name === "github") {
             provider = new firebaseInstance.auth.GithubAuthProvider();
         }
@@ -43,6 +46,7 @@ const Auth = ( {userObj} ) => {
                 <AuthForm userObj={userObj}/>
                 <ButtonStyle>
                     <img src={Google} onClick={onSocialClick} name="google" />
+                    <img src={Facebook} onClick={onSocialClick} name="facebook" />
                     <img src={Github} onClick={onSocialClick} name="github" />
                 </ButtonStyle>
             </Container>
