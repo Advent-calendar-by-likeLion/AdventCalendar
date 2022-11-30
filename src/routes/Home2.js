@@ -97,8 +97,7 @@ const Home2 = ({ userObj }) => {
   const Config = () => {
     
     // get the msg goal count by firestore db.
-    dbService.collection("AdminConfig").doc("AdminConfig").get()
-      .then((doc) => {
+    dbService.collection("AdminConfig").doc("AdminConfig").onSnapshot((doc) => {
         setGoalCount(doc.data().goalCount);
       });
 
