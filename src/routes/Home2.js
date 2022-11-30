@@ -64,8 +64,8 @@ const Home2 = ({ userObj }) => {
 
   useEffect(() => {
     
-    dbService.collection("hotelOwner").doc(id).get().then((doc) => {
-      if (msgCount >= goalCount && windowInfo[windowCount]) {
+    dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
+      if (msgCount >= goalCount && snapshot.data().windowInfo[windowCount]) {
         setIsFull(true);
       } else {
         setIsFull(false);

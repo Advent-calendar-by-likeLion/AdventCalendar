@@ -79,6 +79,7 @@ const Write = ({ match, userObj }) => {
         // 날짜 따와서 modal nweet에 넣음.
         // 날짜 따와서 lastWriteTime을 호텔오너에 넣음.
 
+        checkVisible();
         // 날짜가 다르면(다음날이 되면 window count가 올라간다)? 봐야할듯
         await dbService.collection(tableId).add({
             text: nweet,
@@ -94,7 +95,6 @@ const Write = ({ match, userObj }) => {
         
         // set the last date to db.
         setLastDateToDB();
-        checkVisible();
         history.push("/writesuccess");
 
     };
