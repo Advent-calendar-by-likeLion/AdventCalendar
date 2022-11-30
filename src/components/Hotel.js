@@ -20,6 +20,8 @@ const Hotel = () => {
     const [msgSize, setMsgSize] = useState("");
     const [dateFormat, setDateFormat] = useState("");
     const [nweets, setNweets] = useState([]);
+    const [info, setInfo] = useState([]);
+
 
     const {id} = useParams(); // hetelOwnerId
 
@@ -31,15 +33,24 @@ const Hotel = () => {
         document.getElementById("body").style.fill = doc.data().bodyColor;
         document.getElementById("circle").style.fill = doc.data().bodyColor;
       });
+
+      initWindowInfo();
     }, []);
+    
 
-    const getPost = () => {
-
+    const initWindowInfo = () => {
+      dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
+          setInfo(doc.data().windowInfo);
+      });
     }
 
     const openModalPost = () => console.log("btn event");
     
     const onClickOpenModal = (item) => {
+      if (!info[item]) {
+        alert("창문이 닫혀있습니다!");
+        return;
+      }
       dbService.collection(`${id}_${item}`).onSnapshot((snapshot) => {
         const newArray = snapshot.docs.map((document) => ({
             id: document.id,
@@ -76,7 +87,7 @@ const Hotel = () => {
                           </Btn>
                         : 
                           <Btn onClick={() => onClickOpenModal(item)}>
-                            <Window item={item}/>
+                            <Window info={info} item={item}/>
                           </Btn>
                         } 
                     </div>

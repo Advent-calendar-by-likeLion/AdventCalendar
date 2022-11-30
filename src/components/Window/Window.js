@@ -4,23 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 
-const Window = ({item}) => {
-    const {id} = useParams(); // hetelOwnerId
-    const [info, setInfo] = useState([]);
-    const [windowCount, setWindowCount] = useState([]);
-
-    useEffect(() => {
-        initWindowInfo();
-    }, []);
-
-    const initWindowInfo = () => {
-        dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
-            setInfo(doc.data().windowInfo);
-            setWindowCount(doc.data().windowCount);
-        });
-      }
-
-
+const Window = ({info, item}) => {
     return (
         info[item] ? 
         <svg width="45" height="55" viewBox="0 0 45 55" fill="none" xmlns="http://www.w3.org/2000/svg">
