@@ -153,13 +153,13 @@ const Home2 = ({ userObj }) => {
 
   return (
     <>
-      <HotelContainer> 
+      <HotelContainer style={{fontFamily: "humanbeomseok"}}> 
         <Progressbar msgCount={msgCount} goalCount={goalCount}/>
         <br/>
-        <TitleDiv style={{marginBottom:'10px'}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
+        <TitleDiv style={{marginBottom:'10px', fontFamily: "humanbeomseok"}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
         <HotelName userObj={userObj} displayName={displayName}/>
         <br/>
-        <TitleDiv2 style={{marginBottom:'10px'}}>{description}</TitleDiv2>
+        <TitleDiv2 style={{marginBottom:'10px', fontFamily: "humanbeomseok"}}>{description}</TitleDiv2>
           {/* <HotelName userObj={userObj} /> */}
           <Hotel/>
           { 
