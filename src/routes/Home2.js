@@ -375,7 +375,7 @@ const GingerTitle = styled.div`
   font-family: 'humanbeomseok';
   font-style: normal;
   font-weight: 900;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 48px;
 
   text-align: center;
@@ -385,7 +385,7 @@ const GingerTitle = styled.div`
 const GingerContent = styled.div`
   position: absolute;
 
-  top: 17%;
+  top: 20%;
   bottom: 12.8%;
 
   font-family: 'humanbeomseok';
