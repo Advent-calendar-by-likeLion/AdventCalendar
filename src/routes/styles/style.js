@@ -122,7 +122,7 @@ export const LandingRedButton = styled.img`
 `
 export const LandingTitle1 = styled.div`
     position: relative;
-    left: -23%;
+    left: -22%;
     top: 9%;
 
     font-family: 'humanbeomseok';

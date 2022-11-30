@@ -267,7 +267,7 @@ const Home2 = ({ userObj }) => {
           {isLandingModalOpen && <LandingModal closeModal={onClickCloseLandingModal}>
                             <LandingPageModalInner>
                                 <LandingRedButton src={LandingPage} />
-                                <LandingTitle1>⛄어드벤트 캘린더란?</LandingTitle1>
+                                <LandingTitle1>⛄ 어드벤트 캘린더란?</LandingTitle1>
                                 <LandingContent1>
                                     어드벤트 캘린더는 12월 1일부터 25일까지, 크리스마스를 기다리며 하나씩 선물을 열어보는 달력을 말해요! 
                                 </LandingContent1>
@@ -276,7 +276,7 @@ const Home2 = ({ userObj }) => {
                                     한국에서는 아직 대중화되지 않았지만, 외국에서는 크리스마스와 연말 시즌에 많이 사용한답니다.
                                 </LandingContent1>
                                 <br/>
-                                <LandingTitle2>⛄진저호텔 이용방법</LandingTitle2>
+                                <LandingTitle2>⛄ 진저호텔 이용 방법</LandingTitle2>
                                 <LandingContent2>
                                     🎄 내 호텔을 만들고 SNS에 링크를 공유해요.
                                     <br/>
@@ -289,13 +289,13 @@ const Home2 = ({ userObj }) => {
                                     🎄 정해진 편지 갯수를 채워야 창문을 열 수 있어요!
                                 </LandingContent2>
                                 <br/>
-                                <LandingTitle3>⛄진저맨 카드를 모두 모아 보세요!</LandingTitle3>
+                                <LandingTitle3>⛄ 진저맨 카드를 모두 모아 보세요!</LandingTitle3>
                                 <LandingContent3>진저호텔에 사는 25종의 진저맨을 모두 모아 보세요!</LandingContent3>
                                 <LandingGingerImage>
                                     <img src={LandingImage}/>
                                 </LandingGingerImage>
                                 <br/>
-                                <LandingTitle4>⛄웰컴투 진저호텔</LandingTitle4>
+                                <LandingTitle4>⛄ 웰컴투 진저호텔</LandingTitle4>
                                 <LandingContent4>
                                     🎅 웰컴투 진저호텔은 광운대, 동국대, 숭실대, 중앙대, 한서대
                                 </LandingContent4>
