@@ -34,6 +34,9 @@ const Home2 = ({ userObj }) => {
   const [msgSize, setMsgSize] = useState(0);
   const [displayName, setDisplayName] = useState("");
   const [description, setDescription] = useState("");
+  const [windowInfo, setWindowInfo] = useState([]);
+  const [windowCount, setWindowCount] = useState("");
+  const [lastDate, setLastDate] = useState("");
   
   const [isModalOpen, setModalOpen] = useState(false);
   const [isGingerModalOpen, setGingerModalOpen] = useState(false);
@@ -49,45 +52,50 @@ const Home2 = ({ userObj }) => {
 
     dbService.collection("hotelOwner").doc(id).get()
     .then((doc) => {
-      setDisplayName(doc.data().nickname)
-      setDescription(doc.data().description)
+      setDisplayName(doc.data().nickname);
+      setDescription(doc.data().description);
+      setWindowCount(doc.data().windowCount);
+      setWindowInfo(doc.data().windowInfo);
+      setLastDate(doc.data().lastDate);
     });
-    dbService.collection(id).onSnapshot((snapshot) => {
-      const newArray = snapshot.docs.map((document) => ({
-          id: document.id,
-          ...document.data(),
-      }))
-      setMsgCount(newArray.length);
-      setNweets(newArray);
 
-    })
 
   }, []);
 
   useEffect(() => {
     
     dbService.collection("hotelOwner").doc(id).get().then((doc) => {
-      if (msgCount >= goalCount && doc.data().windowInfo[doc.data().windowCount]) {
+      if (msgCount >= goalCount && windowInfo[windowCount]) {
         setIsFull(true);
       } else {
         setIsFull(false);
       }
     });
-
+    
     // true고 date가 local과 같을떄.
   }, [msgCount]);
 
-  const Config = () => {
+  useEffect(() => {
+    dbService.collection(`${id}_${windowCount}`).onSnapshot((snapshot) => {
+      const newArray = snapshot.docs.map((document) => ({
+          id: document.id,
+          ...document.data(),
+      }))
+      setMsgCount(newArray.length);
+      setNweets(newArray);
+    })
 
+  }, [windowCount]);
+
+
+  const Config = () => {
+    
     // get the msg goal count by firestore db.
     dbService.collection("AdminConfig").doc("AdminConfig").get()
       .then((doc) => {
         setGoalCount(doc.data().goalCount);
       });
 
-    // set the last date to db.
-    setLastDate();
-    
   }
 
     // text by db
@@ -97,15 +105,15 @@ const Home2 = ({ userObj }) => {
 
     // 날짜가 다르면(다음날이 되면 window count가 올라간다)? 봐야할듯
 
-  const setLastDate = async () => {
-    let date = new Date();
-    let offset = date.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
-    let dateOffset = new Date(date.getTime() - offset);
-    
-    await dbService.collection("hotelOwner").doc(id).update({
-      lastDate : dateOffset.toISOString().slice(2, 10),
-    });
-  }
+
+    const getCurrentDate = () => { // ex : 22-04-17
+      let date = new Date();
+      let offset = date.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
+      let dateOffset = new Date(date.getTime() - offset);
+      
+      return dateOffset.toISOString().slice(2, 10);
+    }
+
 
   const onClickOpenModal = () => {
     setModalOpen(true);
@@ -152,9 +160,8 @@ const Home2 = ({ userObj }) => {
           { 
           id === (userObj ? userObj.uid : 0) ?  
           <>
-            <RedButton disabled={isFull} onClick={onClickOpenModal}>오늘의 편지</RedButton>
-            
-            {isFull ? <><br/><HotelGuide>* 오늘의 편지 마감! 내일 작성 해주세요.</HotelGuide></>:<></>}
+            <RedButton disabled={!isFull} onClick={onClickOpenModal}>오늘의 편지</RedButton>
+            {!isFull ? <><br/><HotelGuide>* 오늘의 편지를 채워야 열람할 수 있어요! *</HotelGuide></>:<></>}
             <br/>
             <RedButton onClick={onClickOpenGingerModal}>진저맨 모달</RedButton>
             <br/>
@@ -166,7 +173,9 @@ const Home2 = ({ userObj }) => {
           :  
           <>
             <br/>
-            <RedButton onClick={toWrite}>편지 보내기</RedButton>
+            <RedButton disabled={isFull} onClick={toWrite}>편지 보내기</RedButton>
+            {isFull ? <><br/><HotelGuide>* 오늘의 편지 마감! 내일 작성 해주세요 *</HotelGuide></>:<></>}
+            
             <br/>
           </>
           }          

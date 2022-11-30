@@ -38,8 +38,8 @@ const Hotel = () => {
 
     const openModalPost = () => console.log("btn event");
     
-    const onClickOpenModal = () => {
-      dbService.collection(id).onSnapshot((snapshot) => {
+    const onClickOpenModal = (item) => {
+      dbService.collection(`${id}_${item}`).onSnapshot((snapshot) => {
         const newArray = snapshot.docs.map((document) => ({
             id: document.id,
             ...document.data(),
@@ -64,7 +64,8 @@ const Hotel = () => {
                     <div key={key} className={`div${item}`}>
                         {
                         item == 1 ? 
-                          <Btn onClick={onClickOpenModal}>
+                        
+                          <Btn onClick={() => onClickOpenModal(item)}>
                               <Window item={item}/>
                           </Btn>
                         : 

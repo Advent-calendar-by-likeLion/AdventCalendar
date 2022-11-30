@@ -32,6 +32,8 @@ const Write = ({ match, userObj }) => {
     const [goalCount, setGoalCount] = useState(0)
     const [windowCount, setWindowCount] = useState(1)
     
+    const tableId = `${id}_${windowCount}`;
+
     useEffect(() => {
         dbService.collection("hotelOwner").doc(id).get()
         .then((doc) => {
@@ -78,7 +80,8 @@ const Write = ({ match, userObj }) => {
         // 날짜 따와서 lastWriteTime을 호텔오너에 넣음.
 
         // 날짜가 다르면(다음날이 되면 window count가 올라간다)? 봐야할듯
-        await dbService.collection(`${id}_${windowCount}`).add({
+        await dbService.collection(tableId).add({
+            text: nweet,
             timestamp: new Date(),
             creatorId: uid,
             attachmentUrl,
@@ -88,6 +91,9 @@ const Write = ({ match, userObj }) => {
 
         setNweet("");
         setAttachment("");
+        
+        // set the last date to db.
+        setLastDateToDB();
         checkVisible();
         history.push("/writesuccess");
 
@@ -160,10 +166,19 @@ const Write = ({ match, userObj }) => {
 
     const onClearAttachment = () => setAttachment("");
 
-    const checkVisible = () => {
+    const setLastDateToDB = async () => {
+        let date = new Date();
+        let offset = date.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
+        let dateOffset = new Date(date.getTime() - offset);
+        
+        await dbService.collection("hotelOwner").doc(id).update({
+          lastDate : dateOffset.toISOString().slice(2, 10),
+        });
+      }
 
+    const checkVisible = () => {
         let msgCount = 0;
-        dbService.collection(id).onSnapshot((snapshot) => {
+        dbService.collection(tableId).onSnapshot((snapshot) => {
             const newArray = snapshot.docs.map((document) => ({
                 id: document.id,
                 ...document.data(),
@@ -191,10 +206,10 @@ const Write = ({ match, userObj }) => {
         });
     }
 
-    const changeVisible2 = async (i) => { // Todo: Need to connect DB
-        await dbService.collection("hotelOwner").doc(userObj.uid).update({
+    const changeVisible2 = async (i) => { // 날짜 체크도 필요할지 생각.
+        await dbService.collection("hotelOwner").doc(id).update({
              [`windowInfo.${i}`] : true,
-             windowCount : i
+            //  windowCount : i,
         });
     }
 
