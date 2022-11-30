@@ -188,7 +188,8 @@ const Write = ({ match, userObj }) => {
 
     const changeVisible2 = async (i) => { // Todo: Need to connect DB
         await dbService.collection("hotelOwner").doc(userObj.uid).update({
-             [`windowInfo.${i}`] : true  
+             [`windowInfo.${i}`] : true,
+             windowCount : i
         });
     }
 
