@@ -23,7 +23,7 @@ export const GridBox = styled.div `
     width: 235px;
     height: 358.8px;
 
-    margin-top: 30px;
-    margin-left: 13px;
+    margin-top: 28px;
+    margin-left: 11px;
     justify-items: center;
 `
