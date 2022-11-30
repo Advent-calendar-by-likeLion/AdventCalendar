@@ -49,7 +49,7 @@ export const InputStyle = styled.input`
     border-bottom-color: #BAB8B5;
     padding-left: 10px;
 
-    font-family: 'Preahvihear';
+    font-family: 'humanbeomseok';
     src: url(//db.onlinewebfonts.com/c/7275543a4c81e75f7268e3d555b186d0?family=Preah+Vihear);
     font-style: normal;
     font-weight: 400;
@@ -58,7 +58,7 @@ export const InputStyle = styled.input`
 
     ::placeholder {
         color: #BAB8B5;
-        font-family: 'Preahvihear';
+        font-family: 'humanbeomseok';
         src: url(//db.onlinewebfonts.com/c/7275543a4c81e75f7268e3d555b186d0?family=Preah+Vihear);
         font-style: normal;
         font-weight: 400;
