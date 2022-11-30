@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-    <GlobalStyle/>
+    <GlobalStyle />
       <MediaDiv>
         <SnowfallStyle style={{background: 'transparent', position: 'relative', snowflakeCount: "150" }}>
 

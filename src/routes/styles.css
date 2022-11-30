@@ -1,3 +1,12 @@
+@charset "utf-8";
+
+/* font setting */
+
+@font-face {
+    font-family: "humanbeomseok";
+    src: url("../assets/fonts/휴먼범석체.ttf");
+}
+
 #search-button {
     width: 30px;
     height: 30px;
