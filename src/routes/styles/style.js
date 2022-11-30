@@ -75,7 +75,7 @@ export const WriteTitleDiv = styled.div`
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
-    font-family: humanbeomseok;
+    font-family: 'humanbeomseok';
     line-height: 29px;
     text-align: center;
 
