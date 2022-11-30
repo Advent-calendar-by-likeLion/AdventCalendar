@@ -16,6 +16,7 @@ const InitConfigData = ({userObj}) => {
         await dbService.collection("hotelOwner").doc(userObj.uid).set({
             description : "",
             nickname: "",
+            lastDate: "22-04-17",
             roofColor : "#005452",
             bodyColor : "#AF2010",
             windowCount : 1,

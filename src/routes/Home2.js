@@ -42,8 +42,7 @@ const Home2 = ({ userObj }) => {
   const [isFull, setIsFull] = useState(false);
 
   useEffect(() => {
-    
-    initWindowInfo();
+    Config();
     if (userObj) {
       uid = userObj.uid;
     }     
@@ -78,11 +77,34 @@ const Home2 = ({ userObj }) => {
     // true고 date가 local과 같을떄.
   }, [msgCount]);
 
-  const initWindowInfo = () => {
+  const Config = () => {
+
+    // get the msg goal count by firestore db.
     dbService.collection("AdminConfig").doc("AdminConfig").get()
       .then((doc) => {
         setGoalCount(doc.data().goalCount);
       });
+
+    // set the last date to db.
+    setLastDate();
+    
+  }
+
+    // text by db
+    // id+ window count 로 하여 테이블생성. --
+    // 날짜 따와서 modal nweet에 넣음.
+    // 날짜 따와서 lastWriteTime을 호텔오너에 넣음.
+
+    // 날짜가 다르면(다음날이 되면 window count가 올라간다)? 봐야할듯
+
+  const setLastDate = async () => {
+    let date = new Date();
+    let offset = date.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
+    let dateOffset = new Date(date.getTime() - offset);
+    
+    await dbService.collection("hotelOwner").doc(id).update({
+      lastDate : dateOffset.toISOString().slice(2, 10),
+    });
   }
 
   const onClickOpenModal = () => {
