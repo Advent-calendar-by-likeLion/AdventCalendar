@@ -96,13 +96,13 @@ export const GingerCardLayout = styled.div`
     align-items: center;
 
     width: 279px;
-    height: 435px;
+    height: 310px;
     padding-top: 10px;
     padding-bottom: 35px;
 
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 30px;
 `
 
 export const LandingPageModalLayout = styled.div`

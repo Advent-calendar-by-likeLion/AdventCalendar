@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 125px;
+    margin-top: 82px;
 `
 export const HotelImg = styled.img`
     width: 180px;
