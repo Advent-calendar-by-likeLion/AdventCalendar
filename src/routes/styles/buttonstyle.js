@@ -52,8 +52,8 @@ export const WhiteButton = styled.button`
 
 export const CircleButton = styled.button`
 
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     border-radius: 100px;
     border-width: 0px;
     margin-right: 10px;
