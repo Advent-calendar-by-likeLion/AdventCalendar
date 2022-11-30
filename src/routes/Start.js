@@ -106,7 +106,7 @@ const ButtonLayout = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12.57px;
-    margin-top: 62.02px;
+    margin-top: 30px;
     margin-bottom: 142px;
 `
 const LandingGingerImage = styled.div`
