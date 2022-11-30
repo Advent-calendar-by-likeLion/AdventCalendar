@@ -19,8 +19,6 @@ const Hotel = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const [msgSize, setMsgSize] = useState(0);
     const [nweets, setNweets] = useState([]);
-    const [roofColor, setRoofColor] = useState("");
-    const [bodyColor, setBodyColor] = useState("");
 
     const {id} = useParams(); // hetelOwnerId
 
