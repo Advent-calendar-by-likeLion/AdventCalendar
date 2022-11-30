@@ -114,7 +114,7 @@ export const LandingPageModalLayout = styled.div`
     top: 50%;
 
     width: 300px;
-    height: 687px;
+    height: 697px;
 
     background: #FFFFFF;
     border: 3px solid #BAB8B5;
@@ -128,7 +128,7 @@ export const LandingPageModalInner = styled.div`
     top: 50%;
 
     width: 280px;
-    height: 665px;
+    height: 675px;
 
     border: 1px dashed #686363;
     border-radius: 7px;
