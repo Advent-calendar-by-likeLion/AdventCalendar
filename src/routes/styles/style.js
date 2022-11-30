@@ -122,7 +122,7 @@ export const LandingRedButton = styled.img`
 `
 export const LandingTitle1 = styled.div`
     position: relative;
-    left: -17%;
+    left: -23%;
     top: 9%;
 
     font-family: 'humanbeomseok';
@@ -136,7 +136,7 @@ export const LandingTitle1 = styled.div`
 `
 export const LandingContent1 = styled.div`
     position: relative;
-    left: 0.1%;
+    left: 0%;
     top: 9.9%;
 
     height: 28px;
@@ -154,8 +154,8 @@ export const LandingContent1 = styled.div`
 
 export const LandingTitle2 = styled.div`
     position: relative;
-    left: -17%;
-    top: 17%;
+    left: -23%;
+    top: 11%;
 
     font-family: 'humanbeomseok';
     font-style: normal;
@@ -168,8 +168,8 @@ export const LandingTitle2 = styled.div`
 `
 export const LandingContent2 = styled.div`
     position: relative;
-    left: 2.68%;
-    top: 17.9%;
+    left: -9%;
+    top: 11.9%;
 
     font-family: 'humanbeomseok';
     font-style: normal;
@@ -184,8 +184,8 @@ export const LandingContent2 = styled.div`
 
 export const LandingTitle3 = styled.div`
     position: relative;
-    left: 0%;
-    top: 19%;
+    left: -9.5%;
+    top: 13%;
 
     font-family: 'humanbeomseok';
     font-style: normal;
@@ -198,8 +198,8 @@ export const LandingTitle3 = styled.div`
 `
 export const LandingContent3 = styled.div`
     position: relative;
-    left: 13%;
-    top: 20.2%;
+    left: 14%;
+    top: 13.9%;
 
     height: 20px;
     width: 304px;
@@ -216,8 +216,8 @@ export const LandingContent3 = styled.div`
 
 export const LandingTitle4 = styled.div`
     position: relative;
-    left: -19%;
-    top: 22%;
+    left: -25%;
+    top: 16%;
 
     font-family: 'humanbeomseok';
     font-style: normal;
@@ -230,10 +230,10 @@ export const LandingTitle4 = styled.div`
 `
 export const LandingContent4 = styled.div`
     position: relative;
-    left: -0.6%;
-    top: 22.9%;
+    left: 0%;
+    top: 16.9%;
     height: 60px;
-    width: 225px;
+    width: 230px;
     
     font-family: 'humanbeomseok';
     font-style: normal;
@@ -244,7 +244,22 @@ export const LandingContent4 = styled.div`
     
     color: #000000;
 `
-
+export const LandingContent10 = styled.div`
+    position: relative;
+    left: 0%;
+    top: 10.9%;
+    height: -7px;
+    width: 230px;
+    
+    font-family: 'humanbeomseok';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    text-align: left;
+    text-indent: 1.8em;
+    
+    color: #000000;
+`
 export const LandingButton = styled.div`
     position: relative;
     width: 35px;

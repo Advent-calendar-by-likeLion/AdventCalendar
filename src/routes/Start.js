@@ -5,7 +5,7 @@ import SignupBar from '../assets/SignupBar.svg';
 import Title from '../assets/Welcome.svg'; // 기존에 쓰던 타이틀
 import MainTitle from '../assets/WelcomeAddedFont.svg'; // 폰트적용된 타이틀
 import { useHistory } from 'react-router-dom';
-import { Container, HotelImg, TitleDiv, LandingButton, LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4 } from './styles/style';
+import { Container, HotelImg, TitleDiv, LandingButton, LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4, LandingContent10 } from './styles/style';
 import { GreenButton, RedButton } from './styles/buttonstyle';
 import LandingModal from '../components/Modal/LandingModal';
 import { useState } from 'react';
@@ -58,9 +58,12 @@ const Start = () => {
                                 <LandingRedButton src={LandingPage} />
                                 <LandingTitle1>⛄어드벤트 캘린더란?</LandingTitle1>
                                 <LandingContent1>
-                                    어드벤트 캘린더는 12월 1일부터 25일까지, 
-                                    <br/>크리스마스를 기다리며 하나씩 선물을 열어보는 달력을 말해요! 한국에서는 아직 대중화되지 
-                                    <br/>않았지만, 외국에서는 크리스마스와 연말 시즌에 많이 사용한답니다.</LandingContent1>
+                                    어드벤트 캘린더는 12월 1일부터 25일까지, 크리스마스를 기다리며 하나씩 선물을 열어보는 달력을 말해요! 
+                                </LandingContent1>
+                                <br/>
+                                <LandingContent1>
+                                    한국에서는 아직 대중화되지 않았지만, 외국에서는 크리스마스와 연말 시즌에 많이 사용한답니다.
+                                </LandingContent1>
                                 <br/>
                                 <LandingTitle2>⛄진저호텔 이용방법</LandingTitle2>
                                 <LandingContent2>
@@ -81,12 +84,14 @@ const Start = () => {
                                     <img src={LandingImage}/>
                                 </LandingGingerImage>
                                 <br/>
-                                <LandingTitle4>⛄웰컴 투 진저호텔</LandingTitle4>
+                                <LandingTitle4>⛄웰컴투 진저호텔</LandingTitle4>
                                 <LandingContent4>
-                                    🎅 웰컴 투 진저호텔은 광운대, 동국대, 숭실대,
-                                    <br/>중앙대, 한서대 학생 5명이 함께 만든 크리스마스 시즌 서비스입니다.
-                                    <br/>🎅 웰컴 투 진저호텔은 수익을 창출하지 않으며, 비영리 서비스입니다.
+                                    🎅 웰컴투 진저호텔은 광운대, 동국대, 숭실대, 중앙대, 한서대
                                 </LandingContent4>
+                                <LandingContent10>학생 5명이 함께 만든 크리스마스 시즌 서비스입니다.</LandingContent10>
+                                <LandingContent5>
+                                    <br/>🎅 웰컴투 진저호텔은 수익을 창출하지 않으며, 비영리 서비스입니다.
+                                </LandingContent5>
                                 <LandingInstaImage>
                                     <img src={LandingInsta}/>
                                 </LandingInstaImage>
@@ -114,19 +119,35 @@ const LandingGingerImage = styled.div`
     height: 116px;
     width: 220px;
     left: 0px;
-    top: 143px;
+    top: 100px;
 `
 const LandingInstaImage = styled.div`
     position: relative;
     height: 10px;
     width: 10px;
     left: 40px;
-    top: 185px;
+    top: 60px;
 `
 const LandingEmailImage = styled.div`
     position: relative;
     height: 10px;
     width: 10px;
     left: 40px;
-    top: 190px;
+    top: 66px;
+`
+const LandingContent5 = styled.div`
+    position: relative;
+    left: 0%;
+    top: 10%;
+    height: 60px;
+    width: 230px;
+    
+    font-family: 'humanbeomseok';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16.9px;
+    text-align: left;
+    
+    color: #000000;
 `
