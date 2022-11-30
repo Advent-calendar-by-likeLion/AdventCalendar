@@ -63,24 +63,18 @@ const Hotel = () => {
                 items.map((item, key) => (
                     <div key={key} className={`div${item}`}>
                         {
-                        item == 1 ? 
-                        
-                          <Btn onClick={() => onClickOpenModal(item)}>
-                              <Window item={item}/>
-                          </Btn>
-                        : 
                         item == 24 ? 
-                          <Btn onClick={onClickOpenModal}>
+                          <Btn onClick={() => onClickOpenModal(item)}>
                             <Door/>
                           </Btn>
                         : 
                         item == 25 ? 
-                          <Btn onClick={onClickOpenModal}>
+                          <Btn onClick={() => onClickOpenModal(item)}>
                             <TopWindow/>
                           </Btn>
                         : 
-                          <Btn onClick={onClickOpenModal}>
-                              <Window item={item} />
+                          <Btn onClick={() => onClickOpenModal(item)}>
+                            <Window item={item}/>
                           </Btn>
                         } 
                     </div>

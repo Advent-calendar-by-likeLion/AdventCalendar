@@ -43,6 +43,7 @@ const Home2 = ({ userObj }) => {
   const [msgCount, setMsgCount] = useState(0);
   const [goalCount, setGoalCount] = useState(0);
   const [isFull, setIsFull] = useState(false);
+  const [isMsgFull, setIsMsgFull] = useState(false);
 
   useEffect(() => {
     Config();
@@ -69,6 +70,12 @@ const Home2 = ({ userObj }) => {
         setIsFull(true);
       } else {
         setIsFull(false);
+      }
+      
+      if (msgCount >= (Number)(goalCount * 2)) {
+        setIsMsgFull(true);
+      } else {
+        setIsMsgFull(false);
       }
     });
     
@@ -173,8 +180,16 @@ const Home2 = ({ userObj }) => {
           :  
           <>
             <br/>
-            <RedButton disabled={isFull} onClick={toWrite}>편지 보내기</RedButton>
-            {isFull ? <><br/><HotelGuide>* 오늘의 편지 마감! 내일 작성 해주세요 *</HotelGuide></>:<></>}
+            <RedButton disabled={isMsgFull} onClick={toWrite}>편지 보내기</RedButton>
+            {
+              isMsgFull ?
+              <><br/><HotelGuide>* 오늘의 편지 마감! 내일 작성해 주세요 *</HotelGuide></>
+              :
+              isFull ?
+              <><br/><HotelGuide>보낼 수 있는 편지가 {(goalCount * 2) - msgCount}개 남았습니다!</HotelGuide></>
+              :
+              <></>
+            }
             
             <br/>
           </>
