@@ -30,8 +30,14 @@ const Write = ({ match, userObj }) => {
     const [fileUrl, setFileUrl] = useState("");
 
     const [goalCount, setGoalCount] = useState(0)
+    const [windowCount, setWindowCount] = useState(1)
     
     useEffect(() => {
+        dbService.collection("hotelOwner").doc(id).get()
+        .then((doc) => {
+            setWindowCount(doc.data().windowCount);
+        });
+
         dbService.collection("AdminConfig").doc("AdminConfig").get()
         .then((doc) => {
           setGoalCount(doc.data().goalCount);
@@ -67,13 +73,12 @@ const Write = ({ match, userObj }) => {
             attachmentUrl = await response.ref.getDownloadURL();
         }
         // text by db
-        // id+ window count 로 하여 테이블생성. 
+        // id+ window count 로 하여 테이블생성. --
         // 날짜 따와서 modal nweet에 넣음.
         // 날짜 따와서 lastWriteTime을 호텔오너에 넣음.
 
         // 날짜가 다르면(다음날이 되면 window count가 올라간다)? 봐야할듯
-        await dbService.collection(id).add({
-            text: nweet,
+        await dbService.collection(`${id}_${windowCount}`).add({
             timestamp: new Date(),
             creatorId: uid,
             attachmentUrl,
