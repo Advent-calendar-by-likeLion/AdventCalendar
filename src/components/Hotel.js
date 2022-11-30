@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import {dbService } from "fbase"
 import { useParams } from 'react-router-dom';
 import Modal from './Modal/Modal';
-import { ReactComponent as MainHotel } from '../assets/MainHotel.svg';
+import { ReactComponent as MainHotel } from '../assets/Component3434.svg';
 import { CardLayout, MessageCard } from './Modal/styles';
 import Nweet from './Nweet';
 import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
