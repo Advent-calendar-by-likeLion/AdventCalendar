@@ -5,13 +5,14 @@ import SignupBar from '../assets/SignupBar.svg';
 import Title from '../assets/Welcome.svg';
 import { useHistory } from 'react-router-dom';
 import { Container, HotelImg, TitleDiv, WelcometoGingerHotel } from './styles/style';
-import { GreenButton, RedButton, YellowButton } from './styles/buttonstyle';
+import { GreenButton, RedButton } from './styles/buttonstyle';
 import LandingModal from '../components/Modal/LandingModal';
 import { useState } from 'react';
 
 // Landing Page 관련
 import { LandingPageModalInner } from "../components/Modal/styles";
 import LandingPage from '../assets/WelcometoGingerHotel.svg';
+import LandingModalButton from '../assets/LandingModalButton.svg';
 
 const Start = () => {
     const history = useHistory();
@@ -43,7 +44,9 @@ const Start = () => {
             <ButtonLayout>
                 <RedButton onClick={onclickLoginBar}>로그인</RedButton>
                 <GreenButton onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
-                <YellowButton onClick={onClickOpenLandingModal}>About Service</YellowButton>
+                <LandingButton>
+                    <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
+                </LandingButton>
             </ButtonLayout>
 
             {isLandingModalOpen && <LandingModal closeModal={onClickCloseLandingModal}>
@@ -142,4 +145,11 @@ const LandingContent2 = styled.div`
     text-align: left;
     
     color: #000000;
+`
+const LandingButton = styled.div`
+    position: relative;
+    width: 35px;
+    height: 35px;
+    left: 280px;
+    top: -700px;
 `
