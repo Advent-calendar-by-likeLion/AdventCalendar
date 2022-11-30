@@ -3,26 +3,7 @@ import Stamp from '../../assets/Stamp.svg';
 import { useRef } from 'react';
 import styled from 'styled-components';
 
-const TimeTitle = () => {
-  const todayTime = () => {
-    let now = new Date();
-    let todayYear = now.getFullYear();
-    let todayMonth = ('0' + now.getMonth() + 1).slice(-2);
-    let todayDate = ('0' + now.getDate()).slice(-2);
-
-    return todayYear + '.' + todayMonth + '.' + todayDate;
-  }
-
-  return (
-    <div>{todayTime().slice(2, 9)}
-      <span>{todayTime().slice(9, 12)}</span>
-      <span>{todayTime().slice(12, 19)}</span>
-    </div>
-  )
-}
-
-
-const Modal = ({ closeModal, children }) => {
+const Modal = ({ dateFormat, closeModal, children }) => {
 
     const outside = useRef();
 
@@ -34,7 +15,7 @@ const Modal = ({ closeModal, children }) => {
             <ModalLayout>
               <StampLayout src={Stamp} />
               <TimeTitleLayout>
-                <TimeTitle />
+                <div>{dateFormat}</div>
               </TimeTitleLayout>
                 {/* <ModalCloseButton onClick={() => closeModal(false)} /> */}
                 {children}
@@ -57,7 +38,7 @@ const StampLayout = styled.img`
 const TimeTitleLayout = styled.div`
   position: absolute;
   font-family: "Noto Sans KR";
-  left: 228px;
+  left: 223px;
   top: 5px;
   font-size: 12px;
   line-height: 17px;

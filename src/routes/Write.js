@@ -80,21 +80,25 @@ const Write = ({ match, userObj }) => {
         // 날짜 따와서 lastWriteTime을 호텔오너에 넣음.
 
         checkVisible();
+        let date = new Date();
+        let offset = date.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
+        let dateOffset = new Date(date.getTime() - offset);
+        let dateFormat = dateOffset.toISOString().slice(2, 10)
+        // set the last date to db.
+        setLastDateToDB(dateFormat);
         // 날짜가 다르면(다음날이 되면 window count가 올라간다)? 봐야할듯
         await dbService.collection(tableId).add({
             text: nweet,
             timestamp: new Date(),
+            dateFormat:dateFormat,
             creatorId: uid,
             attachmentUrl,
             hotelOwnerId: id,
-            writerNickname: displayName
+            writerNickname: displayName,
         });
 
         setNweet("");
         setAttachment("");
-        
-        // set the last date to db.
-        setLastDateToDB();
         history.push("/writesuccess");
 
     };
@@ -166,13 +170,9 @@ const Write = ({ match, userObj }) => {
 
     const onClearAttachment = () => setAttachment("");
 
-    const setLastDateToDB = async () => {
-        let date = new Date();
-        let offset = date.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
-        let dateOffset = new Date(date.getTime() - offset);
-        
+    const setLastDateToDB = async (dateFormat) => {
         await dbService.collection("hotelOwner").doc(id).update({
-          lastDate : dateOffset.toISOString().slice(2, 10),
+          lastDate : dateFormat,
         });
       }
 

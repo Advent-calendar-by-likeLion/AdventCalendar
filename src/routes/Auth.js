@@ -17,7 +17,7 @@ const Auth = ( {userObj} ) => {
         } = event;
         let provider;
         if (name === "google") {
-            provider = new firebaseInstance.auth.GoogleAuthProvider();
+            provider = new firebaseInstance.auth.FacebookAuthProvider();
         } else if (name === "github") {
             provider = new firebaseInstance.auth.GithubAuthProvider();
         }

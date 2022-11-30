@@ -236,8 +236,8 @@ const Home2 = ({ userObj }) => {
             <br/>
           </>
           }      
-          {isGingerModalOpen && <GingerModal closeModal={onClickCloseGingerModal}>
-                        {isGoLetter ? <Modal closeModal={onClickCloseModal}>
+          {isGingerModalOpen && <GingerModal dateFormat={nweets[0].dateFormat} closeModal={onClickCloseGingerModal}>
+                        {isGoLetter ? <Modal dateFormat={nweets[0].dateFormat} closeModal={onClickCloseModal}>
                                           <h1>도착한 편지</h1>
                                           <CardLayout>
                                           {nweets.map((nweet) => (
