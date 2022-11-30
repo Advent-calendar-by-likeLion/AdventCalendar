@@ -45,6 +45,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   border-radius: 100px;
+
+  margin-bottom: 50px;
 `;
 
 const Progress = styled.div`
@@ -58,5 +60,5 @@ const Progress = styled.div`
 const CountContainer = styled.div`
     display: flex;
     flex-direction: row;
-    margin-top: 69px;
+    margin-top: 30px;
 `

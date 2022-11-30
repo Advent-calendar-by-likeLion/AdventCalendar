@@ -72,7 +72,7 @@ const Nickname = ({userObj}) => {
       <>
         <Container>
             <div style={{
-                marginTop: "141px",
+                marginTop: "95px",
                 height: "29px",
                 fontSize: "22px",  
                 fontWeight: "bold",
