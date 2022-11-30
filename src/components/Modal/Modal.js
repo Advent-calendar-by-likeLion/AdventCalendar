@@ -7,8 +7,8 @@ const TimeTitle = () => {
   const todayTime = () => {
     let now = new Date();
     let todayYear = now.getFullYear();
-    let todayMonth = now.getMonth() + 1;
-    let todayDate = now.getDate();
+    let todayMonth = ('0' + now.getMonth() + 1).slice(-2);
+    let todayDate = ('0' + now.getDate()).slice(-2);
 
     return todayYear + '.' + todayMonth + '.' + todayDate;
   }
@@ -56,8 +56,9 @@ const StampLayout = styled.img`
 
 const TimeTitleLayout = styled.div`
   position: absolute;
-  left: 225px;
-  top: 3px;
+  font-family: "Noto Sans KR";
+  left: 228px;
+  top: 5px;
   font-size: 12px;
   line-height: 17px;
 `
