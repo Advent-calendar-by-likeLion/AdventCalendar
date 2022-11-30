@@ -88,10 +88,6 @@ const Home2 = ({ userObj }) => {
       }
     });
     
-    if (new Date("20" + lastDate) < new Date("20" + getCurrentDate())) {
-      addWindowCount(); // Todo: need to validate
-    }
-
     // true고 date가 local과 같을떄.
   }, [msgCount]);
 
@@ -107,16 +103,6 @@ const Home2 = ({ userObj }) => {
 
   }, [windowCount]);
 
-  const addWindowCount = async () => { // Todo: Need to connect DB
-    let date = new Date();
-    let offset = date.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
-    let dateOffset = new Date(date.getTime() - offset);
-
-    await dbService.collection("hotelOwner").doc(id).update({
-        windowCount : windowCount + 1,
-        lastDate : dateOffset.toISOString().slice(2, 10),
-    });
-  }
 
   const Config = () => {
     
