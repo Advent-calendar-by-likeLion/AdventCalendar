@@ -12,11 +12,11 @@ import { useState } from 'react';
 
 // Landing Page 관련
 import { LandingPageModalInner } from "../components/Modal/styles";
-import LandingPage from '../assets/LandingPage/WelcometoGingerHotel.svg';
+import LandingPage from '../assets/LandingPage/Welcome.svg';
 import LandingModalButton from '../assets/LandingPage/LandingModalButton.svg';
-import LandingImage from '../assets/LandingPage/Landing_Image.svg';
-import LandingEmail from '../assets/LandingPage/LandingEmailImage.svg';
-import LandingInsta from '../assets/LandingPage/LandingInstaImage.svg';
+import LandingImage from '../assets/LandingPage/LandingImageGinger.svg';
+import LandingEmail from '../assets/LandingPage/LandingEmail.svg';
+import LandingInsta from '../assets/LandingPage/LandingInsta.svg';
 
 const Start = () => {
     const history = useHistory();

@@ -23,11 +23,11 @@ import BellBoyCookie from '../assets/cookie/BellBoyCookie.svg';
 import { LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4 } from './styles/style';
 import LandingModal from '../components/Modal/LandingModal';
 import { LandingPageModalInner } from "../components/Modal/styles";
-import LandingPage from '../assets/LandingPage/WelcometoGingerHotel.svg';
+import LandingPage from '../assets/LandingPage/Welcome.svg';
 import LandingModalButton from '../assets/LandingPage/LandingModalButton.svg';
-import LandingImage from '../assets/LandingPage/Landing_Image.svg';
-import LandingEmail from '../assets/LandingPage/LandingEmailImage.svg';
-import LandingInsta from '../assets/LandingPage/LandingInstaImage.svg';
+import LandingImage from '../assets/LandingPage/LandingImageGinger.svg';
+import LandingEmail from '../assets/LandingPage/LandingEmail.svg';
+import LandingInsta from '../assets/LandingPage/LandingInsta.svg';
 
 const Home2 = ({ userObj }) => {
   const history = useHistory();
@@ -430,6 +430,6 @@ const LandingButtonHotel1 = styled.div`
     position: relative;
     width: 35px;
     height: 35px;
-    left: 160px;
+    left: 130px;
     top: -993px;
 `

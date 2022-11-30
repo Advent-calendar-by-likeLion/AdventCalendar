@@ -96,16 +96,11 @@ const Nickname = ({userObj}) => {
             <GreenButton onClick={clickHotelColorButton}>호텔 색상 정하기</GreenButton>
             <br/>
             <br/>
-            <HotelGuide>* 호텔 이름과 색상은 나중에도 수정할 수 있어요!</HotelGuide>
+            <HotelGuide>* 호텔 이름과 색상은 나중에도 수정할 수 있어요! *</HotelGuide>
             <br/>
             <form onSubmit={onSubmit}>
                 <RedButton>완성하기</RedButton>
             </form>
-
-            <br/>
-            <WhiteButton onClick={ () => {
-            history.goBack();
-            } } >뒤로 가기</WhiteButton>
         </Container>
       </>
   )
@@ -201,6 +196,7 @@ const HotelImg = styled.img`
     margin-top: 27px;
 `
 const HotelGuide = styled.div`
+    font-family: "humanbeomseok";
     text-align: center; 
     font-weight: 500;
     font-size: 12px;
