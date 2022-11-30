@@ -11,10 +11,6 @@ const Window = ({item}) => {
 
     useEffect(() => {
         initWindowInfo();
-    }, [info]);
-    
-    useEffect(() => {
-        initWindowInfo();
     }, []);
 
     const initWindowInfo = () => {
