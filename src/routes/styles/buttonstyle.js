@@ -14,6 +14,7 @@ export const RedButton = styled.button`
 
     font-weight: 400;
     font-size: 14px;
+    font-family: "humanbeomseok";
     line-height: 20px;
     color: white;
     
@@ -41,6 +42,7 @@ export const WhiteButton = styled.button`
 
     font-weight: 400;
     font-size: 14px;
+    font-family: "humanbeomseok";
     line-height: 20px;
     color: #AF2010;
     
@@ -71,6 +73,7 @@ export const GreenButton = styled.button`
 
     font-weight: 400;
     font-size: 14px;
+    font-family: "humanbeomseok";
     line-height: 20px;
     color: white;
     
@@ -96,6 +99,7 @@ export const RedRoundButton = styled.button`
 
     font-weight: 400;
     font-size: 13px;
+    font-family: "humanbeomseok";
     line-height: 24px;
     color: white;
     

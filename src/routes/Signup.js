@@ -1,4 +1,5 @@
 import Title from '../assets/Welcome.svg';
+import MainTitle from '../assets/WelcomeAddedFont.svg';
 import { Container, InputStyle, TitleDiv } from './styles/style';
 import DisSignup from '../assets/DisSignup.svg';
 import styled from 'styled-components';
@@ -47,8 +48,8 @@ const Signup = ({userObj}) => {
   return (
       <>
       <Container>
-        <img src={Title} />
-        <TitleDiv>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
+        <img src={MainTitle} />
+        {/* <TitleDiv>진저호텔에서 보내는 25일간의 휴일</TitleDiv> */}
         <form onSubmit={onSubmit}>
           <InputLayout2>
               <InputStyle placeholder='이메일' name="email" type="email" required value={email} onChange={onChange} />

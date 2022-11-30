@@ -76,15 +76,16 @@ const Nickname = ({userObj}) => {
                 height: "29px",
                 fontSize: "22px",  
                 fontWeight: "bold",
+                fontFamily: "humanbeomseok"
 
             }}>누구의 진저호텔인가요?</div>
             <HotelSubCon>
                 <HotelImg src={HotelSnow} />
             </HotelSubCon>
             <NicknameInput>
-                <InputStylenick style={{fontWeight:"bold"}} type="text" placeholder='닉네임' defaultValue={userObj.displayName ? userObj.displayName : ''}
+                <InputStylenick style={{fontWeight:"bold", fontFamily: "humanbeomseok"}} type="text" placeholder='닉네임' defaultValue={userObj.displayName ? userObj.displayName : ''}
                 onChange={onChange}/>
-                    <h1 style={{fontSize: "20px", fontWeight: "bold"}} >의 진저호텔</h1>
+                    <h1 style={{fontSize: "20px", fontWeight: "bold", fontFamily: "humanbeomseok"}} >의 진저호텔</h1>
             </NicknameInput>
             <TxtAreaDesc maxLength={1000} type="text" placeholder='내 호텔을 소개해 주세요!' onChange={onChangeDesc}
             defaultValue={description ? description : ''}
@@ -144,7 +145,7 @@ const TxtAreaDesc = styled.textarea`
     font-weight: 400;
     font-size: 18px;
     line-height: 25px;
-    font-family: none;
+    font-family: "humanbeomseok";
     resize: none;
     white-space: pre-wrap;
     ::placeholder {
