@@ -75,6 +75,7 @@ export const WriteTitleDiv = styled.div`
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
+    font-family: humanbeomseok;
     line-height: 29px;
     text-align: center;
 
@@ -88,6 +89,7 @@ export const LetterStyle = styled.img`
 export const WriteSubTitle = styled.div`
     font-weight: 500;
     font-size: 12px;
+    font-family: "humanbeomseok";
     line-height: 17px;
     
     color: #686363;
@@ -123,7 +125,7 @@ export const LandingTitle1 = styled.div`
     left: -17%;
     top: 9%;
 
-    font-family: 'Noto Sans KR';
+    font-family: 'humanbeomseok';
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -140,7 +142,7 @@ export const LandingContent1 = styled.div`
     height: 28px;
     width: 225px;
 
-    font-family: 'Noto Sans KR';
+    font-family: 'humanbeomseok';
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
@@ -155,7 +157,7 @@ export const LandingTitle2 = styled.div`
     left: -17%;
     top: 17%;
 
-    font-family: 'Noto Sans KR';
+    font-family: 'humanbeomseok';
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -169,7 +171,7 @@ export const LandingContent2 = styled.div`
     left: 2.68%;
     top: 17.9%;
 
-    font-family: 'Noto Sans KR';
+    font-family: 'humanbeomseok';
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
@@ -185,7 +187,7 @@ export const LandingTitle3 = styled.div`
     left: 0%;
     top: 19%;
 
-    font-family: 'Noto Sans KR';
+    font-family: 'humanbeomseok';
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -202,7 +204,7 @@ export const LandingContent3 = styled.div`
     height: 20px;
     width: 304px;
 
-    font-family: 'Noto Sans KR';
+    font-family: 'humanbeomseok';
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
@@ -217,7 +219,7 @@ export const LandingTitle4 = styled.div`
     left: -19%;
     top: 22%;
 
-    font-family: 'Noto Sans KR';
+    font-family: 'humanbeomseok';
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -233,7 +235,7 @@ export const LandingContent4 = styled.div`
     height: 60px;
     width: 225px;
     
-    font-family: 'Noto Sans KR';
+    font-family: 'humanbeomseok';
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
