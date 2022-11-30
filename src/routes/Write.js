@@ -294,6 +294,7 @@ const Textarea = styled.textarea`
 
     text-align: center;
     font-size: 13px;
+    font-family: humanbeomseok;
     line-height: 19px;  
     resize: none;
 
@@ -321,6 +322,7 @@ const Input = styled.input`
 
     text-align: center;
     font-size: 13px;
+    font-family: humanbeomseok;
     line-height: 19px;  
 
     :focus::placeholder {
@@ -344,6 +346,7 @@ const WriteSuccessTitle = styled.div`
     text-align: center;
     font-weight: bold;
     font-size: 20px;
+    font-family: humanbeomseok;
     width: 280px;
     height: 29px;
 `

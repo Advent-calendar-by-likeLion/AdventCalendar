@@ -75,6 +75,7 @@ export const WriteTitleDiv = styled.div`
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
+    font-family: humanbeomseok;
     line-height: 29px;
     text-align: center;
 
@@ -88,6 +89,7 @@ export const LetterStyle = styled.img`
 export const WriteSubTitle = styled.div`
     font-weight: 500;
     font-size: 12px;
+    font-family: "humanbeomseok";
     line-height: 17px;
     
     color: #686363;
