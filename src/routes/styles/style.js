@@ -112,9 +112,141 @@ export const GingerCookie = styled.img`
 `
 
 // Landing Page
-export const WelcometoGingerHotel = styled.img`
+export const LandingRedButton = styled.img`
     position: absolute;
     
-    top: 3.5%;
+    top: 1.5%;
     bottom: 66.5%;
+`
+export const LandingTitle1 = styled.div`
+    position: relative;
+    left: -17%;
+    top: 9%;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: left;
+
+    color: #000000;
+`
+export const LandingContent1 = styled.div`
+    position: relative;
+    left: 0.1%;
+    top: 9.9%;
+
+    height: 28px;
+    width: 225px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: left;
+
+    color: #000000;
+`
+
+export const LandingTitle2 = styled.div`
+    position: relative;
+    left: -17%;
+    top: 17%;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: left;
+
+    color: #000000;
+`
+export const LandingContent2 = styled.div`
+    position: relative;
+    left: 2.68%;
+    top: 17.9%;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: left;
+    
+    color: #000000;
+`
+
+
+export const LandingTitle3 = styled.div`
+    position: relative;
+    left: 0%;
+    top: 19%;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23.17px;
+    text-align: left;
+
+    color: #000000;
+`
+export const LandingContent3 = styled.div`
+    position: relative;
+    left: 13%;
+    top: 20.2%;
+
+    height: 20px;
+    width: 304px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14.48px;
+    text-align: left;
+
+    color: #000000;
+`
+
+export const LandingTitle4 = styled.div`
+    position: relative;
+    left: -19%;
+    top: 22%;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: left;
+
+    color: #000000;
+`
+export const LandingContent4 = styled.div`
+    position: relative;
+    left: -0.6%;
+    top: 22.9%;
+    height: 60px;
+    width: 225px;
+    
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16.9px;
+    text-align: left;
+    
+    color: #000000;
+`
+
+export const LandingButton = styled.div`
+    position: relative;
+    width: 35px;
+    height: 35px;
+    left: 280px;
+    top: -700px;
 `
