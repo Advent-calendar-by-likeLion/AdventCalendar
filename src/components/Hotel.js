@@ -47,8 +47,8 @@ const Hotel = () => {
     const openModalPost = () => console.log("btn event");
     
     const onClickOpenModal = (item) => {
-      if (!info[item]) {
-        alert("창문이 닫혀있습니다!");
+      if (!info[item]) { 
+        alert("창문이 닫혀 있습니다!");
         return;
       }
       dbService.collection(`${id}_${item}`).onSnapshot((snapshot) => {

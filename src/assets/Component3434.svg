@@ -1,9 +1,9 @@
 <svg width="340" height="458" viewBox="0 0 340 458" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect x="50.2294" y="66.1738" width="240.216" height="333.35" fill="#AF2010" stroke="black"/>
-<path d="M50.7653 65.1745L74.3929 35.4404H170.243H266.095L289.904 65.1745H50.7653Z" fill="#005452" stroke="black"/>
-<path d="M120.183 65.5234L170.104 7.76463L220.026 65.5234H120.183Z" fill="#005452" stroke="black"/>
+<rect id="body" x="50.2294" y="66.1738" width="240.216" height="333.35" fill="#AF2010" stroke="black"/>
+<path id="roof1" d="M50.7653 65.1745L74.3929 35.4404H170.243H266.095L289.904 65.1745H50.7653Z" fill="#005452" stroke="black"/>
+<path id="roof2" d="M120.183 65.5234L170.104 7.76463L220.026 65.5234H120.183Z" fill="#005452" stroke="black"/>
 <ellipse cx="169.642" cy="281.849" rx="11.6417" ry="11.6417" fill="#005452"/>
-<ellipse cx="169.642" cy="281.849" rx="6.20891" ry="6.20891" fill="#AF2010"/>
+<ellipse id="circle" cx="169.642" cy="281.849" rx="6.20891" ry="6.20891" fill="#AF2010"/>
 <ellipse cx="172.952" cy="272.122" rx="4.38201" ry="3.03193" transform="rotate(-35.6892 172.952 272.122)" fill="#AF2010"/>
 <ellipse cx="172.938" cy="272.098" rx="2.32834" ry="1.61099" transform="rotate(-35.6892 172.938 272.098)" fill="#005452"/>
 <ellipse rx="4.38201" ry="3.03193" transform="matrix(0.812194 0.583388 0.583388 -0.812194 166.122 272.277)" fill="#AF2010"/>
