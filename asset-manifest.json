@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/AdventCalendar/static/css/main.1c5491ba.chunk.css",
-    "main.js": "/AdventCalendar/static/js/main.291068bd.chunk.js",
-    "main.js.map": "/AdventCalendar/static/js/main.291068bd.chunk.js.map",
+    "main.js": "/AdventCalendar/static/js/main.81e9c6a0.chunk.js",
+    "main.js.map": "/AdventCalendar/static/js/main.81e9c6a0.chunk.js.map",
     "runtime-main.js": "/AdventCalendar/static/js/runtime-main.5bb88139.js",
     "runtime-main.js.map": "/AdventCalendar/static/js/runtime-main.5bb88139.js.map",
     "static/js/2.d7aae410.chunk.js": "/AdventCalendar/static/js/2.d7aae410.chunk.js",
@@ -16,10 +16,10 @@
     "static/media/GithubLogin.87abaf73.svg": "/AdventCalendar/static/media/GithubLogin.87abaf73.svg",
     "static/media/GoogleLogin.c1879b17.svg": "/AdventCalendar/static/media/GoogleLogin.c1879b17.svg",
     "static/media/Hotel2.16a75d8c.svg": "/AdventCalendar/static/media/Hotel2.16a75d8c.svg",
-    "static/media/LandingEmailImage.e57dfbd8.svg": "/AdventCalendar/static/media/LandingEmailImage.e57dfbd8.svg",
-    "static/media/LandingInstaImage.bad8cbe3.svg": "/AdventCalendar/static/media/LandingInstaImage.bad8cbe3.svg",
+    "static/media/LandingEmail.e3a6d51e.svg": "/AdventCalendar/static/media/LandingEmail.e3a6d51e.svg",
+    "static/media/LandingImageGinger.89122c3d.svg": "/AdventCalendar/static/media/LandingImageGinger.89122c3d.svg",
+    "static/media/LandingInsta.e246864b.svg": "/AdventCalendar/static/media/LandingInsta.e246864b.svg",
     "static/media/LandingModalButton.d225b020.svg": "/AdventCalendar/static/media/LandingModalButton.d225b020.svg",
-    "static/media/Landing_Image.c2862af2.svg": "/AdventCalendar/static/media/Landing_Image.c2862af2.svg",
     "static/media/Letter.ee331406.svg": "/AdventCalendar/static/media/Letter.ee331406.svg",
     "static/media/LoginBar.8a9badec.svg": "/AdventCalendar/static/media/LoginBar.8a9badec.svg",
     "static/media/MainHotel.a097f54d.svg": "/AdventCalendar/static/media/MainHotel.a097f54d.svg",
@@ -28,14 +28,14 @@
     "static/media/SnowHotel.ef55a547.svg": "/AdventCalendar/static/media/SnowHotel.ef55a547.svg",
     "static/media/Stamp.2ed426dc.svg": "/AdventCalendar/static/media/Stamp.2ed426dc.svg",
     "static/media/Welcome.01549c16.svg": "/AdventCalendar/static/media/Welcome.01549c16.svg",
+    "static/media/Welcome.474b68b0.svg": "/AdventCalendar/static/media/Welcome.474b68b0.svg",
     "static/media/WelcomeAddedFont.2297b86c.svg": "/AdventCalendar/static/media/WelcomeAddedFont.2297b86c.svg",
-    "static/media/WelcometoGingerHotel.f3a9e8a0.svg": "/AdventCalendar/static/media/WelcometoGingerHotel.f3a9e8a0.svg",
     "static/media/styles.css": "/AdventCalendar/static/media/humanbeomseok.359ba83f.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.5bb88139.js",
     "static/js/2.d7aae410.chunk.js",
     "static/css/main.1c5491ba.chunk.css",
-    "static/js/main.291068bd.chunk.js"
+    "static/js/main.81e9c6a0.chunk.js"
   ]
 }
