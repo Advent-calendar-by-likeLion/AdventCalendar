@@ -7,9 +7,9 @@ export const Container = styled.div`
     margin-top: 82px;
 `
 export const HotelImg = styled.img`
-    width: 180px;
-    height: 285px;
-    margin-top: 36px;
+    width: 300px;
+    height: 400px;
+    margin-top: 15px;
 `
 export const TitleDiv = styled.div`
     width: auto;
