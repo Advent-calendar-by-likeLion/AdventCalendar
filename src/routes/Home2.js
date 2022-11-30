@@ -71,7 +71,7 @@ const Home2 = ({ userObj }) => {
         setIsFull(false);
       }
       
-      if (msgCount >= (Number)(goalCount * 2)) {
+      if (msgCount !== 0 && msgCount >= (Number)(goalCount * 2)) {
         setIsMsgFull(true);
       } else {
         setIsMsgFull(false);
