@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const TopWindow = () => {
     return (
-        <svg width="40" height="43" viewBox="0 0 59 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="59" height="43" viewBox="0 0 59 43" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5.05655 31.5501L29.1084 0.811376L53.1603 31.5501H5.05655Z" fill="white" stroke="black"/>
             <rect x="4.54883" y="25.0005" width="49.1188" height="6.97691" fill="white" stroke="black"/>
             <path d="M16.731 24.5705L27.4891 10.0607L27.489 24.5705H16.731Z" fill="white" stroke="black"/>
