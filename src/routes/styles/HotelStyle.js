@@ -4,6 +4,7 @@ export const HotelContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 30px;
 `
 
 export const Hotelbg = styled.img`
@@ -18,8 +19,7 @@ export const GridBox = styled.div `
     display: grid;
     width: 205.69px;
     height: 358.8px;
-    margin-right: 8px;
 
-    margin-top: 55px;
+    margin-top: 30px;
     justify-items: center;
 `

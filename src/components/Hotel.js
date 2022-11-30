@@ -4,12 +4,14 @@ import styled from 'styled-components';
 import Door from './Window/Door';
 import TopWindow from './Window/TopWindow';
 import Window from './Window/Window';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {dbService } from "fbase"
 import { useParams } from 'react-router-dom';
 import Modal from './Modal/Modal';
+import { ReactComponent as MainHotel } from '../assets/TestHotel.svg';
 import { CardLayout, MessageCard } from './Modal/styles';
 import Nweet from './Nweet';
+import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
 
 const Hotel = () => {
 
@@ -17,9 +19,20 @@ const Hotel = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const [msgSize, setMsgSize] = useState(0);
     const [nweets, setNweets] = useState([]);
+    const [roofColor, setRoofColor] = useState("");
+    const [bodyColor, setBodyColor] = useState("");
 
     const {id} = useParams(); // hetelOwnerId
 
+    useEffect(async () => {
+      await dbService.collection("hotelOwner").doc(id).get()
+      .then((doc) => {
+        document.getElementById("roof1").style.fill = doc.data().roofColor;
+        document.getElementById("roof2").style.fill = doc.data().roofColor;
+        document.getElementById("body").style.fill = doc.data().bodyColor;
+        document.getElementById("circle").style.fill = doc.data().bodyColor;
+      });
+    }, []);
 
     const getPost = () => {
 
@@ -46,7 +59,8 @@ const Hotel = () => {
     const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 ,22 , 23, 24, 25];
     return (
         <HotelContainer>
-            <Hotelbg src={Hotel2}/>
+            {/* <Hotelbg src={Hotel2}/> */}
+            <MainHotel />
             <GridBox> {
                 items.map((item, key) => (
                     <div key={key} className={`div${item}`}>
