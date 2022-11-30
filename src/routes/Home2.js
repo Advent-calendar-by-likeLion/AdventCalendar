@@ -51,8 +51,7 @@ const Home2 = ({ userObj }) => {
       uid = userObj.uid;
     }     
 
-    dbService.collection("hotelOwner").doc(id).get()
-    .then((doc) => {
+    dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
       setDisplayName(doc.data().nickname);
       setDescription(doc.data().description);
       setWindowCount(doc.data().windowCount);
