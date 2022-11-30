@@ -129,6 +129,7 @@ const WriteSuccessTitle = styled.div`
     text-align: center;
     font-weight: bold;
     font-size: 20px;
+    font-family: "humanbeomseok";
     width: 280px;
     height: 29px;
 `
