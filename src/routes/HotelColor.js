@@ -70,6 +70,7 @@ const HotelColor = ({userObj}) => {
                 fontSize: "22px",
                 fontWeight: "bold",
                 position:"relative",
+                fontFamily: "humanbeomseok"
             }}>
                 내 호텔은 무슨 색인가요?
             </div>
@@ -153,6 +154,7 @@ const PalleteLayout = styled.div`
 const TextStyle = styled.div`
     font-size: 18px;
     font-weight: 600px;
+    font-family: "humanbeomseok";
     padding-bottom: 5px;
 `
 const PalleteFlex = styled.div`

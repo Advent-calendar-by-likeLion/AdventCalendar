@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import Hotel from '../assets/SnowHotel.svg';
 import LoginBar from '../assets/LoginBar.svg';
 import SignupBar from '../assets/SignupBar.svg';
-import Title from '../assets/Welcome.svg';
+import Title from '../assets/Welcome.svg'; // 기존에 쓰던 타이틀
+import MainTitle from '../assets/WelcomeAddedFont.svg'; // 폰트적용된 타이틀
 import { useHistory } from 'react-router-dom';
 import { Container, HotelImg, TitleDiv, LandingButton, LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4 } from './styles/style';
 import { GreenButton, RedButton } from './styles/buttonstyle';
@@ -40,9 +41,9 @@ const Start = () => {
     return (
         <>
         <Container>
-            <img src={Title} />
+            <img src={MainTitle} />
             <br/>
-            <TitleDiv>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
+            {/* <TitleDiv>진저호텔에서 보내는 25일간의 휴일</TitleDiv> */}
             <HotelImg src={Hotel} />
             <ButtonLayout>
                 <RedButton onClick={onclickLoginBar}>로그인</RedButton>
