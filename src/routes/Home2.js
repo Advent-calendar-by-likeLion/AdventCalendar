@@ -265,34 +265,6 @@ const Home2 = ({ userObj }) => {
                               <RedRoundButton onClick={onClickGoLetter}>편지 읽기</RedRoundButton>
                             </GingerCardLayout>}
                           </GingerModal>} 
-          {/* {isModalOpen && <Modal closeModal={onClickCloseModal}>
-                            <h1>도착한 편지</h1>
-                            <CardLayout>
-                            {nweets.map((nweet) => (
-                            <MessageCard>
-                                <Nweet 
-                                  key={nweet.id} 
-                                  nweetObj={nweet}
-                                  isOwner={nweet.creatorId === userObj.uid}
-                                />
-                            </MessageCard>
-                            ))}
-                            </CardLayout>
-                          </Modal>}
-          {isGingerModalOpen && <GingerModal closeModal={onClickCloseGingerModal}>
-                            <GingerCardLayout>
-                              <GingerTitle>벨보이 진저맨</GingerTitle>
-                              <br/>
-                              <GingerContent>진저호텔에 온 걸 환영한다!
-                                              <br/>
-                                              크리스마스에 진저호텔이라...
-                                              <br/>
-                                              탁월한 선택!
-                              </GingerContent>
-                              <GingerCookie src={BellBoyCookie} />
-                              <RedRoundButton>편지 읽기</RedRoundButton>
-                            </GingerCardLayout>
-                          </GingerModal>} */}
           {isLandingModalOpen && <LandingModal closeModal={onClickCloseLandingModal}>
                             <LandingPageModalInner>
                                 <LandingRedButton src={LandingPage} />
@@ -400,7 +372,7 @@ const GingerTitle = styled.div`
   top: 6%;
   bottom: 18.26%;
 
-  font-family: 'Noto Sans KR';
+  font-family: 'humanbeomseok';
   font-style: normal;
   font-weight: 900;
   font-size: 17px;
@@ -416,7 +388,7 @@ const GingerContent = styled.div`
   top: 17%;
   bottom: 12.8%;
 
-  font-family: 'Noto Sans KR';
+  font-family: 'humanbeomseok';
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
