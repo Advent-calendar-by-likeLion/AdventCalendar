@@ -161,8 +161,8 @@
   }
   .custom-radios input[type=radio] + label span {
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin: -1px 4px 0 0;
     vertical-align: middle;
     cursor: pointer;
@@ -180,4 +180,5 @@
   }
   .custom-radios input[type=radio]:checked + label span img {
     opacity: 1;
+    margin-bottom: 4px;
   }
