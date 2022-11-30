@@ -1,8 +1,8 @@
 
 import { authService, firebaseInstance } from "fbase";
 import AuthForm from "components/AuthForm";
-import Google from '../assets/Google.svg';
-import Github from '../assets/Github.svg';
+import Google from '../assets/GoogleLogin.svg';
+import Github from '../assets/GithubLogin.svg';
 import { Container } from './styles/style';
 import styled from 'styled-components';
 import { useHistory } from "react-router-dom";
