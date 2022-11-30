@@ -110,3 +110,11 @@ export const GingerCookie = styled.img`
     margin: 0 auto;
     margin-top: 95px;
 `
+
+// Landing Page
+export const WelcometoGingerHotel = styled.img`
+    position: absolute;
+    
+    top: 3.5%;
+    bottom: 66.5%;
+`
