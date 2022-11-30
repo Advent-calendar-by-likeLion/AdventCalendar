@@ -53,8 +53,7 @@ const AdminConfig = ({userObj}) => {
             }}>오늘의 편지 최대 갯수</div>
 
             <NicknameInput>
-                <InputStylenick type="text" placeholder='숫자 입력'
-                onChange={onChange}/>
+                <InputStylenick type="text" placeholder='숫자 입력' onChange={onChange}/>
             </NicknameInput>
             <br/>
             <form onSubmit={onSubmit}>

@@ -195,7 +195,7 @@ const Write = ({ match, userObj }) => {
         dbService.collection("hotelOwner").doc(id).get().then((doc) => {
         let i = 1; // window day count
         while (true) {
-            if (doc.data().windowInfo[i]) {
+            if (doc.data().windowCount > i || doc.data().windowInfo[i]) {
                 i++;
                 continue;
             }

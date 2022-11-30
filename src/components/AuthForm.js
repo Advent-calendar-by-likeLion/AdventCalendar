@@ -1,6 +1,7 @@
 import { authService, firebaseInstance } from "fbase";
 import { useState } from "react";
 import Title from '../assets/Welcome.svg';
+import MainTitle from '../assets/WelcomeAddedFont.svg';
 import DisLoginBar from '../assets/DisLoginBar.svg';
 import LoginBar from '../assets/LoginBar.svg';
 import styled from "styled-components";
@@ -41,8 +42,8 @@ const AuthForm = (userObj) => {
 
     return (
         <>
-            <img src={Title} />
-            <TitleDiv>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
+            <img src={MainTitle} />
+            {/* <TitleDiv>진저호텔에서 보내는 25일간의 휴일</TitleDiv> */}
                 <form onSubmit={onSubmit}>
                     <LoginFormStyle>
                         <InputLayout>

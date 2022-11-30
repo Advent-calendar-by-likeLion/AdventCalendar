@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 const Window = ({item}) => {
     const {id} = useParams(); // hetelOwnerId
     const [info, setInfo] = useState([]);
+    const [windowCount, setWindowCount] = useState([]);
 
     useEffect(() => {
         initWindowInfo();
@@ -17,9 +18,9 @@ const Window = ({item}) => {
     }, []);
 
     const initWindowInfo = () => {
-        dbService.collection("hotelOwner").doc(id).get()
-        .then((doc) => {
+        dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
             setInfo(doc.data().windowInfo);
+            setWindowCount(doc.data().windowCount);
         });
       }
 
