@@ -17,7 +17,8 @@ const Hotel = () => {
 
 
     const [isModalOpen, setModalOpen] = useState(false);
-    const [msgSize, setMsgSize] = useState(0);
+    const [msgSize, setMsgSize] = useState("");
+    const [dateFormat, setDateFormat] = useState("");
     const [nweets, setNweets] = useState([]);
 
     const {id} = useParams(); // hetelOwnerId
@@ -46,6 +47,7 @@ const Hotel = () => {
         }))
         setMsgSize(newArray.length);
         setNweets(newArray);
+        setDateFormat(newArray[0].dateFormat);
       })
       setModalOpen(true);
     }
@@ -81,7 +83,7 @@ const Hotel = () => {
 
                 ))
             } </GridBox>
-                      {isModalOpen && <Modal dateFormat={nweets[0].dateFormat} closeModal={onClickCloseModal}>
+                      {isModalOpen && <Modal dateFormat={dateFormat} closeModal={onClickCloseModal}>
                             <h1>도착한 편지</h1>
                             <CardLayout>
                             {nweets.map((nweet) => (
