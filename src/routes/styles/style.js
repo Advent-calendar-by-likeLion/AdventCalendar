@@ -151,11 +151,28 @@ export const LandingContent1 = styled.div`
 
     color: #000000;
 `
+export const LandingContent11 = styled.div`
+    position: relative;
+    left: 0%;
+    top: 9.1%;
+
+    height: 28px;
+    width: 225px;
+
+    font-family: 'humanbeomseok';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: left;
+
+    color: #000000;
+`
 
 export const LandingTitle2 = styled.div`
     position: relative;
     left: -23%;
-    top: 11%;
+    top: 10%;
 
     font-family: 'humanbeomseok';
     font-style: normal;
@@ -169,7 +186,7 @@ export const LandingTitle2 = styled.div`
 export const LandingContent2 = styled.div`
     position: relative;
     left: -9%;
-    top: 11.9%;
+    top: 10.9%;
 
     font-family: 'humanbeomseok';
     font-style: normal;
@@ -185,7 +202,7 @@ export const LandingContent2 = styled.div`
 export const LandingTitle3 = styled.div`
     position: relative;
     left: -9.5%;
-    top: 13%;
+    top: 11.5%;
 
     font-family: 'humanbeomseok';
     font-style: normal;
@@ -199,7 +216,7 @@ export const LandingTitle3 = styled.div`
 export const LandingContent3 = styled.div`
     position: relative;
     left: 14%;
-    top: 13.9%;
+    top: 12.5%;
 
     height: 20px;
     width: 304px;
@@ -217,7 +234,7 @@ export const LandingContent3 = styled.div`
 export const LandingTitle4 = styled.div`
     position: relative;
     left: -25%;
-    top: 16%;
+    top: 14.5%;
 
     font-family: 'humanbeomseok';
     font-style: normal;
@@ -231,7 +248,7 @@ export const LandingTitle4 = styled.div`
 export const LandingContent4 = styled.div`
     position: relative;
     left: 0%;
-    top: 16.9%;
+    top: 15.5%;
     height: 60px;
     width: 230px;
     
@@ -247,7 +264,7 @@ export const LandingContent4 = styled.div`
 export const LandingContent10 = styled.div`
     position: relative;
     left: 0%;
-    top: 10.9%;
+    top: 9.4%;
     height: -7px;
     width: 230px;
     
