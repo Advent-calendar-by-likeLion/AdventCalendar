@@ -46,7 +46,7 @@ const Container = styled.div`
   align-items: center;
   border-radius: 100px;
 
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 `;
 
 const Progress = styled.div`
