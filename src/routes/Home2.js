@@ -20,7 +20,7 @@ import MessageModal from "../components/Modal/MessageModal";
 import BellBoyCookie from '../assets/cookie/BellBoyCookie.svg';
 
 // Landing Page 관련
-import { LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4, LandingContent10 } from './styles/style';
+import { LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4, LandingContent10, LandingContent11 } from './styles/style';
 import LandingModal from '../components/Modal/LandingModal';
 import { LandingPageModalInner } from "../components/Modal/styles";
 import LandingPage from '../assets/LandingPage/Welcome.svg';
@@ -270,9 +270,9 @@ const Home2 = ({ userObj }) => {
                                     어드벤트 캘린더는 12월 1일부터 25일까지, 크리스마스를 기다리며 하나씩 선물을 열어보는 달력을 말해요! 
                                 </LandingContent1>
                                 <br/>
-                                <LandingContent1>
+                                <LandingContent11>
                                     한국에서는 아직 대중화되지 않았지만, 외국에서는 크리스마스와 연말 시즌에 많이 사용한답니다.
-                                </LandingContent1>
+                                </LandingContent11>
                                 <br/>
                                 <LandingTitle2>⛄ 진저호텔 이용 방법</LandingTitle2>
                                 <LandingContent2>
@@ -411,21 +411,21 @@ const LandingGingerImage = styled.div`
     height: 116px;
     width: 220px;
     left: 0px;
-    top: 100px;
+    top: 92px;
 `
 const LandingInstaImage = styled.div`
     position: relative;
     height: 10px;
     width: 10px;
     left: 40px;
-    top: 60px;
+    top: 53px;
 `
 const LandingEmailImage = styled.div`
     position: relative;
     height: 10px;
     width: 10px;
     left: 40px;
-    top: 66px;
+    top: 58px;
 `
 const LandingButtonHotel1 = styled.div`
     position: relative;
@@ -437,7 +437,7 @@ const LandingButtonHotel1 = styled.div`
 const LandingContent5 = styled.div`
     position: relative;
     left: 0%;
-    top: 10%;
+    top: 9%;
     height: 60px;
     width: 230px;
     
