@@ -296,6 +296,8 @@ const Home2 = ({ userObj }) => {
                                     🎄 하루에 하나의 창문만 오픈 가능해요!
                                     <br/>
                                     🎄 정해진 편지 갯수를 채워야 창문을 열 수 있어요!
+                                    <br/>
+                                    🎄 열지 못한 창문은 25일에 오픈돼요!
                                 </LandingContent2>
                                 <br/>
                                 <LandingTitle3>⛄ 진저맨 카드를 모두 모아 보세요!</LandingTitle3>
@@ -438,14 +440,14 @@ const LandingInstaImage = styled.div`
     height: 10px;
     width: 10px;
     left: 40px;
-    top: 53px;
+    top: 50px;
 `
 const LandingEmailImage = styled.div`
     position: relative;
     height: 10px;
     width: 10px;
     left: 40px;
-    top: 58px;
+    top: 55px;
 `
 const LandingButtonHotel1 = styled.div`
     position: relative;
