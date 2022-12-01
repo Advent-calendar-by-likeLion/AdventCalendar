@@ -301,9 +301,11 @@ const Home2 = ({ userObj }) => {
                                 <LandingContent5>
                                     <br/>🎅 웰컴투 진저호텔은 수익을 창출하지 않으며, 비영리 서비스입니다.
                                 </LandingContent5>
-                                <LandingInstaImage>
-                                    <img src={LandingInsta}/>
-                                </LandingInstaImage>
+                                <InstaLink href="https://www.instagram.com/gingerhotel_welcome/">
+                                  <LandingInstaImage>
+                                      <img src={LandingInsta}/>
+                                  </LandingInstaImage>
+                                </InstaLink>
                                 <LandingEmailImage>
                                     <img src={LandingEmail}/>
                                 </LandingEmailImage>
@@ -316,6 +318,13 @@ const Home2 = ({ userObj }) => {
 
 export default Home2;
 
+const InstaLink = styled.a`
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: transparent;
+  border: none;
+  color: #FFFFFF;
+`
 const Cookie = styled.img`
   width: 180px;
   height: 218px;
