@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/AdventCalendar/static/css/main.49dc601a.chunk.css",
-    "main.js": "/AdventCalendar/static/js/main.ab56dd4b.chunk.js",
-    "main.js.map": "/AdventCalendar/static/js/main.ab56dd4b.chunk.js.map",
+    "main.js": "/AdventCalendar/static/js/main.919678e0.chunk.js",
+    "main.js.map": "/AdventCalendar/static/js/main.919678e0.chunk.js.map",
     "runtime-main.js": "/AdventCalendar/static/js/runtime-main.5bb88139.js",
     "runtime-main.js.map": "/AdventCalendar/static/js/runtime-main.5bb88139.js.map",
     "static/js/2.ddbd781d.chunk.js": "/AdventCalendar/static/js/2.ddbd781d.chunk.js",
@@ -14,7 +14,7 @@
     "static/media/Component3434.962424e7.svg": "/AdventCalendar/static/media/Component3434.962424e7.svg",
     "static/media/DisLoginBar.3c0e8c3b.svg": "/AdventCalendar/static/media/DisLoginBar.3c0e8c3b.svg",
     "static/media/DisSignup.5bbd4721.svg": "/AdventCalendar/static/media/DisSignup.5bbd4721.svg",
-    "static/media/FacebookLogin.768b817e.svg": "/AdventCalendar/static/media/FacebookLogin.768b817e.svg",
+    "static/media/FaceBookLogin.768b817e.svg": "/AdventCalendar/static/media/FaceBookLogin.768b817e.svg",
     "static/media/GithubLogin.87abaf73.svg": "/AdventCalendar/static/media/GithubLogin.87abaf73.svg",
     "static/media/GoogleLogin.c1879b17.svg": "/AdventCalendar/static/media/GoogleLogin.c1879b17.svg",
     "static/media/Hotel2.16a75d8c.svg": "/AdventCalendar/static/media/Hotel2.16a75d8c.svg",
@@ -38,6 +38,6 @@
     "static/js/runtime-main.5bb88139.js",
     "static/js/2.ddbd781d.chunk.js",
     "static/css/main.49dc601a.chunk.css",
-    "static/js/main.ab56dd4b.chunk.js"
+    "static/js/main.919678e0.chunk.js"
   ]
 }
