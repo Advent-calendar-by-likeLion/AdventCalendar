@@ -31,6 +31,7 @@ const Write = ({ match, userObj }) => {
 
     const [goalCount, setGoalCount] = useState(0)
     const [windowCount, setWindowCount] = useState(1)
+    const [lastDate, setLastDate] = useState("");
     
     const tableId = `${id}_${windowCount}`;
 
@@ -38,6 +39,7 @@ const Write = ({ match, userObj }) => {
         dbService.collection("hotelOwner").doc(id).get()
         .then((doc) => {
             setWindowCount(doc.data().windowCount);
+            setLastDate(doc.data().lastDate);
         });
 
         dbService.collection("AdminConfig").doc("AdminConfig").get()
@@ -168,11 +170,30 @@ const Write = ({ match, userObj }) => {
         }
     }
 
+    const getCurrentDate = () => { // ex : 22-04-17
+        let date = new Date();
+        let offset = date.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
+        let dateOffset = new Date(date.getTime() - offset);
+        
+        return dateOffset.toISOString().slice(2, 10);
+    }
+        
     const onClearAttachment = () => setAttachment("");
 
     const setLastDateToDB = async (dateFormat) => {
+
+        dbService.collection("hotelOwner").doc(id).get()
+        .then((doc) => {
+          setLastDate(doc.data().lastDate);
+        });
+        let isAddable = false;
+        if (new Date("20" + lastDate) < new Date("20" + getCurrentDate())) {
+            isAddable = true;
+        }
+
         await dbService.collection("hotelOwner").doc(id).update({
           lastDate : dateFormat,
+          windowCount : isAddable ? Number(windowCount) + 1 : Number(windowCount),
         });
       }
 
