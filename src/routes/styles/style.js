@@ -282,5 +282,5 @@ export const LandingButton = styled.div`
     width: 35px;
     height: 35px;
     left: 271px;
-    top: -729.5px;
+    top: -727.5px;
 `
