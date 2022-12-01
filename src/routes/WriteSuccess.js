@@ -115,7 +115,6 @@ const WriteSuccess= ({userObj}) => {
                     {
 
                     }
-                    <RedButton onClick={onclickWriteLetterBar}>편지 더 쓰기</RedButton>
                     <GreenButton onClick={onclickMyHotelBar}>내 호텔 가기</GreenButton>
                 </ButtonLayout>
             </Container>

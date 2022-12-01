@@ -191,6 +191,10 @@ const Home2 = ({ userObj }) => {
     })
   }
 
+  const createHotel = () => {
+    history.push("/"); // 경로 설정 추후에 다시 할 예정
+}
+
   return (
     <>
       <HotelContainer style={{fontFamily: "humanbeomseok"}}> 
@@ -223,7 +227,12 @@ const Home2 = ({ userObj }) => {
             <RedButton disabled={isMsgFull} onClick={toWrite}>편지 보내기</RedButton>
             {
               isMsgFull ?
-              <><br/><HotelGuide>* 오늘의 편지 마감! 내일 작성해 주세요 *</HotelGuide></>
+              <>
+              <br/><HotelGuide>* 오늘의 편지 마감! 내일 작성해 주세요 *</HotelGuide>
+              <br/>
+              <GreenButton onClick={createHotel}>호텔 만들기</GreenButton>
+              
+              </>
               :
               isFull ?
               <><br/><HotelGuide>보낼 수 있는 편지가 {(goalCount * 2) - msgCount}개 남았습니다!</HotelGuide></>
