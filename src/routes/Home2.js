@@ -188,7 +188,9 @@ const Home2 = ({ userObj }) => {
   const copyUrl = () => { 
       navigator.clipboard.writeText(nowUrl).then(res=>{
       alert("주소가 복사되었습니다!");
-    })
+    }).catch(() => {
+      alert("해당 브라우저에서 클립보드 복사가 지원되지 않으므로, 상단 url을 복사하거나 다른 크롬 브라우저를 사용 권장 드립니다.");
+    });
   }
 
   const createHotel = () => {
