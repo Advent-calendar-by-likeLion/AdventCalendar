@@ -79,7 +79,6 @@ const Write = ({ match, userObj }) => {
         // 날짜 따와서 modal nweet에 넣음.
         // 날짜 따와서 lastWriteTime을 호텔오너에 넣음.
 
-        checkVisible();
         let date = new Date();
         let offset = date.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
         let dateOffset = new Date(date.getTime() - offset);
@@ -96,7 +95,8 @@ const Write = ({ match, userObj }) => {
             hotelOwnerId: id,
             writerNickname: displayName,
         });
-
+        
+        checkVisible();
         setNweet("");
         setAttachment("");
         history.push("/writesuccess");
