@@ -57,6 +57,7 @@ const Home2 = ({ userObj }) => {
   const [isGoLetter, setIsGoLetter] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0,0);
     Config();
     if (userObj) {
       uid = userObj.uid;
