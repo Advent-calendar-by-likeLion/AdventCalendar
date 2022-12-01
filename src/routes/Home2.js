@@ -229,8 +229,6 @@ const Home2 = ({ userObj }) => {
               isMsgFull ?
               <>
               <br/><HotelGuide>* 오늘의 편지 마감! 내일 작성해 주세요 *</HotelGuide>
-              <br/>
-              <GreenButton onClick={createHotel}>호텔 만들기</GreenButton>
               
               </>
               :
@@ -239,6 +237,8 @@ const Home2 = ({ userObj }) => {
               :
               <></>
             }
+            <br/>
+            <GreenButton onClick={createHotel}>호텔 만들기</GreenButton>
             
             <br/>
           </>
