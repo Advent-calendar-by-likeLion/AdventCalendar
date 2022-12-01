@@ -221,6 +221,15 @@ const Home2 = ({ userObj }) => {
             <GreenButton onClick={copyUrl}>호텔 링크 복사하기</GreenButton>
             <br/>
             <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
+            
+            <br/><br/><br/><HotelGuide>* 완성도 높은 호텔을 위해 오류가 발생 시 ' 
+            <InstaLink href="https://www.instagram.com/gingerhotel_welcome/">
+                                  <InstaImage>
+                                      <img src={LandingInsta}/>
+                                  </InstaImage>
+            </InstaLink>
+            '를 클릭하여 DM 부탁드립니다 *</HotelGuide>
+            
             <Footer />
           </>
           :  
@@ -244,7 +253,10 @@ const Home2 = ({ userObj }) => {
             
             <br/>
           </>
-          }      
+          }
+
+
+                
           {isGingerModalOpen && <GingerModal dateFormat={nweets[0].dateFormat} closeModal={onClickCloseGingerModal}>
                         {isGoLetter ? <Modal dateFormat={nweets[0].dateFormat} closeModal={onClickCloseModal}>
                                           <h1>도착한 편지</h1>
@@ -324,6 +336,7 @@ const Home2 = ({ userObj }) => {
                                 </LandingEmailImage>
                             </LandingPageModalInner>
             </LandingModal>}
+
       </HotelContainer>
     </>
   );
@@ -434,6 +447,11 @@ const LandingGingerImage = styled.div`
     width: 220px;
     left: 0px;
     top: 92px;
+`
+const InstaImage = styled.span`
+    position: relative;
+    height: 10px;
+    width: 10px;
 `
 const LandingInstaImage = styled.div`
     position: relative;
