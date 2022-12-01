@@ -177,18 +177,11 @@ const Write = ({ match, userObj }) => {
       }
 
     const checkVisible = () => {
-        let msgCount = 0;
-        dbService.collection(tableId).onSnapshot((snapshot) => {
-            const newArray = snapshot.docs.map((document) => ({
-                id: document.id,
-                ...document.data(),
-            }))
-            if ( newArray.length == goalCount ) {
-              changeVisible();
+        dbService.collection(tableId).get().then(snap => {
+            if ( snap.size == goalCount ) {
+                changeVisible();
             }
-            console.log(msgCount);
-        })
-
+        });
       };
 
     const changeVisible = () => {
