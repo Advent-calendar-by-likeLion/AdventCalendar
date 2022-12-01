@@ -45,6 +45,9 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             <Route exact path="/signup">
               <Signup userObj={userObj}/>
             </Route>
+            <Route exact path="/AdminConfig/:id">
+              <AdminConfig userObj={userObj}/>
+            </Route>
             <Route exact path="/AdminConfig">
               <AdminConfig userObj={userObj}/>
             </Route>
@@ -71,6 +74,9 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             </Route>
             <Route exact path="/hotelcolor">
               <HotelColor userObj={userObj} />
+            </Route>
+            <Route exact path="/AdminConfig/:id">
+              <AdminConfig userObj={userObj}/>
             </Route>
             <Route exact path="/AdminConfig">
               <AdminConfig userObj={userObj}/>
