@@ -15,6 +15,12 @@ function App() {
   }
 
   useEffect(() => {
+
+    let nowUrl = window.location.href;
+    let repStr = nowUrl.replace(/\/\?fbclid=PAAa.*hotel%2F/,"#/hotel/")
+    window.history.pushState({}, null, repStr);
+    // console.log("repStr : "+ repStr);
+    //console.log("now url : " + nowUrl);
     authService.onAuthStateChanged((user) => {
       if (user) {
         setIsLoggedIn(user);
