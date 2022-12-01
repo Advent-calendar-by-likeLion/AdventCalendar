@@ -2,7 +2,7 @@
 import { authService, firebaseInstance } from "fbase";
 import AuthForm from "components/AuthForm";
 import Google from '../assets/GoogleLogin.svg';
-import Facebook from '../assets/FacebookLogin.svg';
+import Facebook from '../assets/FaceBookLogin.svg';
 import Github from '../assets/GithubLogin.svg';
 import { Container } from './styles/style';
 import styled from 'styled-components';
