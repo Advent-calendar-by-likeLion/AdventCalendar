@@ -13,7 +13,7 @@ import { CardLayout, MessageCard } from './Modal/styles';
 import Nweet from './Nweet';
 import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
 
-const Hotel = () => {
+const Hotel = ({userObj}) => {
 
 
     const [isModalOpen, setModalOpen] = useState(false);
@@ -47,6 +47,10 @@ const Hotel = () => {
     const openModalPost = () => console.log("btn event");
     
     const onClickOpenModal = (item) => {
+      if (id !== (userObj ? userObj.uid : 0)) {
+        alert("자신의 호텔만 열람할 수 있습니다!");
+        return;
+      } 
       if (!info[item]) { 
         alert("창문이 닫혀 있습니다!");
         return;

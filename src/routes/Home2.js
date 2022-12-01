@@ -204,7 +204,7 @@ const Home2 = ({ userObj }) => {
             <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
         </LandingButtonHotel1>  
           {/* <HotelName userObj={userObj} /> */}
-          <Hotel/>
+          <Hotel userObj={userObj}/>
           { 
           id === (userObj ? userObj.uid : 0) ?  
           
