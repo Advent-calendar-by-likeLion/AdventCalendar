@@ -113,7 +113,7 @@ const Home2 = ({ userObj }) => {
     let dateOffset = new Date(date.getTime() - offset);
 
     await dbService.collection("hotelOwner").doc(id).update({
-        windowCount : windowCount + 1,
+        windowCount : Number(windowCount) + 1,
         lastDate : dateOffset.toISOString().slice(2, 10),
     });
   }
