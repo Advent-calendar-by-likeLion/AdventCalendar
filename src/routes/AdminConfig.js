@@ -11,6 +11,7 @@ const AdminConfig = ({userObj}) => {
 
     const [goalCount, setGoalCount] = useState(userObj.displayName);
     const [windowCount, setWindowCount] = useState(2);
+    const [windowInfoIndex, setWindowInfoIndex] = useState(0);
     const history = useHistory();
 
     useEffect(() => {
@@ -22,6 +23,12 @@ const AdminConfig = ({userObj}) => {
 
     }, []);
 
+    const onChangeWindowInfoIndex = (event) => {
+        const {
+          target: { value },
+        } = event;
+        setWindowInfoIndex(value);
+    };
     const onChangeWindowCount = (event) => {
         const {
           target: { value },
@@ -36,6 +43,21 @@ const AdminConfig = ({userObj}) => {
     };
 
 
+    const onSubmitWindowInfo = async (event) => {
+        event.preventDefault();
+
+        // dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
+        //     setWindowInfo(doc.data().windowInfo);
+        // });
+
+        await dbService.collection("hotelOwner").doc(id).update({
+            [`windowInfo.${windowInfoIndex}`] : true,
+           //  windowCount : i,
+        });
+
+        alert(`시발 ${windowInfoIndex}개 로 변경`);
+        //history.push("/hotel/" + userObj.uid);
+    }
     const onSubmit = async (event) => {
         event.preventDefault();
 
@@ -65,6 +87,22 @@ const AdminConfig = ({userObj}) => {
             <div style={{marginTop: "141px", fontSize: '30px', fontWeight: "bold"}}>관리자페이지</div>
             <br/>
             
+            <br/>
+            <div style={{
+                height: "29px",
+                fontSize: "20px",  
+                fontWeight: "500px",
+
+            }}>창문 미오픈 수정</div>
+            <NicknameInput>
+                <InputStylenick type="text" placeholder='일자 입력' onChange={onChangeWindowInfoIndex}/>
+            </NicknameInput>
+            <br/>
+            <form onSubmit={onSubmitWindowInfo}>
+                <RedButton>창문 미오픈 수정</RedButton>
+            </form>
+
+            <br/>
             <br/>
             <div style={{
                 height: "29px",
