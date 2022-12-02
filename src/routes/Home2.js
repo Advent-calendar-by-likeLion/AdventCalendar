@@ -229,7 +229,7 @@ const Home2 = ({ userObj }) => {
             
             <br/><br/><br/>
             <HotelGuide>* 완성도 높은 호텔을 위해 오류 발생 시 ' 
-            <InstaLink href="https://www.instagram.com/gingerhotel_welcome/">
+            <InstaLink target="_blank" href="https://www.instagram.com/gingerhotel_welcome/">
                                   <InstaImage>
                                       <img src={LandingInsta}/>
                                   </InstaImage>
@@ -258,7 +258,7 @@ const Home2 = ({ userObj }) => {
             <GreenButton onClick={createHotel}>호텔 만들기</GreenButton>
             <br/><br/><br/>
             <HotelGuide>* 완성도 높은 호텔을 위해 오류 발생 시 ' 
-            <InstaLink href="https://www.instagram.com/gingerhotel_welcome/">
+            <InstaLink target="_blank" href="https://www.instagram.com/gingerhotel_welcome/">
                                   <InstaImage>
                                       <img src={LandingInsta}/>
                                   </InstaImage>
@@ -340,7 +340,7 @@ const Home2 = ({ userObj }) => {
                                 <LandingContent5>
                                     <br/>🎅 웰컴투 진저호텔은 수익을 창출하지 않으며, 비영리 서비스입니다.
                                 </LandingContent5>
-                                <InstaLink href="https://www.instagram.com/gingerhotel_welcome/">
+                                <InstaLink target="_blank" href="https://www.instagram.com/gingerhotel_welcome/">
                                   <LandingInstaImage>
                                       <img src={LandingInsta}/>
                                   </LandingInstaImage>
