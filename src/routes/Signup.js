@@ -13,6 +13,7 @@ const Signup = ({userObj}) => {
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
   const history = useHistory();
+  const [error, setError] = useState("");
 
   const onChange = (event) => {
     const {target: {name, value}} = event;
@@ -37,7 +38,7 @@ const Signup = ({userObj}) => {
         alert("비밀번호가 일치하지 않습니다.");
       }
     } catch (error) {
-      console.log(error);
+        setError(error.message);
     }
   }
 
@@ -58,6 +59,7 @@ const Signup = ({userObj}) => {
           </InputLayout2>
           <ButtonLayout>
             <RedButton disabled={false} type="submit">내 호텔 만들기</RedButton>
+            {error? "[오류 메세지]" + error : ""}
           </ButtonLayout>
         </form>
       </Container>
