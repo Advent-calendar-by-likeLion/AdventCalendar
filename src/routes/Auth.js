@@ -47,7 +47,7 @@ const Auth = ( {userObj} ) => {
                 <AuthForm userObj={userObj}/>
                 <HotelGuide style={{fontFamily: "humanbeomseok"}}>
                 <br/>   
-                    * 소셜로그인은 삼성/크롬 브라우저를 이용해주세요! *
+                    * 소셜로그인은 삼성/크롬 브라우저를 이용해 주세요! *
                 </HotelGuide>
                 <ButtonStyle>
                     <img src={Google} onClick={onSocialClick} name="google" />
