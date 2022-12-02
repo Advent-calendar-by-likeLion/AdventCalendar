@@ -19,6 +19,7 @@ import MessageModal from "../components/Modal/MessageModal";
 // 쿠키 관련 모음
 import BellBoyCookie from '../assets/cookie/BellBoyCookie.svg';
 import SleepyheadCookie from '../assets/cookie/SleepyheadCookie.svg';
+import babyCookie from '../assets/cookie/babyCookie.svg';
 
 // Landing Page 관련
 import { LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4, LandingContent10, LandingContent11 } from './styles/style';
@@ -287,15 +288,13 @@ const Home2 = ({ userObj }) => {
                                           </CardLayout>
                                         </Modal> :
                             <GingerCardLayout>
-                              <GingerTitle>잠꾸러기 진저맨</GingerTitle>
+                              <GingerTitle>아기 진저맨</GingerTitle>
                               <br/>
-                              <GingerContent>지금 몇시야..?
-                                              <br/>
-                                              5분만 더 잘게... 5분만...
-                                              <br/>
-                                              흠냐... Zzz..
+                              <GingerContent> 뭐?! 내가 귀엽다고??
+                                              <br/>어..어쩔티비산타코털3미터!!
+                                              <br/>당장 그말 취..취소해!!
                               </GingerContent>
-                              <GingerCookie src={SleepyheadCookie} />
+                              <GingerCookie src={babyCookie} />
                               <RedRoundButton onClick={onClickGoLetter}>편지 읽기</RedRoundButton>
                             </GingerCardLayout>}
                           </GingerModal>} 
