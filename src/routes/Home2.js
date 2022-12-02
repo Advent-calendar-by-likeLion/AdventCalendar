@@ -223,7 +223,8 @@ const Home2 = ({ userObj }) => {
             <br/>
             <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
             
-            <br/><br/><br/><HotelGuide>* 완성도 높은 호텔을 위해 오류 발생 시 ' 
+            <br/><br/><br/>
+            <HotelGuide>* 완성도 높은 호텔을 위해 오류 발생 시 ' 
             <InstaLink href="https://www.instagram.com/gingerhotel_welcome/">
                                   <InstaImage>
                                       <img src={LandingInsta}/>
@@ -251,6 +252,14 @@ const Home2 = ({ userObj }) => {
             }
             <br/>
             <GreenButton onClick={createHotel}>호텔 만들기</GreenButton>
+            <br/><br/><br/>
+            <HotelGuide>* 완성도 높은 호텔을 위해 오류 발생 시 ' 
+            <InstaLink href="https://www.instagram.com/gingerhotel_welcome/">
+                                  <InstaImage>
+                                      <img src={LandingInsta}/>
+                                  </InstaImage>
+            </InstaLink>
+            '을 클릭하여 DM 부탁드립니다 *</HotelGuide>
             
             <br/>
           </>
