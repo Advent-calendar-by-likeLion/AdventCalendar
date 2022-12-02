@@ -27,7 +27,6 @@ import { LandingPageModalInner } from "../components/Modal/styles";
 import LandingPage from '../assets/LandingPage/Welcome.svg';
 import LandingModalButton from '../assets/LandingPage/LandingModalButton.svg';
 import LandingImage from '../assets/LandingPage/LandingImageGinger.svg';
-import LandingEmail from '../assets/LandingPage/LandingEmail.svg';
 import LandingInsta from '../assets/LandingPage/LandingInsta.svg';
 
 const Home2 = ({ userObj }) => {
@@ -341,9 +340,6 @@ const Home2 = ({ userObj }) => {
                                       <img src={LandingInsta}/>
                                   </LandingInstaImage>
                                 </InstaLink>
-                                <LandingEmailImage>
-                                    <img src={LandingEmail}/>
-                                </LandingEmailImage>
                             </LandingPageModalInner>
             </LandingModal>}
 
@@ -467,15 +463,8 @@ const LandingInstaImage = styled.div`
     position: relative;
     height: 10px;
     width: 10px;
-    left: 40px;
-    top: 50px;
-`
-const LandingEmailImage = styled.div`
-    position: relative;
-    height: 10px;
-    width: 10px;
-    left: 40px;
-    top: 55px;
+    left: -5px;
+    top: -53px;
 `
 const LandingButtonHotel1 = styled.div`
     position: relative;
