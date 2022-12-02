@@ -96,13 +96,18 @@ const Home2 = ({ userObj }) => {
   }, [msgCount]);
 
   useEffect(() => {
-    dbService.collection(`${id}_${windowCount}`).onSnapshot((snapshot) => {
+    dbService.collection(`${id}_${windowCount}`).orderBy('timestamp','asc').onSnapshot((snapshot) => {
       const newArray = snapshot.docs.map((document) => ({
           id: document.id,
           ...document.data(),
       }))
       setMsgCount(newArray.length);
       setNweets(newArray);
+        if (newArray.length > 0) {
+          if (new Date("20" + newArray[0].dateFormat) < new Date("20" + getCurrentDate())) {
+            addWindowCount();
+          }
+        }
     })
 
   }, [windowCount]);
