@@ -55,7 +55,7 @@ const AdminConfig = ({userObj}) => {
            //  windowCount : i,
         });
 
-        alert(`시발 ${windowInfoIndex}개 로 변경`);
+        alert(`info index ${windowInfoIndex}개 로 변경`);
         //history.push("/hotel/" + userObj.uid);
     }
     const onSubmit = async (event) => {
