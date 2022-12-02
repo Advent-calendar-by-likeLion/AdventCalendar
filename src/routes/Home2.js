@@ -255,7 +255,7 @@ const Home2 = ({ userObj }) => {
               <></>
             }
             <br/>
-            <GreenButton onClick={createHotel}>호텔 만들기</GreenButton>
+            <GreenButton onClick={createHotel}>호텔 만들기 / 로그인</GreenButton>
             <br/><br/><br/>
             <HotelGuide>* 완성도 높은 호텔을 위해 오류 발생 시 ' 
             <InstaLink target="_blank" href="https://www.instagram.com/gingerhotel_welcome/">
