@@ -82,7 +82,7 @@ const Home2 = ({ userObj }) => {
         setIsFull(false);
       }
       
-      if (msgCount !== 0 && msgCount >= (Number)(goalCount * 2)) {
+      if (msgCount !== 0 && msgCount >= 20) {
         setIsMsgFull(true);
       } else {
         setIsMsgFull(false);
@@ -242,7 +242,7 @@ const Home2 = ({ userObj }) => {
               </>
               :
               isFull ?
-              <><br/><HotelGuide>보낼 수 있는 편지가 {(goalCount * 2) - msgCount}개 남았습니다!</HotelGuide></>
+              <><br/><HotelGuide>보낼 수 있는 편지가 {20 - msgCount}개 남았습니다!</HotelGuide></>
               :
               <></>
             }
