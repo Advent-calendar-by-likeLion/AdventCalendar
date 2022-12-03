@@ -138,8 +138,23 @@ const AdminConfig = ({userObj}) => {
                     <br/>
                     <form onSubmit={onSubmitWindowClose}>
                         <RedButton>창문 닫기</RedButton>
+                        
                     </form>
+                    <div style={{
+                    height: "29px",
+                    fontSize: "20px",  
+                    fontWeight: "500px",
 
+                    }}>오늘의 편지 최대 갯수</div>
+                    <HotelGuide>사용자가 받을 수 있는 최대 편지 수</HotelGuide>
+
+                    <NicknameInput>
+                        <InputStylenick type="text" placeholder='숫자 입력' onChange={onChange}/>
+                    </NicknameInput>
+                    <br/>
+                    <form onSubmit={onSubmit}>
+                        <RedButton>편지 갯수 변경</RedButton>
+                    </form>
                     <br/>
                     <br/>
                     <div style={{
