@@ -54,12 +54,6 @@ const Auth = ( {userObj} ) => {
                     <img src={Facebook} onClick={onSocialClick} name="facebook" />
                     <img src={Github} onClick={onSocialClick} name="github" />
                 </ButtonStyle>
-                <br/>
-                <br/>
-                <HotelGuide style={{fontFamily: "humanbeomseok"}}>* 완성도 높은 호텔을 위해 오류 발생 시 ' 
-                    <InstaLink target="_blank" href="https://www.instagram.com/gingerhotel_welcome/"><InstaImage><img src={LandingInsta}/></InstaImage></InstaLink>
-                    '을 클릭하여 DM 부탁드립니다 *
-                </HotelGuide>
             </Container>
     )
 
