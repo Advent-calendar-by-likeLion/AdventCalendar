@@ -322,7 +322,11 @@ const Home2 = ({ userObj }) => {
                                 <LandingContent10>학생 5명이 함께 만든 크리스마스 시즌 서비스입니다.</LandingContent10>
                                 <LandingContent5>
                                     <br/>🎅 웰컴투 진저호텔은 수익을 창출하지 않으며, 비영리 서비스입니다.
+                                    <br/>🎅 본 서비스는 멋쟁이사자처럼대학 연합 해커톤 '단풍톤'에서 대상을 
                                 </LandingContent5>
+                                <LandingContent6>
+                                      받은 서비스입니다.
+                                </LandingContent6>
                                 <InstaLink target="_blank" href="https://www.instagram.com/gingerhotel_welcome/">
                                   <LandingInstaImage>
                                       <img src={LandingInsta}/>
@@ -452,7 +456,7 @@ const LandingInstaImage = styled.div`
     height: 10px;
     width: 10px;
     left: -5px;
-    top: -53px;
+    top: -112px;
 `
 const LandingButtonHotel1 = styled.div`
     position: relative;
@@ -464,7 +468,23 @@ const LandingButtonHotel1 = styled.div`
 const LandingContent5 = styled.div`
     position: relative;
     left: 0%;
-    top: 9%;
+    top: 8%;
+    height: 60px;
+    width: 230px;
+    
+    font-family: 'humanbeomseok';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16.9px;
+    text-align: left;
+    
+    color: #000000;
+`
+const LandingContent6 = styled.div`
+    position: relative;
+    left: 6.4%;
+    top: 6.3%;
     height: 60px;
     width: 230px;
     
