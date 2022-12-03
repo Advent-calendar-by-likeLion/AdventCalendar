@@ -95,7 +95,7 @@ const Start = () => {
                                     <br/>🎅 본 서비스는 멋쟁이사자처럼대학 연합 해커톤 '단풍톤'에서 대상을
                                 </LandingContent5>                                
                                 <LandingContent6>
-                                    받은 서비스입니다.
+                                    받은 서비스입니다.......
                                 </LandingContent6>
                                 <LandingInstaImage>
                                     <img src={LandingInsta}/>
