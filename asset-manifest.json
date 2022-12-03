@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/AdventCalendar/static/css/main.a0d6cc94.chunk.css",
-    "main.js": "/AdventCalendar/static/js/main.b05528a9.chunk.js",
+    "main.js": "/AdventCalendar/static/js/main.97c796e9.chunk.js",
     "runtime-main.js": "/AdventCalendar/static/js/runtime-main.5bb88139.js",
     "static/js/2.1fe672f7.chunk.js": "/AdventCalendar/static/js/2.1fe672f7.chunk.js",
     "index.html": "/AdventCalendar/index.html",
@@ -20,6 +20,7 @@
     "static/media/Letter.8be0709c.svg": "/AdventCalendar/static/media/Letter.8be0709c.svg",
     "static/media/LoginBar.f8a0a1ac.svg": "/AdventCalendar/static/media/LoginBar.f8a0a1ac.svg",
     "static/media/NoRoofWall.3771a277.svg": "/AdventCalendar/static/media/NoRoofWall.3771a277.svg",
+    "static/media/PirateCookie.7f2cb29d.svg": "/AdventCalendar/static/media/PirateCookie.7f2cb29d.svg",
     "static/media/SignupBar.e848518d.svg": "/AdventCalendar/static/media/SignupBar.e848518d.svg",
     "static/media/SleepyheadCookie.c176e955.svg": "/AdventCalendar/static/media/SleepyheadCookie.c176e955.svg",
     "static/media/SnowHotel.a6394569.svg": "/AdventCalendar/static/media/SnowHotel.a6394569.svg",
@@ -35,6 +36,6 @@
     "static/js/runtime-main.5bb88139.js",
     "static/js/2.1fe672f7.chunk.js",
     "static/css/main.a0d6cc94.chunk.css",
-    "static/js/main.b05528a9.chunk.js"
+    "static/js/main.97c796e9.chunk.js"
   ]
 }
