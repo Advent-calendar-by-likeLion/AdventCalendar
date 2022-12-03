@@ -58,6 +58,23 @@ const AdminConfig = ({userObj}) => {
         alert(`info index ${windowInfoIndex}개 로 변경`);
         //history.push("/hotel/" + userObj.uid);
     }
+    // 창문을 닫아 버리자!
+    const onSubmitWindowClose = async (event) => {
+        event.preventDefault();
+
+        // dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
+        //     setWindowInfo(doc.data().windowInfo);
+        // });
+
+        await dbService.collection("hotelOwner").doc(id).update({
+            [`windowInfo.${windowInfoIndex}`] : false,
+           //  windowCount : i,
+        });
+
+        alert(`info index ${windowInfoIndex}개 로 변경`);
+        //history.push("/hotel/" + userObj.uid);
+    }
+    
     const onSubmit = async (event) => {
         event.preventDefault();
 
@@ -93,13 +110,28 @@ const AdminConfig = ({userObj}) => {
                 fontSize: "20px",  
                 fontWeight: "500px",
 
-            }}>창문 미오픈 수정</div>
+            }}>창문 열기</div>
             <NicknameInput>
                 <InputStylenick type="text" placeholder='일자 입력' onChange={onChangeWindowInfoIndex}/>
             </NicknameInput>
             <br/>
             <form onSubmit={onSubmitWindowInfo}>
-                <RedButton>창문 미오픈 수정</RedButton>
+                <RedButton>창문 열기</RedButton>
+            </form>
+
+            <br/>
+            <div style={{
+                height: "29px",
+                fontSize: "20px",  
+                fontWeight: "500px",
+
+            }}>창문 닫기</div>
+            <NicknameInput>
+                <InputStylenick type="text" placeholder='일자 입력' onChange={onChangeWindowInfoIndex}/>
+            </NicknameInput>
+            <br/>
+            <form onSubmit={onSubmitWindowClose}>
+                <RedButton>창문 닫기</RedButton>
             </form>
 
             <br/>
