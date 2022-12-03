@@ -30,11 +30,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
-    "winBuild": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
+    "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "winDeploy": "gh-pages -d winBuild"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
