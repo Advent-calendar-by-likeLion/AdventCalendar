@@ -186,13 +186,13 @@ const AdminConfig = ({userObj}) => {
             <>
                 <Container>
                     <HotelGuide style={{marginTop:'250px', fontSize:"30px", fontFamily:"humanbeomseok"}}>
-                        혹시 해킹하시려는 건 아니죠?
+                        저희 서비스를 사용해주셔서 감사합니다.
                     </HotelGuide>
                     <HotelGuide style={{marginTop:'30px', fontSize:"30px", fontFamily:"humanbeomseok"}}>
-                        그런 거라면 저희 너무 슬픈데...
+                        아쉽게 이 주소는 회원님이 접근할 수 없는 주소입니다.
                     </HotelGuide>
                     <HotelGuide style={{marginTop:'30px', fontSize:"30px", fontFamily:"humanbeomseok"}}>
-                        우리 호텔을 만들어 볼까요?
+                        아직 호텔이 없으시다면 호텔을 만들어서 서비스를 이용해보세요!
                     </HotelGuide>
                     <RedButton style={{marginTop:'70px'}} onClick={toHome}>호텔 만들러가기</RedButton>
                 </Container>
