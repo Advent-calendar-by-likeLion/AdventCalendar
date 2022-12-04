@@ -1,3 +1,4 @@
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FAdvent-calendar-by-likeLion%2FAdventCalendar&count_bg=%23858585&title_bg=%233E3E3E&icon=iconify.svg&icon_color=%23FEF9F9&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 # <2022년 멋쟁이사자처럼 단풍톤 4팀>
 # ☃🎄Welcome to Ginger Hotel🎄☃
 
