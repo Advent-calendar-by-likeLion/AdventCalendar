@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/AdventCalendar/static/css/main.a0d6cc94.chunk.css",
-    "main.js": "/AdventCalendar/static/js/main.65e12a95.chunk.js",
+    "main.js": "/AdventCalendar/static/js/main.da605023.chunk.js",
     "runtime-main.js": "/AdventCalendar/static/js/runtime-main.5bb88139.js",
-    "static/js/2.1fe672f7.chunk.js": "/AdventCalendar/static/js/2.1fe672f7.chunk.js",
+    "static/js/2.fa1ee118.chunk.js": "/AdventCalendar/static/js/2.fa1ee118.chunk.js",
     "index.html": "/AdventCalendar/index.html",
-    "static/js/2.1fe672f7.chunk.js.LICENSE.txt": "/AdventCalendar/static/js/2.1fe672f7.chunk.js.LICENSE.txt",
+    "static/js/2.fa1ee118.chunk.js.LICENSE.txt": "/AdventCalendar/static/js/2.fa1ee118.chunk.js.LICENSE.txt",
     "static/media/BellBoyCookie.8bb275ce.svg": "/AdventCalendar/static/media/BellBoyCookie.8bb275ce.svg",
     "static/media/Component3434.f4ea7bbf.svg": "/AdventCalendar/static/media/Component3434.f4ea7bbf.svg",
     "static/media/DisLoginBar.3b9d2d32.svg": "/AdventCalendar/static/media/DisLoginBar.3b9d2d32.svg",
@@ -13,6 +13,7 @@
     "static/media/FaceBookLogin.a28327f2.svg": "/AdventCalendar/static/media/FaceBookLogin.a28327f2.svg",
     "static/media/GithubLogin.bcfc47a6.svg": "/AdventCalendar/static/media/GithubLogin.bcfc47a6.svg",
     "static/media/GoogleLogin.371e92e4.svg": "/AdventCalendar/static/media/GoogleLogin.371e92e4.svg",
+    "static/media/GreatCookie.7e6b3836.svg": "/AdventCalendar/static/media/GreatCookie.7e6b3836.svg",
     "static/media/Hotel2.2d7f473f.svg": "/AdventCalendar/static/media/Hotel2.2d7f473f.svg",
     "static/media/LandingImageGinger.0304e9ba.svg": "/AdventCalendar/static/media/LandingImageGinger.0304e9ba.svg",
     "static/media/LandingInsta.ef4afd29.svg": "/AdventCalendar/static/media/LandingInsta.ef4afd29.svg",
@@ -34,8 +35,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.5bb88139.js",
-    "static/js/2.1fe672f7.chunk.js",
+    "static/js/2.fa1ee118.chunk.js",
     "static/css/main.a0d6cc94.chunk.css",
-    "static/js/main.65e12a95.chunk.js"
+    "static/js/main.da605023.chunk.js"
   ]
 }
