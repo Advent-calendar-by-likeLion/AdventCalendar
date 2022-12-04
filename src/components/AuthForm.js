@@ -36,10 +36,10 @@ const AuthForm = (userObj) => {
             history.push("/hotel/" + id);
         } catch (error) {
             if (error.message == "The password is invalid or the user does not have a password.") {
-                alert("잘못된 비밀번호 또는 이메일 입니다. 다시 확인하고 입력해주세요.")
+                alert("잘못된 비밀번호 또는 이메일입니다. 다시 확인하고 입력해주세요.")
             }
             if (error.message == "Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later.") {
-                alert("연속으로 비밀번호를 틀리셨습니다. 5분 뒤에 다시 로그인해주세요.")
+                alert("연속으로 비밀번호 또는 이메일을 틀리셨습니다. 나중에 다시 로그인해주세요.")
             }
             setError(error.message);
         } 
