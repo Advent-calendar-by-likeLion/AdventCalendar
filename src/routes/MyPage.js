@@ -37,7 +37,8 @@ const MyPage = ({userObj}) => {
                 <GuideDiv>삭제된 데이터는 복구할 수 없습니다</GuideDiv>
                 <GuideDiv>신중하게 생각하고 눌러주세요!</GuideDiv>
                 <br/>
-                <RedButton onClick={DeleteHotel}>내 호텔 삭제하기</RedButton>
+                {/* 아직 서비스 적용 안됐기 때문에 버튼 비활성화 */}
+                <RedButton disabled={true} onClick={DeleteHotel}>내 호텔 삭제하기</RedButton> 
             </Container>
         </>
     );
