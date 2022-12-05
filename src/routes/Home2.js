@@ -207,17 +207,17 @@ const Home2 = ({ userObj }) => {
 
 const [activeDeleteButton, setActiveDeleteButton] = useState(false);
 const DeleteHotel = () => {
-  let option2 = false;
     let option1 = window.confirm("삭제된 정보는 복구할 수 없습니다. 신중히 생각하고 확인 버튼을 눌러주세요.");
     if (option1 == true) {
-      option2 = window.prompt("삭제를 원하시면 gingerhotel이라고 입력해주세요. 삭제가 완료됩니다.")
-    }
-    if (option2 == "gingerhotel") {
-      authService.currentUser.delete();
-            alert("그동안 저희 진저호텔을 사용해주셔서 감사합니다.");
-            history.push("/");
-    } else {
-      alert("잘못된 문구 입력입니다. 다시한번 확인하고 입력해주세요. 공백도 포함되면 안됩니다.");
+      let option2 = window.prompt("삭제를 원하시면 gingerhotel을 입력해주세요. 삭제가 완료됩니다.")
+
+      if (option2 == "gingerhotel") {
+        authService.currentUser.delete();
+              alert("그동안 저희 진저호텔 서비스를 이용해주셔서 감사합니다.");
+              history.push("/");
+      } else {
+        alert("잘못된 문구 입력입니다. 다시한번 확인하고 입력해주세요. 공백도 포함되면 안됩니다.");
+      }
     }
 }
 
