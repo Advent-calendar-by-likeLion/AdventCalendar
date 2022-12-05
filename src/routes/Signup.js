@@ -38,7 +38,13 @@ const Signup = ({userObj}) => {
         alert("비밀번호가 일치하지 않습니다.");
       }
     } catch (error) {
-        setError(error.message);
+      if (error.message == "The email address is already in use by another account.") {
+        alert("이미 다른 사용자가 사용하고 있는 이메일입니다. 다른 이메일을 사용하여 회원가입해주세요.");
+      }
+      if (error.message == "Password should be at least 6 characters") {
+        alert("비밀번호가 너무 짧습니다. 최소 6글자 이상 입력해주세요.");
+      }
+        console.log(error.message);
     }
   }
 
@@ -62,7 +68,6 @@ const Signup = ({userObj}) => {
           </InputLayout2>
           <ButtonLayout>
             <RedButton disabled={false} type="submit">내 호텔 만들기</RedButton>
-            {error? "[오류 메세지]" + error : ""}
           </ButtonLayout>
         </form>
       </Container>

@@ -291,22 +291,7 @@ const Write = ({ match, userObj }) => {
                     value="Nw"
                 >보내기</RedButton>
             </form>
-            <>
-                <br/>
-                <div class="upload-btn-wrapper">
-                    <GreenButton>이미지 업로드</GreenButton>
-                    <input type="file" accept="image/*" onChange={onFileChange}/>
-                    {attachment && (
-                        <ImgDiv>
-                            <br/>
-                            <img src={attachment} width="100%" />
-                            <br/>
-                            <br/> 
-                            <WhiteButton style={{width: 60, height: 22, marginLeft: 105}} onClick={onClearAttachment}>취소</WhiteButton>
-                        </ImgDiv>
-                    )}
-                </div>
-            </>
+
             </>
         </Container>
     )

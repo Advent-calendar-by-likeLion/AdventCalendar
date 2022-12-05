@@ -208,17 +208,17 @@ const Home2 = ({ userObj }) => {
 
 const [activeDeleteButton, setActiveDeleteButton] = useState(false);
 const DeleteHotel = () => {
-  let option2 = false;
     let option1 = window.confirm("삭제된 정보는 복구할 수 없습니다. 신중히 생각하고 확인 버튼을 눌러주세요.");
     if (option1 == true) {
-      option2 = window.prompt("회원님의 이메일을 입력하면 회원님의 모든 정보가 삭제됩니다.")
-    }
-    if (option2 == authService.currentUser.email) {
-      authService.currentUser.delete();
-            alert("그동안 저희 진저호텔을 사용해주셔서 감사합니다.");
-            history.push("/");
-    } else {
-      alert("잘못된 이메일입니다. 진저 호텔에 가입할 때 사용했던 이메일을 입력해주세요.");
+      let option2 = window.prompt("삭제를 원하시면 gingerhotel을 입력해주세요. 삭제가 완료됩니다.")
+
+      if (option2 == "gingerhotel") {
+        authService.currentUser.delete();
+              alert("그동안 저희 진저호텔 서비스를 이용해주셔서 감사합니다.");
+              history.push("/");
+      } else {
+        alert("잘못된 문구 입력입니다. 다시한번 확인하고 입력해주세요. 공백도 포함되면 안됩니다.");
+      }
     }
 }
 
@@ -322,7 +322,7 @@ const DeleteHotel = () => {
                                     <br/>
                                     🎄 하루에 하나의 창문만 오픈 가능해요!!
                                     <br/>
-                                    🎄 정해진 편지 개수를 채워야 창문을 열 수 있어요!!
+                                    🎄 정해진 편지 개수를 채워야 창문을 열 수 있어요!
                                     <br/>
                                     🎄 열지 못한 창문은 25일에 오픈돼요!
                                 </LandingContent2>
