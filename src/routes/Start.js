@@ -40,7 +40,7 @@ const Start = () => {
 
     const onclickPasswordReset = () => {
         authService.sendPasswordResetEmail(window.prompt("이메일을 입력해주세요.")).then(function() {
-            alert("메일이 정상적으로 전송되었습니다.");
+            alert("메일이 정상적으로 전송되었습니다. 메일함에 메일이 없다면 스팸메일함을 확인해주세요.");
         }).catch(function(error) {
             var errorMessage = error.message;
             if (errorMessage == "The email address is badly formatted.") {
