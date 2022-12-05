@@ -27,8 +27,8 @@ useEffect(() => {
             <h1>/{goalCount})</h1>
         </CountContainer>
         <Container>
-        {/*%로 부모넓이의 1/5 씩 넓어짐*/}
-        <Progress width={(msgCount/goalCount)*100 + "%"}/>
+          {/*%로 부모넓이의 1/5 씩 넓어짐*/}
+          <Progress width={(msgCount/goalCount)*100 + "%"}/>
         </Container>
     </>
     
@@ -46,7 +46,7 @@ const Container = styled.div`
   align-items: center;
   border-radius: 100px;
 
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `;
 
 const Progress = styled.div`
