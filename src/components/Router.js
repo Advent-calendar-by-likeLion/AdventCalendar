@@ -84,6 +84,9 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             <Route exact path="/AdminConfig">
               <AdminConfig userObj={userObj}/>
             </Route>
+            <Route exact path="/mypage">
+              <MyPage userObj={userObj} />
+            </Route>
           </>
         )}
         {/* <Redirect from="*" to="/"/> */}
