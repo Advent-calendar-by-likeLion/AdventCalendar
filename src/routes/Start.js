@@ -59,7 +59,7 @@ const Start = () => {
             <ButtonLayout>
                 <RedButton onClick={onclickLoginBar}>로그인</RedButton>
                 <GreenButton onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
-                <WhiteButton onClick={onclickPasswordReset}>비밀 번호 재설정</WhiteButton>
+                {/* <WhiteButton onClick={onclickPasswordReset}>비밀 번호 재설정</WhiteButton> */}
                 <LandingButton>
                     <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
                 </LandingButton>
