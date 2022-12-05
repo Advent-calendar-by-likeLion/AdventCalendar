@@ -12,6 +12,21 @@ import { useParams, useHistory } from 'react-router-dom';
 import imageCompression from "browser-image-compression";
 import { ColorRing } from 'react-loader-spinner';
 
+// Don't write badwords to someone. When you did it or even you are going to do it, you are so bad person.
+import { badwordexam } from "../components/BadWords";
+
+const style = {
+    badwordstyle: {
+    fontFamily: 'Noto sans kr',
+    fontSize: '12px',
+    color: '#AF2010',
+    textAlign: 'center',
+    marginLeft: '20px',
+    marginTop: '5px',
+    marginBottom: '15px',
+    },
+};
+
 const Write = ({ match, userObj }) => {
     const {id} = useParams(); // hetelOwnerId
 
@@ -44,7 +59,7 @@ const Write = ({ match, userObj }) => {
 
         dbService.collection("AdminConfig").doc("AdminConfig").get()
         .then((doc) => {
-          setGoalCount(doc.data().goalCount);
+            setGoalCount(doc.data().goalCount);
         });
     }, []);
 
@@ -60,9 +75,10 @@ const Write = ({ match, userObj }) => {
             uid = userObj.uid; 
         }
 
-      
+
 
     }, [value]);
+
     
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -263,6 +279,11 @@ const Write = ({ match, userObj }) => {
             type="text"
             value={displayName}
             />
+            <div style={style.badwordstyle}>
+                ※ 경고 ※
+                <br/>욕설, 성희롱, 비방 편지를 작성할 경우{' '}
+                <div></div>형사 처벌의 대상이 될 수 있습니다.
+            </div>
             <br/>
             <form onSubmit={onSubmit}>
                 <RedButton
