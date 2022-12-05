@@ -246,8 +246,8 @@ const DeleteHotel = () => {
             <GreenButton onClick={copyUrl}>호텔 링크 복사하기</GreenButton>
             <br/>
             <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
-            <br/>
-            <RedButton onClick={DeleteHotel}>회원 탈퇴</RedButton> 
+            {/* <br/>
+            <RedButton onClick={DeleteHotel}>회원 탈퇴</RedButton>  */}
             <Footer />
           </>
           :  
