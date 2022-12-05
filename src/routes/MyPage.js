@@ -32,7 +32,7 @@ const MyPage = ({userObj}) => {
     }
 
     const onclickPasswordReset = () => {
-        authService.sendPasswordResetEmail(window.prompt("진저호텔에 가입한 이메일을 입력해주세요. 가입한 이메일이 실존하지 않는 이메일의 경우 비밀번호를 재설정할 수 없습니다.", "예시) ginger@naver.com")).then(function() {
+        authService.sendPasswordResetEmail(window.prompt("진저호텔에 가입한 이메일을 입력해 주세요. 가입한 이메일이 실존하지 않는 이메일인 경우 비밀번호를 재설정할 수 없습니다.", "예시) ginger@naver.com")).then(function() {
             alert("입력한 이메일로 메일을 전송했습니다.");
         }).catch(function(error) {
             if (error.message == "The email address is badly formatted.") {
