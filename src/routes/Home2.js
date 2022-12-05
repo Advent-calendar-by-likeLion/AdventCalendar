@@ -205,6 +205,22 @@ const Home2 = ({ userObj }) => {
     history.push("/"); // 경로 설정 추후에 다시 할 예정
 }
 
+const [activeDeleteButton, setActiveDeleteButton] = useState(false);
+const DeleteHotel = () => {
+  let option2 = false;
+    let option1 = window.confirm("삭제된 정보는 복구할 수 없습니다. 신중히 생각하고 확인 버튼을 눌러주세요.");
+    if (option1 == true) {
+      option2 = window.prompt("회원님의 이메일을 입력하면 회원님의 모든 정보가 삭제됩니다.")
+    }
+    if (option2 == authService.currentUser.email) {
+      authService.currentUser.delete();
+            alert("그동안 저희 진저호텔을 사용해주셔서 감사합니다.");
+            history.push("/");
+    } else {
+      alert("잘못된 이메일입니다. 진저 호텔에 가입할 때 사용했던 이메일을 입력해주세요.");
+    }
+}
+
   return (
     <>
       <HotelContainer style={{fontFamily: "humanbeomseok"}}> 
@@ -229,7 +245,8 @@ const Home2 = ({ userObj }) => {
             <GreenButton onClick={copyUrl}>호텔 링크 복사하기</GreenButton>
             <br/>
             <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
-            
+            <br/>
+            <RedButton onClick={DeleteHotel}>회원 탈퇴</RedButton> 
             <Footer />
           </>
           :  
