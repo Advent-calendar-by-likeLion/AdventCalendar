@@ -39,12 +39,14 @@ const Start = () => {
     }
 
     const onclickPasswordReset = () => {
-        authService.sendPasswordResetEmail(window.prompt("이메일을 입력해주세요.")).then(function() {
-            alert("메일이 정상적으로 전송되었습니다. 메일함에 메일이 없다면 스팸메일함을 확인해주세요.");
+        authService.sendPasswordResetEmail(window.prompt("진저호텔에 가입한 이메일을 입력해 주세요. 가입한 이메일이 실존하지 않는 이메일인 경우 비밀번호를 재설정할 수 없습니다.", "예시) ginger@naver.com")).then(function() {
+            alert("입력한 이메일로 메일을 전송했습니다.");
         }).catch(function(error) {
-            var errorMessage = error.message;
-            if (errorMessage == "The email address is badly formatted.") {
+            if (error.message == "The email address is badly formatted.") {
                 alert("올바른 형식의 이메일을 입력해주세요.")
+            }
+            if (error.message == "There is no user record corresponding to this identifier. The user may have been deleted.") {
+                alert("진저호텔에 가입된 기록이 없는 이메일입니다.");
             }
         })
     }
@@ -59,7 +61,7 @@ const Start = () => {
             <ButtonLayout>
                 <RedButton onClick={onclickLoginBar}>로그인</RedButton>
                 <GreenButton onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
-                {/* <WhiteButton onClick={onclickPasswordReset}>비밀 번호 재설정</WhiteButton> */}
+                {/* <WhiteButton onClick={onclickPasswordReset}>비밀번호를 잊어버리셨나요?</WhiteButton> */}
                 <LandingButton>
                     <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
                 </LandingButton>

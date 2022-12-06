@@ -6,7 +6,7 @@ import DisLoginBar from '../assets/DisLoginBar.svg';
 import LoginBar from '../assets/LoginBar.svg';
 import styled from "styled-components";
 import { Container, InputStyle, TitleDiv } from "../routes/styles/style";
-import { RedButton } from "../routes/styles/buttonstyle";
+import { RedButton, WhiteButton } from "../routes/styles/buttonstyle";
 import { useHistory } from "react-router-dom";
 import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 
@@ -26,6 +26,19 @@ const AuthForm = (userObj) => {
         } else if (name === "password") {
             setPassword(value);
         }
+    }
+
+    const onclickPasswordReset = () => {
+        authService.sendPasswordResetEmail(window.prompt("진저호텔에 가입할 때 사용한 이메일을 입력해 주세요.\n\n가입한 이메일이 실존하지 않는 이메일인 경우 비밀번호를 재설정할 수 없습니다.\n\n소셜로그인을 사용하여 회원가입하신 경우 이 기능을 절대 사용하지 마세요.", "예시) ginger@naver.com")).then(function() {
+            alert("입력한 이메일로 메일을 전송했습니다.\n(보내드린 메일이 스팸메일함에 있을 수도 있으니 잘 확인해주세요.)");
+        }).catch(function(error) {
+            if (error.message == "The email address is badly formatted.") {
+                alert("올바른 형식의 이메일을 입력해주세요.")
+            }
+            if (error.message == "There is no user record corresponding to this identifier. The user may have been deleted.") {
+                alert("진저호텔에 가입된 기록이 없는 이메일입니다.");
+            }
+        })
     }
 
     const onSubmit = async (event) => {
@@ -60,6 +73,8 @@ const AuthForm = (userObj) => {
                             <InputStyle name="password" type="password" placeholder="비밀번호" required value={password} onChange={onChange}/>
                         </InputLayout>
                         <RedButton disabled={buttonDisabled? false : true} type="submit">로그인</RedButton>
+                        <br/>
+                        <WhiteButton onClick={onclickPasswordReset}>비밀번호를 잊어버리셨나요?</WhiteButton>
                         {error && <Errorspan className="authError">{error}</Errorspan>}
                     </LoginFormStyle>
                 </form>
