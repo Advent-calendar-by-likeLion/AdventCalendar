@@ -6,9 +6,10 @@ import Title from '../assets/Welcome.svg'; // 기존에 쓰던 타이틀
 import MainTitle from '../assets/WelcomeAddedFont.svg'; // 폰트적용된 타이틀
 import { useHistory } from 'react-router-dom';
 import { Container, HotelImg, TitleDiv, LandingButton, LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4, LandingContent10, LandingContent11 } from './styles/style';
-import { GreenButton, RedButton } from './styles/buttonstyle';
+import { GreenButton, RedButton, WhiteButton } from './styles/buttonstyle';
 import LandingModal from '../components/Modal/LandingModal';
 import { useState } from 'react';
+import { authService } from "fbase"
 
 // Landing Page 관련
 import { LandingPageModalInner } from "../components/Modal/styles";
@@ -37,6 +38,17 @@ const Start = () => {
         setLandingModalOpen((prev) => !prev);
     }
 
+    const onclickPasswordReset = () => {
+        authService.sendPasswordResetEmail(window.prompt("이메일을 입력해주세요.")).then(function() {
+            alert("메일이 정상적으로 전송되었습니다. 메일함에 메일이 없다면 스팸메일함을 확인해주세요.");
+        }).catch(function(error) {
+            var errorMessage = error.message;
+            if (errorMessage == "The email address is badly formatted.") {
+                alert("올바른 형식의 이메일을 입력해주세요.")
+            }
+        })
+    }
+
     return (
         <>
         <Container>
@@ -47,6 +59,7 @@ const Start = () => {
             <ButtonLayout>
                 <RedButton onClick={onclickLoginBar}>로그인</RedButton>
                 <GreenButton onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
+                {/* <WhiteButton onClick={onclickPasswordReset}>비밀 번호 재설정</WhiteButton> */}
                 <LandingButton>
                     <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
                 </LandingButton>

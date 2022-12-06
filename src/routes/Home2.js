@@ -4,7 +4,7 @@ import {dbService, authService, storageService} from "fbase"
 import "./styles.css";
 import { GridBox, Hotelbg, HotelContainer } from './styles/HotelStyle';
 import { Container, TitleDiv, TitleDiv2, GingerCookie } from "./styles/style";
-import Progressbar from "./Progressbar";
+import Progressbar, { TodayMessageDiv } from "./Progressbar";
 import Hotel from "../components/Hotel";
 import { RedButton, WhiteButton, GreenButton, RedRoundButton } from "./styles/buttonstyle";
 import { useHistory, useParams } from "react-router-dom";
@@ -226,6 +226,15 @@ const DeleteHotel = () => {
     <>
       <HotelContainer style={{fontFamily: "humanbeomseok"}}> 
         <Progressbar msgCount={msgCount} goalCount={goalCount}/>
+        { id === (userObj ? userObj.uid : 0) ?
+          <>
+            <TodayMessageGuide>오늘 받아야 하는 편지 개수는 매일 바뀝니다</TodayMessageGuide>
+          </>
+          :
+          <>
+            <TodayMessageGuide></TodayMessageGuide>
+          </>
+        }
         <br/>
         <TitleDiv style={{marginBottom:'10px', fontFamily: "humanbeomseok"}}>진저호텔에서 보내는 25일간의 휴일</TitleDiv>
         <HotelName userObj={userObj} displayName={displayName}/> 
@@ -246,8 +255,8 @@ const DeleteHotel = () => {
             <GreenButton onClick={copyUrl}>호텔 링크 복사하기</GreenButton>
             <br/>
             <WhiteButton onClick={onLogOutClick}>로그아웃</WhiteButton>
-            <br/>
-            <RedButton onClick={DeleteHotel}>회원 탈퇴</RedButton> 
+            {/* <br/>
+            <RedButton onClick={DeleteHotel}>회원 탈퇴</RedButton>  */}
             <Footer />
           </>
           :  
@@ -455,6 +464,14 @@ const HotelGuide = styled.div`
     text-align: center; 
     font-weight: 500;
     font-size: 12px;
+`
+
+const TodayMessageGuide = styled.div`
+  text-align: center; 
+  font-weight: 500;
+  font-size: 12px;
+  color: #585858;
+  margin-bottom: 30px;
 `
 
 const LandingGingerImage = styled.div`

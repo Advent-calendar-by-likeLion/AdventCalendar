@@ -67,6 +67,16 @@ const Write = ({ match, userObj }) => {
     const onSubmit = async (event) => {
         event.preventDefault();
         
+        // Valdating the bad word.
+        for (let i = 0; i < badwordexam.length; i++) {
+            if (nweet.includes(badwordexam[i])) {
+                window.alert(
+                    `욕설, 비속어, 성희롱, 비방 목적의 단어 등의 입력을 금지합니다.\n금지어 : ${badwordexam[i]}`,
+                );
+                return;
+            }
+        }
+        
         setLoading(true);
         
         let attachmentUrl = "";
@@ -76,10 +86,6 @@ const Write = ({ match, userObj }) => {
             const response = await attRef.putString(attachment, "data_url");
             attachmentUrl = await response.ref.getDownloadURL();
         }
-        // text by db
-        // id+ window count 로 하여 테이블생성. --
-        // 날짜 따와서 modal nweet에 넣음.
-        // 날짜 따와서 lastWriteTime을 호텔오너에 넣음.
 
         let date = new Date();
         let offset = date.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
