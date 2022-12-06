@@ -83,6 +83,16 @@ const Write = ({ match, userObj }) => {
     const onSubmit = async (event) => {
         event.preventDefault();
         
+        // Valdating the bad word.
+        for (let i = 0; i < badwordexam.length; i++) {
+            if (nweet.includes(badwordexam[i])) {
+                window.alert(
+                    `욕설, 비속어, 성희롱, 비방 목적의 단어 등의 입력을 금지합니다.\n금지어 : ${badwordexam[i]}`,
+                );
+                return;
+            }
+        }
+        
         setLoading(true);
         
         let attachmentUrl = "";
