@@ -12,6 +12,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import imageCompression from "browser-image-compression";
 import { ColorRing } from 'react-loader-spinner';
 
+
 // Don't write badwords to someone. When you did it or even you are going to do it, you are so bad person.
 import { badwordexam } from "../components/BadWords";
 
@@ -43,8 +44,8 @@ const Write = ({ match, userObj }) => {
     let uid = 0;
 
     // image resizing 관련
-    const [file, setFile] = useState(null);
-    const [fileUrl, setFileUrl] = useState("");
+    /* const [file, setFile] = useState(null);
+    const [fileUrl, setFileUrl] = useState(""); */
 
     const [goalCount, setGoalCount] = useState(0)
     const [windowCount, setWindowCount] = useState(1)
@@ -154,7 +155,7 @@ const Write = ({ match, userObj }) => {
 
         };
 
-    const onFileChange = async (event) => {
+    /* const onFileChange = async (event) => {
         const {
             target: { files },
         } = event;
@@ -191,7 +192,7 @@ const Write = ({ match, userObj }) => {
         if (Boolean(theFile)) {
             reader.readAsDataURL(theFile);
         }
-    }
+    } */
 
     const getCurrentDate = () => { // ex : 22-04-17
         let date = new Date();
@@ -298,22 +299,6 @@ const Write = ({ match, userObj }) => {
                     value="Nw"
                 >보내기</RedButton>
             </form>
-            <>
-                <br/>
-                <div class="upload-btn-wrapper">
-                    <GreenButton>이미지 업로드</GreenButton>
-                    <input type="file" accept="image/*" onChange={onFileChange}/>
-                    {attachment && (
-                        <ImgDiv>
-                            <br/>
-                            <img src={attachment} width="100%" />
-                            <br/>
-                            <br/> 
-                            <WhiteButton style={{width: 60, height: 22, marginLeft: 105}} onClick={onClearAttachment}>취소</WhiteButton>
-                        </ImgDiv>
-                    )}
-                </div>
-            </>
             </>
         </Container>
     )
