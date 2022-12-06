@@ -23,6 +23,7 @@ import babyCookie from '../assets/cookie/babyCookie.svg';
 import PirateCookie from '../assets/cookie/PirateCookie.svg';
 import GreatCookie from '../assets/cookie/GreatCookie.svg';
 import MilkHotSpringCookie from '../assets/cookie/MilkHotSpringCookie.svg';
+import DetectiveCookie from '../assets/cookie/DetectiveCookie.svg';
 
 // Landing Page 관련
 import { LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4, LandingContent10, LandingContent11 } from './styles/style';
@@ -299,13 +300,13 @@ const DeleteHotel = () => {
                                           </CardLayout>
                                         </Modal> :
                             <GingerCardLayout>
-                              <GingerTitle>밀크온천 진저맨</GingerTitle>
+                              <GingerTitle>탐정 진저맨</GingerTitle>
                               <br/>
-                              <GingerContent> 흐아~ 역시 호캉스엔
-                                              <br/>온천이 빠질 수 없지!
-                                              <br/>1등급 우유! 따땃해~~
+                              <GingerContent> 뭐? 너 편지가 사라졌다고?
+                                              <br/> .......
+                                              <br/>그냥 안 온 것 같은데?
                               </GingerContent>
-                              <GingerCookie src={MilkHotSpringCookie} />
+                              <GingerCookie src={DetectiveCookie} />
                               <RedRoundButton onClick={onClickGoLetter}>편지 읽기</RedRoundButton>
                             </GingerCardLayout>}
                           </GingerModal>} 
