@@ -292,7 +292,7 @@ const DeleteHotel = () => {
                                               <Nweet 
                                                 key={nweet.id} 
                                                 nweetObj={nweet}
-                                                isOwner={nweet.creatorId === userObj.uid}
+                                                tableNm={`${id}_${windowCount}`}
                                               />
                                           </MessageCard>
                                           ))}
