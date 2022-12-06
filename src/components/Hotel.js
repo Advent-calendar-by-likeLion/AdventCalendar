@@ -18,6 +18,7 @@ const Hotel = ({userObj}) => {
 
     const [isModalOpen, setModalOpen] = useState(false);
     const [msgSize, setMsgSize] = useState("");
+    const [lastWindowItemCount, setLastWindowItemCount] = useState("");
     const [dateFormat, setDateFormat] = useState("");
     const [nweets, setNweets] = useState([]);
     const [info, setInfo] = useState([]);
@@ -64,6 +65,7 @@ const Hotel = ({userObj}) => {
         setNweets(newArray);
         setDateFormat(newArray[0].dateFormat);
       })
+      setLastWindowItemCount(item);
       setModalOpen(true);
     }
   
@@ -106,6 +108,7 @@ const Hotel = ({userObj}) => {
                                 <Nweet 
                                   key={nweet.id} 
                                   nweetObj={nweet}
+                                  tableNm={`${id}_${lastWindowItemCount}`}
                                 />
                             </MessageCard>
                             ))}
