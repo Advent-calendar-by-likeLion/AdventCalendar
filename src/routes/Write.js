@@ -102,10 +102,6 @@ const Write = ({ match, userObj }) => {
             const response = await attRef.putString(attachment, "data_url");
             attachmentUrl = await response.ref.getDownloadURL();
         }
-        // text by db
-        // id+ window count 로 하여 테이블생성. --
-        // 날짜 따와서 modal nweet에 넣음.
-        // 날짜 따와서 lastWriteTime을 호텔오너에 넣음.
 
         let date = new Date();
         let offset = date.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
