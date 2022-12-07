@@ -75,15 +75,18 @@ const Home2 = ({ userObj }) => {
     });
 
     // 만약 오늘 이후의 창문이 열려있다면 다 닫는 코드를 작성: 이미 열려버린 창문들을 처리하기 위함
-    dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
-      for (let i = todayDate + 1; i <= 25; i++) {
-        if (snapshot.data().windowInfo[i]) {
-          dbService.collection("hotelOwner").doc(id).update({
-            [`windowInfo.${i}`] : false,
-          });
+    // 25일 일때는 처리할 필요가 없음.
+    if (todayDate != 25) {
+      dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
+        for (let i = todayDate + 1; i <= 25; i++) {
+          if (snapshot.data().windowInfo[i]) {
+            dbService.collection("hotelOwner").doc(id).update({
+              [`windowInfo.${i}`] : false,
+            });
+          }
         }
-      }
-    });
+      });
+    }
 
     await dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
       setDisplayName(doc.data().nickname);
