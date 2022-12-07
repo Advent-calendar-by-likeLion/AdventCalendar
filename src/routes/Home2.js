@@ -33,6 +33,7 @@ import LandingPage from '../assets/LandingPage/Welcome.svg';
 import LandingModalButton from '../assets/LandingPage/LandingModalButton.svg';
 import LandingImage from '../assets/LandingPage/LandingImageGinger.svg';
 import LandingInsta from '../assets/LandingPage/LandingInsta.svg';
+import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 
 const Home2 = ({ userObj }) => {
   const history = useHistory();
@@ -65,7 +66,11 @@ const Home2 = ({ userObj }) => {
     Config();
     if (userObj) {
       uid = userObj.uid;
-    }     
+    }
+
+    dbService.collection("hotelOwner").doc(id).update({
+      windowCount: (new Date().getDate()).toString()
+    });
 
     dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
       setDisplayName(doc.data().nickname);
@@ -75,10 +80,9 @@ const Home2 = ({ userObj }) => {
       setLastDate(doc.data().lastDate);
     });
 
-
   }, []);
+
   useEffect(() => {
-    
     dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
       if (msgCount >= goalCount && snapshot.data().windowInfo[windowCount]) {
         setIsFull(true);
@@ -108,11 +112,11 @@ const Home2 = ({ userObj }) => {
       }))
       setMsgCount(newArray.length);
       setNweets(newArray);
-        if (newArray.length > 0) {
-          if (new Date("20" + newArray[0].dateFormat) < new Date("20" + getCurrentDate())) {
-            addWindowCount();
-          }
-        }
+        // if (newArray.length > 0) {
+        //   if (new Date("20" + newArray[0].dateFormat) < new Date("20" + getCurrentDate())) {
+        //     addWindowCount();
+        //   }
+        // }
     })
 
   }, [windowCount]);
