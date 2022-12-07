@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/AdventCalendar/static/css/main.a0d6cc94.chunk.css",
-    "main.js": "/AdventCalendar/static/js/main.e8895bde.chunk.js",
+    "main.js": "/AdventCalendar/static/js/main.b93954f9.chunk.js",
     "runtime-main.js": "/AdventCalendar/static/js/runtime-main.5bb88139.js",
     "static/js/2.0dcf533d.chunk.js": "/AdventCalendar/static/js/2.0dcf533d.chunk.js",
     "index.html": "/AdventCalendar/index.html",
     "static/js/2.0dcf533d.chunk.js.LICENSE.txt": "/AdventCalendar/static/js/2.0dcf533d.chunk.js.LICENSE.txt",
     "static/media/BellBoyCookie.8bb275ce.svg": "/AdventCalendar/static/media/BellBoyCookie.8bb275ce.svg",
+    "static/media/ClassicCookie.948a5fc1.svg": "/AdventCalendar/static/media/ClassicCookie.948a5fc1.svg",
     "static/media/Component3434.f4ea7bbf.svg": "/AdventCalendar/static/media/Component3434.f4ea7bbf.svg",
     "static/media/DetectiveCookie.a903c60d.svg": "/AdventCalendar/static/media/DetectiveCookie.a903c60d.svg",
     "static/media/DisLoginBar.3b9d2d32.svg": "/AdventCalendar/static/media/DisLoginBar.3b9d2d32.svg",
@@ -39,6 +40,6 @@
     "static/js/runtime-main.5bb88139.js",
     "static/js/2.0dcf533d.chunk.js",
     "static/css/main.a0d6cc94.chunk.css",
-    "static/js/main.e8895bde.chunk.js"
+    "static/js/main.b93954f9.chunk.js"
   ]
 }
