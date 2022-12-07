@@ -61,18 +61,31 @@ const Home2 = ({ userObj }) => {
   const [isFull, setIsFull] = useState(false);
   const [isMsgFull, setIsMsgFull] = useState(false);
   const [isGoLetter, setIsGoLetter] = useState(false);
+  const todayDate = new Date().getDate();
 
-  useEffect(() => {
+  useEffect(async () => {
     Config();
     if (userObj) {
       uid = userObj.uid;
     }
 
+    // windowCount에 오늘 날짜를 입력해줌: 이렇게하면 오늘 날짜와 동일한 Index의 창문을 열 수 있음
     dbService.collection("hotelOwner").doc(id).update({
-      windowCount: (new Date().getDate()).toString()
+      windowCount: todayDate.toString()
     });
 
-    dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
+    // 만약 오늘 이후의 창문이 열려있다면 다 닫는 코드를 작성: 이미 열려버린 창문들을 처리하기 위함
+    dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
+      for (let i = todayDate + 1; i <= 25; i++) {
+        if (snapshot.data().windowInfo[i]) {
+          dbService.collection("hotelOwner").doc(id).update({
+            [`windowInfo.${i}`] : false,
+          });
+        }
+      }
+    });
+
+    await dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
       setDisplayName(doc.data().nickname);
       setDescription(doc.data().description);
       setWindowCount(doc.data().windowCount);
@@ -97,9 +110,9 @@ const Home2 = ({ userObj }) => {
       }
     });
     
-    if (new Date("20" + lastDate) < new Date("20" + getCurrentDate())) {
-      addWindowCount(); // Todo: need to validate
-    }
+    // if (new Date("20" + lastDate) < new Date("20" + getCurrentDate())) {
+    //   addWindowCount(); // Todo: need to validate
+    // }
 
     // true고 date가 local과 같을떄.
   }, [msgCount]);
