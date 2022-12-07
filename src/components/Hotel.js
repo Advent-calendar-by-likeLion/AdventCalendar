@@ -61,9 +61,14 @@ const Hotel = ({userObj}) => {
             id: document.id,
             ...document.data(),
         }))
+        console.log(newArray);
         setMsgSize(newArray.length);
         setNweets(newArray);
-        setDateFormat(newArray[0].dateFormat);
+        if (newArray.length == 0) {
+          setDateFormat("22-12-00");
+        } else {
+          setDateFormat(newArray[0].dateFormat);
+        }
       })
       setLastWindowItemCount(item);
       setModalOpen(true);

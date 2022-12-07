@@ -57,13 +57,14 @@ const Home2 = ({ userObj }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isGingerModalOpen, setGingerModalOpen] = useState(false);
   const [msgCount, setMsgCount] = useState(0);
-  const [goalCount, setGoalCount] = useState(0);
+  const [goalCount, setGoalCount] = useState(1);
   const [isFull, setIsFull] = useState(false);
   const [isMsgFull, setIsMsgFull] = useState(false);
   const [isGoLetter, setIsGoLetter] = useState(false);
   const todayDate = new Date().getDate();
 
   useEffect(async () => {
+    console.log(todayDate);
     Config();
     if (userObj) {
       uid = userObj.uid;
@@ -100,10 +101,11 @@ const Home2 = ({ userObj }) => {
 
   useEffect(() => {
     dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
-      if (msgCount >= goalCount && snapshot.data().windowInfo[windowCount]) {
+      if (msgCount >= goalCount) {
+        dbService.collection("hotelOwner").doc(id).update({
+          [`windowInfo.${todayDate}`] : true,
+        });
         setIsFull(true);
-      } else {
-        setIsFull(false);
       }
       
       if (msgCount !== 0 && msgCount >= 20) {
