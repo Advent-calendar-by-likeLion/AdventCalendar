@@ -59,8 +59,7 @@ const Signup = ({userObj}) => {
         {/* <TitleDiv>진저호텔에서 보내는 25일간의 휴일</TitleDiv> */}
         <form onSubmit={onSubmit}>
           <InputLayout2>
-              <SignupGuide>잊어버린 이메일은 나중에 찾을 수 없습니다.</SignupGuide>
-              <SignupGuide>천천히 정확하게 입력해주세요.</SignupGuide>
+              <SignupGuide>실제 이메일로만 비밀번호를 찾으실 수 있습니다.</SignupGuide>
               <br/><br/><br/>
               <InputStyle placeholder='이메일' name="email" type="email" required value={email} onChange={onChange} />
               <InputStyle placeholder='비밀번호' name="password1" type="password" required value={password1} onChange={onChange} />
