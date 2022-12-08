@@ -76,8 +76,8 @@ const Home2 = ({ userObj }) => {
     });
 
     // 만약 오늘 이후의 창문이 열려있다면 다 닫는 코드를 작성: 이미 열려버린 창문들을 처리하기 위함
-    // 25일 일때는 처리할 필요가 없음.
-    if (todayDate != 25) {
+    // 25일 이후로는 처리할 필요가 없음. 그때는 오류도 거의 사라질 것으로 예상됨으로 코드 삭제해도 될 것으로 보임
+    if (todayDate < 25) {
       dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
         for (let i = todayDate + 1; i <= 25; i++) {
           if (snapshot.data().windowInfo[i]) {
@@ -101,6 +101,7 @@ const Home2 = ({ userObj }) => {
 
   useEffect(() => {
     dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
+      // 목표 개수를 채웠을 때는 오늘 날짜에 해당하는 창문을 열어줍니다.
       if (msgCount >= goalCount) {
         dbService.collection("hotelOwner").doc(id).update({
           [`windowInfo.${todayDate}`] : true,
