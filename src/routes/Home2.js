@@ -267,6 +267,8 @@ const DeleteHotel = () => {
           id === (userObj ? userObj.uid : 0) ?  
           
           <>
+            <HotelGuide style={{marginBottom: "5px"}}>12월 9일부터 날짜와 동일한 숫자의 창문이 열립니다!</HotelGuide>
+            <HotelGuide style={{marginBottom: "10px"}}>이미 받은 편지들은 지워지지 않으니 걱정마세요!</HotelGuide>
             <RedButton disabled={!isFull} onClick={onClickOpenGingerModal}>오늘의 편지</RedButton>
             {!isFull ? <><br/><HotelGuide>* 오늘의 편지를 채워야 열람할 수 있어요! *</HotelGuide></>:<></>}
             <br/>
