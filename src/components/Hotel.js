@@ -15,7 +15,6 @@ import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
 
 const Hotel = ({userObj}) => {
 
-
     const [isModalOpen, setModalOpen] = useState(false);
     const [msgSize, setMsgSize] = useState("");
     const [lastWindowItemCount, setLastWindowItemCount] = useState("");
