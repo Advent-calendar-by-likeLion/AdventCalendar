@@ -44,8 +44,6 @@ const Hotel = ({userObj}) => {
           setInfo(doc.data().windowInfo);
       });
     }
-
-    const openModalPost = () => console.log("btn event");
     
     const onClickOpenModal = (item) => {
       if (id !== (userObj ? userObj.uid : 0)) {
