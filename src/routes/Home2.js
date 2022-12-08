@@ -34,6 +34,7 @@ import LandingPage from '../assets/LandingPage/Welcome.svg';
 import LandingModalButton from '../assets/LandingPage/LandingModalButton.svg';
 import LandingImage from '../assets/LandingPage/LandingImageGinger.svg';
 import LandingInsta from '../assets/LandingPage/LandingInsta.svg';
+import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 
 const Home2 = ({ userObj }) => {
   const history = useHistory();
@@ -57,18 +58,39 @@ const Home2 = ({ userObj }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isGingerModalOpen, setGingerModalOpen] = useState(false);
   const [msgCount, setMsgCount] = useState(0);
-  const [goalCount, setGoalCount] = useState(0);
+  const [goalCount, setGoalCount] = useState(1);
   const [isFull, setIsFull] = useState(false);
   const [isMsgFull, setIsMsgFull] = useState(false);
   const [isGoLetter, setIsGoLetter] = useState(false);
+  const todayDate = new Date().getDate();
 
-  useEffect(() => {
+  useEffect(async () => {
+    console.log(todayDate);
     Config();
     if (userObj) {
       uid = userObj.uid;
-    }     
+    }
 
-    dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
+    // windowCount에 오늘 날짜를 입력해줌: 이렇게하면 오늘 날짜와 동일한 Index의 창문을 열 수 있음
+    dbService.collection("hotelOwner").doc(id).update({
+      windowCount: todayDate.toString()
+    });
+
+    // 만약 오늘 이후의 창문이 열려있다면 다 닫는 코드를 작성: 이미 열려버린 창문들을 처리하기 위함
+    // 25일 이후로는 처리할 필요가 없음. 그때는 오류도 거의 사라질 것으로 예상됨으로 코드 삭제해도 될 것으로 보임
+    if (todayDate < 25) {
+      dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
+        for (let i = todayDate + 1; i <= 25; i++) {
+          if (snapshot.data().windowInfo[i]) {
+            dbService.collection("hotelOwner").doc(id).update({
+              [`windowInfo.${i}`] : false,
+            });
+          }
+        }
+      });
+    }
+
+    await dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
       setDisplayName(doc.data().nickname);
       setDescription(doc.data().description);
       setWindowCount(doc.data().windowCount);
@@ -76,15 +98,16 @@ const Home2 = ({ userObj }) => {
       setLastDate(doc.data().lastDate);
     });
 
-
   }, []);
+
   useEffect(() => {
-    
     dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
-      if (msgCount >= goalCount && snapshot.data().windowInfo[windowCount]) {
+      // 목표 개수를 채웠을 때는 오늘 날짜에 해당하는 창문을 열어줍니다.
+      if (msgCount >= goalCount) {
+        dbService.collection("hotelOwner").doc(id).update({
+          [`windowInfo.${todayDate}`] : true,
+        });
         setIsFull(true);
-      } else {
-        setIsFull(false);
       }
       
       if (msgCount !== 0 && msgCount >= 20) {
@@ -94,9 +117,9 @@ const Home2 = ({ userObj }) => {
       }
     });
     
-    if (new Date("20" + lastDate) < new Date("20" + getCurrentDate())) {
-      addWindowCount(); // Todo: need to validate
-    }
+    // if (new Date("20" + lastDate) < new Date("20" + getCurrentDate())) {
+    //   addWindowCount(); // Todo: need to validate
+    // }
 
     // true고 date가 local과 같을떄.
   }, [msgCount]);
@@ -109,11 +132,11 @@ const Home2 = ({ userObj }) => {
       }))
       setMsgCount(newArray.length);
       setNweets(newArray);
-        if (newArray.length > 0) {
-          if (new Date("20" + newArray[0].dateFormat) < new Date("20" + getCurrentDate())) {
-            addWindowCount();
-          }
-        }
+        // if (newArray.length > 0) {
+        //   if (new Date("20" + newArray[0].dateFormat) < new Date("20" + getCurrentDate())) {
+        //     addWindowCount();
+        //   }
+        // }
     })
 
   }, [windowCount]);
@@ -137,13 +160,6 @@ const Home2 = ({ userObj }) => {
       });
 
   }
-
-    // text by db
-    // id+ window count 로 하여 테이블생성. --
-    // 날짜 따와서 modal nweet에 넣음.
-    // 날짜 따와서 lastWriteTime을 호텔오너에 넣음.
-
-    // 날짜가 다르면(다음날이 되면 window count가 올라간다)? 봐야할듯
 
 
     const getCurrentDate = () => { // ex : 22-04-17

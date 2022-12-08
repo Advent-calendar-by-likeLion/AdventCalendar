@@ -26,7 +26,7 @@ const InitConfigData = ({userObj}) => {
             lastDate: getCurrentDate(),
             roofColor : "#005452",
             bodyColor : "#AF2010",
-            windowCount : 1,
+            windowCount : (new Date().getDate()).toString(),
             windowInfo: {
                 1 : false,
                 2 : false,

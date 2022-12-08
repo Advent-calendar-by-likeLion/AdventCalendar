@@ -43,8 +43,6 @@ const Hotel = ({userObj}) => {
           setInfo(doc.data().windowInfo);
       });
     }
-
-    const openModalPost = () => console.log("btn event");
     
     const onClickOpenModal = (item) => {
       if (id !== (userObj ? userObj.uid : 0)) {
@@ -60,9 +58,14 @@ const Hotel = ({userObj}) => {
             id: document.id,
             ...document.data(),
         }))
+        console.log(newArray);
         setMsgSize(newArray.length);
         setNweets(newArray);
-        setDateFormat(newArray[0].dateFormat);
+        if (newArray.length == 0) {
+          setDateFormat("22-12-00");
+        } else {
+          setDateFormat(newArray[0].dateFormat);
+        }
       })
       setLastWindowItemCount(item);
       setModalOpen(true);
