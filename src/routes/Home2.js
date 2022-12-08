@@ -19,7 +19,7 @@ import MessageModal from "../components/Modal/MessageModal";
 // 쿠키 관련 모음
 import BellBoyCookie from '../assets/cookie/BellBoyCookie.svg';
 import SleepyheadCookie from '../assets/cookie/SleepyheadCookie.svg';
-import babyCookie from '../assets/cookie/babyCookie.svg';
+import BabyCookie from '../assets/cookie/BabyCookie.svg';
 import PirateCookie from '../assets/cookie/PirateCookie.svg';
 import GreatCookie from '../assets/cookie/GreatCookie.svg';
 import MilkHotSpringCookie from '../assets/cookie/MilkHotSpringCookie.svg';
