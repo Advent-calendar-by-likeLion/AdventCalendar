@@ -66,7 +66,6 @@ const Home2 = ({ userObj }) => {
   const todayDate = new Date().getDate();
 
   useEffect(async () => {
-    console.log(todayDate);
     Config();
     if (userObj) {
       uid = userObj.uid;
@@ -108,6 +107,11 @@ const Home2 = ({ userObj }) => {
         dbService.collection("hotelOwner").doc(id).update({
           [`windowInfo.${todayDate}`] : true,
         });
+        setIsFull(true);
+      }
+
+      // 창문을 최초에 열었을 때, 오늘의 편지 버튼을 계속 활성화로 유지하기 위한 코드
+      if (snapshot.data().windowInfo[todayDate]) {
         setIsFull(true);
       }
       
