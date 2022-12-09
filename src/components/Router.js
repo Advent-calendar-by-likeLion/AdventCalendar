@@ -1,7 +1,7 @@
 import { HashRouter as Router, Route, Switch /*, Redirect*/ } from "react-router-dom";
 import Auth from "routes/Auth";
 import Start from "../routes/Start";
-import Signup from '../routes/createSign';
+import Signup from '../routes/CreateSign';
 import Write from "../routes/Write";
 import Home2 from "../routes/Home2";
 import WriteSuccess from "../routes/WriteSuccess";
