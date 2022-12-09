@@ -60,8 +60,7 @@ const Start = () => {
             <HotelImg src={Hotel} />
             <ButtonLayout>
                 <RedButton onClick={onclickLoginBar}>로그인</RedButton>
-                <GreenButton disabled={true} onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
-                <HotelGuide>점검을 위해 회원가입을 잠시 비활성화 합니다.</HotelGuide>
+                <GreenButton onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
                 {/* <WhiteButton onClick={onclickPasswordReset}>비밀번호를 잊어버리셨나요?</WhiteButton> */}
                 <LandingButton>
                     <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
@@ -177,10 +176,4 @@ const LandingContent6 = styled.div`
     text-align: left;
     
     color: #000000;
-`
-
-const HotelGuide = styled.div`
-    text-align: center; 
-    font-weight: 500;
-    font-size: 12px;
 `
