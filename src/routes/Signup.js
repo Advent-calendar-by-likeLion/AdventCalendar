@@ -8,6 +8,8 @@ import { useState } from 'react';
 import { authService } from 'fbase';
 import { useHistory } from 'react-router-dom';
 
+import { emailFilter } from "../components/EmailFilter";
+
 const Signup = ({userObj}) => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
@@ -28,6 +30,18 @@ const Signup = ({userObj}) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+
+
+
+    for (let i = 0; i < emailFilter.length; i++) {
+      if (email.includes(emailFilter[i])) {
+          window.alert(
+              `욕설, 성희롱, 비속어, 비방 내용의 입력을 금지합니다.\n금지어 : ${emailFilter[i]}`,
+          );
+          return;
+      }
+  }
+
     try {
       if (password1 == password2) {
         await authService.createUserWithEmailAndPassword(email, password1);
