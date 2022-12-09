@@ -94,11 +94,7 @@ const MyPage = ({userObj}) => {
                         </>
                     ))}
                     </GingerGrid>
-                    {isModalOpen && <MypageModal item={items.item} closeModal={onClickCloseModal}>
-                        <GingerCardLayout>
-                            <MPGingerModal info={info}/>
-                        </GingerCardLayout>
-                        </MypageModal>}
+
                 </GingerBoxLayout>
             </Container>
         </>
