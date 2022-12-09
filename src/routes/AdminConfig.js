@@ -100,6 +100,12 @@ const AdminConfig = ({userObj}) => {
         event.preventDefault();
         // collection = table
 
+        /* 진저맨 추가방법 
+           1. 진저맨이 추가 되면은 title과 content 입력
+           2. 날짜에 대한 데이터를 doc("숫자") 입력
+           3. Home2.js 19Line에 존재하는 쿠키 관련 모음에, 기존에 추가하던 방식대로 svg를 추가하면 됌. 
+           4. 그리고 cookies array에 날짜 순서대로 컴포넌트 데이터를 넣어주면 됌.
+        */
         await dbService.collection("CookieInfo").doc("0").set({
             gingerTitle : "??? 진저맨",
             gingerContent : "내가 누구게~?\n흐흐흐~\n편지를 모으면 볼 수 있지롱!",
