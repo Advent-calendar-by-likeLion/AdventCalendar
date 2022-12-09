@@ -214,7 +214,7 @@ const AdminConfig = ({userObj}) => {
     
 
   return (
-        !isAdmin ?
+        isAdmin ?
         (
             <>
                 <Container>
