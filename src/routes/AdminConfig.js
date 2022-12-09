@@ -101,75 +101,75 @@ const AdminConfig = ({userObj}) => {
         // collection = table
 
         await dbService.collection("CookieInfo").doc("0").set({
-            GingerTitle : "??? 진저맨",
-            GingerContent : "내가 누구게~?\n흐흐흐~\n편지를 모으면 볼 수 있지롱!",
-            GingerName : "../assets/cookie/WhatGingerCookie.svg",
+            gingerTitle : "??? 진저맨",
+            gingerContent : "내가 누구게~?\n흐흐흐~\n편지를 모으면 볼 수 있지롱!",
+            gingerName : "../assets/cookie/WhatGingerCookie.svg",
         });
 
         await dbService.collection("CookieInfo").doc("1").set({
-            GingerTitle : "벨보이 진저맨",
-            GingerContent : "진저호텔에 온 걸 환영한다!\n크리스마스에 진저호텔이라...\n탁월한 선택!",
-            GingerName : "../assets/cookie/BellboyCookie.svg",
+            gingerTitle : "벨보이 진저맨",
+            gingerContent : "진저호텔에 온 걸 환영한다!\n크리스마스에 진저호텔이라...\n탁월한 선택!",
+            gingerName : "../assets/cookie/BellboyCookie.svg",
         });
 
         await dbService.collection("CookieInfo").doc("2").set({
-            GingerTitle : "잠꾸러기 진저맨",
-            GingerContent : "지금 몇시야..?\n5분만 더 잘게... 5분만...\n흠냐... Zzz",
-            GingerName : "../assets/cookie/SleepyCookie.svg",
+            gingerTitle : "잠꾸러기 진저맨",
+            gingerContent : "지금 몇시야..?\n5분만 더 잘게... 5분만...\n흠냐... Zzz",
+            gingerName : "../assets/cookie/SleepyCookie.svg",
         });
 
         await dbService.collection("CookieInfo").doc("3").set({
-            GingerTitle : "아기 진저맨",
-            GingerContent : "뭐?! 내가 귀엽다고??\n어.. 어쩔티비산타코털3미터!!\n당장 그 말 취..취소해!!",
-            GingerName : "../assets/cookie/BabyCookie.svg",
+            gingerTitle : "아기 진저맨",
+            gingerContent : "뭐?! 내가 귀엽다고??\n어.. 어쩔티비산타코털3미터!!\n당장 그 말 취..취소해!!",
+            gingerName : "../assets/cookie/BabyCookie.svg",
         });
 
         await dbService.collection("CookieInfo").doc("4").set({
-            GingerTitle : "해적 진저맨",
-            GingerContent : "여기 진저호텔 스위트룸에\n보석이 잔뜩 있다는 소문을 들었지..\n다 내가 가져갈거야~!!!",
-            GingerName : "../assets/cookie/PirateCookie.svg",
+            gingerTitle : "해적 진저맨",
+            gingerContent : "여기 진저호텔 스위트룸에\n보석이 잔뜩 있다는 소문을 들었지..\n다 내가 가져갈거야~!!!",
+            gingerName : "../assets/cookie/PirateCookie.svg",
         });
 
         await dbService.collection("CookieInfo").doc("5").set({
-            GingerTitle : "위대한 진저맨",
-            GingerContent : "오늘 밤 라운지에서 파티를 열거야\n유명인사들을 잔뜩 초청했지!\n시간 있으면 들리라구 친구~",
-            GingerName : "../assets/cookie/GreatCookie.svg",
+            gingerTitle : "위대한 진저맨",
+            gingerContent : "오늘 밤 라운지에서 파티를 열거야\n유명인사들을 잔뜩 초청했지!\n시간 있으면 들리라구 친구~",
+            gingerName : "../assets/cookie/GreatCookie.svg",
         });
 
         await dbService.collection("CookieInfo").doc("6").set({
-            GingerTitle : "밀크온천 진저맨",
-            GingerContent : "흐아~ 역시 호캉스엔\n온천이 빠질 수 없지!\n1등급 우유! 따땃해~~",
-            GingerName : "../assets/cookie/MilkHotSpringCookie.svg",
+            gingerTitle : "밀크온천 진저맨",
+            gingerContent : "흐아~ 역시 호캉스엔\n온천이 빠질 수 없지!\n1등급 우유! 따땃해~~",
+            gingerName : "../assets/cookie/MilkHotSpringCookie.svg",
         });
 
         await dbService.collection("CookieInfo").doc("7").set({
-            GingerTitle : "탐정 진저맨",
-            GingerContent : "뭐? 너 편지가 사라졌다고?\n.......\n그냥 안 온 것 같은데?",
-            GingerName : ".../assets/cookie/DetectiveCookie.svg",
+            gingerTitle : "탐정 진저맨",
+            gingerContent : "뭐? 너 편지가 사라졌다고?\n.......\n그냥 안 온 것 같은데?",
+            gingerName : "../assets/cookie/DetectiveCookie.svg",
         });
 
         await dbService.collection("CookieInfo").doc("8").set({
-            GingerTitle : "클래식 진저맨",
-            GingerContent : "다섯살 때부터 난 플룻을 불었어\n영재였지~\n내 연주 한번 들어볼래?",
-            GingerName : "../assets/cookie/ClassicCookie.svg",
+            gingerTitle : "클래식 진저맨",
+            gingerContent : "다섯살 때부터 난 플룻을 불었어\n영재였지~\n내 연주 한번 들어볼래?",
+            gingerName : "../assets/cookie/ClassicCookie.svg",
         });
 
         await dbService.collection("CookieInfo").doc("9").set({
-            GingerTitle : "킹받는 진저맨",
-            GingerContent : "응 편지 내가 먼저 다봤쥬~\n킹받쥬? 할말없쥬? 당황했~쥬?\n열받는데 아무말 못하겠쥬?",
-            GingerName : "../assets/cookie/KingCookie.svg",
+            gingerTitle : "킹받는 진저맨",
+            gingerContent : "응 편지 내가 먼저 다봤쥬~\n킹받쥬? 할말없쥬? 당황했~쥬?\n열받는데 아무말 못하겠쥬?",
+            gingerName : "assets/cookie/KingCookie.svg",
         });
 
         await dbService.collection("CookieInfo").doc("10").set({
-            GingerTitle : "해맑은 진저맨",
-            GingerContent : "나는 비가 오는 날이 좋아!\n첨벙첨벙~",
-            GingerName : "../assets/cookie/HappyCookie.svg",
+            gingerTitle : "해맑은 진저맨",
+            gingerContent : "나는 비가 오는 날이 좋아!\n첨벙첨벙~",
+            gingerName : "../assets/cookie/HappyCookie.svg",
         });
 
         await dbService.collection("CookieInfo").doc("11").set({
-            GingerTitle : "겁쟁이 진저맨",
-            GingerContent : "그 얘기 들었어?\n무시무시한 진저호텔 악령 괴담!\n아직 여기 있을지도 몰라..",
-            GingerName : "../assets/cookie/ScaredCookie.svg",
+            gingerTitle : "겁쟁이 진저맨",
+            gingerContent : "그 얘기 들었어?\n무시무시한 진저호텔 악령 괴담!\n아직 여기 있을지도 몰라..",
+            gingerName : "../assets/cookie/ScaredCookie.svg",
         });        
         
 

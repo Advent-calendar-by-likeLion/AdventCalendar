@@ -103,6 +103,14 @@ const Home2 = ({ userObj }) => {
       setLastDate(doc.data().lastDate);
     });
 
+    dbService.collection("CookieInfo").doc(todayDate.toString()).get().then((doc) => {
+      setGingerTitle(doc.data().gingerTitle);
+      setGingerContent(doc.data().gingerContent);
+      setGingerName(doc.data().gingerName);
+    })
+
+
+
   }, []);
 
   useEffect(() => {
