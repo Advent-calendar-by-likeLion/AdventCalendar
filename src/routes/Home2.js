@@ -195,7 +195,6 @@ const Home2 = ({ userObj }) => {
       setGingerTitle(doc.data().gingerTitle);
       setGingerContent(doc.data().gingerContent);
       setGingerName(doc.data().gingerName);
-      console.log(doc.data());
     })
 
 

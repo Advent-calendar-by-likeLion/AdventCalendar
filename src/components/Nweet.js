@@ -13,9 +13,7 @@ const Nweet = ({ nweetObj, tableNm }) => {
         console.log(ok);
 
         if(ok) {
-            console.log(nweetObj.id);
             const data = await dbService.doc(`${tableNm}/${nweetObj.id}`).delete();
-            console.log(data);
             if (nweetObj.attachmentUrl !== "") {
                 await storageService.refFromURL(nweetObj.attachmentUrl).delete();
             }
