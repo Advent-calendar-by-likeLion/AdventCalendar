@@ -1,6 +1,7 @@
-import { dbService } from "fbase";
+import { dbService, authService } from "fbase";
 
 import styled from 'styled-components';
+import { InputStyle } from './styles/style';
 import { RedButton, WhiteButton } from './styles/buttonstyle';
 import { useEffect, useState } from 'react';
 import { useHistory, useParams } from "react-router-dom";
@@ -176,10 +177,43 @@ const AdminConfig = ({userObj}) => {
     const toHome = () => {
         history.push("/");
     }
+
+    // 기본 로그인 테스트 
+    const [email, setEmail] = useState("");
+    const [password1, setPassword1] = useState("");
+    const [password2, setPassword2] = useState("");
+
+    const onChangeEmailAndPassword = (event) => {
+        const {target: {name, value}} = event;
+        if (name === "email") {
+          setEmail(value)
+        } else if (name === "password1") {
+          setPassword1(value)
+        } else if (name === "password2") {
+          setPassword2(value)
+        }
+    }
+    
+    const onSubmitSignUpTest = async (event) => {
+        event.preventDefault();
+        
+        try {
+            if (password1 == password2) {
+                await authService.createUserWithEmailAndPassword(email, password1);
+                history.push("/InitConfigData");
+              } else if (password1 == "" || password2 == "") {
+                alert("비밀번호를 입력해주세요.");
+              } else if (password1 != password2) {
+                alert("비밀번호가 일치하지 않습니다.");
+            }
+        } catch (error) {
+            alert(error.message);
+        }
+    }
     
 
   return (
-        isAdmin ?
+        !isAdmin ?
         (
             <>
                 <Container>
@@ -253,9 +287,27 @@ const AdminConfig = ({userObj}) => {
 
                     <br/>
                     <form onSubmit={createTableCookieInfo}>
-                            <RedButton>진저맨DB삽입</RedButton>
+                        <RedButton>진저맨DB삽입</RedButton>
+                    </form>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <Container>
+                        <form onSubmit={onSubmitSignUpTest}>
+                            <h1 style={{fontFamily: "humanbeomseok", fontSize: "25px"}}>회원가입 테스트</h1>
+                            <InputLayout2>
+                                <InputStyle placeholder='이메일' name="email" type="email" required value={email} onChange={onChangeEmailAndPassword} />
+                                <InputStyle placeholder='비밀번호' name="password1" type="password" required value={password1} onChange={onChangeEmailAndPassword} />
+                                <InputStyle placeholder='비밀번호 확인' name="password2" type="password" required value={password2} onChange={onChangeEmailAndPassword}/>
+                            </InputLayout2>
+                            <ButtonLayout>
+                                <RedButton type="submit">회원가입 테스트</RedButton>
+                            </ButtonLayout>
                         </form>
-                        <br/>
+                    </Container>
+                    <br/>
+                    <br/>
+                    <br/>
                     <WhiteButton onClick={ () => {
                         history.push("/");
                     } } >시작화면</WhiteButton>
@@ -367,4 +419,22 @@ const HotelGuide = styled.div`
     text-align: center; 
     font-weight: 500;
     font-size: 12px;
+`
+
+const InputLayout2 = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 72px;
+    margin-bottom: 39px;
+    align-items: center;
+`
+
+const ButtonLayout = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 12.57px;
+    margin-top: 62.02px;
+    margin-bottom: 142px;
+    align-items: center;
 `
