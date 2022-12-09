@@ -288,6 +288,10 @@ const DeleteHotel = () => {
           </>
           :
           <>
+            <HotelGuide style={{fontFamily: "humanbeomseok"}}>
+                        <br/>   
+                        * 현재 서비스 점검을 위해서 이메일 로그인 기능을 잠시 비활성화 합니다. *
+                        </HotelGuide>
             <TodayMessageGuide></TodayMessageGuide>
           </>
         }
