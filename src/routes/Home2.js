@@ -17,6 +17,7 @@ import Nweet from "../components/Nweet";
 import MessageModal from "../components/Modal/MessageModal";
 
 // 쿠키 관련 모음
+import WhoGinger from '../assets/cookie/WhoGinger.svg';
 import BellBoyCookie from '../assets/cookie/BellBoyCookie.svg';
 import SleepyheadCookie from '../assets/cookie/SleepyheadCookie.svg';
 import BabyCookie from '../assets/cookie/BabyCookie.svg';
