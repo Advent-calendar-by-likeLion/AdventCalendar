@@ -56,6 +56,11 @@ const Home2 = ({ userObj }) => {
   const [windowCount, setWindowCount] = useState("");
   const [lastDate, setLastDate] = useState("");
   
+  // cookie
+  const [gingerTitle, setGingerTitle] = useState("");
+  const [gingerContent, setGingerContent] = useState("");
+  const [gingerName, setGingerName] = useState("");
+  
   const [isModalOpen, setModalOpen] = useState(false);
   const [isGingerModalOpen, setGingerModalOpen] = useState(false);
   const [msgCount, setMsgCount] = useState(0);
@@ -185,6 +190,15 @@ const Home2 = ({ userObj }) => {
   }
 
   const onClickOpenGingerModal = () => {
+
+    dbService.collection("CookieInfo").doc(windowCount).onSnapshot((doc) => {
+      setGingerTitle(doc.data().gingerTitle);
+      setGingerContent(doc.data().gingerContent);
+      setGingerName(doc.data().gingerName);
+      console.log(doc.data());
+    })
+
+
     setGingerModalOpen(true);
   }
 
@@ -324,13 +338,12 @@ const DeleteHotel = () => {
                                           </CardLayout>
                                         </Modal> :
                             <GingerCardLayout>
-                              <GingerTitle>킹받는 진저맨</GingerTitle>
+                              <GingerTitle>{gingerTitle}</GingerTitle>
                               <br/>
-                              <GingerContent> 응 편지 내가 먼저 다 봤쥬~
-                                              <br/>킹받쥬? 할말없쥬? 당황했~쥬?
-                                              <br/>열받는데 아무말 못하겠쥬?
+                              <GingerContent> 
+                                {gingerContent}
                               </GingerContent>
-                              <GingerCookie src={KingCookie} />
+                              <GingerCookie src={gingerName} />
                               <RedRoundButton onClick={onClickGoLetter}>편지 읽기</RedRoundButton>
                             </GingerCardLayout>}
                           </GingerModal>} 
