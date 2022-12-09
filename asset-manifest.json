@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/AdventCalendar/static/css/main.a0d6cc94.chunk.css",
-    "main.js": "/AdventCalendar/static/js/main.d653d83c.chunk.js",
+    "main.js": "/AdventCalendar/static/js/main.5d25215e.chunk.js",
     "runtime-main.js": "/AdventCalendar/static/js/runtime-main.5bb88139.js",
-    "static/js/2.fb832bc6.chunk.js": "/AdventCalendar/static/js/2.fb832bc6.chunk.js",
+    "static/js/2.dec108ee.chunk.js": "/AdventCalendar/static/js/2.dec108ee.chunk.js",
     "index.html": "/AdventCalendar/index.html",
-    "static/js/2.fb832bc6.chunk.js.LICENSE.txt": "/AdventCalendar/static/js/2.fb832bc6.chunk.js.LICENSE.txt",
+    "static/js/2.dec108ee.chunk.js.LICENSE.txt": "/AdventCalendar/static/js/2.dec108ee.chunk.js.LICENSE.txt",
+    "static/media/BabyCookie.fbefbd8a.svg": "/AdventCalendar/static/media/BabyCookie.fbefbd8a.svg",
     "static/media/BellBoyCookie.8bb275ce.svg": "/AdventCalendar/static/media/BellBoyCookie.8bb275ce.svg",
     "static/media/ClassicCookie.948a5fc1.svg": "/AdventCalendar/static/media/ClassicCookie.948a5fc1.svg",
     "static/media/Component3434.f4ea7bbf.svg": "/AdventCalendar/static/media/Component3434.f4ea7bbf.svg",
@@ -37,13 +38,12 @@
     "static/media/Welcome.e6a8cd9d.svg": "/AdventCalendar/static/media/Welcome.e6a8cd9d.svg",
     "static/media/WelcomeAddedFont.823997f0.svg": "/AdventCalendar/static/media/WelcomeAddedFont.823997f0.svg",
     "static/media/WhoGinger.ece997df.svg": "/AdventCalendar/static/media/WhoGinger.ece997df.svg",
-    "static/media/babyCookie.fbefbd8a.svg": "/AdventCalendar/static/media/babyCookie.fbefbd8a.svg",
     "static/media/styles.css": "/AdventCalendar/static/media/humanbeomseok.359ba83f.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.5bb88139.js",
-    "static/js/2.fb832bc6.chunk.js",
+    "static/js/2.dec108ee.chunk.js",
     "static/css/main.a0d6cc94.chunk.css",
-    "static/js/main.d653d83c.chunk.js"
+    "static/js/main.5d25215e.chunk.js"
   ]
 }
