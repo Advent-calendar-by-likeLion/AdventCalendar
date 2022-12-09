@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom';
 
 import { emailFilter } from "../components/EmailFilter";
 
-const Signup = ({userObj}) => {
+const Signup2 = ({userObj}) => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
@@ -88,7 +88,7 @@ const Signup = ({userObj}) => {
   )
 }
 
-export default Signup
+export default Signup2
 
 const InputLayout2 = styled.div`
     display: flex;

@@ -25,7 +25,7 @@ const Start = () => {
         history.push("/login");
     }
     const onclickSignupBar = () => {
-        history.push("/signup");
+        history.push("/signup2");
     }
 
     const [isLandingModalOpen, setLandingModalOpen] = useState(false);
