@@ -38,6 +38,11 @@ import LandingInsta from '../assets/LandingPage/LandingInsta.svg';
 import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 
 const Home2 = ({ userObj }) => {
+
+  // Need to add Daily Cookies here.
+  const cookies = new Array(WhoGinger, BellBoyCookie, SleepyheadCookie, BabyCookie, PirateCookie, GreatCookie, MilkHotSpringCookie,
+    DetectiveCookie, ClassicCookie, KingCookie);
+
   const history = useHistory();
   const {id} = useParams(); // hetelOwnerId
   const toWrite = () => {
@@ -350,7 +355,8 @@ const DeleteHotel = () => {
                               <GingerContent> 
                                 {gingerContent}
                               </GingerContent>
-                              <GingerCookie src={gingerName} />
+                              <GingerCookie src={cookies[windowCount]} 
+                              />
                               <RedRoundButton onClick={onClickGoLetter}>편지 읽기</RedRoundButton>
                             </GingerCardLayout>}
                           </GingerModal>} 
