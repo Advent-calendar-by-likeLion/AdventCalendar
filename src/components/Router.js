@@ -42,9 +42,6 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             <Route exact path="/login">
               <Auth userObj={userObj}/>
             </Route>
-            <Route exact path="/createSign">
-              <Signup userObj={userObj}/>
-            </Route>
             <Route exact path="/AdminConfig/:id">
               <AdminConfig userObj={userObj}/>
             </Route>
@@ -68,9 +65,6 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             </Route>
             <Route exact path="/login">
               <Auth userObj={userObj}/>
-            </Route>
-            <Route exact path="/signup2">
-              <Signup userObj={userObj}/>
             </Route>
             <Route exact path="/writesuccess">
               <WriteSuccess userObj={userObj}/>
