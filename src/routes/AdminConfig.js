@@ -200,7 +200,8 @@ const AdminConfig = ({userObj}) => {
         try {
             if (password1 == password2) {
                 await authService.createUserWithEmailAndPassword(email, password1);
-                history.push("/InitConfigData");
+                alert("회원가입 성공!");
+                history.push("/AdminConfig");
               } else if (password1 == "" || password2 == "") {
                 alert("비밀번호를 입력해주세요.");
               } else if (password1 != password2) {
