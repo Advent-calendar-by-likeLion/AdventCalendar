@@ -281,17 +281,9 @@ const DeleteHotel = () => {
         { id === (userObj ? userObj.uid : 0) ?
           <>
             <TodayMessageGuide>오늘 받아야 하는 편지 개수는 매일 바뀝니다</TodayMessageGuide>
-            <HotelGuide style={{fontFamily: "humanbeomseok"}}>
-                        <br/>   
-                        * 현재 서비스 점검을 위해서 이메일 로그인 기능을 잠시 비활성화 합니다. *
-                        </HotelGuide>
           </>
           :
           <>
-            <HotelGuide style={{fontFamily: "humanbeomseok"}}>
-                        <br/>   
-                        * 현재 서비스 점검을 위해서 이메일 로그인 기능을 잠시 비활성화 합니다. *
-                        </HotelGuide>
             <TodayMessageGuide></TodayMessageGuide>
           </>
         }
@@ -560,7 +552,7 @@ const LandingButtonHotel1 = styled.div`
     width: 35px;
     height: 35px;
     left: 148px;
-    top: -229px;
+    top: -187px;
 `
 const LandingContent5 = styled.div`
     position: relative;

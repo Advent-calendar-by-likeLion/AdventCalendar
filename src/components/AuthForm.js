@@ -72,10 +72,6 @@ const AuthForm = (userObj) => {
                             <InputStyle name="email" type="email" placeholder="이메일" required value={email} onChange={onChange}/>
                             <InputStyle name="password" type="password" placeholder="비밀번호" required value={password} onChange={onChange}/>
                         </InputLayout>
-                        <HotelGuide style={{fontFamily: "humanbeomseok"}}>
-                        <br/>   
-                        * 현재 서비스 점검을 위해서 이메일 로그인 기능을 잠시 비활성화 합니다. *
-                        </HotelGuide>
                         <br/>
                         <RedButton disabled={buttonDisabled? false : true} type="submit">로그인</RedButton>
                         <br/>
