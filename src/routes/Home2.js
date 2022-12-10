@@ -30,6 +30,7 @@ import ClassicCookie from '../assets/cookie/ClassicCookie.svg';
 import KingCookie from '../assets/cookie/KingCookie.svg';
 import HappyCookie from '../assets/cookie/HappyCookie.svg';
 import ScaredCookie from '../assets/cookie/ScaredCookie.svg';
+import CollegeCookie from '../assets/cookie/CollegeCookie.svg';
 
 // Landing Page 관련
 import { LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4, LandingContent10, LandingContent11 } from './styles/style';
@@ -45,7 +46,7 @@ const Home2 = ({ userObj }) => {
 
   // Need to add Daily Cookies here.
   const cookies = new Array(WhoGinger, BellBoyCookie, SleepyheadCookie, BabyCookie, PirateCookie, GreatCookie, MilkHotSpringCookie,
-    DetectiveCookie, ClassicCookie, KingCookie, HappyCookie, ScaredCookie);
+    DetectiveCookie, ClassicCookie, KingCookie, HappyCookie, CollegeCookie);
 
   const history = useHistory();
   const {id} = useParams(); // hetelOwnerId
