@@ -60,8 +60,8 @@ const Start = () => {
             <HotelImg src={Hotel} />
             <ButtonLayout>
                 <RedButton onClick={onclickLoginBar}>로그인</RedButton>
-                <GreenButton disabled={true} onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
-                <HotelGuide style={{fontFamily: "humanbeomseok"}}>점검을 위해 회원가입을 잠시 비활성화합니다.</HotelGuide>
+                <GreenButton disabled={false} onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
+                {/* <HotelGuide style={{fontFamily: "humanbeomseok"}}>점검을 위해 회원가입을 잠시 비활성화합니다.</HotelGuide> */}
                 {/* <WhiteButton onClick={onclickPasswordReset}>비밀번호를 잊어버리셨나요?</WhiteButton> */}
                 <LandingButton>
                     <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
