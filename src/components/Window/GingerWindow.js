@@ -10,6 +10,7 @@ import Classic from '../../assets/cookie/ClassicCookie.svg';
 import King from '../../assets/cookie/KingCookie.svg';
 import Happy from '../../assets/cookie/HappyCookie.svg';
 import Scared from '../../assets/cookie/ScaredCookie.svg';
+import College from "../../assets/cookie/CollegeCookie.svg";
 import styled from 'styled-components';
 
 const GingerWindow = ({info, item}) => {
@@ -132,9 +133,20 @@ const GingerWindow = ({info, item}) => {
         <div>첨벙첨벙~</div>
     </GingerContent>
     <img src={Happy} style={{width:"70px"}}/>
-    </>
+    </> 
     :
     item == 11 ?
+    <>
+    <GingerTitle>대학생 진저맨</GingerTitle>
+    <GingerContent>
+        <div>레포트.. 이제 2개만 더 쓰면 돼..</div>
+        <div>남은 전공 시험 5개...</div>
+        <div>졸업해야지... 졸업해야지..</div>
+    </GingerContent>
+    <img src={College} style={{width:"70px"}}/>
+    </>
+    :
+    item == 12 ?
     <>
     <GingerTitle>겁쟁이 진저맨</GingerTitle>
     <GingerContent>
