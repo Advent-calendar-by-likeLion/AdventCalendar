@@ -6,24 +6,15 @@ import { Container, GingerCookie } from "./styles/style";
 import { RedButton, WhiteButton } from "./styles/buttonstyle";
 import styled from "styled-components";
 import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
-import { GingerCardLayout } from "../components/Modal/styles";
-import DetectiveCookie from '../assets/cookie/DetectiveCookie.svg';
-import SmallGingerCard from "../components/SmallGingerCard";
-import MypageModal from '../components/MypageModal';
 import { useParams } from "react-router-dom";
-import GingerWindow from '../components/Window/GingerWindow';
-import GingerDate from "../components/Window/GingerDate";
-import MPGingerModal from "../components/Modal/MPGingerModal";
 
 const MyPage = ({userObj}) => {
     const {id} = useParams();
     const history = useHistory();
     const [username, setUsername] = useState("");
     const [activeDeleteButton, setActiveDeleteButton] = useState(false);
-    const [isModalOpen, setModalOpen] = useState(false);
 
     const [info, setInfo] = useState([]);
-    const [date, setDate] = useState("");
 
     useEffect(() => {
         dbService.collection("hotelOwner").doc(authService.currentUser.uid).onSnapshot((doc) => {
@@ -58,16 +49,7 @@ const MyPage = ({userObj}) => {
             }
         })
     }
-
-    const onClickOpenModal = (item) => {
-        setModalOpen(true);
-        console.log("click");
-    }
-    const onClickCloseModal = (item) => {
-        setModalOpen((prev) => !prev);
-        console.log("click");
-      }
-    const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 ,22 , 23, 24, 25];
+    
     return (
         <>
             <Container>
@@ -76,26 +58,9 @@ const MyPage = ({userObj}) => {
                 <GuideDiv>신중하게 생각하고 눌러주세요!</GuideDiv>
                 <br/>
                 {/* 아직 서비스 적용 안됐기 때문에 버튼 비활성화 */}
-                <RedButton disabled={true} onClick={DeleteHotel}>내 호텔 삭제하기</RedButton>
+                <RedButton disabled={false} onClick={DeleteHotel}>내 호텔 삭제하기</RedButton>
                 <br/>
                 <WhiteButton onClick={onclickPasswordReset}>비밀 번호 재설정</WhiteButton>
-                <GingerBoxLayout>
-                    <GingerGrid>
-                    {items.map((item) => (
-                        <>
-                        <FlexGingerCard>
-                        <GingerManCard item={item} onClick={() => onClickOpenModal(item)}>
-                        <SmallGingerCardLayout>
-                            <GingerWindow item={item} info={info} />
-                        </SmallGingerCardLayout>
-                        </GingerManCard>
-                        <GingerDate item={item} info={info}/>
-                        </FlexGingerCard>
-                        </>
-                    ))}
-                    </GingerGrid>
-
-                </GingerBoxLayout>
             </Container>
         </>
     );
@@ -119,62 +84,4 @@ const TitleDiv = styled.div`
     height: 66px;
     margin-bottom: 30px;
     font-family: humanbeomseok;
-`
-const GingerBoxLayout = styled.div`
-    margin-top: 35px;
-    margin-bottom: 35px;
-
-    padding-top: 25px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 40px;
-
-    box-sizing: border-box;
-    background-color: white;
-    border: 1px dashed #DF6F6F;
-    border-radius: 20px;
-    box-shadow: 0 0 0 11px white, 0 0 0 12px #DF6F6F;
-
-    width: 316px;
-
-    height: fit-content;
-`
-const GingerGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    row-gap: 15px;
-    column-gap: 20px;
-    justify-items: center;
-`
-const GingerManCard = styled.div`
-    width: 130px;
-    height: 202.69px;
-    background: white;
-    border-radius: 5px;
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-
-    box-sizing: border-box;
-    border: 3px solid #A4D6CB;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 22px;
-
-    margin-bottom: 15px;
-`
-const FlexGingerCard = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-const SmallGingerCardLayout = styled.div`
-    margin-top: 28px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
 `
