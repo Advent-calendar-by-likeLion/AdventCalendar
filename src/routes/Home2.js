@@ -512,6 +512,8 @@ const GingerContent = styled.div`
   text-align: center;
   
   color: #000000;
+  
+  white-space: pre-wrap;
 `
 
 const HotelGuide = styled.div`
