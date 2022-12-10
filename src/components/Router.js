@@ -1,6 +1,7 @@
 import { HashRouter as Router, Route, Switch /*, Redirect*/ } from "react-router-dom";
 import Auth from "routes/Auth";
 import Start from "../routes/Start";
+import Signup from '../routes/CreateSign';
 import Write from "../routes/Write";
 import Home2 from "../routes/Home2";
 import WriteSuccess from "../routes/WriteSuccess";
@@ -43,9 +44,6 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             <Route exact path="/login">
               <Auth userObj={userObj}/>
             </Route>
-            <Route exact path="/createSign">
-              <CreateSign userObj={userObj} />
-            </Route>
             <Route exact path="/AdminConfig/:id">
               <AdminConfig userObj={userObj}/>
             </Route>
@@ -72,9 +70,6 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             </Route>
             <Route exact path="/login">
               <Auth userObj={userObj}/>
-            </Route>
-            <Route exact path="/createSign">
-              <CreateSign userObj={userObj} />
             </Route>
             <Route exact path="/writesuccess">
               <WriteSuccess userObj={userObj}/>
