@@ -7,6 +7,7 @@ import { RedButton, WhiteButton } from "./styles/buttonstyle";
 import styled from "styled-components";
 import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
+import BackIcon from "../assets/BackIc.svg";
 
 const MyPage = ({userObj}) => {
     const {id} = useParams();
@@ -49,10 +50,16 @@ const MyPage = ({userObj}) => {
             }
         })
     }
+
+    const onClickBack = () => {
+        history.push("/hotel/" + id);
+    }
+
     
     return (
         <>
             <Container>
+            <BackIcStyle onClick={onClickBack}><img src={BackIcon} style={{position:"relative", left:"-150px", top:"-10px"}}></img></BackIcStyle>
                 <TitleDiv>{username}의 마이페이지</TitleDiv>
                 <GuideDiv>삭제된 데이터는 복구할 수 없습니다</GuideDiv>
                 <GuideDiv>신중하게 생각하고 눌러주세요!</GuideDiv>
@@ -84,4 +91,9 @@ const TitleDiv = styled.div`
     height: 66px;
     margin-bottom: 30px;
     font-family: humanbeomseok;
+`
+const BackIcStyle = styled.button`
+
+    background-color: transparent;
+    border: none;
 `

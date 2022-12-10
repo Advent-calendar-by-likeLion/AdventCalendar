@@ -14,7 +14,7 @@ import { useParams } from "react-router-dom";
 import GingerWindow from '../components/Window/GingerWindow';
 import GingerDate from "../components/Window/GingerDate";
 import MPGingerModal from "../components/Modal/MPGingerModal";
-// import BackIcon from "../assets/BackIc.svg";
+import BackIcon from "../assets/BackIc.svg";
 
 const GingerPage = ({userObj}) => {
     const {id} = useParams();
@@ -40,6 +40,10 @@ const GingerPage = ({userObj}) => {
     //     setModalOpen((prev) => !prev);
     //     console.log("click");
     //   }
+    
+    const onClickBack = () => {
+        history.push("/hotel/" + id);
+    }
 
     const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 ,22 , 23, 24, 25];
     
@@ -47,7 +51,7 @@ const GingerPage = ({userObj}) => {
         <>
             <Container>
                 <div>
-                {/* <BackIcStyle onClick={onClickBack}><img src={BackIcon} style={{position:"relative", left:"-80px", top:"30px"}}></img></BackIcStyle> */}
+                <BackIcStyle onClick={onClickBack}><img src={BackIcon} style={{position:"relative", left:"-80px", top:"-10px"}}></img></BackIcStyle>
                 <TitleDiv>{username}의 진저맨 앨범</TitleDiv>
                 </div>
                 <GingerBoxLayout>
@@ -153,8 +157,8 @@ const SmallGingerCardLayout = styled.div`
     flex-direction: column;
     align-items: center;
 `
-// const BackIcStyle = styled.button`
+const BackIcStyle = styled.button`
 
-//     background-color: transparent;
-//     border: none;
-// `
+    background-color: transparent;
+    border: none;
+`
