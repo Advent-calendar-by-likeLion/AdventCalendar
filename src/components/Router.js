@@ -9,6 +9,7 @@ import HotelColor from '../routes/HotelColor';
 import InitConfigData from "../routes/InitConfigData";
 import AdminConfig from "../routes/AdminConfig";
 import MyPage from "../routes/MyPage";
+import GingerPage from "../routes/GingerPage";
 import CreateSign from "../routes/CreateSign";
 
 
@@ -53,6 +54,9 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             </Route>
             <Route exact path="/mypage/:id">
               <MyPage userObj={userObj} />
+            </Route>
+            <Route exact path="/ginger/:id">
+              <GingerPage userObj={userObj} />
             </Route>
           </>
         ) : (

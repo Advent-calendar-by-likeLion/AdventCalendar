@@ -20,7 +20,7 @@ import MessageModal from "../components/Modal/MessageModal";
 import WhoGinger from '../assets/cookie/WhoGinger.svg';
 import BellBoyCookie from '../assets/cookie/BellBoyCookie.svg';
 import SleepyheadCookie from '../assets/cookie/SleepyheadCookie.svg';
-import BabyCookie from '../assets/cookie/BabyCookie.svg';
+import BabyCookie from '../assets/cookie/babyCookie.svg';
 import PirateCookie from '../assets/cookie/PirateCookie.svg';
 import GreatCookie from '../assets/cookie/GreatCookie.svg';
 import MilkHotSpringCookie from '../assets/cookie/MilkHotSpringCookie.svg';
@@ -242,6 +242,10 @@ const Home2 = ({ userObj }) => {
     setIsGoLetter(true);
   }
 
+  const onClickGingerAlbum = () => {
+    history.push("/ginger/" + id);
+  }
+
 
   //링크 복사 버튼 코드
   let nowUrl = window.location.href;
@@ -274,6 +278,10 @@ const DeleteHotel = () => {
     }
 }
 
+const GoMypage = () => {
+  history.push("/mypage/" + id);
+}
+
   return (
     <>
       <HotelContainer style={{fontFamily: "humanbeomseok"}}> 
@@ -281,6 +289,7 @@ const DeleteHotel = () => {
         { id === (userObj ? userObj.uid : 0) ?
           <>
             <TodayMessageGuide>오늘 받아야 하는 편지 개수는 매일 바뀝니다</TodayMessageGuide>
+            <Mypage onClick={GoMypage}>마이페이지</Mypage>
           </>
           :
           <>
@@ -303,7 +312,12 @@ const DeleteHotel = () => {
           <>
             <HotelGuide style={{marginBottom: "5px"}}>12월 9일부터 날짜와 동일한 숫자의 창문이 열립니다!</HotelGuide>
             <HotelGuide style={{marginBottom: "10px"}}>이미 받은 편지들은 지워지지 않으니 걱정마세요!</HotelGuide>
-            <RedButton disabled={!isFull} onClick={onClickOpenGingerModal}>오늘의 편지</RedButton>
+            <BtnFlex>
+            <RedButton2 disabled={!isFull} onClick={onClickOpenGingerModal}>오늘의 편지</RedButton2>
+            <GingerBtn onClick={onClickGingerAlbum}>
+              <img src={WhoGinger} style={{width:"20px", height:"25.71px", paddingTop:"7px"}}></img>
+            </GingerBtn>
+            </BtnFlex>
             {!isFull ? <><br/><HotelGuide>* 오늘의 편지를 채워야 열람할 수 있어요! *</HotelGuide></>:<></>}
             <br/>
             <GreenButton onClick={copyUrl}>호텔 링크 복사하기</GreenButton>
@@ -553,8 +567,8 @@ const LandingButtonHotel1 = styled.div`
     position: relative;
     width: 35px;
     height: 35px;
-    left: 148px;
-    top: -187px;
+    right: 148px;
+    top: -220px;
 `
 const LandingContent5 = styled.div`
     position: relative;
@@ -587,4 +601,72 @@ const LandingContent6 = styled.div`
     text-align: left;
     
     color: #000000;
+`
+const RedButton2 = styled.button`
+    width: 195px;
+    height: 29px;
+    border-width: 1.5px;
+    border-style: dashed;
+    border-color: white;
+    border-radius: 2px;
+    background-color: #AF2010;
+    outline-width: 9px;
+    outline-color:  #AF2010;
+    outline-style: solid;
+
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "humanbeomseok";
+    line-height: 20px;
+    color: white;
+    
+    margin-top: 9px;
+    margin-bottom: 9px;
+    :disabled {
+        background-color: rgba(175, 32, 16, 0.5);
+        outline-color:  rgba(175, 32, 16, 0.5);
+    }
+`
+const GingerBtn = styled.div`
+  width: 65px;
+  height: 38px;
+
+  border: 3px solid #E07272;
+  border-radius: 10px;
+  background-color: white;
+
+  text-align: center;
+`
+const BtnFlex = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+
+  justify-content: center;
+  align-items: center;
+`
+const Mypage = styled.button`
+  position: relative;
+  right: -140px;
+  top: -60px;
+
+  width: 67px;
+  height: 25.26px;
+
+  border-width: 1.5px;
+  border-style: dashed;
+  border-color: white;
+  background-color: #4C243C;
+  outline-width: 5px;
+  outline-color:  #4C243C;
+  outline-style: solid;
+
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "humanbeomseok";
+  line-height: 16px;
+  color: white;
+
+  padding-top: 2px;
+  border-radius: 50px;
 `
