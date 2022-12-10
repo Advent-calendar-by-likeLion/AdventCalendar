@@ -137,17 +137,6 @@ const GingerWindow = ({info, item}) => {
     :
     item == 11 ?
     <>
-    <GingerTitle>대학생 진저맨</GingerTitle>
-    <GingerContent>
-        <div>레포트.. 이제 2개만 더 쓰면 돼..</div>
-        <div>남은 전공 시험 5개...</div>
-        <div>졸업해야지... 졸업해야지..</div>
-    </GingerContent>
-    <img src={College} style={{width:"70px"}}/>
-    </>
-    :
-    item == 12 ?
-    <>
     <GingerTitle>겁쟁이 진저맨</GingerTitle>
     <GingerContent>
         <div>그 얘기 들었어?</div>
@@ -155,6 +144,17 @@ const GingerWindow = ({info, item}) => {
         <div>아직 여기 있을지도 몰라..</div>
     </GingerContent>
     <img src={Scared} style={{width:"70px"}}/>
+    </>
+    :
+    item == 12 ?
+    <>
+    <GingerTitle>대학생 진저맨</GingerTitle>
+    <GingerContent>
+        <div>레포트.. 이제 2개만 더 쓰면 돼..</div>
+        <div>남은 전공 시험 5개...</div>
+        <div>졸업해야지... 졸업해야지..</div>
+    </GingerContent>
+    <img src={College} style={{width:"70px"}}/>
     </>
     :
     <>

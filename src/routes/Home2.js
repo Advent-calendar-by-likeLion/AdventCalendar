@@ -46,7 +46,7 @@ const Home2 = ({ userObj }) => {
 
   // Need to add Daily Cookies here.
   const cookies = new Array(WhoGinger, BellBoyCookie, SleepyheadCookie, BabyCookie, PirateCookie, GreatCookie, MilkHotSpringCookie,
-    DetectiveCookie, ClassicCookie, KingCookie, HappyCookie, CollegeCookie);
+    DetectiveCookie, ClassicCookie, KingCookie, HappyCookie, ScaredCookie, CollegeCookie);
 
   const history = useHistory();
   const {id} = useParams(); // hetelOwnerId
