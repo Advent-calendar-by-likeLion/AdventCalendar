@@ -21,7 +21,7 @@ import MypageImg from "../assets/Mypage.svg";
 import WhoGinger from '../assets/cookie/WhoGinger.svg';
 import BellBoyCookie from '../assets/cookie/BellBoyCookie.svg';
 import SleepyheadCookie from '../assets/cookie/SleepyheadCookie.svg';
-import BabyCookie from '../assets/cookie/BabyCookie.svg';
+import BabyCookie from '../assets/cookie/Baby_Cookie.svg';
 import PirateCookie from '../assets/cookie/PirateCookie.svg';
 import GreatCookie from '../assets/cookie/GreatCookie.svg';
 import MilkHotSpringCookie from '../assets/cookie/MilkHotSpringCookie.svg';
