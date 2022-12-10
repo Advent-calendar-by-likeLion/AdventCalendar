@@ -131,10 +131,10 @@ const Home2 = ({ userObj }) => {
         setIsFull(true);
       }
 
-      // 창문을 최초에 열었을 때, 오늘의 편지 버튼을 계속 활성화로 유지하기 위한 코드
-      if (snapshot.data().windowInfo[todayDate]) {
-        setIsFull(true);
-      }
+      // 창문을 최초에 열었을 때, 오늘의 편지 버튼을 계속 활성화로 유지하기 위한 코드 : 오류 있어서 일단 비활성화
+      // if (snapshot.data().windowInfo[todayDate]) {
+      //   setIsFull(true);
+      // }
       
       if (msgCount !== 0 && msgCount >= 20) {
         setIsMsgFull(true);
