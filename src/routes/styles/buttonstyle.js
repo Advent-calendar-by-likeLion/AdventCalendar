@@ -3,14 +3,29 @@ import styled from "styled-components"
 export const RedButton = styled.button`
     width: 281px;
     height: 29px;
-    border-width: 1.5px;
+
+    /* border-width: 1.5px;
     border-style: dashed;
     border-color: white;
     border-radius: 2px;
     background-color: #AF2010;
     outline-width: 9px;
     outline-color:  #AF2010;
-    outline-style: solid;
+    outline-style: solid; */
+
+    box-shadow:  0 0 0 10px #AF2010;
+
+    border: 1.5px dashed white;
+    /* outline:  solid #AF2010; */
+    box-shadow: 0 0 0 8px #AF2010, 0 0 0 9px white;
+
+    border-radius: 2px;
+    background-color: #AF2010; 
+
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "humanbeomseok";
+    line-height: 20px;
 
     font-weight: 400;
     font-size: 14px;
@@ -23,6 +38,7 @@ export const RedButton = styled.button`
     :disabled {
         background-color: rgba(175, 32, 16, 0.5);
         outline-color:  rgba(175, 32, 16, 0.5);
+        box-shadow: 0 0 0 8px rgba(175, 32, 16, 0.5), 0 0 0 9px white;
     }
 
 `
@@ -62,14 +78,22 @@ export const CircleButton = styled.button`
 export const GreenButton = styled.button`
     width: 281px;
     height: 29px;
-    border-width: 1.5px;
+    /* border-width: 1.5px;
     border-style: dashed;
     border-color: white;
     border-radius: 2px;
     background: #005452;
     outline-width: 9px;
     outline-color: #005452;
-    outline-style: solid;
+    outline-style: solid; */
+
+    box-shadow:  0 0 0 10px #005452;
+
+    border: 1.5px dashed white;
+    box-shadow: 0 0 0 8px #005452, 0 0 0 9px white;
+
+    border-radius: 2px;
+    background-color: #005452; 
 
     font-weight: 400;
     font-size: 14px;
@@ -82,6 +106,7 @@ export const GreenButton = styled.button`
     :disabled {
         background-color: rgba(175, 32, 16, 0.5);
         outline-color:  rgba(175, 32, 16, 0.5);
+        box-shadow: 0 0 0 8px rgba(175, 32, 16, 0.5), 0 0 0 9px white;
     }
 
 `

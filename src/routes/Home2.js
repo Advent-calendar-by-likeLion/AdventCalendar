@@ -15,6 +15,7 @@ import GingerModal from "../components/Modal/GingerModal";
 import { CardLayout, MessageCard, GingerCardLayout } from "../components/Modal/styles";
 import Nweet from "../components/Nweet";
 import MessageModal from "../components/Modal/MessageModal";
+import MypageImg from "../assets/Mypage.svg";
 
 // 쿠키 관련 모음
 import WhoGinger from '../assets/cookie/WhoGinger.svg';
@@ -289,7 +290,7 @@ const GoMypage = () => {
         { id === (userObj ? userObj.uid : 0) ?
           <>
             <TodayMessageGuide>오늘 받아야 하는 편지 개수는 매일 바뀝니다</TodayMessageGuide>
-            <Mypage onClick={GoMypage}>마이페이지</Mypage>
+            <img src={MypageImg} style={{position:"relative", right:"-140px", top:"-60px"}} onClick={GoMypage}/>
           </>
           :
           <>
@@ -605,14 +606,23 @@ const LandingContent6 = styled.div`
 const RedButton2 = styled.button`
     width: 195px;
     height: 29px;
-    border-width: 1.5px;
+    /* border-width: 1.5px;
     border-style: dashed;
     border-color: white;
     border-radius: 2px;
     background-color: #AF2010;
     outline-width: 9px;
     outline-color:  #AF2010;
-    outline-style: solid;
+    outline-style: solid; */
+
+    box-shadow:  0 0 0 10px #AF2010;
+
+    border: 1.5px dashed white;
+    /* outline:  solid #AF2010; */
+    box-shadow: 0 0 0 8px #AF2010, 0 0 0 9px white;
+
+    border-radius: 2px;
+    background-color: #AF2010; 
 
     font-weight: 400;
     font-size: 14px;
@@ -625,6 +635,7 @@ const RedButton2 = styled.button`
     :disabled {
         background-color: rgba(175, 32, 16, 0.5);
         outline-color:  rgba(175, 32, 16, 0.5);
+        box-shadow: 0 0 0 8px rgba(175, 32, 16, 0.5), 0 0 0 9px white;
     }
 `
 const GingerBtn = styled.div`
@@ -645,28 +656,28 @@ const BtnFlex = styled.div`
   justify-content: center;
   align-items: center;
 `
-const Mypage = styled.button`
-  position: relative;
-  right: -140px;
-  top: -60px;
+// const Mypage = styled.button`
+//   position: relative;
+//   right: -140px;
+//   top: -60px;
 
-  width: 67px;
-  height: 25.26px;
+//   width: 67px;
+//   height: 25.26px;
 
-  border-width: 1.5px;
-  border-style: dashed;
-  border-color: white;
-  background-color: #4C243C;
-  outline-width: 5px;
-  outline-color:  #4C243C;
-  outline-style: solid;
+//   border-width: 1.5px;
+//   border-style: dashed;
+//   border-color: white;
+//   background-color: #4C243C;
+//   outline-width: 5px;
+//   outline-color:  #4C243C;
+//   outline-style: solid;
 
-  font-weight: 400;
-  font-size: 14px;
-  font-family: "humanbeomseok";
-  line-height: 16px;
-  color: white;
+//   font-weight: 400;
+//   font-size: 14px;
+//   font-family: "humanbeomseok";
+//   line-height: 16px;
+//   color: white;
 
-  padding-top: 2px;
-  border-radius: 50px;
-`
+//   padding-top: 2px;
+//   border-radius: 50px;
+// `

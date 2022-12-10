@@ -67,7 +67,7 @@ const MyPage = ({userObj}) => {
                 {/* 아직 서비스 적용 안됐기 때문에 버튼 비활성화 */}
                 <RedButton disabled={false} onClick={DeleteHotel}>내 호텔 삭제하기</RedButton>
                 <br/>
-                <WhiteButton onClick={onclickPasswordReset}>비밀 번호 재설정</WhiteButton>
+                <WhiteButton onClick={onclickPasswordReset}>비밀번호 재설정</WhiteButton>
             </Container>
         </>
     );
