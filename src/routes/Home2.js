@@ -291,7 +291,7 @@ const GoMypage = () => {
         { id === (userObj ? userObj.uid : 0) ?
           <>
             <TodayMessageGuide>오늘 받아야 하는 편지 개수는 매일 바뀝니다</TodayMessageGuide>
-            <img src={MypageImg} style={{position:"relative", right:"-140px", top:"-60px"}} onClick={GoMypage}/>
+            <img src={MypageImg} style={{position:"relative", right:"-140px", top:"-75px"}} onClick={GoMypage}/>
           </>
           :
           <>
@@ -303,15 +303,15 @@ const GoMypage = () => {
         <HotelName userObj={userObj} displayName={displayName}/> 
         <br/>
         <TitleDiv2 style={{marginBottom:'10px', fontFamily: "humanbeomseok"}}>{description}</TitleDiv2>
-        <LandingButtonHotel1>
-            <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
-        </LandingButtonHotel1>  
           {/* <HotelName userObj={userObj} /> */}
           <Hotel userObj={userObj}/>
           { 
           id === (userObj ? userObj.uid : 0) ?  
           
           <>
+            <LandingButtonHotel1>
+              <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
+            </LandingButtonHotel1>  
             <HotelGuide style={{marginBottom: "5px"}}>12월 9일부터 날짜와 동일한 숫자의 창문이 열립니다!</HotelGuide>
             <HotelGuide style={{marginBottom: "10px"}}>이미 받은 편지들은 지워지지 않으니 걱정마세요!</HotelGuide>
             <BtnFlex>
@@ -331,6 +331,9 @@ const GoMypage = () => {
           </>
           :  
           <>
+            <LandingButtonHotel2>
+              <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
+            </LandingButtonHotel2> 
             <br/>
             <RedButton disabled={isMsgFull} onClick={toWrite}>편지 보내기</RedButton>
             {
@@ -570,7 +573,14 @@ const LandingButtonHotel1 = styled.div`
     width: 35px;
     height: 35px;
     right: 148px;
-    top: -220px;
+    top: -270px;
+`
+const LandingButtonHotel2 = styled.div`
+    position: relative;
+    width: 35px;
+    height: 35px;
+    right: 130px;
+    top: -685px;
 `
 const LandingContent5 = styled.div`
     position: relative;
