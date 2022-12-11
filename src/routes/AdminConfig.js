@@ -162,16 +162,15 @@ const AdminConfig = ({userObj}) => {
             gingerContent : "나는 비가 오는 날이 좋아!\n첨벙첨벙~",
         });
 
-        await dbService.collection("CookieInfo").doc("11").set({
+        await dbService.collection("CookieInfo").doc("11").set({            
             gingerTitle : "겁쟁이 진저맨",
             gingerContent : "그 얘기 들었어?\n무시무시한 진저호텔 악령 괴담!\n아직 여기 있을지도 몰라..",
         });
-
+        
         await dbService.collection("CookieInfo").doc("12").set({
             gingerTitle : "대학생 진저맨",
-            gingerContent : "레포트.. 이제 2개만 더 쓰면 돼..\n남은 전공 시험 5개..\n졸업해야지... 졸업해야지..",
+            gingerContent : "레포트.. 이제 2개만 더 쓰면 돼..\n남은 전공 시험 5개...\n졸업해야지... 졸업해야지..",
         });
-        
 
 
 
