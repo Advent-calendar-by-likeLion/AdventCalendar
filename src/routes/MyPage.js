@@ -26,15 +26,17 @@ const MyPage = ({userObj}) => {
     }, []);
 
     const DeleteHotel = () => {
-        if (!activeDeleteButton) {
-            alert("다시 한번 누르면 정말 회원이 삭제됩니다. 신중히 고민 후 삭제해주세요. 삭제된 정보를 복구할 수 없습니다.");
-            setActiveDeleteButton(true);
-        }
+        let option1 = window.confirm("삭제된 정보는 복구할 수 없습니다. 신중히 생각하고 확인 버튼을 눌러주세요.");
+        if (option1 == true) {
+            let option2 = window.prompt("삭제를 원하시면 gingerhotel을 입력해주세요. 삭제가 완료됩니다.")
 
-        if (activeDeleteButton) {
-            authService.currentUser.delete();
-            alert("그동안 저희 진저호텔을 사용해주셔서 감사합니다.");
-            history.push("/");
+            if (option2 == "gingerhotel") {
+                authService.currentUser.delete();
+                    alert("그동안 저희 진저호텔 서비스를 이용해주셔서 감사합니다.");
+                    history.push("/");
+            } else {
+                alert("잘못된 문구 입력입니다. 다시 한번 확인하고 입력해주세요. 공백도 포함되면 안 됩니다.");
+            }
         }
     }
 
