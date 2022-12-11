@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.b522ac9b.chunk.css",
-    "main.js": "/static/js/main.ce73b10d.chunk.js",
+    "main.js": "/static/js/main.bc379ede.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.7dc8b8fe.js",
-    "static/js/2.53737c94.chunk.js": "/static/js/2.53737c94.chunk.js",
+    "static/js/2.5c1ba3c2.chunk.js": "/static/js/2.5c1ba3c2.chunk.js",
     "index.html": "/index.html",
-    "static/js/2.53737c94.chunk.js.LICENSE.txt": "/static/js/2.53737c94.chunk.js.LICENSE.txt",
+    "static/js/2.5c1ba3c2.chunk.js.LICENSE.txt": "/static/js/2.5c1ba3c2.chunk.js.LICENSE.txt",
     "static/media/Baby_Cookie.14e65e9a.svg": "/static/media/Baby_Cookie.14e65e9a.svg",
     "static/media/BackIc.0b3a633b.svg": "/static/media/BackIc.0b3a633b.svg",
     "static/media/BellBoyCookie.0aab7e61.svg": "/static/media/BellBoyCookie.0aab7e61.svg",
     "static/media/ClassicCookie.212a68ef.svg": "/static/media/ClassicCookie.212a68ef.svg",
-    "static/media/CollegeCookie.43f5634c.svg": "/static/media/CollegeCookie.43f5634c.svg",
+    "static/media/CollegeCookie.995e5393.svg": "/static/media/CollegeCookie.995e5393.svg",
     "static/media/Component3434.962424e7.svg": "/static/media/Component3434.962424e7.svg",
     "static/media/DetectiveCookie.f5f8f76c.svg": "/static/media/DetectiveCookie.f5f8f76c.svg",
     "static/media/DisLoginBar.3c0e8c3b.svg": "/static/media/DisLoginBar.3c0e8c3b.svg",
@@ -45,8 +45,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7dc8b8fe.js",
-    "static/js/2.53737c94.chunk.js",
+    "static/js/2.5c1ba3c2.chunk.js",
     "static/css/main.b522ac9b.chunk.css",
-    "static/js/main.ce73b10d.chunk.js"
+    "static/js/main.bc379ede.chunk.js"
   ]
 }
