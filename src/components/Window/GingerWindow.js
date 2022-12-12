@@ -11,6 +11,7 @@ import King from '../../assets/cookie/KingCookie.svg';
 import Happy from '../../assets/cookie/HappyCookie.svg';
 import Scared from '../../assets/cookie/ScaredCookie.svg';
 import College from "../../assets/cookie/CollegeCookie.svg";
+import Dracula from '../../assets/cookie/DraculaCookie.svg';
 import styled from 'styled-components';
 
 const GingerWindow = ({info, item}) => {
@@ -155,6 +156,17 @@ const GingerWindow = ({info, item}) => {
         <div>졸업해야지... 졸업해야지..</div>
     </GingerContent>
     <img src={College} style={{width:"70px"}}/>
+    </>
+    :
+    item == 13 ?
+    <>
+    <GingerTitle>드라큘라 진저맨</GingerTitle>
+    <GingerContent>
+        <div>내가 사는 성보다는 아니지만</div>
+        <div>진저호텔도 봐줄 만하구나</div>
+        <div>흠!</div>
+    </GingerContent>
+    <img src={Dracula} style={{width:"70px"}}/>
     </>
     :
     <>
