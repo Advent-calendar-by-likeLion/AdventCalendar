@@ -172,6 +172,11 @@ const AdminConfig = ({userObj}) => {
             gingerContent : "레포트.. 이제 2개만 더 쓰면 돼..\n남은 전공 시험 5개...\n졸업해야지... 졸업해야지..",
         });
 
+        await dbService.collection("CookieInfo").doc("13").set({
+            gingerTitle : "드라큘라 진저맨",
+            gingerContent : "내가 사는 성보다는 아니지만\n진저호텔도 봐줄 만하구나\n흠!",
+        });
+
 
 
         alert(`진저맨쿠키 DB 삽입`);
