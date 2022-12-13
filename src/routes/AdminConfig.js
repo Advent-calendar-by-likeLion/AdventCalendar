@@ -177,6 +177,36 @@ const AdminConfig = ({userObj}) => {
             gingerContent : "내가 사는 성보다는 아니지만\n진저호텔도 봐줄 만하구나\n흠!",
         });
 
+        await dbService.collection("CookieInfo").doc("14").set({
+            gingerTitle : "군인 진저맨",
+            gingerContent : "충성! 병장 진! 저! 맨!\n 진저호텔에 오신 겁니까?\n 반갑습니다!",
+        });
+        
+        await dbService.collection("CookieInfo").doc("15").set({
+            gingerTitle : "",
+            gingerContent : "",
+        });
+        
+        await dbService.collection("CookieInfo").doc("16").set({
+            gingerTitle : "",
+            gingerContent : "",
+        });
+        
+        await dbService.collection("CookieInfo").doc("17").set({
+            gingerTitle : "",
+            gingerContent : "",
+        });
+        
+        await dbService.collection("CookieInfo").doc("18").set({
+            gingerTitle : "",
+            gingerContent : "",
+        });
+
+        await dbService.collection("CookieInfo").doc("19").set({
+            gingerTitle : "",
+            gingerContent : "",
+        });
+
 
 
         alert(`진저맨쿠키 DB 삽입`);
