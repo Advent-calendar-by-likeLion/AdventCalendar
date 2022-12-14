@@ -183,8 +183,8 @@ const AdminConfig = ({userObj}) => {
         });
         
         await dbService.collection("CookieInfo").doc("15").set({
-            gingerTitle : "",
-            gingerContent : "",
+            gingerTitle : "쉐프 진저맨",
+            gingerContent : "나는 진저호텔 주방장!\n진저호텔의 요리는 모두 내가 지휘하지",
         });
         
         await dbService.collection("CookieInfo").doc("16").set({

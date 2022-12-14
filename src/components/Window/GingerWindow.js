@@ -12,6 +12,8 @@ import Happy from '../../assets/cookie/HappyCookie.svg';
 import Scared from '../../assets/cookie/ScaredCookie.svg';
 import College from "../../assets/cookie/CollegeCookie.svg";
 import Dracula from '../../assets/cookie/DraculaCookie.svg';
+import Soldier from '../../assets/cookie/SoldierCookie.svg';
+import Chef from '../../assets/cookie/ChefCookie.svg';
 import styled from 'styled-components';
 
 const GingerWindow = ({info, item}) => {
@@ -167,6 +169,27 @@ const GingerWindow = ({info, item}) => {
         <div>흠!</div>
     </GingerContent>
     <img src={Dracula} style={{width:"70px"}}/>
+    </>
+    :
+    item == 14 ?
+    <>
+    <GingerTitle>군인 진저맨</GingerTitle>
+    <GingerContent>
+        <div>충성! 병장 진! 저! 맨!</div>
+        <div>진저호텔에 오신 겁니까?</div>
+        <div>반갑습니다!</div>
+    </GingerContent>
+    <img src={Soldier} style={{width:"70px"}}/>
+    </>
+    :
+    item == 15 ?
+    <>
+    <GingerTitle>쉐프 진저맨</GingerTitle>
+    <GingerContent>
+        <div>나는 진저호텔 주방장!</div>
+        <div>진저호텔의 요리는 모두 내가 지휘하지</div>
+    </GingerContent>
+    <img src={Chef} style={{width:"70px"}}/>
     </>
     :
     <>
