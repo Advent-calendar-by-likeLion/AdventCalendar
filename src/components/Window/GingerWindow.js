@@ -168,7 +168,7 @@ const GingerWindow = ({info, item}) => {
         <div>진저호텔도 봐줄 만하구나</div>
         <div>흠!</div>
     </GingerContent>
-    <img src={Dracula} style={{width:"70px"}}/>
+    <img src={Dracula} style={{width:"70px", height:"90px"}}/>
     </>
     :
     item == 14 ?
