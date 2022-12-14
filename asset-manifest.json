@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b522ac9b.chunk.css",
-    "main.js": "/static/js/main.ba514219.chunk.js",
+    "main.js": "/static/js/main.690ce5ed.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.7dc8b8fe.js",
     "static/js/2.11b1a647.chunk.js": "/static/js/2.11b1a647.chunk.js",
     "index.html": "/index.html",
@@ -9,7 +9,7 @@
     "static/media/Baby_Cookie.14e65e9a.svg": "/static/media/Baby_Cookie.14e65e9a.svg",
     "static/media/BackIc.0b3a633b.svg": "/static/media/BackIc.0b3a633b.svg",
     "static/media/BellBoyCookie.0aab7e61.svg": "/static/media/BellBoyCookie.0aab7e61.svg",
-    "static/media/ChefCookie.d9ef5b60.svg": "/static/media/ChefCookie.d9ef5b60.svg",
+    "static/media/ChefCookie.7a672c85.svg": "/static/media/ChefCookie.7a672c85.svg",
     "static/media/ClassicCookie.212a68ef.svg": "/static/media/ClassicCookie.212a68ef.svg",
     "static/media/CollegeCookie.995e5393.svg": "/static/media/CollegeCookie.995e5393.svg",
     "static/media/Component3434.962424e7.svg": "/static/media/Component3434.962424e7.svg",
@@ -50,6 +50,6 @@
     "static/js/runtime-main.7dc8b8fe.js",
     "static/js/2.11b1a647.chunk.js",
     "static/css/main.b522ac9b.chunk.css",
-    "static/js/main.ba514219.chunk.js"
+    "static/js/main.690ce5ed.chunk.js"
   ]
 }
