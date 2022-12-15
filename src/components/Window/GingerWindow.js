@@ -14,6 +14,7 @@ import College from "../../assets/cookie/CollegeCookie.svg";
 import Dracula from '../../assets/cookie/DraculaCookie.svg';
 import Soldier from '../../assets/cookie/SoldierCookie.svg';
 import Chef from '../../assets/cookie/ChefCookie.svg';
+import Snowman from '../../assets/cookie/SnowmanCookie.svg';
 import styled from 'styled-components';
 
 const GingerWindow = ({info, item}) => {
@@ -190,6 +191,17 @@ const GingerWindow = ({info, item}) => {
         <div>진저호텔의 요리는 모두 내가 지휘하지</div>
     </GingerContent>
     <img src={Chef} style={{width:"70px"}}/>
+    </>
+    :
+    item == 16 ?
+    <>
+    <GingerTitle>눈사람 진저맨</GingerTitle>
+    <GingerContent>
+        <div>눈이 오는 날에는 나를 만날 수 있어</div>
+        <div>사실 눈이 오는 날에만 날 만날 수 있지!</div>
+        <div>난 눈사람일까? 진저맨일까?</div>
+    </GingerContent>
+    <img src={Snowman} style={{width:"70px"}}/>
     </>
     :
     <>

@@ -188,8 +188,8 @@ const AdminConfig = ({userObj}) => {
         });
         
         await dbService.collection("CookieInfo").doc("16").set({
-            gingerTitle : "",
-            gingerContent : "",
+            gingerTitle : "눈사람 진저맨",
+            gingerContent : "눈이 오는 날에는 나를 만날 수 있어\n사실 눈이 오는 날에만 날 만날 수 있지!\n난 눈사람일까? 진저맨일까?",
         });
         
         await dbService.collection("CookieInfo").doc("17").set({
