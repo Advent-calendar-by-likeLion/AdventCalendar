@@ -193,8 +193,8 @@ const AdminConfig = ({userObj}) => {
         });
         
         await dbService.collection("CookieInfo").doc("17").set({
-            gingerTitle : "",
-            gingerContent : "",
+            gingerTitle : "론 진저맨",
+            gingerContent : "이게 뭐냐고?\n온갖 맛이 나는 젤리!\n조지는 코딱지 맛 젤리도 먹어봤대",
         });
         
         await dbService.collection("CookieInfo").doc("18").set({

@@ -15,6 +15,7 @@ import Dracula from '../../assets/cookie/DraculaCookie.svg';
 import Soldier from '../../assets/cookie/SoldierCookie.svg';
 import Chef from '../../assets/cookie/ChefCookie.svg';
 import Snowman from '../../assets/cookie/SnowmanCookie.svg';
+import Ronald from '../../assets/cookie/RonaldCookie.svg';
 import styled from 'styled-components';
 
 const GingerWindow = ({info, item}) => {
@@ -202,6 +203,17 @@ const GingerWindow = ({info, item}) => {
         <div>난 눈사람일까? 진저맨일까?</div>
     </GingerContent>
     <img src={Snowman} style={{width:"70px"}}/>
+    </>
+    :
+    item == 17 ?
+    <>
+    <GingerTitle>론 진저맨</GingerTitle>
+    <GingerContent>
+        <div>이게 뭐냐고?</div>
+        <div>온갖 맛이 나는 젤리!</div>
+        <div>조지는 코딱지 맛 젤리도 먹어봤대</div>
+    </GingerContent>
+    <img src={Ronald} style={{width:"70px"}}/>
     </>
     :
     <>
