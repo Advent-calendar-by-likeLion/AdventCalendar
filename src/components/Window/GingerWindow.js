@@ -16,6 +16,7 @@ import Soldier from '../../assets/cookie/SoldierCookie.svg';
 import Chef from '../../assets/cookie/ChefCookie.svg';
 import Snowman from '../../assets/cookie/SnowmanCookie.svg';
 import Ronald from '../../assets/cookie/RonaldCookie.svg';
+import ColdMan from '../../assets/cookie/ColdManCookie.svg';
 import styled from 'styled-components';
 
 const GingerWindow = ({info, item}) => {
@@ -214,6 +215,17 @@ const GingerWindow = ({info, item}) => {
         <div>조지는 코딱지 맛 젤리도 먹어봤대</div>
     </GingerContent>
     <img src={Ronald} style={{width:"70px"}}/>
+    </>
+    :
+    item == 18 ?
+    <>
+    <GingerTitle>차가운 도시 진저맨</GingerTitle>
+    <GingerContent>
+        <div>차가운 도시 진저맨인 나도</div>
+        <div>크리스마스에는 쉬어야 돼</div>
+        <div>바쁘다 바빠 현대사회</div>
+    </GingerContent>
+    <img src={ColdMan} style={{width:"70px"}}/>
     </>
     :
     <>

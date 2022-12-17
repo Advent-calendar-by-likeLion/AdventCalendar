@@ -198,8 +198,8 @@ const AdminConfig = ({userObj}) => {
         });
         
         await dbService.collection("CookieInfo").doc("18").set({
-            gingerTitle : "",
-            gingerContent : "",
+            gingerTitle : "차가운 도시 진저맨",
+            gingerContent : "차가운 도시 진저맨인 나도\n크리스마스에는 쉬어야 돼\n바쁘다 바빠 현대사회",
         });
 
         await dbService.collection("CookieInfo").doc("19").set({
