@@ -203,8 +203,8 @@ const AdminConfig = ({userObj}) => {
         });
 
         await dbService.collection("CookieInfo").doc("19").set({
-            gingerTitle : "",
-            gingerContent : "",
+            gingerTitle : "치어리더 진저맨",
+            gingerContent : "GO!\nG! I! N! G! E! R!\n고! 진저 고!",
         });
 
 
