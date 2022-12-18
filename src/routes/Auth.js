@@ -43,7 +43,7 @@ const Auth = ( {userObj} ) => {
     }
 
     return (
-            <Container>
+            <Container style={{marginBottom: "100px"}}>
                 <AuthForm userObj={userObj}/>
                 <HotelGuide style={{fontFamily: "humanbeomseok"}}>
                 <br/>   
