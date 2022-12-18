@@ -54,6 +54,11 @@ const Auth = ( {userObj} ) => {
                     <img src={Facebook} onClick={onSocialClick} name="facebook" />
                     <img src={Github} onClick={onSocialClick} name="github" />
                 </ButtonStyle>
+                <HotelGuide style={{fontFamily: "humanbeomseok"}}>
+                <br/><br/>
+                계속 진행하면 진저호텔 <a href="https://puffy-mum-94e.notion.site/814bde5a30de4059b00d0c416e1eba96" target="_blank">서비스 이용약관</a>에 동의하고 <br/><br/>
+                <a href="https://puffy-mum-94e.notion.site/3feab163a1034d5a8a9ba69390854301" target="_blank">개인정보 처리방침</a>을 읽었음을 인정하는 것으로 간주됩니다.
+                </HotelGuide>
             </Container>
     )
 

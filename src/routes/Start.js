@@ -63,6 +63,11 @@ const Start = () => {
                 <GreenButton disabled={false} onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
                 {/* <HotelGuide style={{fontFamily: "humanbeomseok"}}>점검을 위해 회원가입을 잠시 비활성화합니다.</HotelGuide> */}
                 {/* <WhiteButton onClick={onclickPasswordReset}>비밀번호를 잊어버리셨나요?</WhiteButton> */}
+                <HotelGuide style={{fontFamily: "humanbeomseok"}}>
+                <br/>
+                계속 진행하면 진저호텔 <a href="https://puffy-mum-94e.notion.site/814bde5a30de4059b00d0c416e1eba96" target="_blank">서비스 이용약관</a>에 동의하고 <br/><br/>
+                <a href="https://puffy-mum-94e.notion.site/3feab163a1034d5a8a9ba69390854301" target="_blank">개인정보 처리방침</a>을 읽었음을 인정하는 것으로 간주됩니다.
+                </HotelGuide>
                 <LandingButton>
                     <img src={LandingModalButton} onClick={onClickOpenLandingModal}/>
                 </LandingButton>
