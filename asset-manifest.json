@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b522ac9b.chunk.css",
-    "main.js": "/static/js/main.0e7242dd.chunk.js",
+    "main.js": "/static/js/main.c5925e1e.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.7dc8b8fe.js",
     "static/js/2.11b1a647.chunk.js": "/static/js/2.11b1a647.chunk.js",
     "index.html": "/index.html",
@@ -44,6 +44,7 @@
     "static/media/SoldierCookie.cd9de1b4.svg": "/static/media/SoldierCookie.cd9de1b4.svg",
     "static/media/Stamp.2ed426dc.svg": "/static/media/Stamp.2ed426dc.svg",
     "static/media/StartHotel.5a19b365.svg": "/static/media/StartHotel.5a19b365.svg",
+    "static/media/TeenCookie.5f488221.svg": "/static/media/TeenCookie.5f488221.svg",
     "static/media/Welcome.01549c16.svg": "/static/media/Welcome.01549c16.svg",
     "static/media/Welcome.474b68b0.svg": "/static/media/Welcome.474b68b0.svg",
     "static/media/WelcomeAddedFont.2297b86c.svg": "/static/media/WelcomeAddedFont.2297b86c.svg",
@@ -54,6 +55,6 @@
     "static/js/runtime-main.7dc8b8fe.js",
     "static/js/2.11b1a647.chunk.js",
     "static/css/main.b522ac9b.chunk.css",
-    "static/js/main.0e7242dd.chunk.js"
+    "static/js/main.c5925e1e.chunk.js"
   ]
 }
