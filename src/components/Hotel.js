@@ -86,12 +86,12 @@ const Hotel = ({userObj}) => {
                         {
                         item == 24 ? 
                           <Btn onClick={() => onClickOpenModal(item)}>
-                            <Door/>
+                            <Door info={info} /> 
                           </Btn>
                         : 
                         item == 25 ? 
                           <Btn onClick={() => onClickOpenModal(item)}>
-                            <TopWindow/>
+                            <TopWindow info={info} />
                           </Btn>
                         : 
                           <Btn onClick={() => onClickOpenModal(item)}>

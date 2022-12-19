@@ -99,8 +99,10 @@ const Home2 = ({ userObj }) => {
       windowCount: todayDate.toString()
     });
 
-    // 만약 오늘 이후의 창문이 열려있다면 다 닫는 코드를 작성: 이미 열려버린 창문들을 처리하기 위함
-    // 25일 이후로는 처리할 필요가 없음. 그때는 오류도 거의 사라질 것으로 예상됨으로 코드 삭제해도 될 것으로 보임
+    /*
+      만약 오늘 이후의 창문이 열려있다면 다 닫는 코드를 작성: 이미 열려버린 창문들을 처리하기 위함
+      25일 이후로는 처리할 필요가 없음. 그때는 오류도 거의 사라질 것으로 예상됨으로 코드 삭제해도 될 것으로 보임
+    */
     if (todayDate < 25) {
       dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
         for (let i = todayDate + 1; i <= 25; i++) {
@@ -112,6 +114,18 @@ const Home2 = ({ userObj }) => {
         }
       });
     }
+
+    /*
+      NOTE: 25일 창문 일괄 Open 코드 테스트 중입니다. 아직 활성화하면 안 됩니다.
+      조건이 적용되어 있어서 활성화해도 문제는 없지만 24일까지는 비활성화 하는 것을 추천합니다.
+    */
+    // if (todayDate == 25) {
+    //   for (let i = 1; i <= 25; i++) {
+    //     dbService.collection("hotelOwner").doc(id).update({
+    //       [`windowInfo.${i}`] : true,
+    //     });
+    //   }
+    // }
 
     await dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
       setDisplayName(doc.data().nickname);
