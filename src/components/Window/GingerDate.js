@@ -138,6 +138,13 @@ const GingerDate = ({info, item}) => {
     fontSize: "13px",
     lineheight: "11px",
     textAlign: "center"}
+    }>2022-12-20</div>
+    :
+    item == 21 ?
+    <div style={{fontFamily: 'humanbeomseok',
+    fontSize: "13px",
+    lineheight: "11px",
+    textAlign: "center"}
     }>2022-12-21</div>
     :
     item == 22 ?
