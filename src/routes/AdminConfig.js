@@ -206,7 +206,30 @@ const AdminConfig = ({userObj}) => {
             gingerTitle : "치어리더 진저맨",
             gingerContent : "GO!\nG! I! N! G! E! R!\n고! 진저 고!",
         });
-
+        await dbService.collection("CookieInfo").doc("20").set({
+            gingerTitle : "하이틴 진저맨",
+            gingerContent : "안녕?\n너가 이번에 새로 온 전학생이구나\n나랑 친구할래?",
+        });
+        await dbService.collection("CookieInfo").doc("21").set({
+            gingerTitle : "",
+            gingerContent : "",
+        });
+        await dbService.collection("CookieInfo").doc("22").set({
+            gingerTitle : "",
+            gingerContent : "",
+        });
+        await dbService.collection("CookieInfo").doc("23").set({
+            gingerTitle : "",
+            gingerContent : "",
+        });
+        await dbService.collection("CookieInfo").doc("24").set({
+            gingerTitle : "",
+            gingerContent : "",
+        });
+        await dbService.collection("CookieInfo").doc("25").set({
+            gingerTitle : "",
+            gingerContent : "",
+        });
 
 
         alert(`진저맨쿠키 DB 삽입`);
