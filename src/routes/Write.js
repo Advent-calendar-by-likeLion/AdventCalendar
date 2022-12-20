@@ -15,6 +15,7 @@ import { ColorRing } from 'react-loader-spinner';
 
 // Don't write badwords to someone. When you did it or even you are going to do it, you are so bad person.
 import { badwordexam } from "../components/BadWords";
+import axios from "axios";
 
 // 희찬짱
 const style = {
@@ -52,6 +53,7 @@ const Write = ({ match, userObj }) => {
     const [lastDate, setLastDate] = useState("");
     
     const tableId = `${id}_${windowCount}`;
+    const [ ip , setIp ] = useState("0.0.0.0");
 
     useEffect(() => {
         dbService.collection("hotelOwner").doc(id).get()
@@ -64,6 +66,11 @@ const Write = ({ match, userObj }) => {
         .then((doc) => {
           setGoalCount(doc.data().goalCount);
         });
+
+        
+        axios.get('https://geolocation-db.com/json/').then((res) => {
+            setIp(res.data.IPv4);
+        })
     }, []);
 
 
@@ -120,6 +127,7 @@ const Write = ({ match, userObj }) => {
             attachmentUrl,
             hotelOwnerId: id,
             writerNickname: displayName,
+            ip : ip,
         });
         
         checkVisible();
