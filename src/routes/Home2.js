@@ -442,6 +442,7 @@ const GoMypage = () => {
                                 </InstaLink>
                             </LandingPageModalInner>
             </LandingModal>}
+            <div style={{marginBottom:"200px"}}></div>
 
       </HotelContainer>
     </>
