@@ -109,7 +109,7 @@ const HotelColor = ({userObj}) => {
         <br/>
         <br/>
         <br/>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} style={{marginBottom:"200px"}}>
                 <RedButton>완성하기</RedButton>
         </form>
     </Container>

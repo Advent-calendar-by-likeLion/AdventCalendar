@@ -98,7 +98,7 @@ const Nickname = ({userObj}) => {
             <br/>
             <HotelGuide>* 호텔 이름과 색상은 나중에도 수정할 수 있어요! *</HotelGuide>
             <br/>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} style={{marginBottom:"200px"}}>
                 <RedButton>완성하기</RedButton>
             </form>
         </Container>
