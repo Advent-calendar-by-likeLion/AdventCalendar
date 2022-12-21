@@ -51,6 +51,7 @@ import LandingModalButton from '../assets/LandingPage/LandingModalButton.svg';
 import LandingImage from '../assets/LandingPage/LandingImageGinger.svg';
 import LandingInsta from '../assets/LandingPage/LandingInsta.svg';
 import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
+import { faLess } from "@fortawesome/free-brands-svg-icons";
 
 const Home2 = ({ userObj }) => {
 
@@ -118,18 +119,6 @@ const Home2 = ({ userObj }) => {
       });
     }
 
-    /*
-      NOTE: 25일 창문 일괄 Open 코드 테스트 중입니다. 아직 활성화하면 안 됩니다.
-      조건이 적용되어 있어서 활성화해도 문제는 없지만 24일까지는 비활성화 하는 것을 추천합니다.
-    */
-    // if (todayDate == 25) {
-    //   for (let i = 1; i <= 25; i++) {
-    //     dbService.collection("hotelOwner").doc(id).update({
-    //       [`windowInfo.${i}`] : true,
-    //     });
-    //   }
-    // }
-
     await dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
       setDisplayName(doc.data().nickname);
       setDescription(doc.data().description);
@@ -138,6 +127,39 @@ const Home2 = ({ userObj }) => {
       setLastDate(doc.data().lastDate);
     });
 
+/*
+    // NOTE: 아래 있는 로직은 1일 부터 24일까지 자신이 모은 진저맨만 볼 수 있게 만든 로직입니다.
+    if (todayDate >= 25) {
+      dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
+        if (snapshot.data().isUpdated == undefined) {
+          dbService.collection("hotelOwner").doc(id).update({
+            isUpdated : false,
+          });
+        }
+        if (!snapshot.data().isUpdated) {
+          // 1일부터 24일까지는 기존의 windowInfo에 따라서 결정
+          // 25일까지 모든 창문을 열기 전에 windowInfo데이터를 gingerManInfo에 저장
+          dbService.collection("hotelOwner").doc(id).update({
+            gingerManInfo : snapshot.data().windowInfo
+          });
+          // 25일은 무조건 창문이 열릴 것이기 때문에 true로 설정
+          dbService.collection("hotelOwner").doc(id).update({
+            "gingerManInfo.25" : true
+          })
+          // 최초 한번 갱신이 완료되면 isUpdated를 true로 바꿔줌
+          dbService.collection("hotelOwner").doc(id).update({
+            isUpdated : true
+          })
+        }
+        // NOTE: 1일부터 25일까지 모든 창문을 Open 합니다.
+        for (let i = 1; i <= 25; i++) {
+          dbService.collection("hotelOwner").doc(id).update({
+            [`windowInfo.${i}`] : true,
+          });
+        }
+      })
+    }
+*/
     dbService.collection("CookieInfo").doc(todayDate.toString()).get().then((doc) => {
       setGingerTitle(doc.data().gingerTitle);
       setGingerContent(doc.data().gingerContent);

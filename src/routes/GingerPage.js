@@ -23,12 +23,25 @@ const GingerPage = ({userObj}) => {
     // const [isModalOpen, setModalOpen] = useState(false);
 
     const [info, setInfo] = useState([]);
+    const todayDate = new Date().getDate();
 
     useEffect(() => {
         dbService.collection("hotelOwner").doc(authService.currentUser.uid).onSnapshot((doc) => {
             setUsername(doc.data().nickname);
             setInfo(doc.data().windowInfo);
             
+            /* 25일 모든 창문 일괄 Open과 관련된 코드입니다. 일단 비활성화 합니다.
+            if (todayDate < 25) {
+                setInfo(doc.data().windowInfo);
+            }
+            if (todayDate >= 25) {
+                try {
+                    setInfo(doc.data().gingerManInfo);
+                } catch (error) {
+                    setInfo(doc.data().windowInfo); // 혹시 모를 오류를 대비해서...아예 쿠키가 없는거보다는 모든 쿠키가 다 있는 것이...
+                }
+            }
+            */
         })
     }, []);
 
