@@ -297,8 +297,8 @@ const Write = ({ match, userObj }) => {
             />
             <div style={style.badwordstyle}>
                 ※ 경고 ※
-                <br/>욕설, 성희롱, 비방 편지를 작성할 경우{' '}
-                <div></div>형사 처벌의 대상이 될 수 있습니다.
+                <br/>욕설, 성희롱, 비방 편지와 같은{' '}
+                <div></div>서비스 부정 이용 방지를 위해 IP 주소가 수집됩니다.
             </div>
             <br/>
             <form onSubmit={onSubmit}>
