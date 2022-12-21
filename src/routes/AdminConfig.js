@@ -215,8 +215,8 @@ const AdminConfig = ({userObj}) => {
             gingerContent : "뭐? 벌써 힘들다고?\n30분만 더 가면 정상이야\n조금만 더 힘을 내~",
         });
         await dbService.collection("CookieInfo").doc("22").set({
-            gingerTitle : "",
-            gingerContent : "",
+            gingerTitle : "세자 진저맨",
+            gingerContent : "진저호텔에 놀러온 것이냐?\n그래.. 성탄절까지 안녕하거라",
         });
         await dbService.collection("CookieInfo").doc("23").set({
             gingerTitle : "",
