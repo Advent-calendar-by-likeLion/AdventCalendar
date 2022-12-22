@@ -302,10 +302,12 @@ const Write = ({ match, userObj }) => {
             </div>
             <br/>
             <form onSubmit={onSubmit}>
+                <WriteSend>
                 <RedButton
                     type="submit"
                     value="Nw"
-                >보내기</RedButton>
+                >보내기</RedButton>                
+                </WriteSend>
             </form>
             </>
         </Container>
@@ -384,4 +386,7 @@ const WriteSuccessTitle = styled.div`
     font-family: humanbeomseok;
     width: 280px;
     height: 29px;
+`
+const WriteSend = styled.div`
+    padding-bottom:150px;
 `
