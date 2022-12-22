@@ -55,7 +55,7 @@ const Hotel = ({userObj}) => {
 
         // 25일은 모두 진저맨을 볼 수 있기 때문에 이 코드를 추가하면 될거 같습니다.
         // dbService.collection("hotelOwner").doc(id).update({
-        //   "windowInfo.25" : true,
+        //   "windowInfo.25" : true
         // });
       }
     }
