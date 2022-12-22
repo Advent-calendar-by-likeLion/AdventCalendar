@@ -128,7 +128,7 @@ const Home2 = ({ userObj }) => {
       setLastDate(doc.data().lastDate);
     });
 
-/*
+
     // NOTE: 아래 있는 로직은 1일 부터 24일까지 자신이 모은 진저맨만 볼 수 있게 만든 로직입니다.
     if (todayDate >= 25) {
       dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
@@ -160,7 +160,7 @@ const Home2 = ({ userObj }) => {
         }
       })
     }
-*/
+
     dbService.collection("CookieInfo").doc(todayDate.toString()).get().then((doc) => {
       setGingerTitle(doc.data().gingerTitle);
       setGingerContent(doc.data().gingerContent);
