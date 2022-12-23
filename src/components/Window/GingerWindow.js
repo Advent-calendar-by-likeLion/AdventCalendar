@@ -209,7 +209,7 @@ const GingerWindow = ({info, item}) => {
         <div>사실 눈이 오는 날에만 날 만날 수 있지!</div>
         <div>난 눈사람일까? 진저맨일까?</div>
     </GingerContent>
-    <img src={Snowman} style={{width:"70px"}}/>
+    <img src={Snowman} style={{width:"65px"}}/>
     </>
     :
     item == 17 ?
@@ -242,7 +242,7 @@ const GingerWindow = ({info, item}) => {
         <div>G! I! N! G! E! R!</div>
         <div>고! 진저 고!</div>
     </GingerContent>
-    <img src={Cheer} style={{width:"70px"}}/>
+    <img src={Cheer} style={{width:"85px"}}/>
     </>
     :
     item == 20 ?
