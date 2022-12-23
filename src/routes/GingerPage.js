@@ -90,6 +90,7 @@ const GingerPage = ({userObj}) => {
                         </MypageModal>} */}
                 </GingerBoxLayout>
             </Container>
+            <div style={{paddingBottom: "150px"}}></div>
         </>
     );
 }
