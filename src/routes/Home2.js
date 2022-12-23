@@ -120,6 +120,13 @@ const Home2 = ({ userObj }) => {
       });
     }
 
+    // 25일 진저맨은 모두 확인할 수 있도록 해야합니다.
+    if (todayDate >= 25) {
+      dbService.collection("hotelOwner").doc(id).update({
+        "windowInfo.25" : true
+      });
+    }
+
     await dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
       setDisplayName(doc.data().nickname);
       setDescription(doc.data().description);
