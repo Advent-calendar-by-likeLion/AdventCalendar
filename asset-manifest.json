@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.27db5e39.chunk.css",
-    "main.js": "/static/js/main.6baabec9.chunk.js",
+    "main.js": "/static/js/main.fb0568b0.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.7dc8b8fe.js",
-    "static/js/2.5eb4de70.chunk.js": "/static/js/2.5eb4de70.chunk.js",
+    "static/js/2.fa0504dd.chunk.js": "/static/js/2.fa0504dd.chunk.js",
     "index.html": "/index.html",
-    "static/js/2.5eb4de70.chunk.js.LICENSE.txt": "/static/js/2.5eb4de70.chunk.js.LICENSE.txt",
+    "static/js/2.fa0504dd.chunk.js.LICENSE.txt": "/static/js/2.fa0504dd.chunk.js.LICENSE.txt",
     "static/media/Baby_Cookie.fbefbd8a.svg": "/static/media/Baby_Cookie.fbefbd8a.svg",
     "static/media/BackIc.d7093c72.svg": "/static/media/BackIc.d7093c72.svg",
     "static/media/BellBoyCookie.8bb275ce.svg": "/static/media/BellBoyCookie.8bb275ce.svg",
@@ -57,8 +57,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7dc8b8fe.js",
-    "static/js/2.5eb4de70.chunk.js",
+    "static/js/2.fa0504dd.chunk.js",
     "static/css/main.27db5e39.chunk.css",
-    "static/js/main.6baabec9.chunk.js"
+    "static/js/main.fb0568b0.chunk.js"
   ]
 }
