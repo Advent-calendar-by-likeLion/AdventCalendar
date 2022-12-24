@@ -21,12 +21,12 @@ function LikeLionAd() {
     const windowSize = window.innerWidth;
     if (windowSize < 1024) {
       ins.style.width = "100%";
-      ins.src= "https://firebasestorage.googleapis.com/v0/b/kw-yon.appspot.com/o/likeLion.jpg?alt=media&token=e5b1fe99-d696-4cff-99b2-db08028cfe37"
+      ins.src= "https://firebasestorage.googleapis.com/v0/b/adventcalendar-d50fc.appspot.com/o/000000_likelionBanner%2FLikeLionBanner.jpg?alt=media&token=013d3f78-8623-45e5-b777-aad90d832b48"
     } else {
       ins.style.marginLeft = "12px";
       ins.style.width = "728px";
       ins.style.height = "100px";
-      ins.src= "https://firebasestorage.googleapis.com/v0/b/kw-yon.appspot.com/o/likeLion.jpg?alt=media&token=e5b1fe99-d696-4cff-99b2-db08028cfe37"
+      ins.src= "https://firebasestorage.googleapis.com/v0/b/adventcalendar-d50fc.appspot.com/o/000000_likelionBanner%2FLikeLionBanner.jpg?alt=media&token=013d3f78-8623-45e5-b777-aad90d832b48"
     
     }
 
