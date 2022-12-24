@@ -94,6 +94,7 @@ const Home2 = ({ userObj }) => {
   const [isMsgFull, setIsMsgFull] = useState(false);
   const [isGoLetter, setIsGoLetter] = useState(false);
   const todayDate = new Date().getDate();
+  const [dateFormating, setDateFormating] = useState();
 
   useEffect(async () => {
     Config();
@@ -183,6 +184,11 @@ const Home2 = ({ userObj }) => {
           id: document.id,
           ...document.data(),
       }))
+      try {
+        setDateFormating(nweets[0].dateFormat);
+      } catch (error) {
+        setDateFormating(`22-12-${todayDate}`);
+      }
       setMsgCount(newArray.length);
       setNweets(newArray);
         // if (newArray.length > 0) {
@@ -365,8 +371,8 @@ const GoMypage = () => {
 
 
                 
-          {isGingerModalOpen && <GingerModal dateFormat={nweets[0].dateFormat} closeModal={onClickCloseGingerModal}>
-                        {isGoLetter ? <Modal dateFormat={nweets[0].dateFormat} closeModal={onClickCloseModal}>
+          {isGingerModalOpen && <GingerModal dateFormat={dateFormating} closeModal={onClickCloseGingerModal}>
+                        {isGoLetter ? <Modal dateFormat={dateFormating} closeModal={onClickCloseModal}>
                                           <h1>도착한 편지</h1>
                                           <CardLayout>
                                           {nweets.map((nweet) => (
