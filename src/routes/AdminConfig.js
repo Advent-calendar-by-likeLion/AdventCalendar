@@ -228,7 +228,7 @@ const AdminConfig = ({userObj}) => {
         });
         await dbService.collection("CookieInfo").doc("25").set({
             gingerTitle : "산타 진저맨",
-            gingerContent : "전저호텔! 올해도 스위트룸을 내어 줘서 고맙소\n덕분에 푹 쉬다가 선물을 주러 갈 수 있게 되었어\n모두들 메리 크리스마스~! 호호호!",
+            gingerContent : "진저호텔! 올해도 스위트룸을 내어 줘서 고맙소\n덕분에 푹 쉬다가 선물을 주러 갈 수 있게 되었어\n모두들 메리 크리스마스~! 호호호!",
         });
 
 
