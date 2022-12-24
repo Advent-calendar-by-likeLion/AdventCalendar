@@ -13,6 +13,7 @@ import MyPage from "../routes/MyPage";
 import GingerPage from "../routes/GingerPage";
 import CreateSign from "../routes/CreateSign";
 import LikeLionAd from "../advertisement/LikeLionAd";
+import Home2Private from "../routes/Home2Private";
 
 
 const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
@@ -23,6 +24,9 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
           <>
             <Route exact path="/hotel/:id">
               <Home2 userObj={userObj}/>
+            </Route>
+            <Route exact path="/hotelp/:id">
+              <Home2Private userObj={userObj}/>
             </Route>
             <Route exact path="/nickname">
               <Nickname userObj={userObj} refreshUser={refreshUser}/>
@@ -65,6 +69,9 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
           <>
             <Route exact path="/hotel/:id">
               <Home2 userObj={userObj}/>
+            </Route>
+            <Route exact path="/hotelp/:id">
+              <Home2Private userObj={userObj}/>
             </Route>
             <Route exact path="/">
               <Start />

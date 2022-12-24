@@ -57,9 +57,15 @@ const Hotel = ({userObj}) => {
     }
     
     const onClickOpenModal = (item) => {
+
+      
+      const windowOpen = sessionStorage.getItem('windowOpen');
+
       if (id !== (userObj ? userObj.uid : 0)) {
-        alert("자신의 호텔만 열람할 수 있습니다!");
-        return;
+        if (!windowOpen){
+          alert("자신의 호텔만 열람할 수 있습니다!");
+          return;
+        }
       } 
       if (!info[item]) { 
         alert("창문이 닫혀 있습니다!");
