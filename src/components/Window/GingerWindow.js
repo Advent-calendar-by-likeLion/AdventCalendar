@@ -23,6 +23,7 @@ import Mountain from '../../assets/cookie/MountainCookie.svg';
 import Seja from '../../assets/cookie/SejaCookie.svg';
 import Snowboarder from '../../assets/cookie/SnowboarderCookie.svg';
 import Rudolf from '../../assets/cookie/RudolfCookie.svg';
+import Santa from '../../assets/cookie/SantaCookie.svg';
 import styled from 'styled-components';
 
 const GingerWindow = ({info, item}) => {
@@ -296,6 +297,17 @@ const GingerWindow = ({info, item}) => {
         <div>썰매? 진저호텔에 주차해놨지~</div>
     </GingerContent>
     <img src={Rudolf} style={{width:"70px"}}/>
+    </>
+    :
+    item == 25 ?
+    <>
+    <GingerTitle>산타 진저맨</GingerTitle>
+    <GingerContent>
+        <div>진저호텔! 올해도 스위트룸을 내어 줘서 고맙소</div>
+        <div>덕분에 푹 쉬다가 선물을 주러 갈 수 있게 되었어</div>
+        <div>모두들 메리 크리스마스~! 호호호!</div>
+    </GingerContent>
+    <img src={Santa} style={{width:"70px"}}/>
     </>
     :
     <>

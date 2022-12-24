@@ -43,6 +43,7 @@ import MountainCookie from '../assets/cookie/MountainCookie.svg';
 import SejaCookie from '../assets/cookie/SejaCookie.svg';
 import SnowboarderCookie from '../assets/cookie/SnowboarderCookie.svg';
 import RudolfCookie from '../assets/cookie/RudolfCookie.svg';
+import SantaCookie from '../assets/cookie/SantaCookie.svg';
 
 // Landing Page 관련
 import { LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4, LandingContent10, LandingContent11 } from './styles/style';
@@ -60,7 +61,7 @@ const Home2 = ({ userObj }) => {
   // Need to add Daily Cookies here.
   const cookies = new Array(WhoGinger, BellBoyCookie, SleepyheadCookie, BabyCookie, PirateCookie, GreatCookie, MilkHotSpringCookie,
     DetectiveCookie, ClassicCookie, KingCookie, HappyCookie, ScaredCookie, CollegeCookie, DraculaCookie, SoldierCookie, ChefCookie,
-    SnowmanCookie, RonaldCookie, ColdManCookie, CheerleaderCookie, TeenCookie, MountainCookie, SejaCookie, SnowboarderCookie, RudolfCookie);
+    SnowmanCookie, RonaldCookie, ColdManCookie, CheerleaderCookie, TeenCookie, MountainCookie, SejaCookie, SnowboarderCookie, RudolfCookie, SantaCookie);
 
   const history = useHistory();
   const {id} = useParams(); // hetelOwnerId
@@ -126,6 +127,7 @@ const Home2 = ({ userObj }) => {
       dbService.collection("hotelOwner").doc(id).update({
         "windowInfo.25" : true
       });
+      setIsFull(true);
     }
 
     await dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
