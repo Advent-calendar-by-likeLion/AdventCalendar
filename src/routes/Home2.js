@@ -57,6 +57,8 @@ import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 import { faLess } from "@fortawesome/free-brands-svg-icons";
 
 const Home2 = ({ userObj }) => {
+  const todayDate = new Date().getDate();
+  const month = new Date().getMonth() + 1;
 
   // Need to add Daily Cookies here.
   const cookies = new Array(WhoGinger, BellBoyCookie, SleepyheadCookie, BabyCookie, PirateCookie, GreatCookie, MilkHotSpringCookie,
@@ -66,7 +68,11 @@ const Home2 = ({ userObj }) => {
   const history = useHistory();
   const {id} = useParams(); // hetelOwnerId
   const toWrite = () => {
-    history.push("/write/" + id);
+    if (month == 12 && todayDate <= 25) {
+      history.push("/write/" + id);
+    } else {
+      alert("12월 25일 이후부터는 편지 보내기 기능을 사용할 수 없습니다!");
+    }
   }
     
   const [nweets, setNweets] = useState([]);
@@ -93,7 +99,6 @@ const Home2 = ({ userObj }) => {
   const [isFull, setIsFull] = useState(false);
   const [isMsgFull, setIsMsgFull] = useState(false);
   const [isGoLetter, setIsGoLetter] = useState(false);
-  const todayDate = new Date().getDate();
   const [dateFormating, setDateFormating] = useState();
 
   useEffect(async () => {
@@ -110,21 +115,22 @@ const Home2 = ({ userObj }) => {
     /*
       만약 오늘 이후의 창문이 열려있다면 다 닫는 코드를 작성: 이미 열려버린 창문들을 처리하기 위함
       25일 이후로는 처리할 필요가 없음. 그때는 오류도 거의 사라질 것으로 예상됨으로 코드 삭제해도 될 것으로 보임
+      2022-12-25: 밑에 코드 주석 처리합니다
     */
-    if (todayDate < 25) {
-      dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
-        for (let i = todayDate + 1; i <= 25; i++) {
-          if (snapshot.data().windowInfo[i]) {
-            dbService.collection("hotelOwner").doc(id).update({
-              [`windowInfo.${i}`] : false,
-            });
-          }
-        }
-      });
-    }
+    // if (todayDate < 25 && month == 12) {
+    //   dbService.collection("hotelOwner").doc(id).onSnapshot((snapshot) => {
+    //     for (let i = todayDate + 1; i <= 25; i++) {
+    //       if (snapshot.data().windowInfo[i]) {
+    //         dbService.collection("hotelOwner").doc(id).update({
+    //           [`windowInfo.${i}`] : false,
+    //         });
+    //       }
+    //     }
+    //   });
+    // }
 
     // 25일 진저맨은 모두 확인할 수 있도록 해야합니다.
-    if (todayDate >= 25) {
+    if (todayDate == 25 && month == 12) {
       dbService.collection("hotelOwner").doc(id).update({
         "windowInfo.25" : true
       });
@@ -139,12 +145,18 @@ const Home2 = ({ userObj }) => {
       setLastDate(doc.data().lastDate);
     });
 
-    dbService.collection("CookieInfo").doc(todayDate.toString()).get().then((doc) => {
-      setGingerTitle(doc.data().gingerTitle);
-      setGingerContent(doc.data().gingerContent);
-      setGingerName(doc.data().gingerName);
-    })
-
+    // 12월 이후에는 오늘의 편지에서 진저맨 카드를 볼 일이 없음
+    if (month == 12) {
+      dbService.collection("CookieInfo").doc(todayDate.toString()).get().then((doc) => {
+        try {
+          setGingerTitle(doc.data().gingerTitle);
+          setGingerContent(doc.data().gingerContent);
+          setGingerName(doc.data().gingerName);
+        } catch (error) {
+          console.log(`${todayDate}` + "일에 해당하는 진저맨은 존재하지 않습니다.");
+        }
+      });
+    }
 
 
   }, []);
