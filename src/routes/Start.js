@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 import { Container, HotelImg, TitleDiv, LandingButton, LandingRedButton, LandingTitle1, LandingTitle2, LandingTitle3, LandingTitle4, LandingContent1, LandingContent2, LandingContent3, LandingContent4, LandingContent10, LandingContent11 } from './styles/style';
 import { GreenButton, RedButton, WhiteButton } from './styles/buttonstyle';
 import LandingModal from '../components/Modal/LandingModal';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { authService } from "fbase"
 
 // Landing Page 관련
@@ -20,6 +20,18 @@ import LandingInsta from '../assets/LandingPage/LandingInsta.svg';
 
 const Start = () => {
     const history = useHistory();
+    const [deactiveSignIn, setDeactiveSignIn] = useState(true);
+    const [signInMessage, setSignInMessage] = useState("");
+    const todayDate = new Date().getDate();
+    const month = new Date().getMonth() + 1;
+
+    useEffect(() => {
+        if (month == 12 && todayDate <= 25) {
+            setDeactiveSignIn(false);
+        } else {
+            setSignInMessage("12월 25일 이후부터 새로운 호텔을 만들 수 없습니다");
+        }
+    }, []);
 
     const onclickLoginBar = () => {
         history.push("/login");
@@ -60,9 +72,8 @@ const Start = () => {
             <HotelImg src={Hotel} />
             <ButtonLayout>
                 <RedButton onClick={onclickLoginBar}>로그인</RedButton>
-                <GreenButton disabled={false} onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
-                {/* <HotelGuide style={{fontFamily: "humanbeomseok"}}>점검을 위해 회원가입을 잠시 비활성화합니다.</HotelGuide> */}
-                {/* <WhiteButton onClick={onclickPasswordReset}>비밀번호를 잊어버리셨나요?</WhiteButton> */}
+                <GreenButton disabled={deactiveSignIn} onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
+                <HotelGuide style={{fontFamily: "humanbeomseok"}}>{signInMessage}</HotelGuide>
                 <HotelGuide style={{fontFamily: "humanbeomseok"}}>
                 <br/>
                 계속 진행하면 진저호텔 <a href="https://puffy-mum-94e.notion.site/814bde5a30de4059b00d0c416e1eba96" target="_blank">서비스 이용약관</a>에 동의하고 <br/><br/>
