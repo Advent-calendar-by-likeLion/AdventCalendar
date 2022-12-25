@@ -22,13 +22,16 @@ const Start = () => {
     const history = useHistory();
     const [deactiveSignIn, setDeactiveSignIn] = useState(true);
     const [signInMessage, setSignInMessage] = useState("");
+    const [signInButtonValue, setSignInButtonValue] = useState("");
     const todayDate = new Date().getDate();
     const month = new Date().getMonth() + 1;
 
     useEffect(() => {
         if (month == 12 && todayDate <= 25) {
+            setSignInButtonValue("내 호텔 만들기");
             setDeactiveSignIn(false);
         } else {
+            setSignInButtonValue("2023년에도 볼 수 있겠죠?");
             setSignInMessage("12월 25일 이후부터 새로운 호텔을 만들 수 없습니다");
         }
     }, []);
@@ -72,7 +75,7 @@ const Start = () => {
             <HotelImg src={Hotel} />
             <ButtonLayout>
                 <RedButton onClick={onclickLoginBar}>로그인</RedButton>
-                <GreenButton disabled={deactiveSignIn} onClick={onclickSignupBar}>내 호텔 만들기</GreenButton>
+                <GreenButton disabled={deactiveSignIn} onClick={onclickSignupBar} >{signInButtonValue}</GreenButton>
                 <HotelGuide style={{fontFamily: "humanbeomseok"}}>{signInMessage}</HotelGuide>
                 <HotelGuide style={{fontFamily: "humanbeomseok"}}>
                 <br/>
