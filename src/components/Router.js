@@ -61,9 +61,9 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             <Route exact path="/ginger/:id">
               <GingerPage userObj={userObj} />
             </Route>
-            <Route exact path="/createSign">
+            {/* <Route exact path="/createSign">
               <CreateSign userObj={userObj} />
-            </Route>
+            </Route> */}
           </>
         ) : (
           <>
@@ -97,9 +97,9 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
             <Route exact path="/mypage">
               <MyPage userObj={userObj} />
             </Route>
-            <Route exact path="/createSign">
+            {/* <Route exact path="/createSign">
               <CreateSign userObj={userObj} />
-            </Route>
+            </Route> */}
           </>
         )}
         {/* <Redirect from="*" to="/"/> */}
