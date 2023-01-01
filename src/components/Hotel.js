@@ -25,6 +25,7 @@ const Hotel = ({userObj}) => {
 
     const {id} = useParams(); // hetelOwnerId
     const todayDate = new Date().getDate();
+    const month = new Date().getMonth() + 1;
 
     useEffect(async () => {
       await dbService.collection("hotelOwner").doc(id).get()
@@ -40,20 +41,18 @@ const Hotel = ({userObj}) => {
     
 
     const initWindowInfo = () => {
-      // 25일 이전에는 기존 방식대로 운영
-      if (todayDate < 25) {
-        dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
-          setInfo(doc.data().windowInfo);
-        });
-      }
-      // 25일 이후부터는 모든 창문을 개방
-      if (todayDate >= 25) {
-        setInfo({
-          1 : true, 2 : true, 3 : true, 4 : true, 5 : true, 6 : true, 7 : true, 8 : true, 9 : true,
-          10 : true, 11 : true, 12 : true, 13 : true, 14 : true, 15 : true, 16 : true, 17 : true,
-          18 : true, 19 : true, 20 : true, 21 : true, 22 : true, 23 : true, 24 : true, 25 : true
-        });
-      }
+      // // 25일 이전에는 기존 방식대로 운영
+      // if (todayDate < 25) {
+      //   dbService.collection("hotelOwner").doc(id).onSnapshot((doc) => {
+      //     setInfo(doc.data().windowInfo);
+      //   });
+      // }
+      // 모든 창문을 개방
+      setInfo({
+        1 : true, 2 : true, 3 : true, 4 : true, 5 : true, 6 : true, 7 : true, 8 : true, 9 : true,
+        10 : true, 11 : true, 12 : true, 13 : true, 14 : true, 15 : true, 16 : true, 17 : true,
+        18 : true, 19 : true, 20 : true, 21 : true, 22 : true, 23 : true, 24 : true, 25 : true
+      });
     }
     
     const onClickOpenModal = (item) => {
