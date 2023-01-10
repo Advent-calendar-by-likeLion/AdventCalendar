@@ -30,9 +30,9 @@ const Nweet = ({ nweetObj, tableNm }) => {
             {nweetObj.attachmentUrl && (
                 <img width="100%" src={nweetObj.attachmentUrl} />
             )}
-            <DelteLayout>
+            {/* <DelteLayout>
                 <DeleteStyle onClick={onDeleteClick}>삭제</DeleteStyle>
-            </DelteLayout>
+            </DelteLayout> */}
         </div>
     )
 }
