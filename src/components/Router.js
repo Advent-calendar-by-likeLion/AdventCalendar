@@ -12,7 +12,7 @@ import AdminConfig from "../routes/AdminConfig";
 import MyPage from "../routes/MyPage";
 import GingerPage from "../routes/GingerPage";
 import CreateSign from "../routes/CreateSign";
-import LikeLionAd from "../advertisement/LikeLionAd";
+// import LikeLionAd from "../advertisement/LikeLionAd";
 import Home2Private from "../routes/Home2Private";
 
 
@@ -104,7 +104,7 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
         )}
         {/* <Redirect from="*" to="/"/> */}
       </Switch>
-      <LikeLionAd/>
+      {/* <LikeLionAd/> */}
     </Router>
   );
 };
