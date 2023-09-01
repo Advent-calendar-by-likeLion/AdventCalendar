@@ -1,0 +1,51 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Create CNAME file
+        run: cp CNAME build/CNAME
+
+      - name: Deploy to GitHub Pages
+        env:
+          REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
+          REACT_APP_AUTH_DOMAIN: ${{ secrets.REACT_APP_AUTH_DOMAIN }}
+          REACT_APP_PROJECT_ID: ${{ secrets.REACT_APP_PROJECT_ID }}
+          REACT_APP_STORAGE_BUCKET: ${{ secrets.REACT_APP_STORAGE_BUCKET }}
+          REACT_APP_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_MESSAGING_SENDER_ID }}
+          REACT_APP_APP_ID: ${{ secrets.REACT_APP_APP_ID }}
+          REACT_APP_MEASUREMENT_I: ${{ secrets.REACT_APP_MEASUREMENT_I }}
+          REACT_APP_KAKAO_KE: ${{ secrets.REACT_APP_KAKAO_KE }}
+          GENERATE_SOURCEMA: ${{ secrets.GENERATE_SOURCEMA }}
+        run: |
+          echo "REACT_APP_API_KEY=$REACT_APP_API_KEY" >> .env
+          echo "REACT_APP_AUTH_DOMAIN=$REACT_APP_AUTH_DOMAIN" >> .env
+          echo "REACT_APP_PROJECT_ID=$REACT_APP_PROJECT_ID" >> .env
+          echo "REACT_APP_STORAGE_BUCKET=$REACT_APP_STORAGE_BUCKET" >> .env
+          echo "REACT_APP_MESSAGING_SENDER_ID=$REACT_APP_MESSAGING_SENDER_ID" >> .env
+          echo "REACT_APP_APP_ID=$REACT_APP_APP_ID" >> .env
+          echo "REACT_APP_MEASUREMENT_I=$REACT_APP_MEASUREMENT_I" >> .env
+          echo "REACT_APP_KAKAO_KE=$REACT_APP_KAKAO_KE" >> .env
+          echo "GENERATE_SOURCEMA=$GENERATE_SOURCEMA" >> .env
+          npx gh-pages -d build -m "Deploy to GitHub Pages"
