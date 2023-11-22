@@ -14,6 +14,7 @@ import GingerPage from "../routes/GingerPage";
 import CreateSign from "../routes/CreateSign";
 // import LikeLionAd from "../advertisement/LikeLionAd";
 import Home2Private from "../routes/Home2Private";
+import KakaoAdFit from "../advertisement/KakaoAdFit";
 
 
 const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
@@ -104,6 +105,7 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
         )}
         {/* <Redirect from="*" to="/"/> */}
       </Switch>
+      {<KakaoAdFit/>}
       {/* <LikeLionAd/> */}
     </Router>
   );
